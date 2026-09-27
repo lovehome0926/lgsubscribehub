@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "sync": "node scripts/sync-sheet.mjs",
     "sheet:export": "node scripts/export-sheet-csv.mjs",
+    "sheet:xlsx": "node scripts/export-workbook.mjs",
     "import:xlsx": "node scripts/import-subscribe.mjs"
   },
   "dependencies": {

@@ -1,58 +1,57 @@
-# Google Sheet 管理商品与促销
+# 用 xlsx / Google Sheet 管理商品与促销
 
-网站的商品清单、价格和每月促销都从一个 Google Sheet 生成。改完表格跑一次 `npm run sync`，
-再重新部署即可。
+日常改商品，打开桌面上的 `LG_Subscribe_Products_2026.xlsx`，或项目里的
+`sheet/LG_Subscribe_Products_2026.xlsx`。三个页签：Products、Promos、How to use。
 
-## 一次性设置
+Google Sheet 我只能读取、不能替你写入（没有你 Google 账号的权限）。本地 xlsx 可以直接改。
 
-1. 到 [sheets.new](https://sheets.new) 建一个新表格，命名例如 `LG Subscribe 2026`。
-2. 建两个页签，名字必须**完全**是 `Products` 和 `Promos`（区分大小写）。
-3. 在 `Products` 页签：**文件 → 导入 → 上传** `sheet/products.csv`，导入位置选
-   「替换当前工作表」。
-4. 在 `Promos` 页签：同样导入 `sheet/promos.csv`。
-5. 右上角**共享 → 知道链接的任何人 → 查看者**。不开这一步脚本读不到。
-6. 复制浏览器地址栏的链接，跑一次：
-
-   ```bash
-   npm run sync -- "粘贴表格链接"
-   ```
-
-   表格 ID 会记在 `scripts/.sheet-id`，之后直接 `npm run sync` 就行。
-
-## 日常使用
+改完有两种更新网站的方法：
 
 ```bash
-npm run sync     # 从 Google Sheet 拉取，重新生成商品和促销数据
-npm run dev      # 本地预览
-npm run build    # 打包部署
+npm run import:xlsx    # 读这个 xlsx，重新生成网站数据
+npm run sync           # 如果你已经把 xlsx 导入 Google 表格，从网上拉
+npm run sheet:xlsx     # 用当前网站数据重新生成一份空白填好的 xlsx
+npm run dev            # 本地预览
 ```
 
-其他命令：
+当前 Google 表格（只读同步用）：
+https://docs.google.com/spreadsheets/d/1vrqUmJl7m2syIR58z63y3NRYPr-bf1wyE5VFiS4LS8o/edit?usp=sharing
 
-```bash
-npm run sheet:export   # 重新从本地 xlsx 导出 CSV 模板
-npm run import:xlsx    # 不用 Google Sheet，直接从本地 xlsx 导入
-```
+共享必须是「知道链接的任何人可查看」。表格 ID 会记在 `scripts/.sheet-id`。
 
 ## Products 页签
 
-一行一个变体（同一商品的不同颜色或容量各占一行）。脚本按 C 列的商品名自动把多行
-合并成一个商品，颜色和规格变成商品页上的选项。
+一行一个变体。脚本按**型号**合并（同一型号的不同颜色合在一张卡）。电视例外：同一系列
+（如 NU865）的不同尺寸合在一张卡。
 
-| 列 | 标题 | 说明 |
-|---|---|---|
-| A | Category | 必填。见下方允许值 |
-| B | Model | 型号，例如 `WD518AN` |
-| C | Product Name | 必填。**同名的行会合并成一个商品** |
-| D | Variant | 颜色和规格，例如 `Calming Beige`、`Silver (9kg)`、`55 inch` |
-| E | Outright Price | 买断价 |
-| F | 84mo Self-Service | 84 个月 · 自助换滤芯月费 |
-| G | 84mo Combine | 84 个月 · 混合保养月费 |
-| H | 84mo Regular Visit | 84 个月 · 上门保养月费 |
-| I | 60mo Self-Service | 60 个月 · 自助换滤芯月费 |
-| J | 60mo Regular Visit | 60 个月 · 上门保养月费 |
-| K | 60mo Combine | 60 个月 · 混合保养月费 |
-| L | LG Page URL | LG 官网商品页链接 |
+空着的价格格子不会出现在网站上。没有 7 年、没有 Combine、没有某个上门周期，页面就不会画出那个选项。
+
+| 标题 | 说明 |
+|---|---|
+| Category | 必填。见下方允许值 |
+| Model | 型号。`WD518AN` 和 `WD516AN` 会分成两张卡 |
+| Name | 必填。商品名 |
+| Specs/Variant | 颜色和规格，例如 `Calming Beige`、`Matte Black (12kg)`、`55 inch` |
+| Outright_Price_MYR | 买断价（非水机）。留空则网站不显示买断 |
+| Outright_Self_MYR | 水机买断 Self-Service（含 1 年保修 + 1 年 CareShip） |
+| Outright_Combine_MYR | 水机买断 Combine Maintenance |
+| Outright_Regular_MYR | 水机买断 Regular Visit |
+| Sub_7Yr_Self_MYR | 7 年 · 自助换滤芯（电视填月费也用这一列） |
+| Sub_7Yr_Combine_MYR | 7 年 · Combine |
+| Sub_7Yr_Regular_6m_MYR | 7 年 · Regular Visit 每 6 个月 |
+| Sub_7Yr_Regular_12m_MYR | 7 年 · Regular Visit 每 12 个月 |
+| Sub_7Yr_Regular_24m_MYR | 7 年 · Regular Visit 每 24 个月 |
+| Sub_5Yr_Self_MYR | 5 年 · 自助换滤芯 |
+| Sub_5Yr_Combine_MYR | 5 年 · Combine |
+| Sub_5Yr_Regular_6m_MYR | 5 年 · Regular Visit 每 6 个月 |
+| Sub_5Yr_Regular_12m_MYR | 5 年 · Regular Visit 每 12 个月 |
+| Sub_5Yr_Regular_24m_MYR | 5 年 · Regular Visit 每 24 个月 |
+| LG HQ Detail Page URL | LG 官网商品页。有链接就抓官网卖点和图 |
+| Copy_Features_From | 没有官网时，填一个同 feature 的型号，例如 `F2520SNEKR` |
+| Hero_Image | 主图文件名或链接。也可把照片丢进 `public/products/型号.jpg` |
+
+本地 xlsx 已经把 6 / 12 / 24 个月上门价拆成独立列。冷气填 6m 和 12m，冰箱填 12m 和 24m。
+旧 Google Sheet 里那一列总的 `Sub_7Yr_Regular_MYR` / `Sub_5Yr_Regular_MYR` 仍然能读：默认冷气/净水器 6 个月，冰箱 12 个月。
 
 A 列只能填这些值，填错会被当成新分类、在网站上落不进任何分类区块：
 
@@ -62,16 +61,19 @@ A 列只能填这些值，填错会被当成新分类、在网站上落不进任
 ### 几个要注意的点
 
 - **价格留空**表示尚未定价，网站会显示「Price to be confirmed」。
-- **L 列的链接是详情文案的钥匙。** 商品页的卖点、演示视频、规格表是从 LG 官网抓下来缓存的，
-  `npm run sync` 会按这个链接把已有详情接回去。**链接改了或清空，那个商品的详情就会掉。**
-  新增商品填好链接后，跑 `node scripts/import-details.mjs` 去抓取详情。
-- **D 列的写法决定颜色还是规格。** 括号里是数字或带 kg / HP / L 的，括号内容当规格、
+- **有官网链接就填链接。** 卖点、演示视频、规格表从 LG 官网抓下来缓存。新增商品填好链接后，跑 `node scripts/import-details.mjs`。
+- **官网没有这个型号的页面时：** `Copy_Features_From` 填一个已经导入、feature 一样的型号。卖点文案和演示会沿用，规格数字不会抄过去。主图请自己放进 `public/products/`，文件名用 `型号.jpg` 或 `型号-颜色.jpg`，也可以填 `Hero_Image`。
+- **同一商品名、没有链接、也没填 Copy_Features_From** 时，会自动沿用同名商品的卖点（例如另一台 Front Loader）。想指定来源就填型号。
+- **Specs/Variant 的写法决定颜色还是规格。** 括号里是数字或带 kg / HP / L 的，括号内容当规格、
   括号前当颜色（`Silver (9kg)`）；括号里是文字的，括号内容当颜色（`Hot Ambient Cold (Calming Beige)`）。
 - 删商品就删掉它的所有行。整个商品的行都删掉后，网站上对应的卡片和分类计数会一起消失。
 
 ## Promos 页签
 
-一行一个促销。同一个月可以有多条，只要作用范围不同。
+一行一个优惠。**按型号填**，不要整类一起打折。每个月有 memo 就加行；没特别优惠的月份不用填，
+网站会用 `default` 那一行（前 9 个月半价）。
+
+Offer 可以直接写 memo 原文：`前12m 77% off`、`前7m 77% off`、`前9m半价`、`Merdeka RM20 off`、`RM10 off`。
 
 | 列 | 标题 | 说明 |
 |---|---|---|

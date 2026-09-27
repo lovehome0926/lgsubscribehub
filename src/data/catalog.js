@@ -68,12 +68,54 @@ export function productsInGroup(groupId) {
   return PRODUCTS.filter((product) => groupOf(product)?.id === groupId)
 }
 
-// Groups in declared order, each with its products. Empty groups are dropped so a
-// removed product line cannot leave a dead tab behind.
+function colorsForSpecs(product, specs) {
+  const ids = new Set(specs.map((spec) => spec.id))
+  return product.colors.filter((color) => {
+    if (color.specIds?.some((id) => ids.has(id))) return true
+    return specs.some((spec) => color.variants?.[spec.id])
+  })
+}
+
+function listingModel(product, specs, colors) {
+  const spec = specs[0]
+  const color = colors[0]
+  return color?.variants?.[spec.id]?.model || color?.model || product.model
+}
+
+// One shop card. Same-price colours stay together. Different prices or models
+// become their own card — except TVs of the same series, which keep sizes on one card.
+export function toListings(product) {
+  const keepTogether = product.type === "tv"
+  const groups = keepTogether ? [product.specs] : product.specs.map((spec) => [spec])
+  return groups.map((specs) => {
+    const split = !keepTogether && product.specs.length > 1
+    const colors = colorsForSpecs(product, specs)
+    const spec = specs[0]
+    const usefulSpec = spec?.label && /hp|kg|\dL\b|"|inch/i.test(spec.label)
+    return {
+      id: split ? `${product.id}--${spec.id}` : product.id,
+      productId: product.id,
+      specIds: specs.map((item) => item.id),
+      product,
+      specs,
+      colors,
+      title: split || (usefulSpec && specs.length === 1) ? `${product.shortName} · ${spec.label}` : product.shortName,
+      model: listingModel(product, specs, colors),
+      specLabel: product.specLabel,
+      split,
+    }
+  })
+}
+
+export function allListings() {
+  return PRODUCTS.flatMap(toListings)
+}
+
 export function groupedCatalog() {
-  return CATEGORY_GROUPS.map((group) => ({ group, products: productsInGroup(group.id) })).filter(
-    (entry) => entry.products.length > 0,
-  )
+  return CATEGORY_GROUPS.map((group) => ({
+    group,
+    listings: productsInGroup(group.id).flatMap(toListings),
+  })).filter((entry) => entry.listings.length > 0)
 }
 
 export { PROMOS }
@@ -89,28 +131,50 @@ function withinWindow(promo, date) {
   return true
 }
 
+function compactCode(value) {
+  return String(value ?? "")
+    .split(".")[0]
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "")
+}
+
+function productCodes(product) {
+  const codes = new Set()
+  const add = (value) => {
+    const code = compactCode(value)
+    if (code) codes.add(code)
+  }
+  add(product.model)
+  add(product.sku)
+  for (const color of product.colors ?? []) {
+    add(color.model)
+    for (const variant of Object.values(color.variants ?? {})) add(variant.model)
+  }
+  return codes
+}
+
 export function promosForDate(date = new Date()) {
   const month = date.getMonth() + 1
   return PROMOS.filter((promo) => promo.month === month && withinWindow(promo, date))
 }
 
+export function fallbackPromos(date = new Date()) {
+  return PROMOS.filter((promo) => promo.month === 0 && withinWindow(promo, date))
+}
+
 // How closely a promo's scope targets a product. Higher wins; -1 means no match.
 function scopeRank(scope, product) {
-  const target = String(scope ?? "").trim().toLowerCase()
-  if (!target || target === "all") return 0
+  const target = String(scope ?? "").trim()
+  if (!target || target.toLowerCase() === "all") return 0
   if (groupOf(product)?.id === target) return 1
-  if (product.category?.toLowerCase() === target) return 2
+  if (product.category?.toLowerCase() === target.toLowerCase()) return 2
 
-  const models = new Set()
-  if (product.model) models.add(product.model.toLowerCase())
-  for (const color of product.colors ?? []) {
-    if (color.model) models.add(color.model.toLowerCase())
-    for (const variant of Object.values(color.variants ?? {})) {
-      if (variant.model) models.add(variant.model.toLowerCase())
+  const want = compactCode(target)
+  if (want.length >= 5) {
+    for (const code of productCodes(product)) {
+      if (code === want || code.startsWith(want) || want.startsWith(code)) return 4
     }
   }
-  if (models.has(target)) return 3
-
   return -1
 }
 
@@ -126,17 +190,37 @@ export function promoForDate(date = new Date()) {
 
 // Most specific promo that applies to one product: model beats category, which
 // beats category group, which beats the site-wide promo.
-export function promoForProduct(product, date = new Date()) {
+function bestPromo(list, product) {
   let best = null
   let bestRank = -1
-  for (const promo of promosForDate(date)) {
+  for (const promo of list) {
     const rank = scopeRank(promo.scope, product)
     if (rank > bestRank) {
       best = promo
       bestRank = rank
     }
   }
-  return best
+  return bestRank >= 0 ? best : null
+}
+
+export function promoForProduct(product, date = new Date()) {
+  return bestPromo(promosForDate(date), product) ?? bestPromo(fallbackPromos(date), product)
+}
+
+export function applyPromo(monthly, promo) {
+  if (monthly == null) return { list: null, now: null, introMonths: null }
+  if (!promo) return { list: monthly, now: monthly, introMonths: null }
+  if (promo.percentOff) {
+    return {
+      list: monthly,
+      now: Math.max(Math.round(monthly * (1 - promo.percentOff / 100)), 0),
+      introMonths: promo.introMonths || null,
+    }
+  }
+  if (promo.extraOff) {
+    return { list: monthly, now: Math.max(monthly - promo.extraOff, 0), introMonths: null }
+  }
+  return { list: monthly, now: monthly, introMonths: null }
 }
 
 export const SERVICES = {
@@ -180,8 +264,23 @@ export function tenurePriced(spec, tenure) {
   return [6, 12, 24].some((cycle) => isMoney(row.visit?.[cycle]))
 }
 
-export function careOptions(spec) {
-  const rows = Object.values(spec.pricing.subscribe || {})
+export function pricedTenures(spec) {
+  return Object.keys(spec.pricing.subscribe || {})
+    .map(Number)
+    .filter((tenure) => tenurePriced(spec, tenure))
+    .sort((a, b) => b - a)
+}
+
+export function visitCycles(spec, tenure) {
+  const visit = spec.pricing.subscribe?.[tenure]?.visit || {}
+  return [6, 12, 24].filter((cycle) => isMoney(visit[cycle]))
+}
+
+export function careOptions(spec, tenure) {
+  const rows =
+    tenure != null
+      ? [spec.pricing.subscribe?.[tenure]].filter(Boolean)
+      : Object.values(spec.pricing.subscribe || {})
   const has = (key) => rows.some((row) => isMoney(row?.[key]))
   const hasVisit = rows.some((row) => [6, 12, 24].some((cycle) => isMoney(row?.visit?.[cycle])))
   const list = []
@@ -192,17 +291,47 @@ export function careOptions(spec) {
   return list
 }
 
+export function outrightAmount(spec, care = "self") {
+  const outright = spec?.pricing?.outright
+  if (isMoney(outright)) return outright
+  if (outright && typeof outright === "object") {
+    if (isMoney(outright[care])) return outright[care]
+    return ["self", "combined", "visit"].map((key) => outright[key]).find(isMoney) ?? null
+  }
+  return null
+}
+
+export function hasOutrightPrice(spec) {
+  return isMoney(outrightAmount(spec))
+}
+
+// Only water outright splits CareShip™ into Self / Combine / Regular Visit.
+// Each plan includes free 1-year warranty and 1-year CareShip™, at its own buyout price.
+export function outrightCareOptions(product, spec) {
+  if (product?.type !== "water") return []
+  const outright = spec?.pricing?.outright
+  if (outright && typeof outright === "object") {
+    return ["self", "combined", "visit"].filter((key) => isMoney(outright[key]))
+  }
+  return isMoney(outright) ? ["self"] : []
+}
+
+export function planCareOptions(product, spec, { payMode, tenure }) {
+  if (payMode === "outright") return outrightCareOptions(product, spec)
+  return product.hasCare ? careOptions(spec, tenure) : []
+}
+
 export function planPrice(spec, { payMode, tenure, care, cycle }) {
-  if (payMode === "outright") return isMoney(spec.pricing.outright) ? spec.pricing.outright : null
+  if (payMode === "outright") return outrightAmount(spec, care)
   const row = spec.pricing.subscribe?.[tenure]
   if (!row) return null
   if (care === "visit") return isMoney(row.visit?.[cycle]) ? row.visit[cycle] : null
   return isMoney(row[care]) ? row[care] : null
 }
 
-export function lowestMonthly(product) {
+export function lowestMonthlyFor(specs) {
   let best = null
-  for (const spec of product.specs) {
+  for (const spec of specs) {
     for (const row of Object.values(spec.pricing.subscribe || {})) {
       for (const key of ["self", "combined", "none"]) {
         if (isMoney(row[key]) && (best == null || row[key] < best)) best = row[key]
@@ -216,8 +345,16 @@ export function lowestMonthly(product) {
   return best
 }
 
+export function lowestMonthly(product) {
+  return lowestMonthlyFor(product.specs)
+}
+
 export const startingMonthly = lowestMonthly
 
 export function productById(id) {
-  return PRODUCTS.find((item) => item.id === id) ?? PRODUCTS[0]
+  return (
+    PRODUCTS.find((item) => item.id === id) ??
+    PRODUCTS.find((item) => item.model?.toLowerCase() === String(id || "").toLowerCase()) ??
+    PRODUCTS[0]
+  )
 }

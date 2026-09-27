@@ -1,109 +1,24 @@
-// Generated from the "Promos" tab of the LG Subscribe product sheet.
-// Re-run scripts/sync-sheet.mjs to refresh.
+// Generated from the "Promos" tab of LG_Subscribe_Products_2026.xlsx.
+// Re-run scripts/sync-sheet.mjs or npm run import:xlsx after a memo update.
 //
-// scope: "all" for a site-wide promo, or a category group id (water-air, cooling,
-// laundry, kitchen, living), a category name (Refrigerators), or a single model
-// (GC-X24FFC7R). The most specific match wins on a product page.
-// extraOff: ringgit taken off the monthly fee. 0 means messaging only.
-// start/end: optional ISO dates. Empty means the whole month.
+// scope: usually a model code (WU525BS, WD518AN). "all" is the fallback.
+// The most specific match wins. Month 0 / "default" applies when that month
+// has no memo for the model.
+// Offer examples: 前12m 77% off / 前7m 77% off / 前9m半价 / Merdeka RM20 off / RM10 off
 export const PROMOS = [
   {
-    month: 1,
-    scope: "all",
-    badge: "NEW YEAR",
-    title: "New Year CareShip™ offer",
-    detail: "Enquire for current Subscribe incentives on approved plans.",
-    extraOff: 0,
-    extended: false,
-    start: null,
-    end: null,
-  },
-  {
-    month: 2,
-    scope: "all",
-    badge: "CNY HOME",
-    title: "CNY filter kit",
-    detail: "Extra PuriCare™ filter set with Self-Service plans.",
-    extraOff: 0,
-    extended: false,
-    start: null,
-    end: null,
-  },
-  {
-    month: 4,
-    scope: "all",
-    badge: "RAYA PREP",
-    title: "Raya installation support",
-    detail: "Standard installation support on selected HA models.",
-    extraOff: 0,
-    extended: true,
-    start: null,
-    end: null,
-  },
-  {
-    month: 6,
-    scope: "all",
-    badge: "MID-YEAR",
-    title: "RM 10 off 7-year plans",
-    detail: "Save RM 10 every month on a 7-year tenure.",
-    extraOff: 10,
-    extended: false,
-    start: null,
-    end: null,
-  },
-  {
-    month: 7,
-    scope: "all",
-    badge: "HAZE WATCH",
-    title: "Air purifier filter bundle",
-    detail: "Filter cover with selected PuriCare™ 360° plans.",
-    extraOff: 0,
-    extended: false,
-    start: null,
-    end: null,
-  },
-  {
-    month: 8,
-    scope: "all",
-    badge: "MERDEKA",
-    title: "Merdeka Subscribe incentive",
-    detail: "Seasonal incentive on 5- and 7-year contracts. Enquire for details.",
-    extraOff: 0,
-    extended: true,
-    start: null,
-    end: null,
-  },
-  {
-    month: 9,
-    scope: "all",
-    badge: "OHSEM",
-    title: "OHSEM CareShip™ kit",
-    detail: "Seasonal filter set on selected PuriCare™ Subscribe plans.",
-    extraOff: 0,
-    extended: true,
-    start: null,
-    end: null,
-  },
-  {
-    month: 11,
-    scope: "all",
-    badge: "11.11",
-    title: "Double filter credit",
-    detail: "Two Self-Service kits in year 1 at no extra fee.",
-    extraOff: 0,
-    extended: false,
-    start: null,
-    end: null,
-  },
-  {
-    month: 12,
-    scope: "all",
-    badge: "HOLIDAY HOME",
-    title: "Year-end CareShip™ offer",
-    detail: "Enquire for current Subscribe incentives.",
-    extraOff: 0,
-    extended: false,
-    start: null,
-    end: null,
-  },
+    "month": 0,
+    "scope": "all",
+    "offer": "前9m半价",
+    "badge": "9M HALF",
+    "title": "First 9 months half price",
+    "detail": "When the month has no special memo, every Subscribe plan is half price for the first 9 months.",
+    "type": "intro_percent",
+    "introMonths": 9,
+    "percentOff": 50,
+    "extraOff": 0,
+    "merdeka": false,
+    "start": null,
+    "end": null
+  }
 ]

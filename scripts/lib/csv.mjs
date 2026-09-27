@@ -86,3 +86,39 @@ export function stripHeader(cells, columns) {
   if (first && first === columns[0].header.toLowerCase()) return cells.slice(1)
   return cells
 }
+
+export function headerKey(value) {
+  return String(value ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "")
+}
+
+// Maps a CSV table by header aliases so Google Sheet column titles can change
+// wording without breaking sync. `aliases` is { field: ["Header A", "Header B"] }.
+export function rowsFromNamedHeaders(cells, aliases) {
+  const header = cells[0] || []
+  const index = new Map()
+  header.forEach((name, i) => {
+    const key = headerKey(name)
+    if (key && !index.has(key)) index.set(key, i)
+  })
+  const fieldAt = {}
+  for (const [field, names] of Object.entries(aliases)) {
+    const found = names.map(headerKey).find((key) => index.has(key))
+    if (found != null) fieldAt[field] = index.get(found)
+  }
+  return cells.slice(1).map((row) => {
+    const obj = {}
+    for (const [field, i] of Object.entries(fieldAt)) {
+      const value = (row[i] ?? "").trim()
+      if (value) obj[field] = value
+    }
+    return obj
+  })
+}
+
+export function isProductHeader(cells) {
+  const keys = (cells[0] || []).map(headerKey)
+  return keys.includes("category") && keys.includes("model")
+}

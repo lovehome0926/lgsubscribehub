@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
 import { Check, ChevronLeft, Droplets, Flame, LayoutPanelTop, ShieldCheck, Snowflake, Truck, Wifi, Zap } from "lucide-react"
-import { SERVICES, careOptions, isMoney, planPrice, promoForProduct, tenurePriced } from "../data/catalog"
+import { SERVICES, applyPromo, hasOutrightPrice, isMoney, planCareOptions, planPrice, pricedTenures, promoForProduct, visitCycles } from "../data/catalog"
 import { whatsappHref } from "../config"
 
 const FEATURE_ICONS = {
@@ -19,11 +19,7 @@ const CARE_BLURB = {
   visit: "Technician visit on a set interval",
   none: "Standard manufacturer warranty",
 }
-const VISIT_CYCLES = [
-  { id: 6, label: "6 mo" },
-  { id: 12, label: "12 mo" },
-  { id: 24, label: "24 mo" },
-]
+const VISIT_LABEL = { 6: "6 mo", 12: "12 mo", 24: "24 mo" }
 const WATER_META = {
   Hot: { Icon: Flame, className: "text-[#c45c26]" },
   Ambient: { Icon: Droplets, className: "text-[#2b6cb0]" },
@@ -34,26 +30,23 @@ function firstSpec(product) {
   return product.specs.find((item) => item.available) ?? product.specs[0]
 }
 
-function applyPromo(monthly, promo) {
-  if (monthly == null) return { list: null, now: null }
-  if (!promo) return { list: monthly, now: monthly }
-  return { list: monthly, now: Math.max(monthly - (promo.extraOff || 0), 0) }
-}
-
 function displayName(product, color) {
   if (!product.baseName) return product.name
   if (product.colors.length < 2 || color.name === "Default") return product.baseName
   return `${product.baseName}, ${color.name}`
 }
 
-function TitleBlock({ product, color, tagline }) {
+function TitleBlock({ product, color, spec, tagline }) {
   return (
     <div>
       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-lg-red">LG Subscribe™</p>
       <h1 className="mt-2 text-[26px] font-semibold leading-[1.25] tracking-tight md:text-[30px]">
         {displayName(product, color)}
       </h1>
-      <p className="mt-1.5 text-sm text-lg-muted">{color.model ?? product.model}</p>
+      <p className="mt-1.5 text-sm text-lg-muted">
+        {color.model ?? product.model}
+        {spec && (product.specs.length > 1 || /hp|kg|\dL\b|"|inch/i.test(spec.label)) ? ` · ${spec.label}` : ""}
+      </p>
       <p className="mt-3 max-w-xl text-sm leading-6 text-lg-ink/75">{tagline}</p>
       {product.waters?.length ? (
         <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium">
@@ -120,122 +113,155 @@ function tileState(selected) {
 }
 
 function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, tenure, setTenure, care, setCare, visitCycle, setVisitCycle, promo, price, waText }) {
-  const perks = [
-    { Icon: Truck, label: "Free Delivery & Installation" },
-    { Icon: ShieldCheck, label: "Zero Deposit" },
-    { Icon: Zap, label: "5-Year Warranty" },
-  ]
-  const services = product.hasCare ? careOptions(spec) : []
-  const outrightReady = isMoney(spec.pricing.outright)
+  const waterOutright = payMode === "outright" && product.type === "water"
+  const perks = waterOutright
+    ? [
+        { Icon: Truck, label: "Free Delivery & Installation" },
+        { Icon: ShieldCheck, label: "Free 1-year Warranty" },
+        { Icon: Zap, label: "1-year CareShip™" },
+      ]
+    : payMode === "outright"
+      ? [
+          { Icon: Truck, label: "Free Delivery & Installation" },
+          { Icon: ShieldCheck, label: "Manufacturer Warranty" },
+        ]
+      : [
+          { Icon: Truck, label: "Free Delivery & Installation" },
+          { Icon: ShieldCheck, label: "Zero Deposit" },
+          { Icon: Zap, label: "5-Year Warranty" },
+        ]
+  const services = planCareOptions(product, spec, { payMode, tenure })
+  const cycles = payMode === "subscribe" ? visitCycles(spec, tenure) : []
+  const outrightReady = hasOutrightPrice(spec)
+  const showPayModes = outrightReady
+  const showTenure = payMode === "subscribe" && subscribeYears.length > 0
+  const showService = services.length > 0 || payMode === "subscribe"
+  let step = 0
 
   function serviceAmount(id) {
+    if (payMode === "outright") return planPrice(spec, { payMode, tenure, care: id, cycle: visitCycle })
     if (payMode !== "subscribe") return null
     if (id !== "visit") return planPrice(spec, { payMode, tenure, care: id, cycle: visitCycle })
     if (care === "visit") return planPrice(spec, { payMode, tenure, care: "visit", cycle: visitCycle })
-    const row = spec.pricing.subscribe?.[tenure]?.visit || {}
-    const values = VISIT_CYCLES.map((cycle) => row[cycle.id]).filter(isMoney)
+    const values = cycles.map((cycle) => spec.pricing.subscribe?.[tenure]?.visit?.[cycle]).filter(isMoney)
     return values.length ? Math.min(...values) : null
+  }
+
+  function visitBlurb() {
+    if (cycles.length === 1) return `Technician visit every ${cycles[0]} months`
+    return CARE_BLURB.visit
   }
 
   return (
     <div className="space-y-6">
-      <div>
-        <StepLabel n="1">Purchase Option</StepLabel>
-        <div className="mt-3 grid grid-cols-2 gap-2.5">
-          {[
-            { id: "subscribe", label: "Subscription" },
-            { id: "outright", label: "Outright" },
-          ].map((mode) => {
-            const selected = payMode === mode.id
-            const ready = mode.id === "subscribe" || outrightReady
-            return (
-              <button
-                key={mode.id}
-                type="button"
-                disabled={!ready}
-                onClick={() => ready && setPayMode(mode.id)}
-                className={`${tileBase} ${ready ? tileState(selected) : "cursor-not-allowed border-gray-100 text-gray-300"}`}
-              >
-                {selected && ready ? <SelectedMark /> : null}
-                <span className="block">{mode.label}</span>
-                {mode.id === "outright" && !ready ? <span className="mt-0.5 block text-[10px] font-medium tracking-normal text-gray-300">TBC</span> : null}
-              </button>
-            )
-          })}
-        </div>
-      </div>
-
-      <div>
-        <StepLabel n="2">Rental Tenure</StepLabel>
-        {payMode === "subscribe" ? (
-          <div className="mt-3 grid grid-cols-2 gap-2.5 pt-2">
-            {subscribeYears.map((item) => {
-              const selected = tenure === item
-              const ready = tenurePriced(spec, item)
-              const popular = item === 84 && ready
+      {showPayModes ? (
+        <div>
+          <StepLabel n={++step}>Purchase Option</StepLabel>
+          <div className="mt-3 grid grid-cols-2 gap-2.5">
+            {[
+              { id: "subscribe", label: "Subscription" },
+              { id: "outright", label: "Outright" },
+            ].map((mode) => {
+              const selected = payMode === mode.id
               return (
                 <button
-                  key={item}
+                  key={mode.id}
                   type="button"
-                  disabled={!ready}
-                  onClick={() => ready && setTenure(item)}
-                  className={`${tileBase} ${ready ? tileState(selected) : "cursor-not-allowed border-gray-100 text-gray-300"}`}
+                  onClick={() => setPayMode(mode.id)}
+                  className={`${tileBase} ${tileState(selected)}`}
                 >
-                  {popular ? <MicroBadge shift={selected}>🔥 Popular</MicroBadge> : null}
-                  {selected && ready ? <SelectedMark /> : null}
-                  <span className="block">{TENURE_LABEL[item]}</span>
-                  {!ready ? <span className="mt-0.5 block text-[10px] font-medium tracking-normal text-gray-300">TBC</span> : null}
+                  {selected ? <SelectedMark /> : null}
+                  <span className="block">{mode.label}</span>
                 </button>
               )
             })}
           </div>
-        ) : (
-          <p className="mt-3 text-xs leading-5 text-gray-500">1-year CareShip™ package with the appliance.</p>
-        )}
-      </div>
+        </div>
+      ) : null}
 
+      {showTenure ? (
+        <div>
+          <StepLabel n={++step}>Rental Tenure</StepLabel>
+          {subscribeYears.length > 1 ? (
+            <div className="mt-3 grid grid-cols-2 gap-2.5 pt-2">
+              {subscribeYears.map((item) => {
+                const selected = tenure === item
+                const popular = item === 84
+                return (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => setTenure(item)}
+                    className={`${tileBase} ${tileState(selected)}`}
+                  >
+                    {popular ? <MicroBadge shift={selected}>🔥 Popular</MicroBadge> : null}
+                    {selected ? <SelectedMark /> : null}
+                    <span className="block">{TENURE_LABEL[item]}</span>
+                  </button>
+                )
+              })}
+            </div>
+          ) : (
+            <p className="mt-3 text-sm font-semibold text-gray-900">{TENURE_LABEL[subscribeYears[0]] ?? `${subscribeYears[0]} mo`}</p>
+          )}
+        </div>
+      ) : payMode === "outright" ? (
+        <p className="text-xs leading-5 text-gray-500">
+          {waterOutright
+            ? "Free 1-year warranty and 1-year CareShip™ included. Choose how filters and visits are handled in year 1."
+            : "Manufacturer warranty included with the appliance."}
+        </p>
+      ) : null}
+
+      {showService ? (
       <div>
-        <StepLabel n="3">Service Plan</StepLabel>
+        <StepLabel n={++step}>Service Plan</StepLabel>
         {services.length ? (
           <div className="mt-3 space-y-3 pt-2">
             {services.map((id) => {
               const amount = serviceAmount(id)
-              const ready = payMode === "outright" || amount != null
               const selected = care === id
               const priced = applyPromo(amount, promo).now
               return (
                 <button
                   key={id}
                   type="button"
-                  disabled={!ready}
-                  onClick={() => ready && setCare(id)}
+                  onClick={() => setCare(id)}
                   className={`relative flex w-full items-center gap-3 rounded-xl border px-3.5 py-3.5 text-left transition-all duration-200 ease-in-out ${
-                    !ready
-                      ? "cursor-not-allowed border-gray-100 bg-white"
-                      : selected
-                        ? "border-transparent bg-rose-50/50 shadow-sm ring-1 ring-[#A50034]"
-                        : "border-gray-200 bg-white hover:border-gray-300"
+                    selected
+                      ? "border-transparent bg-rose-50/50 shadow-sm ring-1 ring-[#A50034]"
+                      : "border-gray-200 bg-white hover:border-gray-300"
                   }`}
                 >
-                  {id === services[0] && ready ? <MicroBadge>Recommended</MicroBadge> : null}
+                  {id === services[0] ? <MicroBadge>Recommended</MicroBadge> : null}
                   <span
                     className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border-[1.5px] transition-all duration-200 ease-in-out ${
-                      selected && ready ? "border-[#A50034] bg-[#A50034]" : "border-gray-300 bg-white"
+                      selected ? "border-[#A50034] bg-[#A50034]" : "border-gray-300 bg-white"
                     }`}
                     aria-hidden="true"
                   >
-                    <span className={`h-1.5 w-1.5 rounded-full bg-white transition-transform duration-200 ease-in-out ${selected && ready ? "scale-100" : "scale-0"}`} />
+                    <span className={`h-1.5 w-1.5 rounded-full bg-white transition-transform duration-200 ease-in-out ${selected ? "scale-100" : "scale-0"}`} />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className={`block text-sm font-bold tracking-tight ${selected && ready ? "text-gray-900" : "text-gray-500"}`}>
+                    <span className={`block text-sm font-bold tracking-tight ${selected ? "text-gray-900" : "text-gray-500"}`}>
                       {CARE_SHORT[id]}
                     </span>
-                    <span className="mt-0.5 block text-xs text-gray-400">{CARE_BLURB[id]}</span>
+                    <span className="mt-0.5 block text-xs text-gray-400">
+                      {waterOutright
+                        ? "Free 1-year warranty & 1-year CareShip™"
+                        : id === "visit"
+                          ? visitBlurb()
+                          : CARE_BLURB[id]}
+                    </span>
                   </span>
-                  {payMode === "subscribe" ? (
-                    <span className={`shrink-0 text-sm font-bold tracking-tight ${priced != null && selected ? "text-[#A50034]" : "text-gray-400"}`}>
-                      {priced == null ? "TBC" : `RM ${priced}`}
-                      {priced != null ? <span className="ml-0.5 text-[11px] font-medium text-gray-400">/mth</span> : null}
+                  {waterOutright && amount != null ? (
+                    <span className={`shrink-0 text-sm font-bold tracking-tight ${selected ? "text-[#A50034]" : "text-gray-400"}`}>
+                      RM {amount.toLocaleString()}
+                    </span>
+                  ) : payMode === "subscribe" && priced != null ? (
+                    <span className={`shrink-0 text-sm font-bold tracking-tight ${selected ? "text-[#A50034]" : "text-gray-400"}`}>
+                      RM {priced}
+                      <span className="ml-0.5 text-[11px] font-medium text-gray-400">/mth</span>
                     </span>
                   ) : null}
                 </button>
@@ -245,24 +271,22 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
         ) : (
           <p className="mt-3 text-xs leading-5 text-gray-500">{SERVICES.none.name}</p>
         )}
-        {payMode === "subscribe" && care === "visit" ? (
+        {payMode === "subscribe" && care === "visit" && cycles.length > 1 ? (
           <div className="mt-3 grid grid-cols-3 gap-2.5">
-            {VISIT_CYCLES.map((cycle) => {
-              const amount = planPrice(spec, { payMode: "subscribe", tenure, care: "visit", cycle: cycle.id })
-              const ready = amount != null
-              const selected = visitCycle === cycle.id
+            {cycles.map((cycle) => {
+              const amount = planPrice(spec, { payMode: "subscribe", tenure, care: "visit", cycle })
+              const selected = visitCycle === cycle
               return (
                 <button
-                  key={cycle.id}
+                  key={cycle}
                   type="button"
-                  disabled={!ready}
-                  onClick={() => ready && setVisitCycle(cycle.id)}
-                  className={`${tileBase} ${ready ? tileState(selected) : "cursor-not-allowed border-gray-100 text-gray-300"}`}
+                  onClick={() => setVisitCycle(cycle)}
+                  className={`${tileBase} ${tileState(selected)}`}
                 >
-                  {selected && ready ? <SelectedMark /> : null}
-                  <span className="block">{cycle.label}</span>
-                  <span className={`mt-0.5 block text-[10px] font-medium tracking-normal ${ready ? "text-gray-400" : "text-gray-300"}`}>
-                    {ready ? `RM ${applyPromo(amount, promo).now}` : "TBC"}
+                  {selected ? <SelectedMark /> : null}
+                  <span className="block">{VISIT_LABEL[cycle]}</span>
+                  <span className="mt-0.5 block text-[10px] font-medium tracking-normal text-gray-400">
+                    RM {applyPromo(amount, promo).now}
                   </span>
                 </button>
               )
@@ -270,16 +294,34 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
           </div>
         ) : null}
       </div>
+      ) : null}
 
       <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-lg">
         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">Your plan</p>
         {price.kind === "subscribe" && price.now != null ? (
-          <p className="mt-2 text-[42px] font-bold leading-none tracking-tight text-[#A50034]">
-            RM {price.now}
-            <span className="ml-1 text-base font-medium tracking-normal text-gray-400">/mth</span>
-          </p>
+          <div className="mt-2">
+            <p className="text-[42px] font-bold leading-none tracking-tight text-[#A50034]">
+              RM {price.now}
+              <span className="ml-1 text-base font-medium tracking-normal text-gray-400">/mth</span>
+            </p>
+            {price.list != null && price.list !== price.now ? (
+              <p className="mt-2 text-xs leading-5 text-gray-500">
+                <span className="mr-1 line-through">RM {price.list}/mth</span>
+                {price.introMonths
+                  ? `promo for first ${price.introMonths} months, then RM ${price.list}/mth`
+                  : promo?.title || "promotional price"}
+              </p>
+            ) : null}
+          </div>
         ) : price.kind === "outright" && price.amount != null ? (
-          <p className="mt-2 text-[42px] font-bold leading-none tracking-tight text-[#A50034]">RM {price.amount.toLocaleString()}</p>
+          <div className="mt-2">
+            <p className="text-[42px] font-bold leading-none tracking-tight text-[#A50034]">RM {price.amount.toLocaleString()}</p>
+            {waterOutright ? (
+              <p className="mt-2 text-xs leading-5 text-gray-500">
+                Includes free 1-year warranty and 1-year CareShip™ ({CARE_SHORT[care]})
+              </p>
+            ) : null}
+          </div>
         ) : (
           <p className="mt-2 text-2xl font-bold tracking-tight text-gray-400">Price to be confirmed</p>
         )}
@@ -335,23 +377,33 @@ function FeatureGrid({ items, className = "" }) {
   )
 }
 
-export default function ProductDetail({ product, onBack }) {
+export default function ProductDetail({ product, onBack, initialSpecId, initialColorId, lockSpec }) {
   const promo = promoForProduct(product)
-  const openingSpec = firstSpec(product)
-  const openingYears = Object.keys(openingSpec.pricing.subscribe).map(Number).sort((a, b) => b - a)
-  const openingTenure = openingYears.find((year) => tenurePriced(openingSpec, year)) ?? openingYears[0]
-  const [colorId, setColorId] = useState(product.colors[0].id)
+  const openingSpec = product.specs.find((item) => item.id === initialSpecId) ?? firstSpec(product)
+  const visibleSpecs = lockSpec ? [openingSpec] : product.specs
+  const visibleColors = product.colors.filter((color) => {
+    if (!lockSpec) return true
+    return color.specIds?.includes(openingSpec.id) || color.variants?.[openingSpec.id]
+  })
+  const palette = visibleColors.length ? visibleColors : product.colors
+  const openingColor = palette.find((item) => item.id === initialColorId) ?? palette[0]
+  const openingYears = pricedTenures(openingSpec)
+  const openingTenure = openingYears[0]
+  const [colorId, setColorId] = useState(openingColor.id)
   const [specId, setSpecId] = useState(openingSpec.id)
   const [payMode, setPayMode] = useState("subscribe")
-  const spec = product.specs.find((item) => item.id === specId) ?? openingSpec
-  const subscribeYears = Object.keys(spec.pricing.subscribe).map(Number).sort((a, b) => b - a)
+  const spec = visibleSpecs.find((item) => item.id === specId) ?? openingSpec
+  const subscribeYears = pricedTenures(spec)
   const [tenure, setTenure] = useState(openingTenure)
-  const [care, setCare] = useState(careOptions(openingSpec)[0] ?? "none")
-  const [visitCycle, setVisitCycle] = useState(6)
-  const color = product.colors.find((item) => item.id === colorId) ?? product.colors[0]
+  const [care, setCare] = useState(planCareOptions(product, openingSpec, { payMode: "subscribe", tenure: openingTenure })[0] ?? "none")
+  const [visitCycle, setVisitCycle] = useState(() => visitCycles(openingSpec, openingTenure)[0] ?? 6)
+  const color = palette.find((item) => item.id === colorId) ?? palette[0]
   const variant = color.variants?.[spec.id]
   const shot = variant?.image || color.image
-  const thumbs = (variant?.gallery?.length ? variant.gallery : color.gallery?.length ? color.gallery : [shot]).slice(0, 5)
+  const waitingPhoto = !shot || /lg-subscribe-2025-banner/i.test(shot)
+  const thumbs = waitingPhoto
+    ? []
+    : (variant?.gallery?.length ? variant.gallery : color.gallery?.length ? color.gallery : [shot]).filter((src) => src && !/lg-subscribe-2025-banner/i.test(src)).slice(0, 5)
   const modelCode = variant?.model || color.model || product.model
   const viewColor = { ...color, model: modelCode, image: shot }
   const detail = variant?.detail?.quickFeatures?.length || variant?.detail?.stories?.length ? variant.detail : null
@@ -362,24 +414,29 @@ export default function ProductDetail({ product, onBack }) {
   const [hero, setHero] = useState(shot)
 
   useEffect(() => {
-    const years = Object.keys(spec.pricing.subscribe).map(Number).filter((year) => tenurePriced(spec, year))
+    const years = pricedTenures(spec)
     if (years.length && !years.includes(tenure)) setTenure(years[0])
   }, [spec, tenure])
 
   useEffect(() => {
-    const options = careOptions(spec)
+    const options = planCareOptions(product, spec, { payMode, tenure })
     if (options.length && !options.includes(care)) setCare(options[0])
-  }, [spec, care])
+  }, [product, spec, tenure, care, payMode])
 
   useEffect(() => {
-    if (payMode === "outright" && !isMoney(spec.pricing.outright)) setPayMode("subscribe")
+    const cycles = visitCycles(spec, tenure)
+    if (cycles.length && !cycles.includes(visitCycle)) setVisitCycle(cycles[0])
+  }, [spec, tenure, visitCycle])
+
+  useEffect(() => {
+    if (payMode === "outright" && !hasOutrightPrice(spec)) setPayMode("subscribe")
   }, [spec, payMode])
 
   useEffect(() => {
     setHero(shot)
   }, [shot])
 
-  const careKey = product.hasCare ? care : "none"
+  const careKey = payMode === "outright" ? (product.type === "water" ? care : "none") : product.hasCare ? care : "none"
 
   const price = useMemo(() => {
     const amount = planPrice(spec, { payMode, tenure, care: careKey, cycle: visitCycle })
@@ -389,20 +446,23 @@ export default function ProductDetail({ product, onBack }) {
 
   const waText = `LG Subscribe enquiry — ${modelCode}, ${viewColor.name === "Default" ? product.shortName : viewColor.name}, ${spec.label}, ${
     payMode === "outright"
-      ? `Outright RM ${price.amount ?? "TBC"}`
+      ? `Outright RM ${price.amount ?? "TBC"}${product.type === "water" ? `, ${CARE_SHORT[careKey]} (Free 1-year Warranty & 1-year CareShip™)` : ""}`
       : `${TENURE_LABEL[tenure] ?? tenure} ${CARE_SHORT[careKey]}${careKey === "visit" ? ` every ${visitCycle} months` : ""} RM ${price.now ?? "TBC"}${price.now != null ? "/month" : ""}`
   }${promo ? ` (${promo.title})` : ""}.`
 
   function selectColor(id) {
-    const next = product.colors.find((item) => item.id === id)
+    const next = palette.find((item) => item.id === id)
     setColorId(id)
-    if (next?.specIds?.length && !next.specIds.includes(spec.id)) setSpecId(next.specIds[0])
+    if (next?.specIds?.length && !next.specIds.includes(spec.id)) {
+      const allowed = next.specIds.find((item) => visibleSpecs.some((row) => row.id === item))
+      if (allowed) setSpecId(allowed)
+    }
   }
 
   function selectSpec(id) {
     setSpecId(id)
     if (color.specIds?.length && !color.specIds.includes(id)) {
-      const match = product.colors.find((item) => item.specIds?.includes(id))
+      const match = palette.find((item) => item.specIds?.includes(id))
       if (match) setColorId(match.id)
     }
   }
@@ -424,13 +484,20 @@ export default function ProductDetail({ product, onBack }) {
 
       <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 md:py-12">
         <div className="md:hidden">
-          <TitleBlock product={product} color={viewColor} tagline={tagline} />
+          <TitleBlock product={product} color={viewColor} spec={spec} tagline={tagline} />
         </div>
 
         <div className="mt-8 grid items-start gap-10 md:mt-0 md:grid-cols-2 md:gap-14">
           <div>
             <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_18px_50px_rgba(17,17,17,0.05)]">
-              <img src={hero} alt={displayName(product, viewColor)} className="mx-auto h-[360px] w-full object-contain p-8 md:h-[460px] md:p-10" />
+              {waitingPhoto ? (
+                <div className="flex h-[360px] flex-col items-center justify-center gap-2 text-center md:h-[460px]">
+                  <p className="text-sm font-medium text-lg-ink">Photo coming</p>
+                  <p className="max-w-xs text-xs leading-5 text-lg-muted">Drop the main photo into public/products/{modelCode}.jpg</p>
+                </div>
+              ) : (
+                <img src={hero} alt={displayName(product, viewColor)} className="mx-auto h-[360px] w-full object-contain p-8 md:h-[460px] md:p-10" />
+              )}
             </div>
             {thumbs.length > 1 ? (
               <div className="mt-5 grid grid-cols-5 gap-3">
@@ -451,17 +518,17 @@ export default function ProductDetail({ product, onBack }) {
 
           <div>
             <div className="hidden md:block">
-              <TitleBlock product={product} color={viewColor} tagline={tagline} />
+              <TitleBlock product={product} color={viewColor} spec={spec} tagline={tagline} />
             </div>
 
-            {product.colors.length > 1 ? (
+            {palette.length > 1 && palette.some((item) => item.name !== "Default") ? (
               <div className="mt-5">
                 <div className="flex items-end justify-between text-sm">
                   <span className="font-bold tracking-tight text-gray-900">Colour</span>
                   <span className="text-lg-muted">{viewColor.name}</span>
                 </div>
                 <div className="mt-2 flex gap-3">
-                  {product.colors.map((item) => (
+                  {palette.map((item) => (
                     <button
                       key={item.id}
                       type="button"
@@ -475,11 +542,11 @@ export default function ProductDetail({ product, onBack }) {
               </div>
             ) : null}
 
-            {product.specs.length > 1 ? (
+            {visibleSpecs.length > 1 ? (
               <div className="mt-6">
                 <p className="text-xs font-bold tracking-tight text-gray-900">{product.specLabel}</p>
                 <div className="mt-3 grid grid-cols-2 gap-2.5">
-                  {product.specs.map((item) => {
+                  {visibleSpecs.map((item) => {
                     const selected = specId === item.id
                     return (
                       <button

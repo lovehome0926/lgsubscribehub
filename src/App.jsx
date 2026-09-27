@@ -13,9 +13,21 @@ import { productById } from "./data/catalog"
 
 function readRoute() {
   const hash = window.location.hash.replace(/^#\/?/, "")
-  const [page, id] = hash.split("/")
-  if (page === "product" && id) return { name: "product", id }
+  const [page, id, a, b] = hash.split("/")
+  if (page === "product" && id) return { name: "product", id, a, b }
   return { name: "home" }
+}
+
+function routeOptions(product, a, b) {
+  const specIds = new Set(product.specs.map((spec) => spec.id))
+  const colorIds = new Set(product.colors.map((color) => color.id))
+  let specId = null
+  let colorId = null
+  if (a && specIds.has(a)) specId = a
+  else if (a && colorIds.has(a)) colorId = a
+  if (b && specIds.has(b)) specId = b
+  if (b && colorIds.has(b)) colorId = b
+  return { specId, colorId }
 }
 
 export default function App() {
@@ -36,8 +48,11 @@ export default function App() {
     })
   }, [route])
 
-  const openProduct = (id) => {
-    window.location.hash = `product/${id}`
+  const openProduct = (id, specId, colorId) => {
+    const parts = ["product", id]
+    if (specId) parts.push(specId)
+    if (colorId) parts.push(colorId)
+    window.location.hash = parts.join("/")
     window.scrollTo(0, 0)
   }
 
@@ -48,10 +63,19 @@ export default function App() {
 
   if (route.name === "product") {
     const product = productById(route.id)
+    const { specId, colorId } = routeOptions(product, route.a, route.b)
+    const lockSpec = Boolean(specId) && product.type !== "tv"
     return (
       <div className="min-h-screen bg-lg-cream">
         <Header onHome={goHome} />
-        <ProductDetail key={product.id} product={product} onBack={goHome} />
+        <ProductDetail
+          key={`${product.id}:${specId ?? ""}:${colorId ?? ""}`}
+          product={product}
+          initialSpecId={specId}
+          initialColorId={colorId}
+          lockSpec={lockSpec}
+          onBack={goHome}
+        />
         <SiteFooter />
         <WhatsAppFab />
       </div>

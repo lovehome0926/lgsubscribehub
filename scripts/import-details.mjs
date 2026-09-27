@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
 import { PRODUCTS } from "../src/data/subscribe2026.js"
+import { applyBorrowedFeatures } from "./lib/build-products.mjs"
 
 const root = path.resolve(import.meta.dirname, "..")
 const cachePath = path.join(root, "scripts", "detail-cache.json")
@@ -57,8 +58,8 @@ function galleryShots(html) {
     let raw = match[1].split("?")[0].split(" ")[0]
     raw = raw.replace(/\/jcr:content\/renditions\/.*$/i, "")
     if (!/\.(jpg|jpeg|png|webp)$/i.test(raw)) continue
-    if (/logo|icon|favicon|gnb-banner|sprite|subscribe-2025-banner/i.test(raw)) continue
-    const url = raw.startsWith("http") ? raw : `https://www.lg.com${raw}`
+    if (/logo|icon|favicon|gnb-banner|sprite|subscribe-2025-banner|mqdefault|hqdefault|ytimg/i.test(raw)) continue
+    const url = (raw.startsWith("http") ? raw : `https://www.lg.com${raw}`).replace("/350x350/", "/450x450/")
     if (seen.has(url)) continue
     seen.add(url)
     found.push(url)
@@ -268,7 +269,9 @@ function detailUrls(products) {
 async function loadCache(urls) {
   let cache = {}
   if (fs.existsSync(cachePath)) cache = JSON.parse(fs.readFileSync(cachePath, "utf8"))
+  const force = process.argv.includes("--force")
   const pending = urls.filter((url) => {
+    if (force) return true
     const entry = cache[url]
     if (!entry) return true
     if (Array.isArray(entry.gallery)) return false
@@ -333,7 +336,8 @@ if (process.argv.includes("--check")) {
   process.exit(0)
 }
 
-const urls = detailUrls(PRODUCTS)
+const requested = process.argv.filter((arg) => /^https?:\/\//.test(arg))
+const urls = requested.length ? requested : detailUrls(PRODUCTS)
 const cache = await loadCache(urls)
 
 for (const product of PRODUCTS) {
@@ -346,7 +350,7 @@ for (const product of PRODUCTS) {
         variant.detail = publicDetail(entry)
         if (!primary) primary = variant.detail
       }
-      if (entry?.gallery?.length) {
+      if (entry?.gallery?.length && !String(variant.image || color.image || "").startsWith("/products/")) {
         variant.gallery = entry.gallery
         variant.image = entry.gallery[0]
         if (!colorGallery) colorGallery = entry.gallery
@@ -363,6 +367,8 @@ for (const product of PRODUCTS) {
   product.facts = primary.facts
   if (primary.tagline) product.tagline = primary.tagline
 }
+
+applyBorrowedFeatures(PRODUCTS)
 
 const banner = `// Generated from LG_Subscribe_Products_2026.xlsx. Re-run scripts/import-subscribe.mjs to refresh prices.
 // Official detail copy is scraped from each LG page URL. Re-run scripts/import-details.mjs to refresh features, stories, and specs.

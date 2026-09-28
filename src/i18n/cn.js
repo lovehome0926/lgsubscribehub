@@ -19,6 +19,11 @@ export default {
     living: { name: "电视与客厅", blurb: "OLED、QNED 屏幕与按摩椅。" },
   },
   notice: "本网站由 DNC HOME APPLIANCES 独立运营，并非 LG 马来西亚官方网站。",
+  seo: {
+    title: "LG Subscribe 峇株巴辖 | 月付方案 | DNC HOME APPLIANCES",
+    description:
+      "DNC HOME APPLIANCES 在峇株巴辖与巴力拉惹（柔佛）独立运营的 LG Subscribe 咨询站。月租方案、到店、顾客评价。WhatsApp Cindy 017-7473787。并非 LG 马来西亚官方网站。",
+  },
   wa: {
     header: "你好Cindy，我想了解马来西亚 LG Subscribe。",
     fab: "你好Cindy，我想为家里了解马来西亚 LG Subscribe。",

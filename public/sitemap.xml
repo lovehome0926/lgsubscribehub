@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://lgsubscribehub.com.my/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/?lang=en</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/?lang=bm</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/?lang=cn</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/#care</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/#career</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>

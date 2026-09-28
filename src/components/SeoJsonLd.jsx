@@ -1,4 +1,4 @@
-import { COMPANY, INDEPENDENCE_NOTICE } from "../config"
+import { COMPANY, INDEPENDENCE_NOTICE, SITE_ORIGIN } from "../config"
 import { GOOGLE_REVIEWS_URL, REVIEWS, reviewStats } from "../data/reviews"
 import { STORES } from "../data/stores"
 
@@ -30,14 +30,21 @@ export default function SeoJsonLd() {
         }
       : undefined
 
+  const areaServed = [
+    { "@type": "Country", name: "Malaysia" },
+    { "@type": "State", name: "Johor" },
+    { "@type": "City", name: "Batu Pahat" },
+  ]
+
   const locations = STORES.map((store) => ({
     "@type": "LocalBusiness",
-    "@id": `https://lgsubscribe.biz.my/#${store.id}`,
+    "@id": `${SITE_ORIGIN}/#${store.id}`,
     name: `${store.name} — ${COMPANY.name}`,
-    image: store.photo,
+    image: `${SITE_ORIGIN}${store.photo}`,
     telephone: COMPANY.phoneTel,
     email: COMPANY.email,
     url: store.maps,
+    areaServed,
     address: {
       "@type": "PostalAddress",
       streetAddress: store.address,
@@ -56,9 +63,11 @@ export default function SeoJsonLd() {
         name: COMPANY.name,
         legalName: COMPANY.name,
         identifier: COMPANY.ssm,
+        url: SITE_ORIGIN,
         telephone: COMPANY.phoneTel,
         email: COMPANY.email,
         description: INDEPENDENCE_NOTICE,
+        areaServed,
         sameAs: [GOOGLE_REVIEWS_URL],
         aggregateRating,
         review: reviews,
@@ -66,7 +75,7 @@ export default function SeoJsonLd() {
       },
       ...locations.map((store) => ({
         ...store,
-        parentOrganization: { "@type": "Organization", name: COMPANY.name },
+        parentOrganization: { "@type": "Organization", name: COMPANY.name, url: SITE_ORIGIN },
         aggregateRating,
         review: reviews,
       })),

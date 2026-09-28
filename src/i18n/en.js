@@ -20,6 +20,11 @@ export default {
   },
   notice:
     "This website is independently managed by DNC HOME APPLIANCES and is not the official LG Malaysia website.",
+  seo: {
+    title: "LG Subscribe Batu Pahat | Monthly plans | DNC HOME APPLIANCES",
+    description:
+      "Independent LG Subscribe enquiry site by DNC HOME APPLIANCES in Batu Pahat and Parit Raja, Johor. Monthly plans, store visits, customer reviews. WhatsApp Cindy 017-7473787. Not the official LG Malaysia website.",
+  },
   wa: {
     header: "Hi Cindy, I would like to enquire about LG Subscribe Malaysia.",
     fab: "Hi Cindy, I would like to enquire about LG Subscribe Malaysia for my home.",

@@ -1,5 +1,7 @@
 export const CDN = "https://www.lg.com/content/dam"
 
+export const SITE_ORIGIN = "https://lgsubscribehub.com.my"
+
 export const COMPANY = {
   name: "DNC HOME APPLIANCES",
   ssm: "202403249616/JR0168103-P",

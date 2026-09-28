@@ -1,12 +1,13 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react"
+import { SITE_ORIGIN } from "../config"
 import bm from "./bm"
 import cn from "./cn"
 import en from "./en"
 
 export const LANGS = [
-  { id: "en", label: "EN", html: "en-MY" },
-  { id: "bm", label: "BM", html: "ms-MY" },
-  { id: "cn", label: "CN", html: "zh-CN" },
+  { id: "en", label: "EN", html: "en-MY", og: "en_MY" },
+  { id: "bm", label: "BM", html: "ms-MY", og: "ms_MY" },
+  { id: "cn", label: "CN", html: "zh-CN", og: "zh_CN" },
 ]
 
 const MESSAGES = { en, bm, cn }
@@ -63,7 +64,17 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     const meta = LANGS.find((item) => item.id === lang)
+    const title = lookup(MESSAGES[lang], "seo.title") || lookup(MESSAGES.en, "seo.title")
+    const description = lookup(MESSAGES[lang], "seo.description") || lookup(MESSAGES.en, "seo.description")
+    const pageUrl = `${SITE_ORIGIN}/?lang=${lang}`
     document.documentElement.lang = meta?.html || "en-MY"
+    document.title = title
+    document.querySelector('meta[name="description"]')?.setAttribute("content", description)
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", description)
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", pageUrl)
+    document.querySelector('meta[property="og:locale"]')?.setAttribute("content", meta?.og || "en_MY")
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", pageUrl)
   }, [lang])
 
   const value = useMemo(() => {

@@ -73,7 +73,7 @@ export default function Reviews() {
   const stats = reviewStats()
   const written = REVIEWS.filter((review) => review.quote)
   return (
-    <section id="reviews" className="scroll-mt-40 bg-lg-cream py-16">
+    <section id="reviews" className="scroll-mt-28 bg-lg-cream py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>

@@ -7,6 +7,8 @@ export default {
     reviews: "评价",
     career: "招商",
     enquire: "咨询",
+    menu: "菜单",
+    close: "关闭",
     idleBanner: "LG Subscribe™ 方案 · CareShip™ 选项 · 联系 Cindy {phone}",
   },
   groups: {
@@ -32,6 +34,14 @@ export default {
     promoBadge: "低至 RM 17/月",
     idleBadge: "半价 · 9 个月",
   },
+  chooser: {
+    eyebrow: "从这里开始",
+    title: "您想先看什么？",
+    shop: { name: "选购", blurb: "查看月租方案与本月促销。" },
+    stores: { name: "门店", blurb: "峇株 Brandshop 与巴力拉惹摊位。" },
+    reviews: { name: "评价", blurb: "安装照片与顾客评分。" },
+    care: { name: "CareShip", blurb: "给机主的 1 年或 2 年保养。" },
+  },
   catalog: {
     eyebrow: "选购 LG Subscribe",
     title: "按类别浏览",
@@ -40,6 +50,8 @@ export default {
     categories: "产品类别",
     offers: "本月优惠",
     offersLabel: "优惠",
+    filterCategory: "类别",
+    filterOffers: "优惠",
     allDeals: "全部优惠",
     subscribe: "订阅",
     subscription: "订阅",
@@ -111,7 +123,8 @@ export default {
       },
       {
         q: "可以只买 CareShip™，不签新的 Subscribe 合约吗？",
-        a: "可以。用 CareShip™ 配置器选择净水器、空气净化器、除湿机与 Styler 的 1 年或 2 年保养方案。把机型、颜色与方案 WhatsApp 给 Cindy。月租订阅仍在选购区。",
+        a: "可以。打开 CareShip 分页，选择净水器、空气净化器、除湿机与 Styler 的 1 年或 2 年保养方案。把机型、颜色与方案 WhatsApp 给 Cindy。月租订阅仍在选购区。",
+        careship: true,
       },
       {
         q: "如何加入团队或了解招商？",

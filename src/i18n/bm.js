@@ -7,6 +7,8 @@ export default {
     reviews: "Ulasan",
     career: "Kerjaya",
     enquire: "Tanya",
+    menu: "Menu",
+    close: "Tutup",
     idleBanner: "Pelan LG Subscribe™ · pilihan CareShip™ · Tanya Cindy {phone}",
   },
   groups: {
@@ -33,6 +35,14 @@ export default {
     promoBadge: "Dari RM 17/bulan",
     idleBadge: "SEPARUH HARGA · 9 bulan",
   },
+  chooser: {
+    eyebrow: "Mula di sini",
+    title: "Apa yang anda mahu buat?",
+    shop: { name: "Kedai", blurb: "Lihat pelan bulanan dan promo bulan ini." },
+    stores: { name: "Cawangan", blurb: "Brandshop Batu Pahat dan kiosk Parit Raja." },
+    reviews: { name: "Ulasan", blurb: "Gambar pemasangan dan penilaian pelanggan." },
+    care: { name: "CareShip", blurb: "Servis 1 tahun atau 2 tahun untuk pemilik." },
+  },
   catalog: {
     eyebrow: "Kedai LG Subscribe",
     title: "Semak ikut kategori",
@@ -41,6 +51,8 @@ export default {
     categories: "Kategori produk",
     offers: "Tawaran bulan ini",
     offersLabel: "Tawaran",
+    filterCategory: "Kategori",
+    filterOffers: "Tawaran",
     allDeals: "Semua tawaran",
     subscribe: "Subscribe",
     subscription: "Langganan",
@@ -112,7 +124,8 @@ export default {
       },
       {
         q: "Boleh beli CareShip™ sahaja, tanpa kontrak Subscribe baharu?",
-        a: "Ya. Guna konfigurator CareShip™ untuk pelan servis 1 tahun atau 2 tahun bagi air, udara, dehumidifier dan Styler. WhatsApp Cindy dengan model, warna dan pelan yang dipilih. Sewaan Subscribe bulanan kekal di Kedai.",
+        a: "Ya. Buka halaman CareShip untuk pelan servis 1 tahun atau 2 tahun bagi air, udara, dehumidifier dan Styler. WhatsApp Cindy dengan model, warna dan pelan yang dipilih. Sewaan Subscribe bulanan kekal di Kedai.",
+        careship: true,
       },
       {
         q: "Bagaimana nak sertai pasukan atau lihat Kerjaya / Pengambilan?",

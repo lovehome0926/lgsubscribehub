@@ -8,7 +8,7 @@ export default function WhySubscribe() {
   const { t } = useLang()
   const items = t("why.items")
   return (
-    <section id="why" className="scroll-mt-24 bg-white py-16">
+    <section id="why" className="scroll-mt-28 bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">{t("why.eyebrow")}</p>
         <h2 className="mt-2 max-w-3xl text-3xl font-semibold sm:text-4xl">{t("why.title")}</h2>

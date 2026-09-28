@@ -31,6 +31,14 @@ export default function Faq() {
                         </a>
                       </>
                     ) : null}
+                    {item.careship ? (
+                      <>
+                        {" "}
+                        <a href="#care" className="font-semibold text-lg-red hover:text-lg-red-dark">
+                          {t("nav.care")}
+                        </a>
+                      </>
+                    ) : null}
                   </p>
                 ) : null}
               </div>

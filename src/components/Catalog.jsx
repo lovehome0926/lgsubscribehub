@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Armchair, Droplets, Refrigerator, Shirt, Snowflake, Tv, UtensilsCrossed, WashingMachine, Wind } from "lucide-react"
+import { Armchair, ChevronDown, Droplets, Refrigerator, Shirt, Snowflake, Tv, UtensilsCrossed, WashingMachine, Wind } from "lucide-react"
 import {
   CATEGORY_GROUPS,
   allListings,
@@ -171,6 +171,7 @@ export default function Catalog({ onSelect }) {
   const { t } = useLang()
   const [active, setActive] = useState(() => groupFromHash() ?? ALL)
   const [deal, setDeal] = useState("all")
+  const [openPanel, setOpenPanel] = useState(null)
 
   useEffect(() => {
     const onHash = () => {
@@ -202,7 +203,7 @@ export default function Catalog({ onSelect }) {
   ]
 
   return (
-    <section id="shop" className="scroll-mt-36 bg-lg-cream py-16">
+    <section id="shop" className="scroll-mt-28 bg-lg-cream py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -219,7 +220,36 @@ export default function Catalog({ onSelect }) {
           </div>
         ) : null}
 
-        <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label={t("catalog.categories")}>
+        <div className="mt-6 grid grid-cols-2 gap-2 md:hidden">
+          <button
+            type="button"
+            onClick={() => setOpenPanel(openPanel === "cat" ? null : "cat")}
+            className="flex items-center justify-between rounded-2xl bg-white px-3 py-3 text-left ring-1 ring-lg-line"
+          >
+            <span>
+              <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-lg-muted">{t("catalog.filterCategory")}</span>
+              <span className="mt-0.5 block text-sm font-semibold">{tabs.find((tab) => tab.id === active)?.name}</span>
+            </span>
+            <ChevronDown className={`h-4 w-4 shrink-0 ${openPanel === "cat" ? "rotate-180" : ""}`} />
+          </button>
+          {dealTabs.length ? (
+            <button
+              type="button"
+              onClick={() => setOpenPanel(openPanel === "offers" ? null : "offers")}
+              className="flex items-center justify-between rounded-2xl bg-white px-3 py-3 text-left ring-1 ring-lg-line"
+            >
+              <span>
+                <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-lg-muted">{t("catalog.filterOffers")}</span>
+                <span className="mt-0.5 block text-sm font-semibold">
+                  {deal === "all" ? t("catalog.allDeals") : dealTabs.find((tab) => tab.id === deal)?.short}
+                </span>
+              </span>
+              <ChevronDown className={`h-4 w-4 shrink-0 ${openPanel === "offers" ? "rotate-180" : ""}`} />
+            </button>
+          ) : null}
+        </div>
+
+        <div className={`${openPanel === "cat" ? "mt-3 flex" : "hidden"} flex-wrap gap-2 md:mt-8 md:flex`} role="tablist" aria-label={t("catalog.categories")}>
           {tabs.map((tab) => {
             const selected = tab.id === active
             return (
@@ -228,7 +258,10 @@ export default function Catalog({ onSelect }) {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                onClick={() => setActive(tab.id)}
+                onClick={() => {
+                  setActive(tab.id)
+                  setOpenPanel(null)
+                }}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   selected
                     ? "bg-lg-red text-white"
@@ -245,13 +278,16 @@ export default function Catalog({ onSelect }) {
         </div>
 
         {dealTabs.length ? (
-          <div className="mt-4 flex flex-wrap items-center gap-2" role="tablist" aria-label={t("catalog.offers")}>
-            <span className="mr-1 text-[11px] font-bold uppercase tracking-[0.16em] text-lg-muted">{t("catalog.offersLabel")}</span>
+          <div className={`${openPanel === "offers" ? "mt-3 flex" : "hidden"} flex-wrap items-center gap-2 md:mt-4 md:flex`} role="tablist" aria-label={t("catalog.offers")}>
+            <span className="mr-1 hidden text-[11px] font-bold uppercase tracking-[0.16em] text-lg-muted md:inline">{t("catalog.offersLabel")}</span>
             <button
               type="button"
               role="tab"
               aria-selected={deal === "all"}
-              onClick={() => setDeal("all")}
+              onClick={() => {
+                setDeal("all")
+                setOpenPanel(null)
+              }}
               className={`rounded-full px-3.5 py-1.5 text-sm font-semibold ${
                 deal === "all" ? "bg-lg-ink text-white" : "bg-white text-lg-ink ring-1 ring-lg-line"
               }`}
@@ -268,7 +304,10 @@ export default function Catalog({ onSelect }) {
                   type="button"
                   role="tab"
                   aria-selected={selected}
-                  onClick={() => setDeal(tab.id)}
+                  onClick={() => {
+                    setDeal(tab.id)
+                    setOpenPanel(null)
+                  }}
                   className={`rounded-full px-3.5 py-1.5 text-sm font-black tracking-wide ring-1 ${
                     selected ? theme?.tab || "bg-lg-red text-white" : "bg-white text-lg-ink ring-lg-line"
                   }`}
@@ -282,7 +321,7 @@ export default function Catalog({ onSelect }) {
         ) : null}
 
         {visible.map(({ group, listings: cards }) => (
-          <div key={group.id} id={`group-${group.id}`} className="scroll-mt-40 mt-12">
+          <div key={group.id} id={`group-${group.id}`} className="scroll-mt-28 mt-12">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-lg-line pb-3">
               <h3 className="text-xl font-semibold">{t(`groups.${group.id}.name`)}</h3>
               <p className="text-sm text-lg-muted">{t(`groups.${group.id}.blurb`)}</p>

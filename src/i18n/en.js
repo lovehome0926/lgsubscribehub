@@ -7,6 +7,8 @@ export default {
     reviews: "Reviews",
     career: "Career",
     enquire: "Enquire",
+    menu: "Menu",
+    close: "Close",
     idleBanner: "LG Subscribe™ plans · CareShip™ options · Ask Cindy {phone}",
   },
   groups: {
@@ -33,6 +35,14 @@ export default {
     promoBadge: "From RM 17/mth",
     idleBadge: "HALF PRICE · 9 months",
   },
+  chooser: {
+    eyebrow: "Start here",
+    title: "What would you like to do?",
+    shop: { name: "Shop", blurb: "See monthly plans and this month’s promos." },
+    stores: { name: "Stores", blurb: "Brandshop Batu Pahat and Parit Raja kiosk." },
+    reviews: { name: "Reviews", blurb: "Install photos and customer ratings." },
+    care: { name: "CareShip", blurb: "1-year or 2-year service for owners." },
+  },
   catalog: {
     eyebrow: "Shop LG Subscribe",
     title: "Browse by category",
@@ -41,6 +51,8 @@ export default {
     categories: "Product categories",
     offers: "This month's offers",
     offersLabel: "Offers",
+    filterCategory: "Category",
+    filterOffers: "Offers",
     allDeals: "All deals",
     subscribe: "Subscribe",
     subscription: "Subscription",
@@ -112,7 +124,8 @@ export default {
       },
       {
         q: "Can I buy CareShip™ only, without a new Subscribe contract?",
-        a: "Yes. Use the CareShip™ configurator for water, air, dehumidifier and Styler 1-year or 2-year service plans. WhatsApp Cindy with the model, colour and plan you selected. Monthly Subscribe rentals remain under Shop.",
+        a: "Yes. Open the CareShip page for water, air, dehumidifier and Styler 1-year or 2-year service plans. WhatsApp Cindy with the model, colour and plan you selected. Monthly Subscribe rentals remain under Shop.",
+        careship: true,
       },
       {
         q: "How do I join the team or look at Career / Recruitment?",

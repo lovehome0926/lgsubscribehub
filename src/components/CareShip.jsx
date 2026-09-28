@@ -120,10 +120,17 @@ export default function CareShip() {
     .join("\n")
 
   return (
-    <section id="care" className="scroll-mt-40 bg-white py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="care" className="bg-white pb-16">
+      <div className="border-b border-lg-line bg-lg-cream">
+        <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 text-xs text-lg-muted sm:px-6">
+          <a href="#shop" className="font-medium text-lg-ink hover:text-lg-red">{t("pdp.shop")}</a>
+          <span>/</span>
+          <span className="text-lg-ink">{t("nav.care")}</span>
+        </div>
+      </div>
+      <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 sm:pt-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">{t("careship.eyebrow")}</p>
-        <h2 className="mt-2 max-w-3xl text-3xl font-semibold">{t("careship.title")}</h2>
+        <h1 className="mt-2 max-w-3xl text-3xl font-semibold">{t("careship.title")}</h1>
         <p className="mt-3 max-w-3xl text-sm leading-7 text-lg-muted">
           {t("careship.lead", { advisor: COMPANY.advisor })}
         </p>

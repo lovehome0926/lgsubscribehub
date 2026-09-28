@@ -7,7 +7,7 @@ import WatermarkedPhoto from "./WatermarkedPhoto"
 export default function Stores() {
   const { t } = useLang()
   return (
-    <section id="stores" className="scroll-mt-40 bg-white py-16">
+    <section id="stores" className="scroll-mt-28 bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">{t("stores.eyebrow")}</p>
         <h2 className="mt-2 text-3xl font-semibold">{t("stores.title")}</h2>

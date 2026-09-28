@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import HomeChooser from "./components/HomeChooser"
 import Catalog from "./components/Catalog"
 import WhySubscribe from "./components/WhySubscribe"
 import CareShip from "./components/CareShip"
@@ -18,6 +19,7 @@ function readRoute() {
   const hash = window.location.hash.replace(/^#\/?/, "")
   const [page, id, a, b] = hash.split("/")
   if (page === "career") return { name: "career", section: id || null }
+  if (page === "care") return { name: "care" }
   if (page === "product" && id) return { name: "product", id, a, b }
   return { name: "home" }
 }
@@ -42,6 +44,11 @@ export default function App() {
     window.addEventListener("hashchange", onHash)
     return () => window.removeEventListener("hashchange", onHash)
   }, [])
+
+  useEffect(() => {
+    if (route.name === "home") return
+    window.scrollTo(0, 0)
+  }, [route.name])
 
   useEffect(() => {
     if (route.name !== "home") return
@@ -77,6 +84,18 @@ export default function App() {
     )
   }
 
+  if (route.name === "care") {
+    return (
+      <div className="min-h-screen bg-lg-cream">
+        <SeoJsonLd />
+        <Header onHome={goHome} />
+        <CareShip />
+        <SiteFooter />
+        <WhatsAppFab />
+      </div>
+    )
+  }
+
   if (route.name === "product") {
     const product = productById(route.id)
     const { specId, colorId } = routeOptions(product, route.a, route.b)
@@ -104,9 +123,9 @@ export default function App() {
       <SeoJsonLd />
       <Header onHome={goHome} />
       <Hero />
+      <HomeChooser />
       <Catalog onSelect={openProduct} />
       <WhySubscribe />
-      <CareShip />
       <Stores />
       <Reviews />
       <Faq />

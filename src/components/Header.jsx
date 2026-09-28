@@ -5,20 +5,29 @@ import { CATEGORY_GROUPS, LOGO, SUB_LOGO } from "../data/catalog"
 import { CAREER, COMPANY, whatsappHref } from "../config"
 import { LANGS, useLang } from "../i18n/LanguageProvider"
 
-function LangSwitch({ onPick }) {
+function LangSwitch({ onPick, tone = "default" }) {
   const { lang, setLang } = useLang()
+  const onRed = tone === "onRed"
   return (
-    <div className="inline-flex items-center text-xs font-semibold">
+    <div className={`inline-flex shrink-0 items-center font-semibold ${onRed ? "text-[11px]" : "text-xs"}`}>
       {LANGS.map((item, index) => (
         <span key={item.id} className="inline-flex items-center">
-          {index > 0 ? <span className="mx-1 text-lg-muted">|</span> : null}
+          {index > 0 ? <span className={`mx-1 ${onRed ? "text-white/40" : "text-lg-muted"}`}>|</span> : null}
           <button
             type="button"
             onClick={() => {
               setLang(item.id)
               onPick?.()
             }}
-            className={lang === item.id ? "text-lg-red" : "text-lg-muted hover:text-lg-ink"}
+            className={
+              lang === item.id
+                ? onRed
+                  ? "text-white"
+                  : "text-lg-red"
+                : onRed
+                  ? "text-white/70 hover:text-white"
+                  : "text-lg-muted hover:text-lg-ink"
+            }
           >
             {item.label}
           </button>
@@ -34,7 +43,6 @@ const LINKS = [
   { href: "#care", key: "care" },
   { href: "#stores", key: "stores" },
   { href: "#reviews", key: "reviews" },
-  { href: "#career", key: "career" },
 ]
 
 export default function Header({ onHome }) {
@@ -63,8 +71,13 @@ export default function Header({ onHome }) {
       <div className="hidden bg-[#111] px-3 py-1 text-center text-[10px] leading-4 text-white/90 lg:block sm:text-[11px]">
         {t("notice")}
       </div>
-      <div className="bg-lg-red px-3 py-1 text-center text-[11px] font-semibold tracking-wide text-white">
-        <span className="block truncate">{promo}</span>
+      <div className="bg-lg-red px-3 py-1 text-[11px] font-semibold tracking-wide text-white">
+        <div className="flex items-center gap-2 lg:block lg:text-center">
+          <div className="lg:hidden">
+            <LangSwitch tone="onRed" />
+          </div>
+          <span className="min-w-0 flex-1 truncate lg:block">{promo}</span>
+        </div>
       </div>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[72px]">
         <button type="button" onClick={onHome} className="flex min-w-0 items-center gap-2 sm:gap-3">
@@ -144,13 +157,18 @@ export default function Header({ onHome }) {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`rounded-2xl px-4 py-3 text-base font-semibold ${
-                  item.key === "career" ? "text-lg-red" : "text-lg-ink"
-                }`}
+                className="rounded-2xl px-4 py-3 text-base font-semibold text-lg-ink"
               >
                 {t(`nav.${item.key}`)}
               </a>
             ))}
+            <a
+              href={CAREER.href}
+              onClick={() => setOpen(false)}
+              className="mt-1 inline-flex w-fit items-center rounded-full border border-lg-red px-4 py-2 text-sm font-semibold text-lg-red"
+            >
+              {t("nav.career")}
+            </a>
             <div className="mt-4 grid gap-2">
               {CATEGORY_GROUPS.map((group) => (
                 <a

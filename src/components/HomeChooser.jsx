@@ -1,4 +1,4 @@
-import { MapPin, ShieldCheck, ShoppingBag, Star } from "lucide-react"
+import { Briefcase, MapPin, ShieldCheck, ShoppingBag, Star } from "lucide-react"
 import { useLang } from "../i18n/LanguageProvider"
 
 const DOORS = [
@@ -28,6 +28,16 @@ export default function HomeChooser() {
             </a>
           ))}
         </div>
+        <a
+          href="#career"
+          className="mt-3 flex items-center gap-4 rounded-[22px] bg-white p-4 pr-16 ring-1 ring-lg-red hover:bg-[#fff5f7] sm:pr-4"
+        >
+          <Briefcase className="h-5 w-5 shrink-0 text-lg-red" />
+          <span>
+            <span className="block text-sm font-semibold text-lg-red">{t("chooser.career.name")}</span>
+            <span className="mt-1 block text-xs leading-5 text-lg-muted">{t("chooser.career.blurb")}</span>
+          </span>
+        </a>
       </div>
     </section>
   )

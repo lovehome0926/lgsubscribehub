@@ -41,6 +41,7 @@ export default {
     stores: { name: "门店", blurb: "峇株 Brandshop 与巴力拉惹摊位。" },
     reviews: { name: "评价", blurb: "安装照片与顾客评分。" },
     care: { name: "CareShip", blurb: "给机主的 1 年或 2 年保养。" },
+    career: { name: "招商 / 加入团队", blurb: "了解销售、招募与双轨路线。" },
   },
   catalog: {
     eyebrow: "选购 LG Subscribe",

@@ -42,6 +42,7 @@ export default {
     stores: { name: "Cawangan", blurb: "Brandshop Batu Pahat dan kiosk Parit Raja." },
     reviews: { name: "Ulasan", blurb: "Gambar pemasangan dan penilaian pelanggan." },
     care: { name: "CareShip", blurb: "Servis 1 tahun atau 2 tahun untuk pemilik." },
+    career: { name: "Kerjaya / Sertai pasukan", blurb: "Jualan, pengambilan dan pilihan dwi-laluan." },
   },
   catalog: {
     eyebrow: "Kedai LG Subscribe",

@@ -1,6 +1,8 @@
-// Generated from LG_Subscribe_Products_2026.xlsx. Re-run scripts/import-subscribe.mjs to refresh prices.
+// Generated from LG_Subscribe_Products_2026.xlsx via scripts/import-subscribe.mjs. Re-run the importer to refresh prices.
 // Official detail copy is scraped from each LG page URL. Re-run scripts/import-details.mjs to refresh features, stories, and specs.
-// Regular Visit prices in the sheet are stored on the 6-month cycle. 12-month and 24-month slots are null until filled.
+// Rows without a URL can copy selling features from Copy_Features_From, or from another product with the same name.
+// Drop hero photos in public/products/{MODEL}.jpg or fill the Hero_Image column.
+// A single Regular column maps to 6-month visits, or 12-month for refrigerators. Extra 6m/12m/24m columns override that.
 // A repeated 28 in unfinished Combine cells is imported as null.
 export const PRODUCTS = [
   {
@@ -3194,8 +3196,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/feature/desktop/lg-air-purifier-aerohit2-2026-as30ggw10-feature-08-thinq-d.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "puricare-aerocat-tower-as25gcbzo",
@@ -4720,8 +4721,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "artcool-mirror-s3-q12jarpa",
@@ -5641,8 +5641,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "dualcool-s3-q12jaypp",
@@ -5872,8 +5871,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "dualcool-s3-q18kaypa",
@@ -6103,8 +6101,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "dualcool-s3-q24klypa",
@@ -6334,8 +6331,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "front-loader-washing-machine-fx1412s5gr",
@@ -7107,8 +7103,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wm-fl-nt-slim-led-pdp-2024-gp1/h-a-wm-nt-slim-led-gp1-feature/desktop/HA-WM-NT-Slim-LED-GP1-10-desktop.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "lg-washtower-wt2520nhegr",
@@ -7339,8 +7334,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-washtower-heat-pump-blacksteel-09-auto-cleaning-condenser-d.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "lg-washtower-wt1410nhb",
@@ -8971,8 +8965,7 @@ export const PRODUCTS = [
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-07-2-allergy-care-d.jpg",
         "video": null
       }
-    ],
-    "facts": []
+    ]
   },
   {
     "id": "instaview-french-door-gc-x24ffc7r",
@@ -10575,7 +10568,6 @@ export const PRODUCTS = [
         "video": null
       }
     ],
-    "featureSource": "GC-J257SQNW",
     "facts": [
       {
         "label": "DIMENSIONS & WEIGHT - Product Dimension (WxHxD, mm)",
@@ -10633,7 +10625,8 @@ export const PRODUCTS = [
         "label": "Vegetable Box",
         "value": "Yes (2)"
       }
-    ]
+    ],
+    "featureSource": "GC-J257SQNW"
   },
   {
     "id": "quadwash-steam-dishwasher-dfc335hm",

@@ -9,51 +9,27 @@ export const GOOGLE_REVIEW_SUMMARY = { count: 23, url: GOOGLE_REVIEWS_URL }
 
 export const REVIEWS = [
   {
-    "author": "Ms from Batu Pahat",
+    "author": "Ms Tan from Batu Pahat",
     "rating": 5,
-    "date": "2026-08-18",
+    "date": "18-08-26",
     "product": "PuriCare Water Purifier",
     "quote": "Cindy explained the monthly plan clearly and the installation team was tidy.",
     "source": "manual"
   },
   {
-    "author": "Mr from Parit Raja",
+    "author": "Mr Helmi from Batu Pahat",
     "rating": 5,
-    "date": "2026-08-22",
+    "date": "22-08-26",
     "product": "DUALCOOL Air Conditioner",
-    "quote": "Visited the Lotus's kiosk, compared packages, and got follow-up on WhatsApp the same day.",
+    "quote": "Repeat order, aircond LG memang sangat jimat current, utk rumah sy dah jimat RM50+.",
     "source": "manual"
   },
   {
-    "author": "Ms from Yong Peng",
+    "author": "Ms Ninie from Batu Pahat",
     "rating": 5,
-    "date": "2026-09-02",
-    "product": "Front Load Washer FX1412S5GR",
-    "quote": "Needed a 12kg washer for the family. The Brandshop let us see the machine first.",
-    "source": "manual"
-  },
-  {
-    "author": "Mr from Ayer Hitam",
-    "rating": 5,
-    "date": "2026-09-10",
-    "product": "LG Subscribe application",
-    "quote": "No pressure to decide on the spot. Documents and CareShip options were walked through one by one.",
-    "source": "manual"
-  },
-  {
-    "author": "Ms from Kluang",
-    "rating": 5,
-    "date": "2026-09-16",
-    "product": "Washer Dryer",
-    "quote": "Drove to Flora Utama for the briefing. After-sales WhatsApp replies have been fast.",
-    "source": "manual"
-  },
-  {
-    "author": "Mr from Batu Pahat",
-    "rating": 5,
-    "date": "2026-09-21",
-    "product": "PuriCare Air Purifier",
-    "quote": "Showed us the unit at the Brandkiosk and helped with the registration.",
+    "date": "02-09-26",
+    "product": "Washtower 14/10KG",
+    "quote": "Highly recommend! Cindy and Joe were super helpful. Since my husband was not at home, they specially came over to assist when the product arrived. Truly responsible and reliable agents!",
     "source": "manual"
   }
 ]

@@ -172,13 +172,6 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit-6",
-        "label": "Regular Visit (6mth)",
-        "year1": 350,
-        "year2": 665,
-        "details": "1x Regular visit every 6mth"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 250,
@@ -191,6 +184,13 @@ export const CARESHIP_PRODUCTS = [
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery + 1x Regular Visit annually"
+      },
+      {
+        "kind": "visit-6",
+        "label": "Regular Visit (6mth)",
+        "year1": 350,
+        "year2": 665,
+        "details": "1x Regular visit every 6mth"
       }
     ]
   },
@@ -207,13 +207,6 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit-6",
-        "label": "Regular Visit (6mth)",
-        "year1": 350,
-        "year2": 665,
-        "details": "1x Regular visit every 6mth"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 250,
@@ -226,6 +219,13 @@ export const CARESHIP_PRODUCTS = [
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery + 1x Regular Visit annually"
+      },
+      {
+        "kind": "visit-6",
+        "label": "Regular Visit (6mth)",
+        "year1": 350,
+        "year2": 665,
+        "details": "1x Regular visit every 6mth"
       }
     ]
   },
@@ -246,13 +246,6 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit-6",
-        "label": "Regular Visit (6mth)",
-        "year1": 350,
-        "year2": 665,
-        "details": "1x Regular visit every 6mth"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 250,
@@ -265,6 +258,13 @@ export const CARESHIP_PRODUCTS = [
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery + 1x Regular Visit annually"
+      },
+      {
+        "kind": "visit-6",
+        "label": "Regular Visit (6mth)",
+        "year1": 350,
+        "year2": 665,
+        "details": "1x Regular visit every 6mth"
       }
     ]
   },
@@ -281,13 +281,6 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit-6",
-        "label": "Regular Visit (6mth)",
-        "year1": 350,
-        "year2": 665,
-        "details": "1x Regular visit every 6mth"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 250,
@@ -300,6 +293,13 @@ export const CARESHIP_PRODUCTS = [
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery + 1x Regular Visit annually"
+      },
+      {
+        "kind": "visit-6",
+        "label": "Regular Visit (6mth)",
+        "year1": 350,
+        "year2": 665,
+        "details": "1x Regular visit every 6mth"
       }
     ]
   },
@@ -319,18 +319,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 400,
-        "year2": 760,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 400,
+        "year2": 760,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -350,18 +350,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 600,
-        "year2": 1140,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 500,
         "year2": 950,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 600,
+        "year2": 1140,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -381,18 +381,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 400,
-        "year2": 760,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 400,
+        "year2": 760,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -412,18 +412,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 400,
-        "year2": 760,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 400,
+        "year2": 760,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -441,18 +441,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 600,
-        "year2": 1140,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 500,
         "year2": 950,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 600,
+        "year2": 1140,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -468,18 +468,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 400,
-        "year2": 760,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 400,
+        "year2": 760,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -496,18 +496,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 400,
-        "year2": 760,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 300,
         "year2": 570,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 400,
+        "year2": 760,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -523,18 +523,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 240,
-        "year2": 430,
-        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 180,
         "year2": 340,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 240,
+        "year2": 430,
+        "details": "1x Visit/yr; Pre-Filter + HEPA Filter"
       }
     ]
   },
@@ -552,18 +552,18 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": 250,
-        "year2": 475,
-        "details": "1x Visit/yr; Accessory Assembly (Cover + HEPA Filter)"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": 150,
         "year2": 285,
         "details": "1x Filter delivery/yr"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": 250,
+        "year2": 475,
+        "details": "1x Visit/yr; Accessory Assembly (Cover + HEPA Filter)"
       }
     ]
   },
@@ -581,17 +581,17 @@ export const CARESHIP_PRODUCTS = [
     ],
     "plans": [
       {
-        "kind": "visit",
-        "label": "Regular Visit",
-        "year1": null,
-        "year2": 550,
-        "details": "2x Filter accessories delivery/yr; Aroma Sheet + Tanks"
-      },
-      {
         "kind": "self",
         "label": "Self-Service",
         "year1": null,
         "year2": 400,
+        "details": "2x Filter accessories delivery/yr; Aroma Sheet + Tanks"
+      },
+      {
+        "kind": "visit",
+        "label": "Regular Visit",
+        "year1": null,
+        "year2": 550,
         "details": "2x Filter accessories delivery/yr; Aroma Sheet + Tanks"
       }
     ]

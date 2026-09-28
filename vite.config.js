@@ -4,4 +4,9 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    watch: {
+      ignored: ["**/INSTALL_PHOTOS/**", "**/GROUP_PHOTOS/**", "**/CARESHIP_PHOTOS/**", "**/sheet/**"],
+    },
+  },
 })

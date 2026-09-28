@@ -1,7 +1,8 @@
 import fs from "fs"
 import path from "path"
 import { PRODUCTS } from "../src/data/subscribe2026.js"
-import { applyBorrowedFeatures } from "./lib/build-products.mjs"
+import { applyBorrowedFeatures, cachePath as imageCachePath } from "./lib/build-products.mjs"
+import { galleryShots, keepLive, sequenceGuesses } from "./lib/gallery.mjs"
 
 const root = path.resolve(import.meta.dirname, "..")
 const cachePath = path.join(root, "scripts", "detail-cache.json")
@@ -9,7 +10,7 @@ const outPath = path.join(root, "src", "data", "subscribe2026.js")
 const samplePath = process.argv.includes("--sample") ? process.argv[process.argv.indexOf("--sample") + 1] : ""
 
 const SKIP_TITLE =
-  /^(lg subscribe|faq|summary|features|specs|specifications|reviews|support|where to buy|need help\??|our picks for you|what people are saying|find locally|all spec|dimensions|product registration|product support|order support|repair request|chat with us|key features)$/i
+    /^(lg subscribe|faq|summary|features|specs|specifications|reviews|support|where to buy|need help\??|our picks for you|what people are saying|find locally|all spec|dimensions|product registration|product support|order support|repair request|chat with us|key features|explore your new washer)/i
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
@@ -43,29 +44,9 @@ function abs(src) {
 function usefulImage(src) {
   const url = abs(src)
   if (!url) return null
-  if (/gnb-banner|logo-lg|plp-b2c|rent-up-button|membership|instalment|streaming-week|subscribe-2025-banner|\/Dim\.jpg|\/icon|sprite|\/jcr:content\//i.test(url)) return null
+  if (/gnb-banner|logo-lg|plp-b2c|rent-up-button|membership|instalment|streaming-week|subscribe-2025-banner|\/Dim\.jpg|\/icon|-icon-|sprite|\/jcr:content\//i.test(url)) return null
   if (!/\.(jpg|jpeg|png|webp)$/i.test(url)) return null
   return url
-}
-
-function galleryShots(html) {
-  const start = html.search(/c-gallery__display--large|c-gallery__item--display-image|type-gallery/)
-  if (start < 0) return []
-  const chunk = html.slice(start, start + 120000)
-  const found = []
-  const seen = new Set()
-  for (const match of chunk.matchAll(/<img[^>]+src="([^"]+)"/g)) {
-    let raw = match[1].split("?")[0].split(" ")[0]
-    raw = raw.replace(/\/jcr:content\/renditions\/.*$/i, "")
-    if (!/\.(jpg|jpeg|png|webp)$/i.test(raw)) continue
-    if (/logo|icon|favicon|gnb-banner|sprite|subscribe-2025-banner|mqdefault|hqdefault|ytimg/i.test(raw)) continue
-    const url = (raw.startsWith("http") ? raw : `https://www.lg.com${raw}`).replace("/350x350/", "/450x450/")
-    if (seen.has(url)) continue
-    seen.add(url)
-    found.push(url)
-    if (found.length >= 5) break
-  }
-  return found
 }
 
 function usefulVideo(src) {
@@ -94,12 +75,15 @@ function bodyCopy(chunk) {
 }
 
 function pickImage(chunk) {
-  const urls = [...chunk.matchAll(/(?:src|srcSet)="([^"]+)"/g)].map((match) => usefulImage(match[1])).filter(Boolean)
+  const urls = [...chunk.matchAll(/(?:src|srcset|data-src)="([^"]+)"/gi)]
+    .flatMap((match) => match[1].split(",").map((part) => part.trim().split(/\s+/)[0]))
+    .map((src) => usefulImage(src))
+    .filter(Boolean)
   const score = (url) => {
     let value = 2
     if (/\/desktop\/|-desktop\.|-d\.jpg/i.test(url)) value = 4
     else if (/mobile/i.test(url)) value = 1
-    if (/thumbnail/i.test(url)) value -= 2
+    if (/\/thumbnail\//i.test(url)) value -= 2
     return value
   }
   return urls.sort((a, b) => score(b) - score(a))[0] || null
@@ -139,8 +123,10 @@ function blockTitle(part) {
 
 function storyCopy(part) {
   const copy = bodyCopy(part)
-  if (copy.length < 40 || /monthly subscription plan|lg subscribe lets you/i.test(copy)) return ""
-  return copy
+  if (copy.length >= 40 && !/monthly subscription plan|lg subscribe lets you/i.test(copy)) return copy
+  const fallback = paragraphs(part).sort((a, b) => b.length - a.length)[0] || ""
+  if (fallback.length < 40 || /monthly subscription plan|lg subscribe lets you/i.test(fallback)) return ""
+  return fallback
 }
 
 function nearbyMedia(parts, index) {
@@ -159,7 +145,7 @@ export function parseDetail(html) {
   const quick = []
   const stories = []
   const seenTitles = new Set()
-  const storyKinds = ["ST0016", "ST0001", "ST0002", "ST0003", "ST0005", "ST0013", "ST0027"]
+  const storyKinds = ["ST0016", "ST0001", "ST0002", "ST0003", "ST0004", "ST0005", "ST0006", "ST0008", "ST0009", "ST0010", "ST0011", "ST0012", "ST0013", "ST0014", "ST0015", "ST0017", "ST0018", "ST0027", "ST0036"]
 
   for (const part of parts) {
     if (!part.startsWith("ST0007") || quick.length) continue
@@ -168,12 +154,12 @@ export function parseDetail(html) {
       const copy = paragraphs(slide)[0] || bodyCopy(slide)
       if (!title || !copy || SKIP_TITLE.test(title) || copy.length < 24) continue
       quick.push({ title, copy: copy.slice(0, 220) })
-      if (quick.length >= 4) break
+      if (quick.length >= 6) break
     }
   }
 
   function consider(index, allowNearby) {
-    if (stories.length >= 4) return
+    if (stories.length >= 8) return
     const part = parts[index]
     if (!storyKinds.some((kind) => part.startsWith(kind))) return
     const title = blockTitle(part)
@@ -196,12 +182,12 @@ export function parseDetail(html) {
   for (let index = 0; index < parts.length; index += 1) consider(index, false)
   for (let index = 0; index < parts.length; index += 1) consider(index, true)
 
-  if (quick.length < 4) {
+  if (quick.length < 6) {
     for (const story of stories) {
       if (quick.some((item) => item.title.toLowerCase() === story.title.toLowerCase())) continue
       const sentence = story.copy.split(/(?<=\.)\s/)[0]
       quick.push({ title: story.title, copy: sentence.slice(0, 180) })
-      if (quick.length >= 4) break
+      if (quick.length >= 6) break
     }
   }
 
@@ -216,8 +202,13 @@ export function parseDetail(html) {
     seen.add(label.toLowerCase())
     facts.push({ label, value })
   }
-  const rich = facts.filter((item) => !/^(yes|no|n\/a|-)$/i.test(item.value))
-  const picked = (rich.length >= 6 ? rich : facts).slice(0, 12)
+  const keepYes = /^(features - |smart technology|capacity|dimensions|body color|door type|max wash|display type|delay timer|type$|ai dd|turbowash 39|steam$|thinq|ezdispense|inverter|direct)/i
+  const rich = facts.filter((item) => {
+    if (/^(baby steam|color care|steam refresh|turbowash 4|turbowash 5)/i.test(item.label)) return false
+    if (/^(yes|no|n\/a|-)$/i.test(item.value)) return keepYes.test(item.label)
+    return true
+  })
+  const picked = (rich.length >= 6 ? rich : facts).slice(0, 14)
 
   if (!quick.length && !stories.length && !picked.length) return null
   return {
@@ -274,7 +265,7 @@ async function loadCache(urls) {
     if (force) return true
     const entry = cache[url]
     if (!entry) return true
-    if (Array.isArray(entry.gallery)) return false
+    if ((entry.gallery?.length || 0) >= 5 && usable(entry)) return false
     return entry.status !== 404
   })
   let cursor = 0
@@ -284,7 +275,13 @@ async function loadCache(urls) {
       cursor += 1
       const { status, html } = await fetchHtml(url)
       const detail = html ? parseDetail(html) : null
-      const gallery = html ? galleryShots(html) : []
+      let gallery = html ? galleryShots(html) : []
+      if (gallery.length < 5) gallery = [...gallery, ...sequenceGuesses(gallery[0])]
+      if (gallery.length) {
+        const checked = await keepLive(gallery)
+        if (checked.length >= 3) gallery = checked
+      }
+      gallery = gallery.slice(0, 8)
       cache[url] = {
         status,
         tagline: detail?.tagline ?? null,
@@ -307,6 +304,11 @@ async function loadCache(urls) {
 
 function usable(entry) {
   return Boolean(entry && (entry.quickFeatures?.length || entry.stories?.length || entry.facts?.length))
+}
+
+function preferProductShot(gallery = []) {
+  const clean = gallery.filter((url) => !/korea-tech|koreatech|korea_tech|\/kr\/images\//i.test(url))
+  return (clean.length ? clean : gallery).slice(0, 8)
 }
 
 function publicDetail(entry) {
@@ -350,10 +352,16 @@ for (const product of PRODUCTS) {
         variant.detail = publicDetail(entry)
         if (!primary) primary = variant.detail
       }
-      if (entry?.gallery?.length && !String(variant.image || color.image || "").startsWith("/products/")) {
-        variant.gallery = entry.gallery
-        variant.image = entry.gallery[0]
-        if (!colorGallery) colorGallery = entry.gallery
+      if (entry?.gallery?.length) {
+        const gallery = preferProductShot(entry.gallery)
+        const local = String(variant.image || color.image || "").startsWith("/products/")
+        if (local) {
+          variant.gallery = [...new Set([variant.image, ...(variant.gallery || []), ...gallery])].slice(0, 8)
+        } else {
+          variant.gallery = gallery
+          variant.image = gallery[0]
+          if (!colorGallery) colorGallery = gallery
+        }
       }
     }
     if (colorGallery) {
@@ -378,5 +386,23 @@ export const PRODUCTS = ${JSON.stringify(PRODUCTS, null, 2)}
 `
 
 fs.writeFileSync(outPath, banner)
+
+let imageCache = []
+if (fs.existsSync(imageCachePath)) {
+  try {
+    imageCache = JSON.parse(fs.readFileSync(imageCachePath, "utf8"))
+  } catch {
+    imageCache = []
+  }
+}
+const imageByUrl = new Map(imageCache.map((item) => [item.url, item]))
+for (const [url, entry] of Object.entries(cache)) {
+  if (!entry.gallery?.length) continue
+  const prev = imageByUrl.get(url) || { url }
+  imageByUrl.set(url, { ...prev, url, status: entry.status ?? prev.status ?? 200, og: entry.gallery[0], gallery: entry.gallery })
+}
+fs.writeFileSync(imageCachePath, JSON.stringify([...imageByUrl.values()], null, 2))
+
 const filled = PRODUCTS.filter((product) => product.quickFeatures?.length || product.stories?.length).length
-console.log(`Wrote details for ${filled}/${PRODUCTS.length} products`)
+const rich = PRODUCTS.filter((product) => product.colors.some((color) => (color.gallery || []).length >= 5)).length
+console.log(`Wrote details for ${filled}/${PRODUCTS.length} products, ${rich} with 5+ hero shots`)

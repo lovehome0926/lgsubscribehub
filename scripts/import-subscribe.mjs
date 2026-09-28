@@ -5,6 +5,9 @@ import { buildProducts, mergePriorDetail, reportProducts, writeProducts, FIELD_A
 import { rowsFromNamedHeaders, rowsToColumnKeys, stripHeader } from "./lib/csv.mjs"
 import { buildPromos, writePromos, PROMO_COLUMNS, DEFAULT_PROMOS } from "./lib/promos.mjs"
 import { readSheetCells } from "./lib/xlsx.mjs"
+import { publishPhotos } from "./publish-photos.mjs"
+import { reviewsFromCsv, reviewsFromXlsx, writeReviews } from "./lib/reviews.mjs"
+import { careshipFromCsv, careshipFromXlsx, writeCareship } from "./lib/careship.mjs"
 
 const xlsxPath = process.argv[2] || path.join(root, "sheet", "LG_Subscribe_Products_2026.xlsx")
 
@@ -27,3 +30,16 @@ try {
   console.warn(`Skipped Promos tab: ${error.message}`)
   writePromos(DEFAULT_PROMOS, { source: "default first-9-months half price" })
 }
+
+publishPhotos()
+const fromSheet = reviewsFromXlsx(xlsxPath)
+const fromCsv = reviewsFromCsv()
+writeReviews(fromSheet.length ? fromSheet : fromCsv, {
+  source: fromSheet.length ? `${path.basename(xlsxPath)} Reviews tab` : "sheet/reviews.csv",
+})
+
+const careshipSheet = careshipFromXlsx(xlsxPath)
+const careshipCsv = careshipFromCsv()
+writeCareship(careshipSheet.length ? careshipSheet : careshipCsv, {
+  source: careshipSheet.length ? `${path.basename(xlsxPath)} CareShip tab` : "sheet/careship.csv",
+})

@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react"
 import { Check, ChevronLeft, Droplets, Flame, LayoutPanelTop, ShieldCheck, Snowflake, Truck, Wifi, Zap } from "lucide-react"
-import { SERVICES, applyPromo, hasOutrightPrice, isMoney, planCareOptions, planPrice, pricedTenures, promoForProduct, visitCycles } from "../data/catalog"
+import { SERVICES, applyPromo, groupOf, hasOutrightPrice, isMoney, planCareOptions, planPrice, pricedTenures, promoForProduct, promoForProductPlan, promoTheme, visitCycles } from "../data/catalog"
 import { whatsappHref } from "../config"
+import { useLang } from "../i18n/LanguageProvider"
+import PromoBadge from "./PromoBadge"
 
 const FEATURE_ICONS = {
   Hygienic: ShieldCheck,
@@ -10,16 +12,6 @@ const FEATURE_ICONS = {
   "LG ThinQ™": Wifi,
 }
 
-const CARE_ORDER = ["self", "combined", "visit"]
-const TENURE_LABEL = { 36: "3 yr", 60: "5 yr", 84: "7 yr" }
-const CARE_SHORT = { self: "Self-Service", combined: "Combined", visit: "Regular Visit", none: "Warranty" }
-const CARE_BLURB = {
-  self: "Filter delivered to you",
-  combined: "Filter kit + 1 visit / year",
-  visit: "Technician visit on a set interval",
-  none: "Standard manufacturer warranty",
-}
-const VISIT_LABEL = { 6: "6 mo", 12: "12 mo", 24: "24 mo" }
 const WATER_META = {
   Hot: { Icon: Flame, className: "text-[#c45c26]" },
   Ambient: { Icon: Droplets, className: "text-[#2b6cb0]" },
@@ -113,22 +105,24 @@ function tileState(selected) {
 }
 
 function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, tenure, setTenure, care, setCare, visitCycle, setVisitCycle, promo, price, waText }) {
+  const { t } = useLang()
+  const activePromo = price.planPromo ?? promo
   const waterOutright = payMode === "outright" && product.type === "water"
   const perks = waterOutright
     ? [
-        { Icon: Truck, label: "Free Delivery & Installation" },
-        { Icon: ShieldCheck, label: "Free 1-year Warranty" },
-        { Icon: Zap, label: "1-year CareShip™" },
+        { Icon: Truck, label: t("pdp.perks.delivery") },
+        { Icon: ShieldCheck, label: t("pdp.perks.warranty1") },
+        { Icon: Zap, label: t("pdp.perks.careship1") },
       ]
     : payMode === "outright"
       ? [
-          { Icon: Truck, label: "Free Delivery & Installation" },
-          { Icon: ShieldCheck, label: "Manufacturer Warranty" },
+          { Icon: Truck, label: t("pdp.perks.delivery") },
+          { Icon: ShieldCheck, label: t("pdp.perks.mfrWarranty") },
         ]
       : [
-          { Icon: Truck, label: "Free Delivery & Installation" },
-          { Icon: ShieldCheck, label: "Zero Deposit" },
-          { Icon: Zap, label: "5-Year Warranty" },
+          { Icon: Truck, label: t("pdp.perks.delivery") },
+          { Icon: ShieldCheck, label: t("pdp.perks.zeroDeposit") },
+          { Icon: Zap, label: t("pdp.perks.warranty5") },
         ]
   const services = planCareOptions(product, spec, { payMode, tenure })
   const cycles = payMode === "subscribe" ? visitCycles(spec, tenure) : []
@@ -148,19 +142,19 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
   }
 
   function visitBlurb() {
-    if (cycles.length === 1) return `Technician visit every ${cycles[0]} months`
-    return CARE_BLURB.visit
+    if (cycles.length === 1) return t("pdp.careBlurb.visitEvery", { n: cycles[0] })
+    return t("pdp.careBlurb.visit")
   }
 
   return (
     <div className="space-y-6">
       {showPayModes ? (
         <div>
-          <StepLabel n={++step}>Purchase Option</StepLabel>
+          <StepLabel n={++step}>{t("pdp.purchase")}</StepLabel>
           <div className="mt-3 grid grid-cols-2 gap-2.5">
             {[
-              { id: "subscribe", label: "Subscription" },
-              { id: "outright", label: "Outright" },
+              { id: "subscribe", label: t("pdp.subscription") },
+              { id: "outright", label: t("pdp.outright") },
             ].map((mode) => {
               const selected = payMode === mode.id
               return (
@@ -181,7 +175,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
 
       {showTenure ? (
         <div>
-          <StepLabel n={++step}>Rental Tenure</StepLabel>
+          <StepLabel n={++step}>{t("pdp.tenure")}</StepLabel>
           {subscribeYears.length > 1 ? (
             <div className="mt-3 grid grid-cols-2 gap-2.5 pt-2">
               {subscribeYears.map((item) => {
@@ -194,34 +188,32 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
                     onClick={() => setTenure(item)}
                     className={`${tileBase} ${tileState(selected)}`}
                   >
-                    {popular ? <MicroBadge shift={selected}>🔥 Popular</MicroBadge> : null}
+                    {popular ? <MicroBadge shift={selected}>🔥 {t("pdp.popular")}</MicroBadge> : null}
                     {selected ? <SelectedMark /> : null}
-                    <span className="block">{TENURE_LABEL[item]}</span>
+                    <span className="block">{t(`pdp.tenureLabel.${item}`)}</span>
                   </button>
                 )
               })}
             </div>
           ) : (
-            <p className="mt-3 text-sm font-semibold text-gray-900">{TENURE_LABEL[subscribeYears[0]] ?? `${subscribeYears[0]} mo`}</p>
+            <p className="mt-3 text-sm font-semibold text-gray-900">{t(`pdp.tenureLabel.${subscribeYears[0]}`) || `${subscribeYears[0]} mo`}</p>
           )}
         </div>
       ) : payMode === "outright" ? (
         <p className="text-xs leading-5 text-gray-500">
-          {waterOutright
-            ? "Free 1-year warranty and 1-year CareShip™ included. Choose how filters and visits are handled in year 1."
-            : "Manufacturer warranty included with the appliance."}
+          {waterOutright ? t("pdp.outrightWater") : t("pdp.outrightOther")}
         </p>
       ) : null}
 
       {showService ? (
       <div>
-        <StepLabel n={++step}>Service Plan</StepLabel>
+        <StepLabel n={++step}>{t("pdp.service")}</StepLabel>
         {services.length ? (
           <div className="mt-3 space-y-3 pt-2">
             {services.map((id) => {
               const amount = serviceAmount(id)
               const selected = care === id
-              const priced = applyPromo(amount, promo).now
+              const priced = applyPromo(amount, promoForProductPlan(product, { tenure, care: id }), { tenure, care: id }).now
               return (
                 <button
                   key={id}
@@ -233,7 +225,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
                       : "border-gray-200 bg-white hover:border-gray-300"
                   }`}
                 >
-                  {id === services[0] ? <MicroBadge>Recommended</MicroBadge> : null}
+                  {id === services[0] ? <MicroBadge>{t("pdp.recommended")}</MicroBadge> : null}
                   <span
                     className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border-[1.5px] transition-all duration-200 ease-in-out ${
                       selected ? "border-[#A50034] bg-[#A50034]" : "border-gray-300 bg-white"
@@ -244,14 +236,14 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className={`block text-sm font-bold tracking-tight ${selected ? "text-gray-900" : "text-gray-500"}`}>
-                      {CARE_SHORT[id]}
+                      {t(`pdp.care.${id}`)}
                     </span>
                     <span className="mt-0.5 block text-xs text-gray-400">
                       {waterOutright
-                        ? "Free 1-year warranty & 1-year CareShip™"
+                        ? t("pdp.careBlurb.waterYear")
                         : id === "visit"
                           ? visitBlurb()
-                          : CARE_BLURB[id]}
+                          : t(`pdp.careBlurb.${id}`)}
                     </span>
                   </span>
                   {waterOutright && amount != null ? (
@@ -284,9 +276,9 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
                   className={`${tileBase} ${tileState(selected)}`}
                 >
                   {selected ? <SelectedMark /> : null}
-                  <span className="block">{VISIT_LABEL[cycle]}</span>
+                  <span className="block">{t(`pdp.visitLabel.${cycle}`)}</span>
                   <span className="mt-0.5 block text-[10px] font-medium tracking-normal text-gray-400">
-                    RM {applyPromo(amount, promo).now}
+                    RM {applyPromo(amount, promoForProductPlan(product, { tenure, care: "visit" }), { tenure, care: "visit" }).now}
                   </span>
                 </button>
               )
@@ -297,20 +289,25 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
       ) : null}
 
       <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-lg">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">Your plan</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">{t("pdp.yourPlan")}</p>
         {price.kind === "subscribe" && price.now != null ? (
           <div className="mt-2">
             <p className="text-[42px] font-bold leading-none tracking-tight text-[#A50034]">
               RM {price.now}
               <span className="ml-1 text-base font-medium tracking-normal text-gray-400">/mth</span>
             </p>
+            {price.introMonths ? (
+              <p className="mt-1 text-sm font-semibold text-gray-700">{t("pdp.firstMonths", { n: price.introMonths })}</p>
+            ) : null}
             {price.list != null && price.list !== price.now ? (
               <p className="mt-2 text-xs leading-5 text-gray-500">
-                <span className="mr-1 line-through">RM {price.list}/mth</span>
+                <span className="mr-1 line-through">{t("pdp.was", { n: price.list })}</span>
                 {price.introMonths
-                  ? `promo for first ${price.introMonths} months, then RM ${price.list}/mth`
-                  : promo?.title || "promotional price"}
+                  ? t("pdp.after", { n: price.after ?? price.list, from: price.introMonths + 1 })
+                  : ` · ${promoTheme(activePromo)?.line || activePromo?.title || t("pdp.tnc")}. ${t("pdp.tnc")}`}
               </p>
+            ) : activePromo?.merdeka ? (
+              <p className="mt-2 text-xs leading-5 text-gray-500">{activePromo.detail || t("pdp.tnc")}</p>
             ) : null}
           </div>
         ) : price.kind === "outright" && price.amount != null ? (
@@ -318,12 +315,12 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
             <p className="text-[42px] font-bold leading-none tracking-tight text-[#A50034]">RM {price.amount.toLocaleString()}</p>
             {waterOutright ? (
               <p className="mt-2 text-xs leading-5 text-gray-500">
-                Includes free 1-year warranty and 1-year CareShip™ ({CARE_SHORT[care]})
+                {t("pdp.includesWater", { plan: t(`pdp.care.${care}`) })}
               </p>
             ) : null}
           </div>
         ) : (
-          <p className="mt-2 text-2xl font-bold tracking-tight text-gray-400">Price to be confirmed</p>
+          <p className="mt-2 text-2xl font-bold tracking-tight text-gray-400">{t("pdp.tbc")}</p>
         )}
         <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-gray-100 pt-4 text-[11px] font-medium text-gray-600">
           {perks.map(({ Icon, label }) => (
@@ -340,7 +337,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
           className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#A50034] py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 ease-in-out hover:bg-[#88002b]"
         >
           <WhatsAppIcon className="h-4 w-4" />
-          Enquire via WhatsApp
+          {t("pdp.enquire")}
         </a>
       </div>
     </div>
@@ -378,6 +375,7 @@ function FeatureGrid({ items, className = "" }) {
 }
 
 export default function ProductDetail({ product, onBack, initialSpecId, initialColorId, lockSpec }) {
+  const { t } = useLang()
   const promo = promoForProduct(product)
   const openingSpec = product.specs.find((item) => item.id === initialSpecId) ?? firstSpec(product)
   const visibleSpecs = lockSpec ? [openingSpec] : product.specs
@@ -388,14 +386,18 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
   const palette = visibleColors.length ? visibleColors : product.colors
   const openingColor = palette.find((item) => item.id === initialColorId) ?? palette[0]
   const openingYears = pricedTenures(openingSpec)
-  const openingTenure = openingYears[0]
+  const openingTenure = promo?.tenure && openingYears.includes(Number(promo.tenure)) ? Number(promo.tenure) : openingYears[0]
   const [colorId, setColorId] = useState(openingColor.id)
   const [specId, setSpecId] = useState(openingSpec.id)
   const [payMode, setPayMode] = useState("subscribe")
   const spec = visibleSpecs.find((item) => item.id === specId) ?? openingSpec
   const subscribeYears = pricedTenures(spec)
   const [tenure, setTenure] = useState(openingTenure)
-  const [care, setCare] = useState(planCareOptions(product, openingSpec, { payMode: "subscribe", tenure: openingTenure })[0] ?? "none")
+  const [care, setCare] = useState(() => {
+    const options = planCareOptions(product, openingSpec, { payMode: "subscribe", tenure: openingTenure })
+    if (promo?.care && options.includes(promo.care)) return promo.care
+    return options[0] ?? "none"
+  })
   const [visitCycle, setVisitCycle] = useState(() => visitCycles(openingSpec, openingTenure)[0] ?? 6)
   const color = palette.find((item) => item.id === colorId) ?? palette[0]
   const variant = color.variants?.[spec.id]
@@ -441,14 +443,33 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
   const price = useMemo(() => {
     const amount = planPrice(spec, { payMode, tenure, care: careKey, cycle: visitCycle })
     if (payMode === "outright") return { kind: "outright", amount }
-    return { kind: "subscribe", ...applyPromo(amount, promo), months: tenure }
+    const planPromo = promoForProductPlan(product, { tenure, care: careKey })
+    return { kind: "subscribe", ...applyPromo(amount, planPromo, { tenure, care: careKey }), months: tenure, planPromo }
   }, [payMode, spec, careKey, tenure, visitCycle, promo])
 
-  const waText = `LG Subscribe enquiry — ${modelCode}, ${viewColor.name === "Default" ? product.shortName : viewColor.name}, ${spec.label}, ${
-    payMode === "outright"
-      ? `Outright RM ${price.amount ?? "TBC"}${product.type === "water" ? `, ${CARE_SHORT[careKey]} (Free 1-year Warranty & 1-year CareShip™)` : ""}`
-      : `${TENURE_LABEL[tenure] ?? tenure} ${CARE_SHORT[careKey]}${careKey === "visit" ? ` every ${visitCycle} months` : ""} RM ${price.now ?? "TBC"}${price.now != null ? "/month" : ""}`
-  }${promo ? ` (${promo.title})` : ""}.`
+  const activePromo = price.planPromo ?? promo
+  const colorLabel = viewColor.name === "Default" ? product.shortName : viewColor.name
+  const waText =
+    activePromo?.merdeka && payMode === "subscribe" && price.now != null
+      ? t("pdp.waPromo", { name: product.name, model: modelCode, price: price.now })
+      : payMode === "outright"
+        ? t("pdp.waOutright", {
+            model: modelCode,
+            color: colorLabel,
+            spec: spec.label,
+            price: price.amount ?? "TBC",
+            care: product.type === "water" ? t("pdp.waterCareNote", { plan: t(`pdp.care.${careKey}`) }) : "",
+          })
+        : t("pdp.waSubscribe", {
+            model: modelCode,
+            color: colorLabel,
+            spec: spec.label,
+            tenure: t(`pdp.tenureLabel.${tenure}`) || tenure,
+            care: t(`pdp.care.${careKey}`),
+            visit: careKey === "visit" ? t("pdp.visitSuffix", { n: visitCycle }) : "",
+            price: price.now ?? "TBC",
+            promo: promo ? ` (${promo.title})` : "",
+          })
 
   function selectColor(id) {
     const next = palette.find((item) => item.id === id)
@@ -473,10 +494,16 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
         <div className="mx-auto flex max-w-7xl items-center gap-2 px-5 py-4 text-xs text-lg-muted sm:px-8">
           <button type="button" onClick={onBack} className="inline-flex items-center gap-1 font-medium text-lg-ink hover:text-lg-red">
             <ChevronLeft className="h-3.5 w-3.5" />
-            Shop
+            {t("pdp.shop")}
           </button>
           <span>/</span>
-          <span>{product.category}</span>
+          {groupOf(product) ? (
+            <a href={`#group-${groupOf(product).id}`} className="font-medium hover:text-lg-red">
+              {product.category}
+            </a>
+          ) : (
+            <span>{product.category}</span>
+          )}
           <span>/</span>
           <span className="text-lg-ink">{modelCode}</span>
         </div>
@@ -492,8 +519,8 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
             <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_18px_50px_rgba(17,17,17,0.05)]">
               {waitingPhoto ? (
                 <div className="flex h-[360px] flex-col items-center justify-center gap-2 text-center md:h-[460px]">
-                  <p className="text-sm font-medium text-lg-ink">Photo coming</p>
-                  <p className="max-w-xs text-xs leading-5 text-lg-muted">Drop the main photo into public/products/{modelCode}.jpg</p>
+                  <p className="text-sm font-medium text-lg-ink">{t("pdp.photoComing")}</p>
+                  <p className="max-w-xs text-xs leading-5 text-lg-muted">{`Drop the main photo into public/products/${modelCode}.jpg`}</p>
                 </div>
               ) : (
                 <img src={hero} alt={displayName(product, viewColor)} className="mx-auto h-[360px] w-full object-contain p-8 md:h-[460px] md:p-10" />
@@ -524,7 +551,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
             {palette.length > 1 && palette.some((item) => item.name !== "Default") ? (
               <div className="mt-5">
                 <div className="flex items-end justify-between text-sm">
-                  <span className="font-bold tracking-tight text-gray-900">Colour</span>
+                  <span className="font-bold tracking-tight text-gray-900">{t("pdp.colour")}</span>
                   <span className="text-lg-muted">{viewColor.name}</span>
                 </div>
                 <div className="mt-2 flex gap-3">
@@ -565,10 +592,9 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
             ) : null}
 
             {promo ? (
-              <p className="mt-4 text-xs font-medium text-lg-red">
-                {promo.title}
-                {promo.extended ? " · Extended" : ""}
-              </p>
+              <div className="mt-4">
+                <PromoBadge promo={promo} />
+              </div>
             ) : null}
 
             <div className="mt-4">
@@ -619,7 +645,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
 
         {facts?.length ? (
           <section className="mt-14 rounded-[28px] bg-white p-7 sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight">Specifications</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">{t("pdp.specs")}</h2>
             <dl className="mt-6 grid gap-x-10 sm:grid-cols-2">
               {facts.map((item) => (
                 <div key={item.label} className="flex justify-between gap-4 border-b border-lg-line py-4 text-sm">

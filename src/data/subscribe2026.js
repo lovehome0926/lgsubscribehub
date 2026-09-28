@@ -1,8 +1,6 @@
-// Generated from LG_Subscribe_Products_2026.xlsx via scripts/import-subscribe.mjs. Re-run the importer to refresh prices.
+// Generated from LG_Subscribe_Products_2026.xlsx. Re-run scripts/import-subscribe.mjs to refresh prices.
 // Official detail copy is scraped from each LG page URL. Re-run scripts/import-details.mjs to refresh features, stories, and specs.
-// Rows without a URL can copy selling features from Copy_Features_From, or from another product with the same name.
-// Drop hero photos in public/products/{MODEL}.jpg or fill the Hero_Image column.
-// A single Regular column maps to 6-month visits, or 12-month for refrigerators. Extra 6m/12m/24m columns override that.
+// Regular Visit prices in the sheet are stored on the 6-month cycle. 12-month and 24-month slots are null until filled.
 // A repeated 28 in unfinished Combine cells is imported as null.
 export const PRODUCTS = [
   {
@@ -33,7 +31,10 @@ export const PRODUCTS = [
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-02.jpg",
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-03.jpg",
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-04.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-08.jpg"
         ],
         "model": "WU525BS.ABKRLML",
         "specIds": [
@@ -48,7 +49,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-02.jpg",
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-03.jpg",
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-04.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/water-purifiers/wu525bs-abkrlml/",
             "detail": {
@@ -69,6 +73,14 @@ export const PRODUCTS = [
                 {
                   "title": "Dispense as much as you want",
                   "copy": "Dispense the exact amount you need at the touch of a button for easy convenience."
+                },
+                {
+                  "title": "With preset temperatures, Easy access to hot and cold water",
+                  "copy": "You can easily access cold water and preset hot water temperatures of 40℃, 75℃, and 85℃ with just a touch of a button."
+                },
+                {
+                  "title": "Filter replacement notifications",
+                  "copy": "The smart clean lamp will let you know when it's time to change your filter."
                 }
               ],
               "stories": [
@@ -95,6 +107,30 @@ export const PRODUCTS = [
                   "copy": "Dispense the exact amount you need at the touch of a button for easy convenience.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-09-1-volume-control.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-09-1-volume-control.mp4"
+                },
+                {
+                  "title": "With preset temperatures, Easy access to hot and cold water",
+                  "copy": "You can easily access cold water and preset hot water temperatures of 40℃, 75℃, and 85℃ with just a touch of a button. 5)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-10-1-adjustable-temperature.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-10-1-adjustable-temperature.mp4"
+                },
+                {
+                  "title": "Filter replacement notifications",
+                  "copy": "The smart clean lamp will let you know when it's time to change your filter.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-11-1-clean-lamp.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-11-1-clean-lamp.mp4"
+                },
+                {
+                  "title": "Automatic Weekly Sanitization and Easy Spout Cleaning",
+                  "copy": "For spout sanitization, press and hold the “Spout Sanitization” button for 3 seconds and place a container of 500ml or more under the spout. Replace your filters easily with scheduled deliveries based on the replacement cycle. 7)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-15-1-1-spout-cleaning.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-15-1-2-filter-replace.mp4"
+                },
+                {
+                  "title": "Heated, auto-sanitization of water pipes and outlets",
+                  "copy": "High-temperature automatic sanitization without the high costs of a service call. You can clean the internal stainless-steel pipes and outlet, removing 99.99% of germs with just the touch of a button. 1)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-04-2-auto-sanitize-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-04-2-auto-sanitize-m.mp4"
                 }
               ],
               "facts": [
@@ -139,8 +175,16 @@ export const PRODUCTS = [
                   "value": "UF"
                 },
                 {
+                  "label": "Inverter Compressor (10 Years Warranty)",
+                  "value": "Yes"
+                },
+                {
                   "label": "Maintenance Method",
                   "value": "Visit Care Service (Every 6 Months) / Self-Service (No Visit)"
+                },
+                {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 }
               ]
             }
@@ -157,7 +201,10 @@ export const PRODUCTS = [
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-02.jpg",
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-03.jpg",
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-04.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-08.jpg"
         ],
         "model": "WU525BS.ASLRLML",
         "specIds": [
@@ -172,7 +219,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-02.jpg",
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-03.jpg",
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-04.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/wu525bs/gallery/gallery/water-purifier-atom-u-2025-wu525bs-gallery-gallery-2010-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/water-purifiers/wu525bs-aslrlml/",
             "detail": {
@@ -193,6 +243,14 @@ export const PRODUCTS = [
                 {
                   "title": "Dispense as much as you want",
                   "copy": "Dispense the exact amount you need at the touch of a button for easy convenience."
+                },
+                {
+                  "title": "With preset temperatures, Easy access to hot and cold water",
+                  "copy": "You can easily access cold water and preset hot water temperatures of 40℃, 75℃, and 85℃ with just a touch of a button."
+                },
+                {
+                  "title": "Filter replacement notifications",
+                  "copy": "The smart clean lamp will let you know when it's time to change your filter."
                 }
               ],
               "stories": [
@@ -219,6 +277,30 @@ export const PRODUCTS = [
                   "copy": "Dispense the exact amount you need at the touch of a button for easy convenience.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/silver/water-purifier-atom-u-silver-2025-wu525bs-feature-09-1-volume-control.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-09-1-volume-control.mp4"
+                },
+                {
+                  "title": "With preset temperatures, Easy access to hot and cold water",
+                  "copy": "You can easily access cold water and preset hot water temperatures of 40℃, 75℃, and 85℃ with just a touch of a button. 5)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/silver/water-purifier-atom-u-silver-2025-wu525bs-feature-10-1-adjustable-temperature.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-10-1-adjustable-temperature.mp4"
+                },
+                {
+                  "title": "Filter replacement notifications",
+                  "copy": "The smart clean lamp will let you know when it's time to change your filter.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/silver/water-purifier-atom-u-silver-2025-wu525bs-feature-11-1-clean-lamp.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-11-1-clean-lamp.mp4"
+                },
+                {
+                  "title": "Automatic Weekly Sanitization and Easy Spout Cleaning",
+                  "copy": "For spout sanitization, press and hold the “Spout Sanitization” button for 3 seconds and place a container of 500ml or more under the spout. Replace your filters easily with scheduled deliveries based on the replacement cycle. 7)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/silver/water-purifier-atom-u-silver-2025-wu525bs-feature-15-1-1-spout-cleaning.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-15-1-2-filter-replace.mp4"
+                },
+                {
+                  "title": "Heated, auto-sanitization of water pipes and outlets",
+                  "copy": "High-temperature automatic sanitization without the high costs of a service call. You can clean the internal stainless-steel pipes and outlet, removing 99.99% of germs with just the touch of a button. 1)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/silver/water-purifier-atom-u-silver-2025-wu525bs-feature-04-2-auto-sanitize-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-04-2-auto-sanitize-m.mp4"
                 }
               ],
               "facts": [
@@ -263,8 +345,16 @@ export const PRODUCTS = [
                   "value": "UF"
                 },
                 {
+                  "label": "Inverter Compressor (10 Years Warranty)",
+                  "value": "Yes"
+                },
+                {
                   "label": "Maintenance Method",
                   "value": "Visit Care Service (Every 6 Months) / Self-Service (No Visit)"
+                },
+                {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 }
               ]
             }
@@ -328,6 +418,14 @@ export const PRODUCTS = [
       {
         "title": "Dispense as much as you want",
         "copy": "Dispense the exact amount you need at the touch of a button for easy convenience."
+      },
+      {
+        "title": "With preset temperatures, Easy access to hot and cold water",
+        "copy": "You can easily access cold water and preset hot water temperatures of 40℃, 75℃, and 85℃ with just a touch of a button."
+      },
+      {
+        "title": "Filter replacement notifications",
+        "copy": "The smart clean lamp will let you know when it's time to change your filter."
       }
     ],
     "stories": [
@@ -354,6 +452,30 @@ export const PRODUCTS = [
         "copy": "Dispense the exact amount you need at the touch of a button for easy convenience.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-09-1-volume-control.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-09-1-volume-control.mp4"
+      },
+      {
+        "title": "With preset temperatures, Easy access to hot and cold water",
+        "copy": "You can easily access cold water and preset hot water temperatures of 40℃, 75℃, and 85℃ with just a touch of a button. 5)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-10-1-adjustable-temperature.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-10-1-adjustable-temperature.mp4"
+      },
+      {
+        "title": "Filter replacement notifications",
+        "copy": "The smart clean lamp will let you know when it's time to change your filter.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-11-1-clean-lamp.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-11-1-clean-lamp.mp4"
+      },
+      {
+        "title": "Automatic Weekly Sanitization and Easy Spout Cleaning",
+        "copy": "For spout sanitization, press and hold the “Spout Sanitization” button for 3 seconds and place a container of 500ml or more under the spout. Replace your filters easily with scheduled deliveries based on the replacement cycle. 7)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-15-1-1-spout-cleaning.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-15-1-2-filter-replace.mp4"
+      },
+      {
+        "title": "Heated, auto-sanitization of water pipes and outlets",
+        "copy": "High-temperature automatic sanitization without the high costs of a service call. You can clean the internal stainless-steel pipes and outlet, removing 99.99% of germs with just the touch of a button. 1)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/feature/desktop/water-purifier-atom-u-2025-wu525bs-feature-04-2-auto-sanitize-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/water-purifier/video/water-purifier-atom-u-2025-wu525bs-feature-04-2-auto-sanitize-m.mp4"
       }
     ],
     "facts": [
@@ -398,8 +520,16 @@ export const PRODUCTS = [
         "value": "UF"
       },
       {
+        "label": "Inverter Compressor (10 Years Warranty)",
+        "value": "Yes"
+      },
+      {
         "label": "Maintenance Method",
         "value": "Visit Care Service (Every 6 Months) / Self-Service (No Visit)"
+      },
+      {
+        "label": "ThinQ(Wi-Fi)",
+        "value": "Yes"
       }
     ]
   },
@@ -425,10 +555,16 @@ export const PRODUCTS = [
         "id": "calming-cream-grey",
         "name": "Calming Cream Grey",
         "hex": "#C9C2B8",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/WD518AN_AGYRLML_EAML_MY_C-450x450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/WD518AN_AGYRLML_EAML_MY_C-450x450.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-01.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-08.jpg"
         ],
         "model": "WD518AN",
         "specIds": [
@@ -437,10 +573,16 @@ export const PRODUCTS = [
         "variants": {
           "hot-ambient-cold": {
             "model": "WD518AN",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/WD518AN_AGYRLML_EAML_MY_C-450x450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/WD518AN_AGYRLML_EAML_MY_C-450x450.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-01.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_agyrlml_eaml_my_c/gallery/D-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/water-purifiers/wd518an-agyrlml/lgsubscribe",
             "detail": {
@@ -461,6 +603,14 @@ export const PRODUCTS = [
                 {
                   "title": "LG ThinQ™ connection",
                   "copy": "Monitor and control your product from the LG ThinQ™ app."
+                },
+                {
+                  "title": "A Style for everyone",
+                  "copy": "Browse the full range of colors and styles to find the perfect complement to your space and taste."
+                },
+                {
+                  "title": "Flexible installation",
+                  "copy": "Perfectly designed to fit into rooms both big and small, adjust the dispenser's layout to fit your needs and change it up whenever you want."
                 }
               ],
               "stories": [
@@ -487,6 +637,30 @@ export const PRODUCTS = [
                   "copy": "Perfect for everything from making a cup of tea to cooking.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-04-03-Convenience-desktop(thumbnail).jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-04-03-Convenience-desktop.mp4"
+                },
+                {
+                  "title": "Get fresh water from hygienic stainless-steel pipes",
+                  "copy": "Enjoy a hygienic water experience with internal pipes that resist corrosion.​",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-01-Hygiene-desktop(thumbnail).jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-01-Hygiene-desktop.mp4"
+                },
+                {
+                  "title": "Enhance the taste of your water",
+                  "copy": "Remove heavy metals and norovirus bacteria with inbuilt multi-stage filtration, improving your water’s taste and quality.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-05-Hygiene-desktop(thumbnail).jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-05-Hygiene-desktop.mp4"
+                },
+                {
+                  "title": "Pure water to the last drop",
+                  "copy": "UV sterilization inside the machine safely removes germs in the water outlet with automatic cycles every hour, giving you peace of mind about your daily water consumption.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-06-Hygiene-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Stay in control on the go",
+                  "copy": "Use the LG ThinQ™ app on your smartphone to easily check the status of your water purifier from anywhere in real time.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-06-01-ThinQ-desktop.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -531,8 +705,16 @@ export const PRODUCTS = [
                   "value": "UF"
                 },
                 {
+                  "label": "Inverter Compressor (10 Years Warranty)",
+                  "value": "Yes"
+                },
+                {
                   "label": "Maintenance Method",
                   "value": "Visit Care Service (Every 3 Months) / Self-Service (No Visit)"
+                },
+                {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 }
               ]
             }
@@ -543,10 +725,16 @@ export const PRODUCTS = [
         "id": "calming-beige",
         "name": "Calming Beige",
         "hex": "#E6D7C3",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/WD518AN_ABGRLML_EAML_MY_C-450x450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/D-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/WD518AN_ABGRLML_EAML_MY_C-450x450.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/D-01.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/D-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-08.jpg"
         ],
         "model": "WD518AN",
         "specIds": [
@@ -555,10 +743,16 @@ export const PRODUCTS = [
         "variants": {
           "hot-ambient-cold": {
             "model": "WD518AN",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/WD518AN_ABGRLML_EAML_MY_C-450x450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/D-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/WD518AN_ABGRLML_EAML_MY_C-450x450.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/D-01.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/D-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd518an_abgrlml_eaml_my_c/gallery/DZ-08.jpg"
             ],
             "url": "https://www.lg.com/my/water-purifiers/objet-collection-water-purifier/wd518an-abgrlml/lgsubscribe",
             "detail": {
@@ -579,6 +773,14 @@ export const PRODUCTS = [
                 {
                   "title": "LG ThinQ™ connection",
                   "copy": "Monitor and control your product from the LG ThinQ™ app."
+                },
+                {
+                  "title": "A Style for everyone",
+                  "copy": "Browse the full range of colors and styles to find the perfect complement to your space and taste."
+                },
+                {
+                  "title": "Flexible installation",
+                  "copy": "Perfectly designed to fit into rooms both big and small, adjust the dispenser's layout to fit your needs and change it up whenever you want."
                 }
               ],
               "stories": [
@@ -605,6 +807,30 @@ export const PRODUCTS = [
                   "copy": "Perfect for everything from making a cup of tea to cooking.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-04-03-Convenience-desktop(thumbnail).jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-04-03-Convenience-desktop.mp4"
+                },
+                {
+                  "title": "Get fresh water from hygienic stainless-steel pipes",
+                  "copy": "Enjoy a hygienic water experience with internal pipes that resist corrosion.​",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-01-Hygiene-desktop(thumbnail).jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-01-Hygiene-desktop.mp4"
+                },
+                {
+                  "title": "Enhance the taste of your water",
+                  "copy": "Remove heavy metals and norovirus bacteria with inbuilt multi-stage filtration, improving your water’s taste and quality.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-05-Hygiene-desktop(thumbnail).jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-05-Hygiene-desktop.mp4"
+                },
+                {
+                  "title": "Pure water to the last drop",
+                  "copy": "UV sterilization inside the machine safely removes germs in the water outlet with automatic cycles every hour, giving you peace of mind about your daily water consumption.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-06-Hygiene-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Stay in control on the go",
+                  "copy": "Use the LG ThinQ™ app on your smartphone to easily check the status of your water purifier from anywhere in real time.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-06-01-ThinQ-desktop.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -647,6 +873,14 @@ export const PRODUCTS = [
                 {
                   "label": "Filter Type",
                   "value": "UF"
+                },
+                {
+                  "label": "Inverter Compressor (10 Years Warranty)",
+                  "value": "Yes"
+                },
+                {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 }
               ]
             }
@@ -710,6 +944,14 @@ export const PRODUCTS = [
       {
         "title": "LG ThinQ™ connection",
         "copy": "Monitor and control your product from the LG ThinQ™ app."
+      },
+      {
+        "title": "A Style for everyone",
+        "copy": "Browse the full range of colors and styles to find the perfect complement to your space and taste."
+      },
+      {
+        "title": "Flexible installation",
+        "copy": "Perfectly designed to fit into rooms both big and small, adjust the dispenser's layout to fit your needs and change it up whenever you want."
       }
     ],
     "stories": [
@@ -736,6 +978,30 @@ export const PRODUCTS = [
         "copy": "Perfect for everything from making a cup of tea to cooking.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-04-03-Convenience-desktop(thumbnail).jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-04-03-Convenience-desktop.mp4"
+      },
+      {
+        "title": "Get fresh water from hygienic stainless-steel pipes",
+        "copy": "Enjoy a hygienic water experience with internal pipes that resist corrosion.​",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-01-Hygiene-desktop(thumbnail).jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-01-Hygiene-desktop.mp4"
+      },
+      {
+        "title": "Enhance the taste of your water",
+        "copy": "Remove heavy metals and norovirus bacteria with inbuilt multi-stage filtration, improving your water’s taste and quality.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-05-Hygiene-desktop(thumbnail).jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-05-Hygiene-desktop.mp4"
+      },
+      {
+        "title": "Pure water to the last drop",
+        "copy": "UV sterilization inside the machine safely removes germs in the water outlet with automatic cycles every hour, giving you peace of mind about your daily water consumption.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-05-06-Hygiene-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Stay in control on the go",
+        "copy": "Use the LG ThinQ™ app on your smartphone to easily check the status of your water purifier from anywhere in real time.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/HA-Puricare-ATOM-V-06-01-ThinQ-desktop.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -780,8 +1046,16 @@ export const PRODUCTS = [
         "value": "UF"
       },
       {
+        "label": "Inverter Compressor (10 Years Warranty)",
+        "value": "Yes"
+      },
+      {
         "label": "Maintenance Method",
         "value": "Visit Care Service (Every 3 Months) / Self-Service (No Visit)"
+      },
+      {
+        "label": "ThinQ(Wi-Fi)",
+        "value": "Yes"
       }
     ]
   },
@@ -807,10 +1081,16 @@ export const PRODUCTS = [
         "id": "calming-navy",
         "name": "Calming Navy",
         "hex": "#1F3A56",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/Basic-450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D1.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/Basic-450.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D4.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D5.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D6.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D7.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D8.jpg"
         ],
         "model": "WD516AN",
         "specIds": [
@@ -819,10 +1099,16 @@ export const PRODUCTS = [
         "variants": {
           "hot-ambient-cold": {
             "model": "WD516AN",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/Basic-450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D1.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/Basic-450.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D4.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D5.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D6.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D7.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_anvrlml_eaml_my_c/gallery/D8.jpg"
             ],
             "url": "https://www.lg.com/my/water-purifiers/water-purifiers/wd516an/lgsubscribe",
             "detail": {
@@ -843,6 +1129,14 @@ export const PRODUCTS = [
                 {
                   "title": "A new filter is shipped to your doorstep every six months",
                   "copy": "The first to market with a subscription service that ships a new filter to your home every six months."
+                },
+                {
+                  "title": "Automatic high-temperature sterilization of water pipes and outlet",
+                  "copy": "High-temperature automatic sterilization without the high costs of a service call."
+                },
+                {
+                  "title": "UV sterilization for pure water to the last drop",
+                  "copy": "The inside of the water outlet stays fresh with automatic UV sterilization once every hour, or whenever you want."
                 }
               ],
               "stories": [
@@ -861,13 +1155,37 @@ export const PRODUCTS = [
                 {
                   "title": "Automatic high-temperature sterilization of water pipes and outlet",
                   "copy": "High-temperature automatic sterilization without the high costs of a service call. You can clean the internal stainless-steel pipes and outlet, removing 99.99% of germs with just the touch of a button.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-04-Mobile1.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-04-Desktop(thumbnail).jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-04-Desktop.mp4"
                 },
                 {
                   "title": "UV sterilization for pure water to the last drop",
                   "copy": "The inside of the water outlet stays fresh with automatic UV sterilization once every hour, or whenever you want.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-06-Mobile1.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-06-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Get fresh flowing water that never sits in a tank",
+                  "copy": "With the tankless system you don’t have to worry about microorganism growth, and your water will be fresh whether it’s hot, cold, or room temperature.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-08-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Removes 9 heavy metals & 99.99% of norovirus.",
+                  "copy": "Enhances the taste of water by removing nine harmful heavy metals and bacteria with multi-stage filtration.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-10-Desktop(thumbnail).jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-10-Desktop1.mp4"
+                },
+                {
+                  "title": "180˚ Rotating Tap",
+                  "copy": "Access to clean drinking water is never this easy with rotatable tap in 180˚",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-14-01-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Water purifier management that adjusts to your lifestyle",
+                  "copy": "Save money with easy, convenient Self-Service thanks to intuitive maintenance functions you can use in between LG expert visits.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-15-Desktop2.jpg",
                   "video": null
                 }
               ],
@@ -925,10 +1243,16 @@ export const PRODUCTS = [
         "id": "silver",
         "name": "Silver",
         "hex": "#C5C9CE",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/450.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-01.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-08.jpg"
         ],
         "model": "WD516AN",
         "specIds": [
@@ -937,10 +1261,16 @@ export const PRODUCTS = [
         "variants": {
           "hot-ambient-cold": {
             "model": "WD516AN",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/450.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-01.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/gallery/D-08.jpg"
             ],
             "url": "https://www.lg.com/my/water-purifiers/water-purifiers/wd516an-grey/lgsubscribe",
             "detail": {
@@ -961,6 +1291,14 @@ export const PRODUCTS = [
                 {
                   "title": "A new filter is shipped to your doorstep every six months",
                   "copy": "The first to market with a subscription service that ships a new filter to your home every six months."
+                },
+                {
+                  "title": "Automatic high-temperature sterilization of water pipes and outlet",
+                  "copy": "High-temperature automatic sterilization without the high costs of a service call."
+                },
+                {
+                  "title": "UV sterilization for pure water to the last drop",
+                  "copy": "The inside of the water outlet stays fresh with automatic UV sterilization once every hour, or whenever you want."
                 }
               ],
               "stories": [
@@ -986,6 +1324,30 @@ export const PRODUCTS = [
                   "title": "UV sterilization for pure water to the last drop",
                   "copy": "The inside of the water outlet stays fresh with automatic UV sterilization once every hour, or whenever you want.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/features/HA-Puricare-WD516AN-Silver-06-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Get fresh flowing water that never sits in a tank",
+                  "copy": "With the tankless system you don’t have to worry about microorganism growth, and your water will be fresh whether it’s hot, cold, or room temperature.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/features/HA-Puricare-WD516AN-Silver-08-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Removes 9 heavy metals & 99.99% of norovirus.",
+                  "copy": "Enhances the taste of water by removing nine harmful heavy metals and bacteria with multi-stage filtration.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_awhrlml_eaml_my_c/features/HA-Puricare-WD516AN-Navy-10-Desktop(thumbnail).jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_awhrlml_eaml_my_c/features/HA-Puricare-WD516AN-Navy-10-Desktop.mp4"
+                },
+                {
+                  "title": "A smart voice that guide you step by step.",
+                  "copy": "The voice guidance will inform you when it's time to replace the filter.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/features/HA-Puricare-WD516AN-Silver-11-01-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Convenient one-touch volume presets",
+                  "copy": "With presets of 120ml, 250ml, 500ml, & 1000ml, conveniently dispense precise water volumes.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/puricare/wd516an_aslrlml_eaml_my_c/features/HA-Puricare-WD516AN-Silver-13-01-Desktop.jpg",
                   "video": null
                 }
               ],
@@ -1096,6 +1458,14 @@ export const PRODUCTS = [
       {
         "title": "A new filter is shipped to your doorstep every six months",
         "copy": "The first to market with a subscription service that ships a new filter to your home every six months."
+      },
+      {
+        "title": "Automatic high-temperature sterilization of water pipes and outlet",
+        "copy": "High-temperature automatic sterilization without the high costs of a service call."
+      },
+      {
+        "title": "UV sterilization for pure water to the last drop",
+        "copy": "The inside of the water outlet stays fresh with automatic UV sterilization once every hour, or whenever you want."
       }
     ],
     "stories": [
@@ -1114,13 +1484,37 @@ export const PRODUCTS = [
       {
         "title": "Automatic high-temperature sterilization of water pipes and outlet",
         "copy": "High-temperature automatic sterilization without the high costs of a service call. You can clean the internal stainless-steel pipes and outlet, removing 99.99% of germs with just the touch of a button.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-04-Mobile1.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-04-Desktop(thumbnail).jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-04-Desktop.mp4"
       },
       {
         "title": "UV sterilization for pure water to the last drop",
         "copy": "The inside of the water outlet stays fresh with automatic UV sterilization once every hour, or whenever you want.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-06-Mobile1.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-06-Desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Get fresh flowing water that never sits in a tank",
+        "copy": "With the tankless system you don’t have to worry about microorganism growth, and your water will be fresh whether it’s hot, cold, or room temperature.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-08-Desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Removes 9 heavy metals & 99.99% of norovirus.",
+        "copy": "Enhances the taste of water by removing nine harmful heavy metals and bacteria with multi-stage filtration.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-10-Desktop(thumbnail).jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-10-Desktop1.mp4"
+      },
+      {
+        "title": "180˚ Rotating Tap",
+        "copy": "Access to clean drinking water is never this easy with rotatable tap in 180˚",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-14-01-Desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Water purifier management that adjusts to your lifestyle",
+        "copy": "Save money with easy, convenient Self-Service thanks to intuitive maintenance functions you can use in between LG expert visits.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/hc/features/HA-Puricare-WD516AN-Navy-15-Desktop2.jpg",
         "video": null
       }
     ],
@@ -1189,10 +1583,16 @@ export const PRODUCTS = [
         "id": "nature-beige",
         "name": "Nature Beige",
         "hex": "#D9CDB8",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-1.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/450.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-4.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-5.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-6.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-7.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-8.jpg"
         ],
         "model": "AS10GDBY0",
         "specIds": [
@@ -1201,10 +1601,16 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "AS10GDBY0",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-1.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/450.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-4.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-5.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-6.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-7.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/gallery/D-8.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/air-purifiers/as10gdby0/lgsubscribe",
             "detail": {
@@ -1225,6 +1631,14 @@ export const PRODUCTS = [
                 {
                   "title": "Breathe freely, live joyfully with pets",
                   "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean."
+                },
+                {
+                  "title": "Better air. Less pet hair",
+                  "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home."
+                },
+                {
+                  "title": "Comfort in every breath with Allergy Care",
+                  "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust."
                 }
               ],
               "stories": [
@@ -1250,6 +1664,30 @@ export const PRODUCTS = [
                   "title": "Breathe freely, live joyfully with pets",
                   "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-09-pet-care-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Better air. Less pet hair",
+                  "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home. Easy pre-filter replacement included.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-10-1-pet-mode-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Comfort in every breath with Allergy Care",
+                  "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-13-allergy-care-m-thumbnail_v1.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Futuristic design with an upscale touch",
+                  "copy": "The design enhances the look of any room, and the central mood lighting adds to the ambiance.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-14-360-degree-design-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Take control of the air with LG ThinQ™",
+                  "copy": "Use LG ThinQ™ to turn on PuriCare™ remotely so cleaner air awaits your family-even on dusty days.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-16-thinq-d.jpg",
                   "video": null
                 }
               ],
@@ -1301,6 +1739,14 @@ export const PRODUCTS = [
                 {
                   "label": "Weight_Shipping (kg)",
                   "value": "24.0"
+                },
+                {
+                  "label": "Product Dimensions -WxHxD (mm)",
+                  "value": "377 x 1100 x 377"
+                },
+                {
+                  "label": "Packing Dimensions -WxHxD (mm)",
+                  "value": "450 x 1195 x 450"
                 }
               ]
             }
@@ -1354,6 +1800,14 @@ export const PRODUCTS = [
       {
         "title": "Breathe freely, live joyfully with pets",
         "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean."
+      },
+      {
+        "title": "Better air. Less pet hair",
+        "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home."
+      },
+      {
+        "title": "Comfort in every breath with Allergy Care",
+        "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust."
       }
     ],
     "stories": [
@@ -1379,6 +1833,30 @@ export const PRODUCTS = [
         "title": "Breathe freely, live joyfully with pets",
         "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-09-pet-care-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Better air. Less pet hair",
+        "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home. Easy pre-filter replacement included.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-10-1-pet-mode-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Comfort in every breath with Allergy Care",
+        "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-13-allergy-care-m-thumbnail_v1.jpg",
+        "video": null
+      },
+      {
+        "title": "Futuristic design with an upscale touch",
+        "copy": "The design enhances the look of any room, and the central mood lighting adds to the ambiance.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-14-360-degree-design-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Take control of the air with LG ThinQ™",
+        "copy": "Use LG ThinQ™ to turn on PuriCare™ remotely so cleaner air awaits your family-even on dusty days.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/as10gdby0_aml_eaml_my_c/features/puricare360-alpha-pet-16-thinq-d.jpg",
         "video": null
       }
     ],
@@ -1430,6 +1908,14 @@ export const PRODUCTS = [
       {
         "label": "Weight_Shipping (kg)",
         "value": "24.0"
+      },
+      {
+        "label": "Product Dimensions -WxHxD (mm)",
+        "value": "377 x 1100 x 377"
+      },
+      {
+        "label": "Packing Dimensions -WxHxD (mm)",
+        "value": "450 x 1195 x 450"
       }
     ]
   },
@@ -1451,9 +1937,16 @@ export const PRODUCTS = [
         "id": "nature-beige",
         "name": "Nature Beige",
         "hex": "#D9CDB8",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/basic/New_Basic_450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/basic/New_Basic_450.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large08.jpg"
         ],
         "model": "AS65GDBY0",
         "specIds": [
@@ -1462,9 +1955,16 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "AS65GDBY0",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/basic/New_Basic_450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/air-purifiers/basic/New_Basic_450.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/as65gdby0_aml_eaml_my_c/gallery/large08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/air-purifiers/as65gdby0/lgsubscribe",
             "detail": {
@@ -1485,6 +1985,14 @@ export const PRODUCTS = [
                 {
                   "title": "Breathe freely, live joyfully with pets",
                   "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean."
+                },
+                {
+                  "title": "Better air. Less pet hair",
+                  "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home."
+                },
+                {
+                  "title": "Comfort in every breath with Allergy Care",
+                  "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust."
                 }
               ],
               "stories": [
@@ -1497,19 +2005,43 @@ export const PRODUCTS = [
                 {
                   "title": "Purify the air all around you",
                   "copy": "LG PuriCare™ purifies the air 360˚ around you, in every direction, no matter where you place it.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/mobile-pet-care-image.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-04-360-purification-d-thumbnail.jpg",
                   "video": null
                 },
                 {
                   "title": "Fresh air spreads faster and farther",
                   "copy": "Delivers clean, filtered air farther and 24% faster than models without Clean Boost technology, improving the air quality in your home.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/mobile-pet-care-image.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-08-clean-booster-d-thumbnail.jpg",
                   "video": null
                 },
                 {
                   "title": "Breathe freely, live joyfully with pets",
                   "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-09-pet-care-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Better air. Less pet hair",
+                  "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home. Easy pre-filter replacement included.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-10-1-pet-mode-m.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Comfort in every breath with Allergy Care",
+                  "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-13-allergy-care-d-thumbnail.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Futuristic design with an upscale touch",
+                  "copy": "The design enhances the look of any room, and the central mood lighting adds to the ambiance.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-14-360-degree-design-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Take control of the air with LG ThinQ™",
+                  "copy": "Use LG ThinQ™ to turn on PuriCare™ remotely so cleaner air awaits your family-even on dusty days.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-16-thinq-d.jpg",
                   "video": null
                 }
               ],
@@ -1561,6 +2093,14 @@ export const PRODUCTS = [
                 {
                   "label": "Weight_Shipping (kg)",
                   "value": "14.7"
+                },
+                {
+                  "label": "Product Dimensions -WxHxD (mm)",
+                  "value": "347 x 612 x 347"
+                },
+                {
+                  "label": "Packing Dimensions -WxHxD (mm)",
+                  "value": "440 x 678 x 440"
                 }
               ]
             }
@@ -1614,6 +2154,14 @@ export const PRODUCTS = [
       {
         "title": "Breathe freely, live joyfully with pets",
         "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean."
+      },
+      {
+        "title": "Better air. Less pet hair",
+        "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home."
+      },
+      {
+        "title": "Comfort in every breath with Allergy Care",
+        "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust."
       }
     ],
     "stories": [
@@ -1626,19 +2174,43 @@ export const PRODUCTS = [
       {
         "title": "Purify the air all around you",
         "copy": "LG PuriCare™ purifies the air 360˚ around you, in every direction, no matter where you place it.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/mobile-pet-care-image.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-04-360-purification-d-thumbnail.jpg",
         "video": null
       },
       {
         "title": "Fresh air spreads faster and farther",
         "copy": "Delivers clean, filtered air farther and 24% faster than models without Clean Boost technology, improving the air quality in your home.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/mobile-pet-care-image.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-08-clean-booster-d-thumbnail.jpg",
         "video": null
       },
       {
         "title": "Breathe freely, live joyfully with pets",
         "copy": "LG's Pet Care feature tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-09-pet-care-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Better air. Less pet hair",
+        "copy": "Pet Mode targets low-lying pet hair, capturing 35% more for a cleaner, fresher home. Easy pre-filter replacement included.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-10-1-pet-mode-m.jpg",
+        "video": null
+      },
+      {
+        "title": "Comfort in every breath with Allergy Care",
+        "copy": "UVnano and Ionizer are combined to eliminate 99.9% of bacteria and neutralize harmful airborne substances, giving you clean, safe air you can trust.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-13-allergy-care-d-thumbnail.jpg",
+        "video": null
+      },
+      {
+        "title": "Futuristic design with an upscale touch",
+        "copy": "The design enhances the look of any room, and the central mood lighting adds to the ambiance.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-14-360-degree-design-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Take control of the air with LG ThinQ™",
+        "copy": "Use LG ThinQ™ to turn on PuriCare™ remotely so cleaner air awaits your family-even on dusty days.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/features/puricare360-alpha-pet-16-thinq-d.jpg",
         "video": null
       }
     ],
@@ -1690,6 +2262,14 @@ export const PRODUCTS = [
       {
         "label": "Weight_Shipping (kg)",
         "value": "14.7"
+      },
+      {
+        "label": "Product Dimensions -WxHxD (mm)",
+        "value": "347 x 612 x 347"
+      },
+      {
+        "label": "Packing Dimensions -WxHxD (mm)",
+        "value": "440 x 678 x 440"
       }
     ]
   },
@@ -1711,9 +2291,16 @@ export const PRODUCTS = [
         "id": "blue",
         "name": "Blue",
         "hex": "#2F5F8F",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/450.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large08.jpg"
         ],
         "model": "AS60GHBTO",
         "specIds": [
@@ -1722,9 +2309,16 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "AS60GHBTO",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/450.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/as60ghbt0-/gallery/large08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/air-purifiers/as60ghbt0/lgsubscribe",
             "detail": {
@@ -1745,6 +2339,14 @@ export const PRODUCTS = [
                 {
                   "title": "Clean air with Multi-Filtration System",
                   "copy": "Multi-Filtration System captures and removes 99.9% 1) of harmful particles-bacteria, viruses, dust, allergen, and odor components."
+                },
+                {
+                  "title": "Certified by BAF",
+                  "copy": "BAF has certified that the filter is coated to remove harmful and allergens such as house dust mites, fungi, and mold floating in the air."
+                },
+                {
+                  "title": "Tested by FITI 1)",
+                  "copy": "[Anti-bacterial 99.9% ('22.12.01)] -Test bacteria: Staphylococcus aureus / Klebsiella pneumoniae / Escherichia coli"
                 }
               ],
               "stories": [
@@ -1770,6 +2372,30 @@ export const PRODUCTS = [
                   "title": "Tested by FITI 1)",
                   "copy": "[Anti-bacterial 99.9% ('22.12.01)] -Test bacteria: Staphylococcus aureus / Klebsiella pneumoniae / Escherichia coli",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-04-2-certification-fiti-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Tested by KCL 1)",
+                  "copy": "[Anti-viral 99.9% ('22.1.20)] -Test bacteria: mouse hepatitis virus (MHV; murine coronavirus) (human infectious coronavirus surrogate)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-04-3-certification-kcl-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Tested by TÜV 2)",
+                  "copy": "[Generated Ion 10.0M ↑ (’23.1.16)] -Place of Testing: LG Electronics Gasan R&D Campus",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-04-4-certification-tuv-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Enjoy pet-friendly freshness at home",
+                  "copy": "LG's Pet Care tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-05-pet-care-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Fits anywhere, covers more space",
+                  "copy": "The compact design fits anywhere and keeps the air clean even in large spaces.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-07-compact-size-d-thumbnail.jpg",
                   "video": null
                 }
               ],
@@ -1821,6 +2447,14 @@ export const PRODUCTS = [
                 {
                   "label": "Weight_Shipping (kg)",
                   "value": "8.7"
+                },
+                {
+                  "label": "Product Dimensions -WxHxD (mm)",
+                  "value": "315 x 511 x 315"
+                },
+                {
+                  "label": "Packing Dimensions -WxHxD (mm)",
+                  "value": "411 x 591 x 411"
                 }
               ]
             }
@@ -1874,6 +2508,14 @@ export const PRODUCTS = [
       {
         "title": "Clean air with Multi-Filtration System",
         "copy": "Multi-Filtration System captures and removes 99.9% 1) of harmful particles-bacteria, viruses, dust, allergen, and odor components."
+      },
+      {
+        "title": "Certified by BAF",
+        "copy": "BAF has certified that the filter is coated to remove harmful and allergens such as house dust mites, fungi, and mold floating in the air."
+      },
+      {
+        "title": "Tested by FITI 1)",
+        "copy": "[Anti-bacterial 99.9% ('22.12.01)] -Test bacteria: Staphylococcus aureus / Klebsiella pneumoniae / Escherichia coli"
       }
     ],
     "stories": [
@@ -1899,6 +2541,30 @@ export const PRODUCTS = [
         "title": "Tested by FITI 1)",
         "copy": "[Anti-bacterial 99.9% ('22.12.01)] -Test bacteria: Staphylococcus aureus / Klebsiella pneumoniae / Escherichia coli",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-04-2-certification-fiti-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Tested by KCL 1)",
+        "copy": "[Anti-viral 99.9% ('22.1.20)] -Test bacteria: mouse hepatitis virus (MHV; murine coronavirus) (human infectious coronavirus surrogate)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-04-3-certification-kcl-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Tested by TÜV 2)",
+        "copy": "[Generated Ion 10.0M ↑ (’23.1.16)] -Place of Testing: LG Electronics Gasan R&D Campus",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-04-4-certification-tuv-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Enjoy pet-friendly freshness at home",
+        "copy": "LG's Pet Care tackles pet smells and hairs efficiently, ensuring that your home stays fresh and clean.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-05-pet-care-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Fits anywhere, covers more space",
+        "copy": "The compact design fits anywhere and keeps the air clean even in large spaces.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aircare_jp_airpurifier_360hitpet_as607hwt0_2023_gp1/features/desktop/puricare360-hit-pet-07-compact-size-d-thumbnail.jpg",
         "video": null
       }
     ],
@@ -1950,6 +2616,14 @@ export const PRODUCTS = [
       {
         "label": "Weight_Shipping (kg)",
         "value": "8.7"
+      },
+      {
+        "label": "Product Dimensions -WxHxD (mm)",
+        "value": "315 x 511 x 315"
+      },
+      {
+        "label": "Packing Dimensions -WxHxD (mm)",
+        "value": "411 x 591 x 411"
       }
     ]
   },
@@ -1971,9 +2645,16 @@ export const PRODUCTS = [
         "id": "beige",
         "name": "Beige",
         "hex": "#E4D5C3",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/basic/450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/basic/450.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-08.jpg"
         ],
         "model": "AS55GGSYO",
         "specIds": [
@@ -1982,9 +2663,16 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "AS55GGSYO",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/basic/450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/basic/450.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/gallery/gallery/air-purifier-gp1-2025-as551gsy0-gallery-gallery-2010-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/air-purifiers/as55ggsy0/lgsubscribe",
             "detail": {
@@ -2005,13 +2693,21 @@ export const PRODUCTS = [
                 {
                   "title": "Clean fans for clean air",
                   "copy": "UVnano light removes 99.998% of harmful bacteria⁴⁾ on the surface of the fan blades, keeping them hygienic."
+                },
+                {
+                  "title": "Leaves your space free from bacteria",
+                  "copy": "With the air ionizer, harmful substances are neutralized, ensuring a clean and healthy environment⁵⁾."
+                },
+                {
+                  "title": "Lighting to match your mood",
+                  "copy": "Customize the lighting to match your mood."
                 }
               ],
               "stories": [
                 {
                   "title": "Clean air with a multi-filtration system",
                   "copy": "The HEPA filter reduces dust, ultrafine particles, germs, viruses, odors, mold, and bacteria¹⁾.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/mobile/air-purifier-gp1-2025-as551gsy0-feature-04-powerful-air-filtration-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-04-powerful-air-filtration-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-04-powerful-air-filtration-m.mp4"
                 },
                 {
@@ -2031,6 +2727,30 @@ export const PRODUCTS = [
                   "copy": "Customize the lighting to match your mood. Adjustable brightness creates the right ambiance for any occasion.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-13-mood-lighting.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-13-mood-lighting.mp4"
+                },
+                {
+                  "title": "Enjoy a good night's sleep",
+                  "copy": "In Sleep mode, the air purifier keeps noise levels as low as 21dB, ensuring a peaceful night's sleep.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-15-brightness-sensor-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-15-brightness-sensor-m.mp4"
+                },
+                {
+                  "title": "Get smart notifications for filter replacement Get air quality updates in real time",
+                  "copy": "Filter replacement reminder User-friendly indications will notify you when filters need to be replaced, so you can save time by planning ahead.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-17-filter-replacement-reminder.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-17-filter-replacement-reminder.mp4"
+                },
+                {
+                  "title": "Get air quality updates in real time",
+                  "copy": "The PM 1.0 sensor⁶⁾ provides real-time air quality updates that can be monitored on the display or via the mobile app.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-18-1-pm-sensor-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "See your air quality at a glance",
+                  "copy": "A smart indicator light on the head displays the overall air quality, monitoring both odors and dust particles.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-18-2-smart-indicator-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-18-2-smart-indicator-m.mp4"
                 }
               ],
               "facts": [
@@ -2081,6 +2801,14 @@ export const PRODUCTS = [
                 {
                   "label": "Weight_Shipping (kg)",
                   "value": "12.2"
+                },
+                {
+                  "label": "Product Dimensions -WxHxD (mm)",
+                  "value": "240 x 997 x 240"
+                },
+                {
+                  "label": "Packing Dimensions -WxHxD (mm)",
+                  "value": "335 x 1063 x 330"
                 }
               ]
             }
@@ -2134,13 +2862,21 @@ export const PRODUCTS = [
       {
         "title": "Clean fans for clean air",
         "copy": "UVnano light removes 99.998% of harmful bacteria⁴⁾ on the surface of the fan blades, keeping them hygienic."
+      },
+      {
+        "title": "Leaves your space free from bacteria",
+        "copy": "With the air ionizer, harmful substances are neutralized, ensuring a clean and healthy environment⁵⁾."
+      },
+      {
+        "title": "Lighting to match your mood",
+        "copy": "Customize the lighting to match your mood."
       }
     ],
     "stories": [
       {
         "title": "Clean air with a multi-filtration system",
         "copy": "The HEPA filter reduces dust, ultrafine particles, germs, viruses, odors, mold, and bacteria¹⁾.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/mobile/air-purifier-gp1-2025-as551gsy0-feature-04-powerful-air-filtration-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-04-powerful-air-filtration-d.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-04-powerful-air-filtration-m.mp4"
       },
       {
@@ -2160,6 +2896,30 @@ export const PRODUCTS = [
         "copy": "Customize the lighting to match your mood. Adjustable brightness creates the right ambiance for any occasion.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-13-mood-lighting.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-13-mood-lighting.mp4"
+      },
+      {
+        "title": "Enjoy a good night's sleep",
+        "copy": "In Sleep mode, the air purifier keeps noise levels as low as 21dB, ensuring a peaceful night's sleep.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-15-brightness-sensor-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-15-brightness-sensor-m.mp4"
+      },
+      {
+        "title": "Get smart notifications for filter replacement Get air quality updates in real time",
+        "copy": "Filter replacement reminder User-friendly indications will notify you when filters need to be replaced, so you can save time by planning ahead.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-17-filter-replacement-reminder.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-17-filter-replacement-reminder.mp4"
+      },
+      {
+        "title": "Get air quality updates in real time",
+        "copy": "The PM 1.0 sensor⁶⁾ provides real-time air quality updates that can be monitored on the display or via the mobile app.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-18-1-pm-sensor-d.jpg",
+        "video": null
+      },
+      {
+        "title": "See your air quality at a glance",
+        "copy": "A smart indicator light on the head displays the overall air quality, monitoring both odors and dust particles.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/feature/desktop/air-purifier-gp1-2025-as551gsy0-feature-18-2-smart-indicator-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/-as551gsy0---aerobooster-pet-version/video/air-purifier-gp1-2025-as551gsy0-feature-18-2-smart-indicator-m.mp4"
       }
     ],
     "facts": [
@@ -2210,6 +2970,14 @@ export const PRODUCTS = [
       {
         "label": "Weight_Shipping (kg)",
         "value": "12.2"
+      },
+      {
+        "label": "Product Dimensions -WxHxD (mm)",
+        "value": "240 x 997 x 240"
+      },
+      {
+        "label": "Packing Dimensions -WxHxD (mm)",
+        "value": "335 x 1063 x 330"
       }
     ]
   },
@@ -2231,9 +2999,16 @@ export const PRODUCTS = [
         "id": "white",
         "name": "White",
         "hex": "#F4F4F4",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/basic/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-basic-large.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/basic/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-basic-large.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-08.jpg"
         ],
         "model": "AS30GGW10",
         "specIds": [
@@ -2242,9 +3017,16 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "AS30GGW10",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/basic/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-basic-large.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/basic/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-basic-large.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/gallery/gallery/lg-air-purifier-aerohit2-2026-as30ggw10-gallery-gallery-2010-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/air-purifiers/as30ggw10/lgsubscribe",
             "detail": {
@@ -2265,6 +3047,14 @@ export const PRODUCTS = [
                 {
                   "title": "Purifying your space in every direction",
                   "copy": "Experience 360° air purification in spaces like kids’ playrooms, bedrooms, or a home office—wherever you want fresh air."
+                },
+                {
+                  "title": "Quiet comfort, even in motion",
+                  "copy": "At just 26dB³⁾, it stays quiet enough to keep you focused on studying in any calm space."
+                },
+                {
+                  "title": "Smart living begins with LG ThinQ™",
+                  "copy": "With the LG ThinQ™ app⁵⁾, you can easily monitor real-time air quality and control your air purifier."
                 }
               ],
               "stories": [
@@ -2291,6 +3081,18 @@ export const PRODUCTS = [
                   "copy": "Experience 360° air purification in spaces like kids’ playrooms, bedrooms, or a home office—wherever you want fresh air.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/feature/desktop/lg-air-purifier-aerohit2-2026-as30ggw10-feature-04-360-purification-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/video/lg-air-purifier-aerohit2-2026-as30ggw10-feature-04-360-purification-m.mp4"
+                },
+                {
+                  "title": "Quiet comfort, even in motion",
+                  "copy": "At just 26dB³⁾, it stays quiet enough to keep you focused on studying in any calm space. Just place it on your desk and breathe easy.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/feature/desktop/lg-air-purifier-aerohit2-2026-as30ggw10-feature-06-low-noise-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Smart living begins with LG ThinQ™",
+                  "copy": "With the LG ThinQ™ app⁵⁾, you can easily monitor real-time air quality and control your air purifier.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/feature/desktop/lg-air-purifier-aerohit2-2026-as30ggw10-feature-08-thinq-d.jpg",
+                  "video": null
                 }
               ],
               "facts": []
@@ -2345,6 +3147,14 @@ export const PRODUCTS = [
       {
         "title": "Purifying your space in every direction",
         "copy": "Experience 360° air purification in spaces like kids’ playrooms, bedrooms, or a home office—wherever you want fresh air."
+      },
+      {
+        "title": "Quiet comfort, even in motion",
+        "copy": "At just 26dB³⁾, it stays quiet enough to keep you focused on studying in any calm space."
+      },
+      {
+        "title": "Smart living begins with LG ThinQ™",
+        "copy": "With the LG ThinQ™ app⁵⁾, you can easily monitor real-time air quality and control your air purifier."
       }
     ],
     "stories": [
@@ -2371,8 +3181,21 @@ export const PRODUCTS = [
         "copy": "Experience 360° air purification in spaces like kids’ playrooms, bedrooms, or a home office—wherever you want fresh air.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/feature/desktop/lg-air-purifier-aerohit2-2026-as30ggw10-feature-04-360-purification-d.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/video/lg-air-purifier-aerohit2-2026-as30ggw10-feature-04-360-purification-m.mp4"
+      },
+      {
+        "title": "Quiet comfort, even in motion",
+        "copy": "At just 26dB³⁾, it stays quiet enough to keep you focused on studying in any calm space. Just place it on your desk and breathe easy.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/feature/desktop/lg-air-purifier-aerohit2-2026-as30ggw10-feature-06-low-noise-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Smart living begins with LG ThinQ™",
+        "copy": "With the LG ThinQ™ app⁵⁾, you can easily monitor real-time air quality and control your air purifier.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aeromini/gp1/feature/desktop/lg-air-purifier-aerohit2-2026-as30ggw10-feature-08-thinq-d.jpg",
+        "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "puricare-aerocat-tower-as25gcbzo",
@@ -2392,9 +3215,16 @@ export const PRODUCTS = [
         "id": "clay-brown",
         "name": "Clay Brown",
         "hex": "#8C5A3C",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/basic/air-purifier-aerocattower-2025-as207cbz0-gallery-basic-large.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/basic/air-purifier-aerocattower-2025-as207cbz0-gallery-basic-large.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-08.jpg"
         ],
         "model": "AS25GCBZO",
         "specIds": [
@@ -2403,9 +3233,16 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "AS25GCBZO",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/basic/air-purifier-aerocattower-2025-as207cbz0-gallery-basic-large.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/basic/air-purifier-aerocattower-2025-as207cbz0-gallery-basic-large.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/gallery/gallery/air-purifier-aerocattower-2025-as207cbz0-gallery-gallery-2010-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/air-purifiers/as25gcbz0/lgsubscribe",
             "detail": {
@@ -2426,6 +3263,14 @@ export const PRODUCTS = [
                 {
                   "title": "A warm, inviting space for your cat",
                   "copy": "A relaxing and cozy space with 2 heat settings, designed for your cat's comfort."
+                },
+                {
+                  "title": "Air purification system for pet-friendly homes",
+                  "copy": "Advanced air purification designed to reduce cat fur¹⁾, allergens²⁾, and odors³⁾."
+                },
+                {
+                  "title": "Strong when needed, silent for your cat",
+                  "copy": "Powerful air purification, quiet operation when your cat is using it for comfort."
                 }
               ],
               "stories": [
@@ -2451,6 +3296,12 @@ export const PRODUCTS = [
                   "title": "Strong when needed, silent for your cat",
                   "copy": "Powerful air purification, quiet operation when your cat is using it for comfort.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/feature/desktop/air-purifier-aerocattower-2025-as207cbz0-feature-08-2-pet-mode-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Clean air and cat weight and resting time, all in one place",
+                  "copy": "Easily control your purifier and monitor your cat's weight and resting time LG ThinQ, anytime, anywhere 5) .",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/feature/desktop/air-purifier-aerocattower-2025-as207cbz0-feature-12-2-lg-thinq-d.jpg",
                   "video": null
                 }
               ],
@@ -2502,6 +3353,14 @@ export const PRODUCTS = [
                 {
                   "label": "Product Dimensions -WxHxD (mm)",
                   "value": "710 x 800 x 422"
+                },
+                {
+                  "label": "Packing Dimensions -WxHxD (mm)",
+                  "value": "735 x 587 x 480"
+                },
+                {
+                  "label": "Fan Mode / Purification Steps",
+                  "value": "6 steps (Auto/Low/Middle/High/Turbo/Sleep)"
                 }
               ]
             }
@@ -2555,6 +3414,14 @@ export const PRODUCTS = [
       {
         "title": "A warm, inviting space for your cat",
         "copy": "A relaxing and cozy space with 2 heat settings, designed for your cat's comfort."
+      },
+      {
+        "title": "Air purification system for pet-friendly homes",
+        "copy": "Advanced air purification designed to reduce cat fur¹⁾, allergens²⁾, and odors³⁾."
+      },
+      {
+        "title": "Strong when needed, silent for your cat",
+        "copy": "Powerful air purification, quiet operation when your cat is using it for comfort."
       }
     ],
     "stories": [
@@ -2580,6 +3447,12 @@ export const PRODUCTS = [
         "title": "Strong when needed, silent for your cat",
         "copy": "Powerful air purification, quiet operation when your cat is using it for comfort.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/feature/desktop/air-purifier-aerocattower-2025-as207cbz0-feature-08-2-pet-mode-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Clean air and cat weight and resting time, all in one place",
+        "copy": "Easily control your purifier and monitor your cat's weight and resting time LG ThinQ, anytime, anywhere 5) .",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-purifier/aerocattower/feature/desktop/air-purifier-aerocattower-2025-as207cbz0-feature-12-2-lg-thinq-d.jpg",
         "video": null
       }
     ],
@@ -2631,6 +3504,14 @@ export const PRODUCTS = [
       {
         "label": "Product Dimensions -WxHxD (mm)",
         "value": "710 x 800 x 422"
+      },
+      {
+        "label": "Packing Dimensions -WxHxD (mm)",
+        "value": "735 x 587 x 480"
+      },
+      {
+        "label": "Fan Mode / Purification Steps",
+        "value": "6 steps (Auto/Low/Middle/High/Turbo/Sleep)"
       }
     ]
   },
@@ -2652,9 +3533,14 @@ export const PRODUCTS = [
         "id": "essence-white",
         "name": "Essence White",
         "hex": "#F7F7F5",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_blwqeml_eaml_my_c/baisc.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D1.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_blwqeml_eaml_my_c/baisc.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D4.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D5.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D6.jpg"
         ],
         "model": "S3WF",
         "specIds": [
@@ -2663,9 +3549,14 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "S3WF",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_blwqeml_eaml_my_c/baisc.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D1.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_blwqeml_eaml_my_c/baisc.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D4.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D5.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/lg-styler/s3wf_alwqeml_eaml_my_c/gallery/D6.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/styler/s3wf-blwqeml/lgsubscribe",
             "detail": {
@@ -2686,6 +3577,14 @@ export const PRODUCTS = [
                 {
                   "title": "Smart Custom Cycles for Your Fashion Pieces",
                   "copy": "Professionally take care of your precious items that can’t be treated in traditional washers and dryers."
+                },
+                {
+                  "title": "Smoothens Wrinkles & Get Crisp Crease in Your Pants",
+                  "copy": "Keep trousers creases looking crisp while reducing general wrinkles quickly and easily."
+                },
+                {
+                  "title": "Easily Monitor And Control Your LG Styler™ At Your Fingertips",
+                  "copy": "Thanks to ThinQ™ with Wi-Fi, you can control LG Styler™ remotely and download additional cycles for different fabric types."
                 }
               ],
               "stories": [
@@ -2711,6 +3610,18 @@ export const PRODUCTS = [
                   "title": "Smart Custom Cycles for Your Fashion Pieces",
                   "copy": "Professionally take care of your precious items that can’t be treated in traditional washers and dryers. Download Tailor-made cycles for special fabrics*.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/styler-features/STYLER-04-Special-Care-Mode-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Smoothens Wrinkles & Get Crisp Crease in Your Pants",
+                  "copy": "Keep trousers creases looking crisp while reducing general wrinkles quickly and easily.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/styler-features/STYLER-05-Pants-Press-Mode-Desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Easily Monitor And Control Your LG Styler™ At Your Fingertips",
+                  "copy": "Thanks to ThinQ™ with Wi-Fi, you can control LG Styler™ remotely and download additional cycles for different fabric types. All at your fingertips.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/styler-features/STYLER-06-LG-THINQ-Desktop.jpg",
                   "video": null
                 }
               ],
@@ -2762,6 +3673,14 @@ export const PRODUCTS = [
                 {
                   "label": "Weight (kg)",
                   "value": "78"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "8806096445457"
+                },
+                {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 }
               ]
             }
@@ -2807,6 +3726,14 @@ export const PRODUCTS = [
       {
         "title": "Smart Custom Cycles for Your Fashion Pieces",
         "copy": "Professionally take care of your precious items that can’t be treated in traditional washers and dryers."
+      },
+      {
+        "title": "Smoothens Wrinkles & Get Crisp Crease in Your Pants",
+        "copy": "Keep trousers creases looking crisp while reducing general wrinkles quickly and easily."
+      },
+      {
+        "title": "Easily Monitor And Control Your LG Styler™ At Your Fingertips",
+        "copy": "Thanks to ThinQ™ with Wi-Fi, you can control LG Styler™ remotely and download additional cycles for different fabric types."
       }
     ],
     "stories": [
@@ -2832,6 +3759,18 @@ export const PRODUCTS = [
         "title": "Smart Custom Cycles for Your Fashion Pieces",
         "copy": "Professionally take care of your precious items that can’t be treated in traditional washers and dryers. Download Tailor-made cycles for special fabrics*.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/styler-features/STYLER-04-Special-Care-Mode-Desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Smoothens Wrinkles & Get Crisp Crease in Your Pants",
+        "copy": "Keep trousers creases looking crisp while reducing general wrinkles quickly and easily.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/styler-features/STYLER-05-Pants-Press-Mode-Desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Easily Monitor And Control Your LG Styler™ At Your Fingertips",
+        "copy": "Thanks to ThinQ™ with Wi-Fi, you can control LG Styler™ remotely and download additional cycles for different fabric types. All at your fingertips.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/styler-features/STYLER-06-LG-THINQ-Desktop.jpg",
         "video": null
       }
     ],
@@ -2883,6 +3822,14 @@ export const PRODUCTS = [
       {
         "label": "Weight (kg)",
         "value": "78"
+      },
+      {
+        "label": "Bar Code",
+        "value": "8806096445457"
+      },
+      {
+        "label": "ThinQ(Wi-Fi)",
+        "value": "Yes"
       }
     ]
   },
@@ -2906,7 +3853,14 @@ export const PRODUCTS = [
         "hex": "#6B4A32",
         "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/basic/recliner-arte-2025-mh21bby-gallery-basic-large.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/basic/recliner-arte-2025-mh21bby-gallery-basic-large.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/basic/recliner-arte-2025-mh21bby-gallery-basic-large.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-full-set-view-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-front-angle-view-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-mind-sleep-care-view-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-3d-massage-view-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-recliner-side-design-view-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-remote-control-view-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-front-view-2010.jpg"
         ],
         "model": "MH21RRY",
         "specIds": [
@@ -2917,7 +3871,14 @@ export const PRODUCTS = [
             "model": "MH21RRY",
             "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/basic/recliner-arte-2025-mh21bby-gallery-basic-large.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/basic/recliner-arte-2025-mh21bby-gallery-basic-large.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/basic/recliner-arte-2025-mh21bby-gallery-basic-large.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-full-set-view-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-front-angle-view-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-mind-sleep-care-view-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-3d-massage-view-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-recliner-side-design-view-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-remote-control-view-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/gallery/gallery/recliner-arte-2025-mh21bby-gallery-front-view-2010.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/massage-chairs/mh21rry/",
             "detail": {
@@ -2938,6 +3899,14 @@ export const PRODUCTS = [
                 {
                   "title": "Helps you unwind after a long day with brainwave sounds​",
                   "copy": "Supports relaxation through brainwave sounds designed to ease stress 1) , combined with meditative breathing exercises and massages that release muscle tension.​"
+                },
+                {
+                  "title": "Brainwave sounds that help you relax for better rest",
+                  "copy": "Brainwave relaxation sounds combined with light full-body massages can assist you in falling asleep more easily 2) ."
+                },
+                {
+                  "title": "Cozy up to warmth and comfort",
+                  "copy": "Gentle warmth in the lower back area enhances comfort and helps you relax more deeply during the massage."
                 }
               ],
               "stories": [
@@ -2963,6 +3932,30 @@ export const PRODUCTS = [
                   "title": "Cozy up to warmth and comfort",
                   "copy": "Gentle warmth in the lower back area enhances comfort and helps you relax more deeply during the massage.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-heated-seat.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Lifestyle Massage",
+                  "copy": "Discover lifestyle-tailored massage program cycles.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-versatile-massage-lifestyle-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Quiet comfort for a more peaceful massage experience",
+                  "copy": "A peaceful experience is provided by a low-noise 4) design, quieter than a library at just 35dB.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-intelligent-comfort-low-noise.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Subscribe to a better life",
+                  "copy": "Affordable plans, low upfront costs, and expert care with warranty coverage.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-subscription-lg-subscribe-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Stress less, care is covered",
+                  "copy": "Make it easy to care for your appliances by optimizing their performance with expert LG care.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-subscription-care-service-d.jpg",
                   "video": null
                 }
               ],
@@ -3051,6 +4044,14 @@ export const PRODUCTS = [
       {
         "title": "Helps you unwind after a long day with brainwave sounds​",
         "copy": "Supports relaxation through brainwave sounds designed to ease stress 1) , combined with meditative breathing exercises and massages that release muscle tension.​"
+      },
+      {
+        "title": "Brainwave sounds that help you relax for better rest",
+        "copy": "Brainwave relaxation sounds combined with light full-body massages can assist you in falling asleep more easily 2) ."
+      },
+      {
+        "title": "Cozy up to warmth and comfort",
+        "copy": "Gentle warmth in the lower back area enhances comfort and helps you relax more deeply during the massage."
       }
     ],
     "stories": [
@@ -3076,6 +4077,30 @@ export const PRODUCTS = [
         "title": "Cozy up to warmth and comfort",
         "copy": "Gentle warmth in the lower back area enhances comfort and helps you relax more deeply during the massage.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-heated-seat.jpg",
+        "video": null
+      },
+      {
+        "title": "Lifestyle Massage",
+        "copy": "Discover lifestyle-tailored massage program cycles.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-versatile-massage-lifestyle-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Quiet comfort for a more peaceful massage experience",
+        "copy": "A peaceful experience is provided by a low-noise 4) design, quieter than a library at just 35dB.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-intelligent-comfort-low-noise.jpg",
+        "video": null
+      },
+      {
+        "title": "Subscribe to a better life",
+        "copy": "Affordable plans, low upfront costs, and expert care with warranty coverage.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-subscription-lg-subscribe-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Stress less, care is covered",
+        "copy": "Make it easy to care for your appliances by optimizing their performance with expert LG care.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/Massage-Chairs/mh21rry-arrreml/feature/desktop/recliner-arte-2025-mh21bby-feature-subscription-care-service-d.jpg",
         "video": null
       }
     ],
@@ -3140,9 +4165,16 @@ export const PRODUCTS = [
         "id": "white",
         "name": "White",
         "hex": "#F4F4F4",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/basic/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-large.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/basic/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-large.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-08.jpg"
         ],
         "model": "S3-Q120AGZB",
         "specIds": [
@@ -3151,9 +4183,16 @@ export const PRODUCTS = [
         "variants": {
           "1-5-hp": {
             "model": "S3-Q120AGZB",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/basic/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-large.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/basic/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-large.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/gallery/gallery/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-gallery-gallery-2010-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q120agzb/lgsubscribe",
             "detail": {
@@ -3174,6 +4213,14 @@ export const PRODUCTS = [
                 {
                   "title": "Avoid energy loss even during ventilation",
                   "copy": "Keep your air conditioner on even when circulating the air in your home with a unit that enters energy saving mode when windows are open 8) ."
+                },
+                {
+                  "title": "Automatically dries heat exchanger after use",
+                  "copy": "Auto Clean+ 8) activates after use, blowing air to remove moisture."
+                },
+                {
+                  "title": "Keep hard-to-reach areas easy to clean",
+                  "copy": "Freeze Cleaning 9) mode makes cleaning inside your air conditioner simple."
                 }
               ],
               "stories": [
@@ -3186,20 +4233,44 @@ export const PRODUCTS = [
                 {
                   "title": "Customized sleep mode based on your routine",
                   "copy": "Sleep Timer+ 4) learns your temperature and airflow preferences for a tailored sleep mode, ensuring restful nights just for you.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/mobile/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-07-sleep-timer-plus-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-07-sleep-timer-plus-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/video/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-07-sleep-timer-plus-m.mp4"
                 },
                 {
                   "title": "Proactive energy savings in your hands",
                   "copy": "Keep your air conditioner on even when circulating the air in your home with a unit that enters energy saving mode when windows are open 6) .",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3nq090a1da-cool-no-radar/gp1/feature/mobile/single-split-inverter-air-conditioner-s1-2024-s3nq181l1da-feature-10-1-kw-manager-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3nq090a1da-cool-no-radar/gp1/feature/desktop/single-split-inverter-air-conditioner-s1-2024-s3nq181l1da-feature-10-1-kw-manager-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3nq090a1da-cool-no-radar/gp1/video/single-split-inverter-air-conditioner-s1-2024-s3nq181l1da-feature-10-1-kw-manager-m.mp4"
                 },
                 {
                   "title": "Avoid energy loss even during ventilation",
                   "copy": "Keep your air conditioner on even when circulating the air in your home with a unit that enters energy saving mode when windows are open 8) .",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/mobile/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-08-2-window-open-detection-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-08-2-window-open-detection-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/video/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-08-2-window-open-detection-m.mp4"
+                },
+                {
+                  "title": "Automatically dries heat exchanger after use",
+                  "copy": "Auto Clean+ 8) activates after use, blowing air to remove moisture. Runs for up to 20 minutes, adjusting volume for faster drying or quieter operation.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-10-auto-clean-plus.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Keep hard-to-reach areas easy to clean",
+                  "copy": "Freeze Cleaning 9) mode makes cleaning inside your air conditioner simple. Thawed ice helps wash away dirty pollutants, reducing harmful bacteria for a fresher home.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-11-freeze-cleaning.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/video/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-11-freeze-cleaning.mp4"
+                },
+                {
+                  "title": "Plasmaster™ Ionizer++",
+                  "copy": "Keeping your space clean, the ionizer removes 99.9% of adhering bacteria, as verified by TÜV and Intertek 12) .",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-12-1-plasmaster-ionizer-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Pre-Filter",
+                  "copy": "Big dust particles get trapped at the first line of defense.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-12-2-pre-filter-d.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -3250,6 +4321,14 @@ export const PRODUCTS = [
                 {
                   "label": "Ionizer",
                   "value": "Yes(4G)"
+                },
+                {
+                  "label": "Launching Month (YYYY-MM)",
+                  "value": "2026-05"
+                },
+                {
+                  "label": "Manufacturer (Importer)",
+                  "value": "LG Electronics"
                 }
               ]
             }
@@ -3294,6 +4373,14 @@ export const PRODUCTS = [
       {
         "title": "Avoid energy loss even during ventilation",
         "copy": "Keep your air conditioner on even when circulating the air in your home with a unit that enters energy saving mode when windows are open 8) ."
+      },
+      {
+        "title": "Automatically dries heat exchanger after use",
+        "copy": "Auto Clean+ 8) activates after use, blowing air to remove moisture."
+      },
+      {
+        "title": "Keep hard-to-reach areas easy to clean",
+        "copy": "Freeze Cleaning 9) mode makes cleaning inside your air conditioner simple."
       }
     ],
     "stories": [
@@ -3306,20 +4393,44 @@ export const PRODUCTS = [
       {
         "title": "Customized sleep mode based on your routine",
         "copy": "Sleep Timer+ 4) learns your temperature and airflow preferences for a tailored sleep mode, ensuring restful nights just for you.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/mobile/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-07-sleep-timer-plus-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-07-sleep-timer-plus-d.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/video/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-07-sleep-timer-plus-m.mp4"
       },
       {
         "title": "Proactive energy savings in your hands",
         "copy": "Keep your air conditioner on even when circulating the air in your home with a unit that enters energy saving mode when windows are open 6) .",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3nq090a1da-cool-no-radar/gp1/feature/mobile/single-split-inverter-air-conditioner-s1-2024-s3nq181l1da-feature-10-1-kw-manager-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3nq090a1da-cool-no-radar/gp1/feature/desktop/single-split-inverter-air-conditioner-s1-2024-s3nq181l1da-feature-10-1-kw-manager-d.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3nq090a1da-cool-no-radar/gp1/video/single-split-inverter-air-conditioner-s1-2024-s3nq181l1da-feature-10-1-kw-manager-m.mp4"
       },
       {
         "title": "Avoid energy loss even during ventilation",
         "copy": "Keep your air conditioner on even when circulating the air in your home with a unit that enters energy saving mode when windows are open 8) .",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/mobile/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-08-2-window-open-detection-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-08-2-window-open-detection-d.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/video/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-08-2-window-open-detection-m.mp4"
+      },
+      {
+        "title": "Automatically dries heat exchanger after use",
+        "copy": "Auto Clean+ 8) activates after use, blowing air to remove moisture. Runs for up to 20 minutes, adjusting volume for faster drying or quieter operation.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-10-auto-clean-plus.jpg",
+        "video": null
+      },
+      {
+        "title": "Keep hard-to-reach areas easy to clean",
+        "copy": "Freeze Cleaning 9) mode makes cleaning inside your air conditioner simple. Thawed ice helps wash away dirty pollutants, reducing harmful bacteria for a fresher home.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-11-freeze-cleaning.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/video/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-11-freeze-cleaning.mp4"
+      },
+      {
+        "title": "Plasmaster™ Ionizer++",
+        "copy": "Keeping your space clean, the ionizer removes 99.9% of adhering bacteria, as verified by TÜV and Intertek 12) .",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-12-1-plasmaster-ionizer-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Pre-Filter",
+        "copy": "Big dust particles get trapped at the first line of defense.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q120agzb-atwgse1/gp1/feature/desktop/lg-single-split-inverter-air-conditioner-s0-2026-s3nq120agzb-feature-12-2-pre-filter-d.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -3370,6 +4481,14 @@ export const PRODUCTS = [
       {
         "label": "Ionizer",
         "value": "Yes(4G)"
+      },
+      {
+        "label": "Launching Month (YYYY-MM)",
+        "value": "2026-05"
+      },
+      {
+        "label": "Manufacturer (Importer)",
+        "value": "LG Electronics"
       }
     ]
   },
@@ -3391,9 +4510,16 @@ export const PRODUCTS = [
         "id": "white",
         "name": "White",
         "hex": "#F4F4F4",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/02_SK_E-Look_S4-W24K231G_MS_Front_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/03_SK_E-Look_S4-W24K231G_MS_Front_Open2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/04_SK_E-Look_S4-W24K231G_MS_RightSide.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/06_SK_E-Look_S4-W24K231G_MS_RightSide_Open2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/07_SK_E-Look_S4-W24K231G_MS_RightSide_Open3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/08_SK_E-Look_S4-W24K231G_MS_LeftSide.jpg"
         ],
         "model": "S3-Q2412GZC",
         "specIds": [
@@ -3402,9 +4528,16 @@ export const PRODUCTS = [
         "variants": {
           "2-5-hp": {
             "model": "S3-Q2412GZC",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/02_SK_E-Look_S4-W24K231G_MS_Front_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/03_SK_E-Look_S4-W24K231G_MS_Front_Open2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/04_SK_E-Look_S4-W24K231G_MS_RightSide.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/06_SK_E-Look_S4-W24K231G_MS_RightSide_Open2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/07_SK_E-Look_S4-W24K231G_MS_RightSide_Open3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/08_SK_E-Look_S4-W24K231G_MS_LeftSide.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q24klypa/lgsubscribe",
             "detail": {
@@ -3425,19 +4558,27 @@ export const PRODUCTS = [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+                },
+                {
+                  "title": "Save on Energy Bills and the Planet",
+                  "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling."
+                },
+                {
+                  "title": "Verified by TUV",
+                  "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO)."
                 }
               ],
               "stories": [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
                 },
                 {
                   "title": "Save on Energy Bills and the Planet",
                   "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
                 },
                 {
@@ -3449,7 +4590,31 @@ export const PRODUCTS = [
                 {
                   "title": "Good Work Goes Unnoticed",
                   "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/mobile/rac-standard-plus-07-less-noise-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-07-less-noise-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Efficient, Faster, Durable, Quieter",
+                  "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "10-Year Warranty",
+                  "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-07-10-Year-Warranty.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Traps Big Dust from the Start",
+                  "copy": "Traps big dust particles as the first line of defense.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-17-pre-filter-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Reduce Allergens for Fresh Air",
+                  "copy": "Remove allergy-causing substances, such as house dust mites, floating in the air.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
                   "video": null
                 }
               ],
@@ -3496,19 +4661,27 @@ export const PRODUCTS = [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+      },
+      {
+        "title": "Save on Energy Bills and the Planet",
+        "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling."
+      },
+      {
+        "title": "Verified by TUV",
+        "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO)."
       }
     ],
     "stories": [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
       },
       {
         "title": "Save on Energy Bills and the Planet",
         "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
       },
       {
@@ -3520,10 +4693,35 @@ export const PRODUCTS = [
       {
         "title": "Good Work Goes Unnoticed",
         "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/mobile/rac-standard-plus-07-less-noise-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-07-less-noise-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Efficient, Faster, Durable, Quieter",
+        "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+        "video": null
+      },
+      {
+        "title": "10-Year Warranty",
+        "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-07-10-Year-Warranty.jpg",
+        "video": null
+      },
+      {
+        "title": "Traps Big Dust from the Start",
+        "copy": "Traps big dust particles as the first line of defense.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-17-pre-filter-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Reduce Allergens for Fresh Air",
+        "copy": "Remove allergy-causing substances, such as house dust mites, floating in the air.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
         "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "artcool-mirror-s3-q12jarpa",
@@ -3543,9 +4741,16 @@ export const PRODUCTS = [
         "id": "mirror",
         "name": "Mirror",
         "hex": "#C5CCD3",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/RAC-ARTCOOL-Basic.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/RAC-ARTCOOL-Basic.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-08.jpg"
         ],
         "model": "S3-Q12JARPA",
         "specIds": [
@@ -3554,9 +4759,16 @@ export const PRODUCTS = [
         "variants": {
           "1-5-hp": {
             "model": "S3-Q12JARPA",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/RAC-ARTCOOL-Basic.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/RAC-ARTCOOL-Basic.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/gallery/2010/RAC-ARTCOOL-Gallery-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q12jarpa/lgsubscribe",
             "detail": {
@@ -3577,13 +4789,21 @@ export const PRODUCTS = [
                 {
                   "title": "Stylish ARTCOOL Design",
                   "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings."
+                },
+                {
+                  "title": "Faster Cooling, Faster Comfort",
+                  "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+                },
+                {
+                  "title": "Verified by TUV",
+                  "copy": "LG inverter air conditioners(US-Q242K*) cools up to 40% more faster than LG non-inverter air conditioners(TS-H2465DAO)."
                 }
               ],
               "stories": [
                 {
                   "title": "Stylish ARTCOOL Design",
                   "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/mobile/RAC-ARTCOOL-03-Stylish-Design-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/desktop/RAC-ARTCOOL-03-Stylish-Design-D.jpg",
                   "video": null
                 },
                 {
@@ -3601,8 +4821,32 @@ export const PRODUCTS = [
                 {
                   "title": "Save on Energy Bills and the Planet",
                   "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/video/RAC-ARTCOOL-05-1-2-Energy-Saving-M.mp4"
+                },
+                {
+                  "title": "Good Work Goes Unnoticed",
+                  "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/desktop/RAC-ARTCOOL-06-1-Less-Noise-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Efficient, Faster, Durable, Quieter",
+                  "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-07-DUAL-Inverter-Compressor-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "10-Year Warranty",
+                  "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-08-10-Year-Warranty.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Traps Big Dust from the Start",
+                  "copy": "Traps big dust particles as the first line of defense.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-5-0/feature/desktop/RAC-ARTCOOL-10-1-Safe-Plus-Pre-Filter-D.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -3651,8 +4895,16 @@ export const PRODUCTS = [
                   "value": "S3-Q12JARPA"
                 },
                 {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
+                },
+                {
                   "label": "Color(Body)",
                   "value": "White"
+                },
+                {
+                  "label": "Color(Discharge)",
+                  "value": "Black"
                 }
               ]
             }
@@ -3697,13 +4949,21 @@ export const PRODUCTS = [
       {
         "title": "Stylish ARTCOOL Design",
         "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings."
+      },
+      {
+        "title": "Faster Cooling, Faster Comfort",
+        "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+      },
+      {
+        "title": "Verified by TUV",
+        "copy": "LG inverter air conditioners(US-Q242K*) cools up to 40% more faster than LG non-inverter air conditioners(TS-H2465DAO)."
       }
     ],
     "stories": [
       {
         "title": "Stylish ARTCOOL Design",
         "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/mobile/RAC-ARTCOOL-03-Stylish-Design-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/desktop/RAC-ARTCOOL-03-Stylish-Design-D.jpg",
         "video": null
       },
       {
@@ -3721,8 +4981,32 @@ export const PRODUCTS = [
       {
         "title": "Save on Energy Bills and the Planet",
         "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/video/RAC-ARTCOOL-05-1-2-Energy-Saving-M.mp4"
+      },
+      {
+        "title": "Good Work Goes Unnoticed",
+        "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/desktop/RAC-ARTCOOL-06-1-Less-Noise-D.jpg",
+        "video": null
+      },
+      {
+        "title": "Efficient, Faster, Durable, Quieter",
+        "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-07-DUAL-Inverter-Compressor-D.jpg",
+        "video": null
+      },
+      {
+        "title": "10-Year Warranty",
+        "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q12jarpa/feature/RAC-ARTCOOL-08-10-Year-Warranty.jpg",
+        "video": null
+      },
+      {
+        "title": "Traps Big Dust from the Start",
+        "copy": "Traps big dust particles as the first line of defense.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-5-0/feature/desktop/RAC-ARTCOOL-10-1-Safe-Plus-Pre-Filter-D.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -3771,8 +5055,16 @@ export const PRODUCTS = [
         "value": "S3-Q12JARPA"
       },
       {
+        "label": "ThinQ(Wi-Fi)",
+        "value": "Yes"
+      },
+      {
         "label": "Color(Body)",
         "value": "White"
+      },
+      {
+        "label": "Color(Discharge)",
+        "value": "Black"
       }
     ]
   },
@@ -3794,9 +5086,16 @@ export const PRODUCTS = [
         "id": "mirror",
         "name": "Mirror",
         "hex": "#C5CCD3",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/RAC-ARTCOOL-Basic.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/RAC-ARTCOOL-Basic.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-08.jpg"
         ],
         "model": "S3-Q24K2RPA",
         "specIds": [
@@ -3805,9 +5104,16 @@ export const PRODUCTS = [
         "variants": {
           "2-5-hp": {
             "model": "S3-Q24K2RPA",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/RAC-ARTCOOL-Basic.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/RAC-ARTCOOL-Basic.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/gallery/2010/RAC-ARTCOOL-Gallery-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q24k2rpa/lgsubscribe",
             "detail": {
@@ -3828,13 +5134,21 @@ export const PRODUCTS = [
                 {
                   "title": "Stylish ARTCOOL Design",
                   "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings."
+                },
+                {
+                  "title": "Faster Cooling, Faster Comfort",
+                  "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+                },
+                {
+                  "title": "Verified by TUV",
+                  "copy": "LG inverter air conditioners(US-Q242K*) cools up to 40% more faster than LG non-inverter air conditioners(TS-H2465DAO)."
                 }
               ],
               "stories": [
                 {
                   "title": "Stylish ARTCOOL Design",
                   "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/mobile/RAC-ARTCOOL-03-Stylish-Design-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/desktop/RAC-ARTCOOL-03-Stylish-Design-D.jpg",
                   "video": null
                 },
                 {
@@ -3852,8 +5166,32 @@ export const PRODUCTS = [
                 {
                   "title": "Save on Energy Bills and the Planet",
                   "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-M.mp4"
+                },
+                {
+                  "title": "Good Work Goes Unnoticed",
+                  "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-5-0/feature/desktop/RAC-ARTCOOL-06-1-Less-Noise-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Efficient, Faster, Durable, Quieter",
+                  "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-07-DUAL-Inverter-Compressor-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "10-Year Warranty",
+                  "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-08-10-Year-Warranty.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Traps Big Dust from the Start",
+                  "copy": "Traps big dust particles as the first line of defense.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-5-0/feature/desktop/RAC-ARTCOOL-10-1-Safe-Plus-Pre-Filter-D.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -3902,8 +5240,16 @@ export const PRODUCTS = [
                   "value": "S3-Q24K2RPA"
                 },
                 {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
+                },
+                {
                   "label": "Color(Body)",
                   "value": "White"
+                },
+                {
+                  "label": "Color(Discharge)",
+                  "value": "Black"
                 }
               ]
             }
@@ -3948,13 +5294,21 @@ export const PRODUCTS = [
       {
         "title": "Stylish ARTCOOL Design",
         "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings."
+      },
+      {
+        "title": "Faster Cooling, Faster Comfort",
+        "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+      },
+      {
+        "title": "Verified by TUV",
+        "copy": "LG inverter air conditioners(US-Q242K*) cools up to 40% more faster than LG non-inverter air conditioners(TS-H2465DAO)."
       }
     ],
     "stories": [
       {
         "title": "Stylish ARTCOOL Design",
         "copy": "Maintain your home aesthetic thanks to LG ARTCOOL's mirrored glass that reflects its surroundings.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/mobile/RAC-ARTCOOL-03-Stylish-Design-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-gp1/feature/desktop/RAC-ARTCOOL-03-Stylish-Design-D.jpg",
         "video": null
       },
       {
@@ -3972,8 +5326,32 @@ export const PRODUCTS = [
       {
         "title": "Save on Energy Bills and the Planet",
         "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-05-1-2-Energy-Saving-M.mp4"
+      },
+      {
+        "title": "Good Work Goes Unnoticed",
+        "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-5-0/feature/desktop/RAC-ARTCOOL-06-1-Less-Noise-D.jpg",
+        "video": null
+      },
+      {
+        "title": "Efficient, Faster, Durable, Quieter",
+        "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-07-DUAL-Inverter-Compressor-D.jpg",
+        "video": null
+      },
+      {
+        "title": "10-Year Warranty",
+        "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/home-air-conditioners/s3-q24k2rpa/feature/RAC-ARTCOOL-08-10-Year-Warranty.jpg",
+        "video": null
+      },
+      {
+        "title": "Traps Big Dust from the Start",
+        "copy": "Traps big dust particles as the first line of defense.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4nq18k2rfc/rac-artcool-2021-5-0/feature/desktop/RAC-ARTCOOL-10-1-Safe-Plus-Pre-Filter-D.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -4022,8 +5400,16 @@ export const PRODUCTS = [
         "value": "S3-Q24K2RPA"
       },
       {
+        "label": "ThinQ(Wi-Fi)",
+        "value": "Yes"
+      },
+      {
         "label": "Color(Body)",
         "value": "White"
+      },
+      {
+        "label": "Color(Discharge)",
+        "value": "Black"
       }
     ]
   },
@@ -4045,9 +5431,16 @@ export const PRODUCTS = [
         "id": "white",
         "name": "White",
         "hex": "#F4F4F4",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/02_SJ_E-Look_S4-W12JA31D_MS_Front_Open11.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/03_SJ_E-Look_S4-W12JA31D_MS_Front_Open21.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/04_SJ_E-Look_S4-W12JA31D_MS_RightSide.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/05_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/06_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open21.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/07_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open_3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/08_SJ_E-Look_S4-W12JA31D_MS_LeftSide.jpg"
         ],
         "model": "S3-Q09JAYPP",
         "specIds": [
@@ -4056,9 +5449,16 @@ export const PRODUCTS = [
         "variants": {
           "1-0-hp": {
             "model": "S3-Q09JAYPP",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/02_SJ_E-Look_S4-W12JA31D_MS_Front_Open11.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/03_SJ_E-Look_S4-W12JA31D_MS_Front_Open21.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/04_SJ_E-Look_S4-W12JA31D_MS_RightSide.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/05_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/06_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open21.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/07_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open_3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/gallery/2010x1334/08_SJ_E-Look_S4-W12JA31D_MS_LeftSide.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q09jaypp/lgsubscribe",
             "detail": {
@@ -4077,11 +5477,25 @@ export const PRODUCTS = [
                   "copy": "Control energy consumption with 4 levels based on your needs, whether alone or with family."
                 },
                 {
+                  "title": "Proactive energy savings in your hands.",
+                  "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app."
+                },
+                {
                   "title": "Keep the inside of your machine squeaky clean",
                   "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode."
+                },
+                {
+                  "title": "Easy-to-see LED display",
+                  "copy": "Stay informed at a glance with a sleek and informative LED display."
                 }
               ],
               "stories": [
+                {
+                  "title": "Proactive energy savings in your hands.",
+                  "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app. If the daily usage limit is exceeded, the remaining days are automatically recalculated to keep you within your specified limit.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/kw-manager-feature-card/feature/desktop/HA-RAC-DUALCOOL-HS-09ISY2-01-kW-Manager-d.jpg",
+                  "video": null
+                },
                 {
                   "title": "Keep the inside of your machine squeaky clean",
                   "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode. Use thawed ice to wash away dust and odor-causing contaminants, reducing harmful bacteria, and leaving you with a fresher home.",
@@ -4097,14 +5511,32 @@ export const PRODUCTS = [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
                 },
                 {
                   "title": "Save on Energy Bills and the Planet",
                   "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
+                },
+                {
+                  "title": "Verified by TUV",
+                  "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO). *Initial Temperature(Outdoor 35℃, Indoor 33℃), Setting Temperature(26℃), Testing Time (8 Hours).",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-02-2-1-TUV.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Good Work Goes Unnoticed",
+                  "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/rac-standard-plus-07-less-noise-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Efficient, Faster, Durable, Quieter",
+                  "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+                  "video": null
                 }
               ],
               "facts": []
@@ -4148,11 +5580,25 @@ export const PRODUCTS = [
         "copy": "Control energy consumption with 4 levels based on your needs, whether alone or with family."
       },
       {
+        "title": "Proactive energy savings in your hands.",
+        "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app."
+      },
+      {
         "title": "Keep the inside of your machine squeaky clean",
         "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode."
+      },
+      {
+        "title": "Easy-to-see LED display",
+        "copy": "Stay informed at a glance with a sleek and informative LED display."
       }
     ],
     "stories": [
+      {
+        "title": "Proactive energy savings in your hands.",
+        "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app. If the daily usage limit is exceeded, the remaining days are automatically recalculated to keep you within your specified limit.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/kw-manager-feature-card/feature/desktop/HA-RAC-DUALCOOL-HS-09ISY2-01-kW-Manager-d.jpg",
+        "video": null
+      },
       {
         "title": "Keep the inside of your machine squeaky clean",
         "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode. Use thawed ice to wash away dust and odor-causing contaminants, reducing harmful bacteria, and leaving you with a fresher home.",
@@ -4168,16 +5614,35 @@ export const PRODUCTS = [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
       },
       {
         "title": "Save on Energy Bills and the Planet",
         "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
+      },
+      {
+        "title": "Verified by TUV",
+        "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO). *Initial Temperature(Outdoor 35℃, Indoor 33℃), Setting Temperature(26℃), Testing Time (8 Hours).",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-02-2-1-TUV.jpg",
+        "video": null
+      },
+      {
+        "title": "Good Work Goes Unnoticed",
+        "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/rac-standard-plus-07-less-noise-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Efficient, Faster, Durable, Quieter",
+        "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q09jaypp-atwgse1/feature/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+        "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "dualcool-s3-q12jaypp",
@@ -4197,9 +5662,16 @@ export const PRODUCTS = [
         "id": "white",
         "name": "White",
         "hex": "#F4F4F4",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front1.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/02_SJ_E-Look_S4-W12JA31D_MS_Front_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/03_SJ_E-Look_S4-W12JA31D_MS_Front_Open2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/04_SJ_E-Look_S4-W12JA31D_MS_RightSide.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/05_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/06_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open21.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/07_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open_31.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/08_SJ_E-Look_S4-W12JA31D_MS_LeftSide1.jpg"
         ],
         "model": "S3-Q12JAYPP",
         "specIds": [
@@ -4208,9 +5680,16 @@ export const PRODUCTS = [
         "variants": {
           "1-5-hp": {
             "model": "S3-Q12JAYPP",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front1.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/450x450/01_SJ_E-Look_S4-W12JA31D_MS_Front.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/01_SJ_E-Look_S4-W12JA31D_MS_Front1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/02_SJ_E-Look_S4-W12JA31D_MS_Front_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/03_SJ_E-Look_S4-W12JA31D_MS_Front_Open2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/04_SJ_E-Look_S4-W12JA31D_MS_RightSide.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/05_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/06_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open21.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/07_SJ_E-Look_S4-W12JA31D_MS_RightSide_Open_31.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q12jaypp-atwgse1/gallery/2010x1334/08_SJ_E-Look_S4-W12JA31D_MS_LeftSide1.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q12jaypp/lgsubscribe",
             "detail": {
@@ -4231,19 +5710,27 @@ export const PRODUCTS = [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+                },
+                {
+                  "title": "Save on Energy Bills and the Planet",
+                  "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling."
+                },
+                {
+                  "title": "Verified by TUV",
+                  "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO)."
                 }
               ],
               "stories": [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
                 },
                 {
                   "title": "Save on Energy Bills and the Planet",
                   "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
                 },
                 {
@@ -4255,7 +5742,31 @@ export const PRODUCTS = [
                 {
                   "title": "Good Work Goes Unnoticed",
                   "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/mobile/rac-standard-plus-07-less-noise-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-07-less-noise-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Efficient, Faster, Durable, Quieter",
+                  "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "10-Year Warranty",
+                  "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac/features/s3-q12ja3wa/S3-Q12JA3WA-home-air-conditioners-RAC-Standard-Plus-07-10-Year-Warranty.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Traps Big Dust from the Start",
+                  "copy": "Traps big dust particles as the first line of defense.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-17-pre-filter-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Reduce Allergens for Fresh Air",
+                  "copy": "Remove allergy-causing substances, such as house dust mites, floating in the air.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
                   "video": null
                 }
               ],
@@ -4302,19 +5813,27 @@ export const PRODUCTS = [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+      },
+      {
+        "title": "Save on Energy Bills and the Planet",
+        "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling."
+      },
+      {
+        "title": "Verified by TUV",
+        "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO)."
       }
     ],
     "stories": [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
       },
       {
         "title": "Save on Energy Bills and the Planet",
         "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
       },
       {
@@ -4326,10 +5845,35 @@ export const PRODUCTS = [
       {
         "title": "Good Work Goes Unnoticed",
         "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/mobile/rac-standard-plus-07-less-noise-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-07-less-noise-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Efficient, Faster, Durable, Quieter",
+        "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+        "video": null
+      },
+      {
+        "title": "10-Year Warranty",
+        "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac/features/s3-q12ja3wa/S3-Q12JA3WA-home-air-conditioners-RAC-Standard-Plus-07-10-Year-Warranty.jpg",
+        "video": null
+      },
+      {
+        "title": "Traps Big Dust from the Start",
+        "copy": "Traps big dust particles as the first line of defense.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-17-pre-filter-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Reduce Allergens for Fresh Air",
+        "copy": "Remove allergy-causing substances, such as house dust mites, floating in the air.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
         "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "dualcool-s3-q18kaypa",
@@ -4355,7 +5899,10 @@ export const PRODUCTS = [
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/02_SK_E-Look_S4-W24K231G_MS_Front_Open1.jpg",
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/03_SK_E-Look_S4-W24K231G_MS_Front_Open2.jpg",
           "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/04_SK_E-Look_S4-W24K231G_MS_RightSide.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/06_SK_E-Look_S4-W24K231G_MS_RightSide_Open2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/07_SK_E-Look_S4-W24K231G_MS_RightSide_Open3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/08_SK_E-Look_S4-W24K231G_MS_LeftSide.jpg"
         ],
         "model": "S3-Q18KAYPA",
         "specIds": [
@@ -4370,7 +5917,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/02_SK_E-Look_S4-W24K231G_MS_Front_Open1.jpg",
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/03_SK_E-Look_S4-W24K231G_MS_Front_Open2.jpg",
               "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/04_SK_E-Look_S4-W24K231G_MS_RightSide.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/06_SK_E-Look_S4-W24K231G_MS_RightSide_Open2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/07_SK_E-Look_S4-W24K231G_MS_RightSide_Open3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/gallery/2010x1334/08_SK_E-Look_S4-W24K231G_MS_LeftSide.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q18kaypa/lgsubscribe",
             "detail": {
@@ -4389,11 +5939,25 @@ export const PRODUCTS = [
                   "copy": "Control energy consumption with 4 levels based on your needs, whether alone or with family."
                 },
                 {
+                  "title": "Proactive energy savings in your hands.",
+                  "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app."
+                },
+                {
                   "title": "Keep the inside of your machine squeaky clean",
                   "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode."
+                },
+                {
+                  "title": "Easy-to-see LED display",
+                  "copy": "Stay informed at a glance with a sleek and informative LED display."
                 }
               ],
               "stories": [
+                {
+                  "title": "Proactive energy savings in your hands.",
+                  "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app. If the daily usage limit is exceeded, the remaining days are automatically recalculated to keep you within your specified limit.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/kw-manager-feature-card/feature/desktop/HA-RAC-DUALCOOL-HS-09ISY2-01-kW-Manager-d.jpg",
+                  "video": null
+                },
                 {
                   "title": "Keep the inside of your machine squeaky clean",
                   "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode. Use thawed ice to wash away dust and odor-causing contaminants, reducing harmful bacteria, and leaving you with a fresher home.",
@@ -4409,14 +5973,32 @@ export const PRODUCTS = [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
                 },
                 {
                   "title": "Save on Energy Bills and the Planet",
                   "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
+                },
+                {
+                  "title": "Verified by TUV",
+                  "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO). *Initial Temperature(Outdoor 35℃, Indoor 33℃), Setting Temperature(26℃), Testing Time (8 Hours).",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac/features/s3-q12ja3wa/S3-Q12JA3WA-home-air-conditioners-RAC-Standard-Plus-03-2-TUV.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Good Work Goes Unnoticed",
+                  "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/rac-standard-plus-07-less-noise-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Efficient, Faster, Durable, Quieter",
+                  "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+                  "video": null
                 }
               ],
               "facts": []
@@ -4460,11 +6042,25 @@ export const PRODUCTS = [
         "copy": "Control energy consumption with 4 levels based on your needs, whether alone or with family."
       },
       {
+        "title": "Proactive energy savings in your hands.",
+        "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app."
+      },
+      {
         "title": "Keep the inside of your machine squeaky clean",
         "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode."
+      },
+      {
+        "title": "Easy-to-see LED display",
+        "copy": "Stay informed at a glance with a sleek and informative LED display."
       }
     ],
     "stories": [
+      {
+        "title": "Proactive energy savings in your hands.",
+        "copy": "Decide usage periods and energy consumption limits within the easy-to-use ThinQ™ app. If the daily usage limit is exceeded, the remaining days are automatically recalculated to keep you within your specified limit.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/kw-manager-feature-card/feature/desktop/HA-RAC-DUALCOOL-HS-09ISY2-01-kW-Manager-d.jpg",
+        "video": null
+      },
       {
         "title": "Keep the inside of your machine squeaky clean",
         "copy": "Cleaning difficult-to-reach spaces inside your air conditioner is easy with Freeze Cleaning mode. Use thawed ice to wash away dust and odor-causing contaminants, reducing harmful bacteria, and leaving you with a fresher home.",
@@ -4480,16 +6076,35 @@ export const PRODUCTS = [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
       },
       {
         "title": "Save on Energy Bills and the Planet",
         "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
+      },
+      {
+        "title": "Verified by TUV",
+        "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO). *Initial Temperature(Outdoor 35℃, Indoor 33℃), Setting Temperature(26℃), Testing Time (8 Hours).",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac/features/s3-q12ja3wa/S3-Q12JA3WA-home-air-conditioners-RAC-Standard-Plus-03-2-TUV.jpg",
+        "video": null
+      },
+      {
+        "title": "Good Work Goes Unnoticed",
+        "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/rac-standard-plus-07-less-noise-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Efficient, Faster, Durable, Quieter",
+        "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q18kaypa-atwgse1/feature/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+        "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "dualcool-s3-q24klypa",
@@ -4509,9 +6124,16 @@ export const PRODUCTS = [
         "id": "white",
         "name": "White",
         "hex": "#F4F4F4",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/02_SK_E-Look_S4-W24K231G_MS_Front_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/03_SK_E-Look_S4-W24K231G_MS_Front_Open2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/04_SK_E-Look_S4-W24K231G_MS_RightSide.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/06_SK_E-Look_S4-W24K231G_MS_RightSide_Open2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/07_SK_E-Look_S4-W24K231G_MS_RightSide_Open3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/08_SK_E-Look_S4-W24K231G_MS_LeftSide.jpg"
         ],
         "model": "S3-Q24KLYPA",
         "specIds": [
@@ -4520,9 +6142,16 @@ export const PRODUCTS = [
         "variants": {
           "2-5-hp": {
             "model": "S3-Q24KLYPA",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/450x450/01_SK_E-Look_S4-W24K231G_MS_Front.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/01_SK_E-Look_S4-W24K231G_MS_Front.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/02_SK_E-Look_S4-W24K231G_MS_Front_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/03_SK_E-Look_S4-W24K231G_MS_Front_Open2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/04_SK_E-Look_S4-W24K231G_MS_RightSide.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/05_SK_E-Look_S4-W24K231G_MS_RightSide_Open1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/06_SK_E-Look_S4-W24K231G_MS_RightSide_Open2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/07_SK_E-Look_S4-W24K231G_MS_RightSide_Open3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/air-conditioner/s3-q24klypa-atwgse1/gallery/2010x1334/08_SK_E-Look_S4-W24K231G_MS_LeftSide.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/residential-air-conditioners/s3-q24klypa/lgsubscribe",
             "detail": {
@@ -4543,19 +6172,27 @@ export const PRODUCTS = [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+                },
+                {
+                  "title": "Save on Energy Bills and the Planet",
+                  "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling."
+                },
+                {
+                  "title": "Verified by TUV",
+                  "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO)."
                 }
               ],
               "stories": [
                 {
                   "title": "Faster Cooling, Faster Comfort",
                   "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
                 },
                 {
                   "title": "Save on Energy Bills and the Planet",
                   "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
                 },
                 {
@@ -4567,7 +6204,31 @@ export const PRODUCTS = [
                 {
                   "title": "Good Work Goes Unnoticed",
                   "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/mobile/rac-standard-plus-07-less-noise-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-07-less-noise-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Efficient, Faster, Durable, Quieter",
+                  "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "10-Year Warranty",
+                  "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-07-10-Year-Warranty.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Traps Big Dust from the Start",
+                  "copy": "Traps big dust particles as the first line of defense.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-17-pre-filter-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Reduce Allergens for Fresh Air",
+                  "copy": "Remove allergy-causing substances, such as house dust mites, floating in the air.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
                   "video": null
                 }
               ],
@@ -4614,19 +6275,27 @@ export const PRODUCTS = [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™."
+      },
+      {
+        "title": "Save on Energy Bills and the Planet",
+        "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling."
+      },
+      {
+        "title": "Verified by TUV",
+        "copy": "LG inverter air conditioners(US-Q242K*) saves up to 70% more energy than LG non-inverter air conditioners(TS-H2465DAO)."
       }
     ],
     "stories": [
       {
         "title": "Faster Cooling, Faster Comfort",
         "copy": "Get comfortably cool faster with the LG DUAL Inverter Compressor™.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-03-1-1-Fast-Cooling-M.mp4"
       },
       {
         "title": "Save on Energy Bills and the Planet",
         "copy": "Reduce your energy consumption and your electricity bill with more efficient cooling.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-04-1-1-Energy-Saving-M.mp4"
       },
       {
@@ -4638,10 +6307,35 @@ export const PRODUCTS = [
       {
         "title": "Good Work Goes Unnoticed",
         "copy": "Don't get disturbed and sleep soundly with an air conditioner that makes less noise.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/mobile/rac-standard-plus-07-less-noise-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-07-less-noise-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Efficient, Faster, Durable, Quieter",
+        "copy": "Powered by DUAL Inverter Compressor™ Technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-06-DUAL-Inverter-Compressor-D.jpg",
+        "video": null
+      },
+      {
+        "title": "10-Year Warranty",
+        "copy": "With a 10-year warranty on the compressor, it will keep performing at its best for longer.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-07-10-Year-Warranty.jpg",
+        "video": null
+      },
+      {
+        "title": "Traps Big Dust from the Start",
+        "copy": "Traps big dust particles as the first line of defense.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/2025_es_lg-com/s4w24k231e/-rac_eu_srac_deluxea---_2023_gp1/feature/desktop/rac-standard-plus-17-pre-filter-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Reduce Allergens for Fresh Air",
+        "copy": "Remove allergy-causing substances, such as house dust mites, floating in the air.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/ac-features/RAC-Standard-Plus-12-1-Allergy-Filter-D.jpg",
         "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "front-loader-washing-machine-fx1412s5gr",
@@ -4661,9 +6355,9 @@ export const PRODUCTS = [
         "id": "matte-black",
         "name": "Matte Black",
         "hex": "#1A1A1A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/lg-subscribe/images/lg-subscribe-2025-banner-D.jpg",
+        "image": "/products/FX1412S5GR.webp",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/lg-subscribe/images/lg-subscribe-2025-banner-D.jpg"
+          "/products/FX1412S5GR.webp"
         ],
         "model": "FX1412S5GR",
         "specIds": [
@@ -4672,11 +6366,79 @@ export const PRODUCTS = [
         "variants": {
           "12kg": {
             "model": "FX1412S5GR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/lg-subscribe/images/lg-subscribe-2025-banner-D.jpg",
+            "image": "/products/FX1412S5GR.webp",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/lg-subscribe/images/lg-subscribe-2025-banner-D.jpg"
+              "/products/FX1412S5GR.webp"
             ],
-            "url": null
+            "url": null,
+            "detail": {
+              "tagline": "Handle all your laundry needs and simplify your routine by washing more clothes in one go.",
+              "quickFeatures": [
+                {
+                  "title": "Your spacious laundry solution​",
+                  "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go."
+                },
+                {
+                  "title": "Take the guesswork out of washing and let AI DD™",
+                  "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes."
+                },
+                {
+                  "title": "Get Fresh Laundry in just 39 minutes",
+                  "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage."
+                },
+                {
+                  "title": "Experience Reduced Noise and Vibrations",
+                  "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process."
+                },
+                {
+                  "title": "Prioritize your health and tackle allergens",
+                  "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash."
+                },
+                {
+                  "title": "Link your washing machine and smartphone",
+                  "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button."
+                }
+              ],
+              "stories": [
+                {
+                  "title": "Your spacious laundry solution​",
+                  "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-02-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Take the guesswork out of washing and let AI DD™",
+                  "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-03-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Get Fresh Laundry in just 39 minutes",
+                  "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-04-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Experience Reduced Noise and Vibrations",
+                  "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-05-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Prioritize your health and tackle allergens",
+                  "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-06-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Link your washing machine and smartphone",
+                  "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button. Use the LG ThinQ™ app to investigate your washing machine's energy usage and to check for any maintenance requirements.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-09-01-desktop.jpg",
+                  "video": null
+                }
+              ],
+              "facts": []
+            }
           }
         }
       }
@@ -4691,7 +6453,7 @@ export const PRODUCTS = [
           "outright": null,
           "subscribe": {
             "60": {
-              "combined": 70,
+              "combined": 90,
               "visit": {
                 "6": 110,
                 "12": null,
@@ -4699,6 +6461,7 @@ export const PRODUCTS = [
               }
             },
             "84": {
+              "combined": 70,
               "visit": {
                 "6": 90,
                 "12": null,
@@ -4709,11 +6472,31 @@ export const PRODUCTS = [
         }
       }
     ],
-    "copyFeaturesFrom": null,
+    "copyFeaturesFrom": "F2520SNEKR",
     "quickFeatures": [
       {
         "title": "Your spacious laundry solution​",
         "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go."
+      },
+      {
+        "title": "Take the guesswork out of washing and let AI DD™",
+        "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes."
+      },
+      {
+        "title": "Get Fresh Laundry in just 39 minutes",
+        "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage."
+      },
+      {
+        "title": "Experience Reduced Noise and Vibrations",
+        "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process."
+      },
+      {
+        "title": "Prioritize your health and tackle allergens",
+        "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash."
+      },
+      {
+        "title": "Link your washing machine and smartphone",
+        "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button."
       }
     ],
     "stories": [
@@ -4722,10 +6505,40 @@ export const PRODUCTS = [
         "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-02-desktop.jpg",
         "video": null
+      },
+      {
+        "title": "Take the guesswork out of washing and let AI DD™",
+        "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-03-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Get Fresh Laundry in just 39 minutes",
+        "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-04-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Experience Reduced Noise and Vibrations",
+        "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-05-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Prioritize your health and tackle allergens",
+        "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-06-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Link your washing machine and smartphone",
+        "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button. Use the LG ThinQ™ app to investigate your washing machine's energy usage and to check for any maintenance requirements.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-09-01-desktop.jpg",
+        "video": null
       }
     ],
-    "facts": [],
-    "featureSource": "F2520SNEKR"
+    "featureSource": "F2520SNEKR",
+    "facts": []
   },
   {
     "id": "front-loader-washing-machine-f2520snekr",
@@ -4745,9 +6558,16 @@ export const PRODUCTS = [
         "id": "matte-black",
         "name": "Matte Black",
         "hex": "#1A1A1A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/450x450/01-NT-Standard-LED-EssenceWhite-Front-450x450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/01-NT-Standard-LED-EssenceWhite-Front1600x1062.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/450x450/01-NT-Standard-LED-EssenceWhite-Front-450x450.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/01-NT-Standard-LED-EssenceWhite-Front1600x1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/02-NT-Standard-LED-EssenceWhite-FrontOpen1600x1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/03-NT-Standard-LED-EssenceWhite-Detail21600x1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/04-NT-Standard-LED-EssenceWhite-KnobWindowDisplayDetail11600x1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/05-NT-Standard-LED-EssenceWhite-DrumDetail1600x1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/06-NT-Standard-LED-EssenceWhite-KnobWindowDisplayDetail31600x1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/07-NT-Standard-LED-EssenceWhite-Detail11600x1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/08-NT-Standard-LED-EssenceWhite-TopDrawerOpen1600x1062.jpg"
         ],
         "model": "F2520SNEKR",
         "specIds": [
@@ -4756,9 +6576,16 @@ export const PRODUCTS = [
         "variants": {
           "20kg": {
             "model": "F2520SNEKR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/450x450/01-NT-Standard-LED-EssenceWhite-Front-450x450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/01-NT-Standard-LED-EssenceWhite-Front1600x1062.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/450x450/01-NT-Standard-LED-EssenceWhite-Front-450x450.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/01-NT-Standard-LED-EssenceWhite-Front1600x1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/02-NT-Standard-LED-EssenceWhite-FrontOpen1600x1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/03-NT-Standard-LED-EssenceWhite-Detail21600x1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/04-NT-Standard-LED-EssenceWhite-KnobWindowDisplayDetail11600x1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/05-NT-Standard-LED-EssenceWhite-DrumDetail1600x1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/06-NT-Standard-LED-EssenceWhite-KnobWindowDisplayDetail31600x1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/07-NT-Standard-LED-EssenceWhite-Detail11600x1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/gallery/1600x1062/08-NT-Standard-LED-EssenceWhite-TopDrawerOpen1600x1062.jpg"
             ],
             "url": "https://www.lg.com/my/washer-dryers/front-load-washing-machines/f2520snek/",
             "detail": {
@@ -4767,6 +6594,26 @@ export const PRODUCTS = [
                 {
                   "title": "Your spacious laundry solution​",
                   "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go."
+                },
+                {
+                  "title": "Take the guesswork out of washing and let AI DD™",
+                  "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes."
+                },
+                {
+                  "title": "Get Fresh Laundry in just 39 minutes",
+                  "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage."
+                },
+                {
+                  "title": "Experience Reduced Noise and Vibrations",
+                  "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process."
+                },
+                {
+                  "title": "Prioritize your health and tackle allergens",
+                  "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash."
+                },
+                {
+                  "title": "Link your washing machine and smartphone",
+                  "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button."
                 }
               ],
               "stories": [
@@ -4774,6 +6621,36 @@ export const PRODUCTS = [
                   "title": "Your spacious laundry solution​",
                   "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-02-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Take the guesswork out of washing and let AI DD™",
+                  "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-03-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Get Fresh Laundry in just 39 minutes",
+                  "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-04-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Experience Reduced Noise and Vibrations",
+                  "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-05-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Prioritize your health and tackle allergens",
+                  "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-06-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Link your washing machine and smartphone",
+                  "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button. Use the LG ThinQ™ app to investigate your washing machine's energy usage and to check for any maintenance requirements.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-09-01-desktop.jpg",
                   "video": null
                 }
               ],
@@ -4785,6 +6662,18 @@ export const PRODUCTS = [
                 {
                   "label": "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)",
                   "value": "650x950x780"
+                },
+                {
+                  "label": "FEATURES - ezDispense",
+                  "value": "No"
+                },
+                {
+                  "label": "FEATURES - Steam",
+                  "value": "Yes"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "Body Color",
@@ -4799,6 +6688,10 @@ export const PRODUCTS = [
                   "value": "20"
                 },
                 {
+                  "label": "TurboWash 39",
+                  "value": "Yes"
+                },
+                {
                   "label": "Delay Timer",
                   "value": "3-19 hours"
                 },
@@ -4807,24 +6700,16 @@ export const PRODUCTS = [
                   "value": "Dial + Full Touch Buttons & LCD+LED Display"
                 },
                 {
+                  "label": "AI DD",
+                  "value": "Yes"
+                },
+                {
                   "label": "Type",
                   "value": "Front Load Washer"
                 },
                 {
-                  "label": "Drum Lifter",
-                  "value": "Stainless Steel Slim Lifter"
-                },
-                {
-                  "label": "Water feed (Hot / Cold)",
-                  "value": "Cold Only"
-                },
-                {
-                  "label": "Water Level",
-                  "value": "Auto"
-                },
-                {
-                  "label": "Product Dimensions (WxHxD mm)",
-                  "value": "650x950x780"
+                  "label": "ezDispense",
+                  "value": "No"
                 }
               ]
             }
@@ -4842,7 +6727,7 @@ export const PRODUCTS = [
           "outright": null,
           "subscribe": {
             "60": {
-              "combined": 100,
+              "combined": 120,
               "visit": {
                 "6": 130,
                 "12": null,
@@ -4850,6 +6735,7 @@ export const PRODUCTS = [
               }
             },
             "84": {
+              "combined": 100,
               "visit": {
                 "6": 110,
                 "12": null,
@@ -4865,6 +6751,26 @@ export const PRODUCTS = [
       {
         "title": "Your spacious laundry solution​",
         "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go."
+      },
+      {
+        "title": "Take the guesswork out of washing and let AI DD™",
+        "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes."
+      },
+      {
+        "title": "Get Fresh Laundry in just 39 minutes",
+        "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage."
+      },
+      {
+        "title": "Experience Reduced Noise and Vibrations",
+        "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process."
+      },
+      {
+        "title": "Prioritize your health and tackle allergens",
+        "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash."
+      },
+      {
+        "title": "Link your washing machine and smartphone",
+        "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button."
       }
     ],
     "stories": [
@@ -4872,6 +6778,36 @@ export const PRODUCTS = [
         "title": "Your spacious laundry solution​",
         "copy": "Handle all your laundry needs and simplify your routine by washing more clothes in one go.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-02-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Take the guesswork out of washing and let AI DD™",
+        "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-03-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Get Fresh Laundry in just 39 minutes",
+        "copy": "TurboWash™ 360⁰ sprays water in four directions to ensure a deep clean without fabric damage.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-04-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Experience Reduced Noise and Vibrations",
+        "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-05-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Prioritize your health and tackle allergens",
+        "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-06-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Link your washing machine and smartphone",
+        "copy": "Connect your washer to the LG ThinQ™ app to control the machine, select courses, and even start it while you're out and about with just the tap of a button. Use the LG ThinQ™ app to investigate your washing machine's energy usage and to check for any maintenance requirements.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/ha-wm-nt-standard-led-gp1/feature/desktop/HA-WM-NT-Standard-LED-GP1-09-01-desktop.jpg",
         "video": null
       }
     ],
@@ -4883,6 +6819,18 @@ export const PRODUCTS = [
       {
         "label": "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)",
         "value": "650x950x780"
+      },
+      {
+        "label": "FEATURES - ezDispense",
+        "value": "No"
+      },
+      {
+        "label": "FEATURES - Steam",
+        "value": "Yes"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "Body Color",
@@ -4897,6 +6845,10 @@ export const PRODUCTS = [
         "value": "20"
       },
       {
+        "label": "TurboWash 39",
+        "value": "Yes"
+      },
+      {
         "label": "Delay Timer",
         "value": "3-19 hours"
       },
@@ -4905,24 +6857,16 @@ export const PRODUCTS = [
         "value": "Dial + Full Touch Buttons & LCD+LED Display"
       },
       {
+        "label": "AI DD",
+        "value": "Yes"
+      },
+      {
         "label": "Type",
         "value": "Front Load Washer"
       },
       {
-        "label": "Drum Lifter",
-        "value": "Stainless Steel Slim Lifter"
-      },
-      {
-        "label": "Water feed (Hot / Cold)",
-        "value": "Cold Only"
-      },
-      {
-        "label": "Water Level",
-        "value": "Auto"
-      },
-      {
-        "label": "Product Dimensions (WxHxD mm)",
-        "value": "650x950x780"
+        "label": "ezDispense",
+        "value": "No"
       }
     ]
   },
@@ -4944,9 +6888,16 @@ export const PRODUCTS = [
         "id": "matte-black",
         "name": "Matte Black",
         "hex": "#1A1A1A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/450x450/01-NT-Slim-LCD-EssenceGraphite-Front.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/01-NT-Slim-LCD-EssenceGraphite-Front.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/450x450/01-NT-Slim-LCD-EssenceGraphite-Front.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/01-NT-Slim-LCD-EssenceGraphite-Front.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/02-NT-Slim-LCD-EssenceGraphite-FrontOpen.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/03-NT-Slim-LCD-EssenceGraphite-RightSide.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/04-NT-Slim-LCD-EssenceGraphite-LeftSide.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/05-NT-Slim-LCD-EssenceGraphite-Detail1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/06-NT-Slim-LCD-EssenceGraphite-Detail2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/07-NT-Slim-LCD-EssenceGraphite-DrumDetail.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/09-NT-Slim-LCD-EssenceGraphite-Side.jpg"
         ],
         "model": "F2515RNTKAR",
         "specIds": [
@@ -4955,9 +6906,16 @@ export const PRODUCTS = [
         "variants": {
           "15-8kg": {
             "model": "F2515RNTKAR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/450x450/01-NT-Slim-LCD-EssenceGraphite-Front.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/01-NT-Slim-LCD-EssenceGraphite-Front.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/450x450/01-NT-Slim-LCD-EssenceGraphite-Front.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/01-NT-Slim-LCD-EssenceGraphite-Front.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/02-NT-Slim-LCD-EssenceGraphite-FrontOpen.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/03-NT-Slim-LCD-EssenceGraphite-RightSide.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/04-NT-Slim-LCD-EssenceGraphite-LeftSide.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/05-NT-Slim-LCD-EssenceGraphite-Detail1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/06-NT-Slim-LCD-EssenceGraphite-Detail2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/07-NT-Slim-LCD-EssenceGraphite-DrumDetail.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-gallery/2010x1334/09-NT-Slim-LCD-EssenceGraphite-Side.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/f2515rntkar/lgsubscribe",
             "detail": {
@@ -4978,13 +6936,21 @@ export const PRODUCTS = [
                 {
                   "title": "Take the guesswork out of washing and let AI DD™",
                   "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes."
+                },
+                {
+                  "title": "Get Fresh Laundry in just 39 minutes",
+                  "copy": "TurboWash™ 360 o sprays water in four directions to ensure a deep clean in a short time."
+                },
+                {
+                  "title": "Experience Reduced Noise and Vibrations",
+                  "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process."
                 }
               ],
               "stories": [
                 {
                   "title": "Washer and Dryer in One",
                   "copy": "Save space, make room for family with LG's all in one washer and dryer.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/mobile/WD-NT-Slim-LCD-02-0-AllinOne-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/desktop/WD-NT-Slim-LCD-02-0-AllinOne-D.jpg",
                   "video": null
                 },
                 {
@@ -5004,6 +6970,30 @@ export const PRODUCTS = [
                   "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wm-fl-nt-slim-led-pdp-2024-gp1/h-a-wm-nt-slim-led-gp1-feature/desktop/HA-WM-NT-Slim-LED-GP1-06-desktop(thumbnail).jpg",
                   "video": null
+                },
+                {
+                  "title": "Get Fresh Laundry in just 39 minutes",
+                  "copy": "TurboWash™ 360 o sprays water in four directions to ensure a deep clean in a short time.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/desktop/HA-WM-NT-Slim-LCD-GP1-07-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Experience Reduced Noise and Vibrations",
+                  "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/desktop/HA-WM-NT-Slim-LCD-GP1-08-desktop(thumbnail).jpg",
+                  "video": null
+                },
+                {
+                  "title": "Prioritize your health and tackle allergens",
+                  "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wm-fl-nt-slim-led-pdp-2024-gp1/h-a-wm-nt-slim-led-gp1-feature/desktop/HA-WM-NT-Slim-LED-GP1-09-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Wash and rinse away pet odors and stains",
+                  "copy": "LG's Pet Care wash cycle provides a strong washing performance, tackling pet odors and stains with high-temperature washing and a four-step rinse process.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wm-fl-nt-slim-led-pdp-2024-gp1/h-a-wm-nt-slim-led-gp1-feature/desktop/HA-WM-NT-Slim-LED-GP1-10-desktop.jpg",
+                  "video": null
                 }
               ],
               "facts": []
@@ -5022,7 +7012,7 @@ export const PRODUCTS = [
           "outright": null,
           "subscribe": {
             "60": {
-              "combined": 85,
+              "combined": 105,
               "visit": {
                 "6": 115,
                 "12": null,
@@ -5030,6 +7020,7 @@ export const PRODUCTS = [
               }
             },
             "84": {
+              "combined": 85,
               "visit": {
                 "6": 95,
                 "12": null,
@@ -5057,13 +7048,21 @@ export const PRODUCTS = [
       {
         "title": "Take the guesswork out of washing and let AI DD™",
         "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes."
+      },
+      {
+        "title": "Get Fresh Laundry in just 39 minutes",
+        "copy": "TurboWash™ 360 o sprays water in four directions to ensure a deep clean in a short time."
+      },
+      {
+        "title": "Experience Reduced Noise and Vibrations",
+        "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process."
       }
     ],
     "stories": [
       {
         "title": "Washer and Dryer in One",
         "copy": "Save space, make room for family with LG's all in one washer and dryer.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/mobile/WD-NT-Slim-LCD-02-0-AllinOne-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/desktop/WD-NT-Slim-LCD-02-0-AllinOne-D.jpg",
         "video": null
       },
       {
@@ -5083,8 +7082,33 @@ export const PRODUCTS = [
         "copy": "Enjoy a machine that use AI to select your washing cycle, reducing fabric damage for longer-lasting clothes.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wm-fl-nt-slim-led-pdp-2024-gp1/h-a-wm-nt-slim-led-gp1-feature/desktop/HA-WM-NT-Slim-LED-GP1-06-desktop(thumbnail).jpg",
         "video": null
+      },
+      {
+        "title": "Get Fresh Laundry in just 39 minutes",
+        "copy": "TurboWash™ 360 o sprays water in four directions to ensure a deep clean in a short time.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/desktop/HA-WM-NT-Slim-LCD-GP1-07-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Experience Reduced Noise and Vibrations",
+        "copy": "Packed with technology and a vibration sensor to bring peace and quiet to your laundry process.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/f2515rntkar-aebreml/h-a-wm-nt-slim-lcd-gp1-feature/desktop/HA-WM-NT-Slim-LCD-GP1-08-desktop(thumbnail).jpg",
+        "video": null
+      },
+      {
+        "title": "Prioritize your health and tackle allergens",
+        "copy": "LG's Allergy Care cycle removes allergens, live dust mites, and bacteria for a worry-free wash.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wm-fl-nt-slim-led-pdp-2024-gp1/h-a-wm-nt-slim-led-gp1-feature/desktop/HA-WM-NT-Slim-LED-GP1-09-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Wash and rinse away pet odors and stains",
+        "copy": "LG's Pet Care wash cycle provides a strong washing performance, tackling pet odors and stains with high-temperature washing and a four-step rinse process.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wm-fl-nt-slim-led-pdp-2024-gp1/h-a-wm-nt-slim-led-gp1-feature/desktop/HA-WM-NT-Slim-LED-GP1-10-desktop.jpg",
+        "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "lg-washtower-wt2520nhegr",
@@ -5094,7 +7118,7 @@ export const PRODUCTS = [
     "baseName": "LG WashTower",
     "shortName": "LG WashTower",
     "model": "WT2520NHEGR",
-    "tagline": "Style your space and make it more special with LG Objet WashTower™.",
+    "tagline": "Style your space and make it more special with LG Objet WashTower™. LG Objet WashTower™ makes your laundry space more stylish.",
     "category": "Washer Dryers",
     "waters": [],
     "hasCare": true,
@@ -5104,9 +7128,16 @@ export const PRODUCTS = [
         "id": "nature-green-beige",
         "name": "Nature Green/Beige",
         "hex": "#C5CDB6",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-01-front-lightoff.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/450.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-01-front-lightoff.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-02-front-lighton.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-03-frontopen.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-04-rightside1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-05-rightside2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-06-leftside1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-07-leftside2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-08-side.jpg"
         ],
         "model": "WT2520NHEGR",
         "specIds": [
@@ -5115,17 +7146,28 @@ export const PRODUCTS = [
         "variants": {
           "25-20kg": {
             "model": "WT2520NHEGR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-01-front-lightoff.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/450.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-01-front-lightoff.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-02-front-lighton.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-03-frontopen.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-04-rightside1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-05-rightside2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-06-leftside1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-07-leftside2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt2520nhegr-abgreml/gallery-new/2010x1334/washtower-wt-2025-w1s3cvkk2hm-wt2520nhegr-my-beige-green-08-side.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/wt2520nhegr/lgsubscribe",
             "detail": {
-              "tagline": "Style your space and make it more special with LG Objet WashTower™.",
+              "tagline": "Style your space and make it more special with LG Objet WashTower™. LG Objet WashTower™ makes your laundry space more stylish.",
               "quickFeatures": [
                 {
                   "title": "Built for Performance, Styled By You",
                   "copy": "Style your space and make it more special with LG Objet WashTower™."
+                },
+                {
+                  "title": "Laundry Room",
+                  "copy": "LG Objet WashTower™ makes your laundry space more stylish."
                 },
                 {
                   "title": "Easy Reach Control Panel",
@@ -5138,6 +7180,10 @@ export const PRODUCTS = [
                 {
                   "title": "Smart Pairing™",
                   "copy": "Thanks to Smart Pairing™, washed clothes will be dried at the optimal cycle."
+                },
+                {
+                  "title": "Get It All Done and Then Some",
+                  "copy": "Your laundry can be thoroughly cleaned in minutes without compromising fabric protection."
                 }
               ],
               "stories": [
@@ -5145,6 +7191,12 @@ export const PRODUCTS = [
                   "title": "Built for Performance, Styled By You",
                   "copy": "Style your space and make it more special with LG Objet WashTower™.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-01-intro-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Laundry Room",
+                  "copy": "LG Objet WashTower™ makes your laundry space more stylish. LG Objet WashTower™ makes your laundry space more stylish.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-03-2-1-interior-gallery-laundryroom-thumb.jpg",
                   "video": null
                 },
                 {
@@ -5163,6 +7215,24 @@ export const PRODUCTS = [
                   "title": "Smart Pairing™",
                   "copy": "Thanks to Smart Pairing™, washed clothes will be dried at the optimal cycle. Just press Start.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-washtower-heat-pump-blacksteel-04-3-smart-paring-m-REV.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Get It All Done and Then Some",
+                  "copy": "Your laundry can be thoroughly cleaned in minutes without compromising fabric protection.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-washtower-heat-pump-blacksteel-07-turbowash-360-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "An Energy-saving Way to Dry",
+                  "copy": "Widens a range of the circulation speed from very fast to slow without turning it on and off.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-11-1-conventional-desktop.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-11-1-conventional-desktop.mp4"
+                },
+                {
+                  "title": "Condenser with Convenient Cleaning",
+                  "copy": "Enjoy hassle-free maintenance of the Auto Cleaning Condenser*-it self-cleans so you don't have to.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-washtower-heat-pump-blacksteel-09-auto-cleaning-condenser-d.jpg",
                   "video": null
                 }
               ],
@@ -5200,6 +7270,10 @@ export const PRODUCTS = [
         "copy": "Style your space and make it more special with LG Objet WashTower™."
       },
       {
+        "title": "Laundry Room",
+        "copy": "LG Objet WashTower™ makes your laundry space more stylish."
+      },
+      {
         "title": "Easy Reach Control Panel",
         "copy": "The centrally located panel provides easy access to both the washer and dryer controls in an easily accessible location."
       },
@@ -5210,6 +7284,10 @@ export const PRODUCTS = [
       {
         "title": "Smart Pairing™",
         "copy": "Thanks to Smart Pairing™, washed clothes will be dried at the optimal cycle."
+      },
+      {
+        "title": "Get It All Done and Then Some",
+        "copy": "Your laundry can be thoroughly cleaned in minutes without compromising fabric protection."
       }
     ],
     "stories": [
@@ -5217,6 +7295,12 @@ export const PRODUCTS = [
         "title": "Built for Performance, Styled By You",
         "copy": "Style your space and make it more special with LG Objet WashTower™.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-01-intro-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Laundry Room",
+        "copy": "LG Objet WashTower™ makes your laundry space more stylish. LG Objet WashTower™ makes your laundry space more stylish.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-03-2-1-interior-gallery-laundryroom-thumb.jpg",
         "video": null
       },
       {
@@ -5236,8 +7320,27 @@ export const PRODUCTS = [
         "copy": "Thanks to Smart Pairing™, washed clothes will be dried at the optimal cycle. Just press Start.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-washtower-heat-pump-blacksteel-04-3-smart-paring-m-REV.jpg",
         "video": null
+      },
+      {
+        "title": "Get It All Done and Then Some",
+        "copy": "Your laundry can be thoroughly cleaned in minutes without compromising fabric protection.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-washtower-heat-pump-blacksteel-07-turbowash-360-d.jpg",
+        "video": null
+      },
+      {
+        "title": "An Energy-saving Way to Dry",
+        "copy": "Widens a range of the circulation speed from very fast to slow without turning it on and off.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-11-1-conventional-desktop.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-it-objet-washtower-gb-heatpump-11-1-conventional-desktop.mp4"
+      },
+      {
+        "title": "Condenser with Convenient Cleaning",
+        "copy": "Enjoy hassle-free maintenance of the Auto Cleaning Condenser*-it self-cleans so you don't have to.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/wd-washtower-heat-pump-blacksteel-09-auto-cleaning-condenser-d.jpg",
+        "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "lg-washtower-wt1410nhb",
@@ -5257,9 +7360,16 @@ export const PRODUCTS = [
         "id": "platinum-black",
         "name": "Platinum Black",
         "hex": "#2A2A2A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/450x450/wt2520nhba-450x450-1.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-1.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/450x450/wt2520nhba-450x450-1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-4.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-5.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-6.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-7.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-8.jpg"
         ],
         "model": "WT1410NHB",
         "specIds": [
@@ -5268,9 +7378,16 @@ export const PRODUCTS = [
         "variants": {
           "14-10kg": {
             "model": "WT1410NHB",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/450x450/wt2520nhba-450x450-1.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-1.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/450x450/wt2520nhba-450x450-1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-4.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-5.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-6.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-7.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/gallery/2010x1334/wt2520nhba-2010x1334-8.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/wt1410nhb/lgsubscribe",
             "detail": {
@@ -5285,12 +7402,20 @@ export const PRODUCTS = [
                   "copy": "Its built intelligence technology identifies optimal wash and dry cycles."
                 },
                 {
+                  "title": "Take Control with Center Control",
+                  "copy": "An all-in-one control panel within reach - so intuitive, you'll wonder why it didn't exist before."
+                },
+                {
                   "title": "AI DD™",
                   "copy": "Auto Sense AI DD™ Technology identifies the most suitable pattern to handle your clothes with care."
                 },
                 {
                   "title": "Smart Paring™",
                   "copy": "Thanks to Smart Paring™, washed clothes will be dried at the optimal cycle."
+                },
+                {
+                  "title": "Get It All Done and Then Some",
+                  "copy": "Your laundry can be thoroughly cleaned in just 30 minutes without compromising fabric protection."
                 }
               ],
               "stories": [
@@ -5307,6 +7432,12 @@ export const PRODUCTS = [
                   "video": null
                 },
                 {
+                  "title": "Take Control with Center Control",
+                  "copy": "An all-in-one control panel within reach - so intuitive, you'll wonder why it didn't exist before.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-03-2-center-control-d.jpg",
+                  "video": null
+                },
+                {
                   "title": "AI DD™",
                   "copy": "Auto Sense AI DD™ Technology identifies the most suitable pattern to handle your clothes with care.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-04-2-ai-dd-d.jpg",
@@ -5316,6 +7447,24 @@ export const PRODUCTS = [
                   "title": "Smart Paring™",
                   "copy": "Thanks to Smart Paring™, washed clothes will be dried at the optimal cycle. Just press Start.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-04-3-smart-paring-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Get It All Done and Then Some",
+                  "copy": "Your laundry can be thoroughly cleaned in just 30 minutes without compromising fabric protection.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-07-turbowash-360-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "An Energy-saving Way to Dry",
+                  "copy": "Uncontrollable compressing Speed Controlled compressing Speed",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-08-1-conventional-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-08-1-conventional-d.mp4"
+                },
+                {
+                  "title": "Condenser with Convenient Cleaning",
+                  "copy": "Enjoy hassle-free maintenance of the Auto Cleaning Condenser*-it self-cleans so you don't have to.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-09-auto-cleaning-condenser-d.jpg",
                   "video": null
                 }
               ],
@@ -5333,6 +7482,10 @@ export const PRODUCTS = [
                   "value": "600 x 1655 x 660"
                 },
                 {
+                  "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+                  "value": "Yes"
+                },
+                {
                   "label": "Max Dry Capacity(kg)",
                   "value": "10"
                 },
@@ -5341,12 +7494,20 @@ export const PRODUCTS = [
                   "value": "14"
                 },
                 {
+                  "label": "Delay Timer",
+                  "value": "No"
+                },
+                {
                   "label": "Display Type",
                   "value": "Full Touch LED"
                 },
                 {
                   "label": "Figure Indicator",
                   "value": "18:88"
+                },
+                {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "Product Dimensions (WxHxD mm)",
@@ -5363,10 +7524,6 @@ export const PRODUCTS = [
                 {
                   "label": "Weight (kg)",
                   "value": "128.0"
-                },
-                {
-                  "label": "Bar Code",
-                  "value": "8806096617663"
                 }
               ]
             }
@@ -5406,12 +7563,20 @@ export const PRODUCTS = [
         "copy": "Its built intelligence technology identifies optimal wash and dry cycles."
       },
       {
+        "title": "Take Control with Center Control",
+        "copy": "An all-in-one control panel within reach - so intuitive, you'll wonder why it didn't exist before."
+      },
+      {
         "title": "AI DD™",
         "copy": "Auto Sense AI DD™ Technology identifies the most suitable pattern to handle your clothes with care."
       },
       {
         "title": "Smart Paring™",
         "copy": "Thanks to Smart Paring™, washed clothes will be dried at the optimal cycle."
+      },
+      {
+        "title": "Get It All Done and Then Some",
+        "copy": "Your laundry can be thoroughly cleaned in just 30 minutes without compromising fabric protection."
       }
     ],
     "stories": [
@@ -5428,6 +7593,12 @@ export const PRODUCTS = [
         "video": null
       },
       {
+        "title": "Take Control with Center Control",
+        "copy": "An all-in-one control panel within reach - so intuitive, you'll wonder why it didn't exist before.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-03-2-center-control-d.jpg",
+        "video": null
+      },
+      {
         "title": "AI DD™",
         "copy": "Auto Sense AI DD™ Technology identifies the most suitable pattern to handle your clothes with care.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-04-2-ai-dd-d.jpg",
@@ -5437,6 +7608,24 @@ export const PRODUCTS = [
         "title": "Smart Paring™",
         "copy": "Thanks to Smart Paring™, washed clothes will be dried at the optimal cycle. Just press Start.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-04-3-smart-paring-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Get It All Done and Then Some",
+        "copy": "Your laundry can be thoroughly cleaned in just 30 minutes without compromising fabric protection.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-07-turbowash-360-d.jpg",
+        "video": null
+      },
+      {
+        "title": "An Energy-saving Way to Dry",
+        "copy": "Uncontrollable compressing Speed Controlled compressing Speed",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-08-1-conventional-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-08-1-conventional-d.mp4"
+      },
+      {
+        "title": "Condenser with Convenient Cleaning",
+        "copy": "Enjoy hassle-free maintenance of the Auto Cleaning Condenser*-it self-cleans so you don't have to.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/wt1410nhb-apbrpml/features/wd-washtower-heat-pump-blacksteel-09-auto-cleaning-condenser-d.jpg",
         "video": null
       }
     ],
@@ -5454,6 +7643,10 @@ export const PRODUCTS = [
         "value": "600 x 1655 x 660"
       },
       {
+        "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+        "value": "Yes"
+      },
+      {
         "label": "Max Dry Capacity(kg)",
         "value": "10"
       },
@@ -5462,12 +7655,20 @@ export const PRODUCTS = [
         "value": "14"
       },
       {
+        "label": "Delay Timer",
+        "value": "No"
+      },
+      {
         "label": "Display Type",
         "value": "Full Touch LED"
       },
       {
         "label": "Figure Indicator",
         "value": "18:88"
+      },
+      {
+        "label": "ThinQ(Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "Product Dimensions (WxHxD mm)",
@@ -5484,10 +7685,6 @@ export const PRODUCTS = [
       {
         "label": "Weight (kg)",
         "value": "128.0"
-      },
-      {
-        "label": "Bar Code",
-        "value": "8806096617663"
       }
     ]
   },
@@ -5499,7 +7696,7 @@ export const PRODUCTS = [
     "baseName": "LG Top Loader",
     "shortName": "LG Top Loader",
     "model": "TV2520SV9KR",
-    "tagline": "Automatically optimize motion based on the weight and fabric type in each load. LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
+    "tagline": "Automatically optimize motion based on the weight and fabric type in each load.",
     "category": "Washers",
     "waters": [],
     "hasCare": true,
@@ -5509,9 +7706,16 @@ export const PRODUCTS = [
         "id": "black",
         "name": "Black",
         "hex": "#111111",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/D-1.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/D-1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-2.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-4.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-5.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-6.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-7.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-8.jpg"
         ],
         "model": "TV2520SV9KR",
         "specIds": [
@@ -5520,17 +7724,28 @@ export const PRODUCTS = [
         "variants": {
           "20kg": {
             "model": "TV2520SV9KR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/D-1.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/D-1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-2.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-4.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-5.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-6.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-7.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/washers/tv2520sv7k_apbreml_eaml_my_c/gallery/S-8.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/tv2520sv9kr/lgsubscribe",
             "detail": {
-              "tagline": "Automatically optimize motion based on the weight and fabric type in each load. LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
+              "tagline": "Automatically optimize motion based on the weight and fabric type in each load.",
               "quickFeatures": [
                 {
                   "title": "Intelligent Care of 24% More Fabric Protection",
                   "copy": "Automatically optimize motion based on the weight and fabric type in each load."
+                },
+                {
+                  "title": "Quiet Operator",
+                  "copy": "This washer balancing vibration and spin speed with 4 vertical damper, 2 horizontal damper and 1 vibration sensor."
                 },
                 {
                   "title": "A Powerful Clean in 39 Minutes",
@@ -5543,31 +7758,59 @@ export const PRODUCTS = [
                 {
                   "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
                   "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes."
+                },
+                {
+                  "title": "Enjoy Fresher Fabrics for Longer",
+                  "copy": "Your laundry will smell fresher and longer when the softener gets deep into fabrics during the wash cycle."
                 }
               ],
               "stories": [
                 {
                   "title": "Intelligent Care of 24% More Fabric Protection",
                   "copy": "Automatically optimize motion based on the weight and fabric type in each load.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.mp4"
+                },
+                {
+                  "title": "Quiet Operator",
+                  "copy": "This washer balancing vibration and spin speed with 4 vertical damper, 2 horizontal damper and 1 vibration sensor.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-02-Smooth-Operation-D.jpg",
+                  "video": null
                 },
                 {
                   "title": "A Powerful Clean in 39 Minutes",
                   "copy": "LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.mp4"
                 },
                 {
                   "title": "Same Size on the Outside, Bigger Capacity in the Inside",
                   "copy": "Do more laundry in one load with a washer that maximizes its interior space for a larger tub.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.mp4"
                 },
                 {
                   "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
                   "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-08-1-Lint-Filter-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-08-1-Lint-Filter-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Enjoy Fresher Fabrics for Longer",
+                  "copy": "Your laundry will smell fresher and longer when the softener gets deep into fabrics during the wash cycle.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-09-1-Scent-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Long Lasting and High Reliability",
+                  "copy": "The Inverter Direct Drive Motor is reliable, quiet, and comes with a 10-year warranty.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-11-1-Inverter-DD-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "An Optimal Way to Wash",
+                  "copy": "6 washing motions powered by the Inverter Direct Drive Motor™ create 6 optimized cycles to wash fabric.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-05-2-1-6Motion-Agitating-D.jpg",
                   "video": null
                 }
               ],
@@ -5579,6 +7822,18 @@ export const PRODUCTS = [
                 {
                   "label": "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)",
                   "value": "632 x 1040 x 670"
+                },
+                {
+                  "label": "FEATURES - ezDispense",
+                  "value": "No"
+                },
+                {
+                  "label": "FEATURES - Steam",
+                  "value": "Yes"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "Body Color",
@@ -5605,20 +7860,16 @@ export const PRODUCTS = [
                   "value": "18:88"
                 },
                 {
+                  "label": "AI DD",
+                  "value": "Yes"
+                },
+                {
                   "label": "Type",
                   "value": "Top Load Washer"
                 },
                 {
-                  "label": "Water feed (Hot / Cold)",
-                  "value": "Cold Only"
-                },
-                {
-                  "label": "Water Level",
-                  "value": "Auto/Manual"
-                },
-                {
-                  "label": "Product Height with Lid Open (mm)",
-                  "value": "1355"
+                  "label": "ezDispense",
+                  "value": "No"
                 }
               ]
             }
@@ -5636,7 +7887,7 @@ export const PRODUCTS = [
           "outright": null,
           "subscribe": {
             "60": {
-              "combined": 80,
+              "combined": 100,
               "visit": {
                 "6": 110,
                 "12": null,
@@ -5644,7 +7895,7 @@ export const PRODUCTS = [
               }
             },
             "84": {
-              "combined": 100,
+              "combined": 80,
               "visit": {
                 "6": 90,
                 "12": null,
@@ -5662,6 +7913,10 @@ export const PRODUCTS = [
         "copy": "Automatically optimize motion based on the weight and fabric type in each load."
       },
       {
+        "title": "Quiet Operator",
+        "copy": "This washer balancing vibration and spin speed with 4 vertical damper, 2 horizontal damper and 1 vibration sensor."
+      },
+      {
         "title": "A Powerful Clean in 39 Minutes",
         "copy": "LG's TurboWash gives you clean and fresh clothing in just 39 minutes."
       },
@@ -5672,31 +7927,59 @@ export const PRODUCTS = [
       {
         "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
         "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes."
+      },
+      {
+        "title": "Enjoy Fresher Fabrics for Longer",
+        "copy": "Your laundry will smell fresher and longer when the softener gets deep into fabrics during the wash cycle."
       }
     ],
     "stories": [
       {
         "title": "Intelligent Care of 24% More Fabric Protection",
         "copy": "Automatically optimize motion based on the weight and fabric type in each load.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.mp4"
+      },
+      {
+        "title": "Quiet Operator",
+        "copy": "This washer balancing vibration and spin speed with 4 vertical damper, 2 horizontal damper and 1 vibration sensor.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-02-Smooth-Operation-D.jpg",
+        "video": null
       },
       {
         "title": "A Powerful Clean in 39 Minutes",
         "copy": "LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.mp4"
       },
       {
         "title": "Same Size on the Outside, Bigger Capacity in the Inside",
         "copy": "Do more laundry in one load with a washer that maximizes its interior space for a larger tub.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.mp4"
       },
       {
         "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
         "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-08-1-Lint-Filter-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-08-1-Lint-Filter-D.jpg",
+        "video": null
+      },
+      {
+        "title": "Enjoy Fresher Fabrics for Longer",
+        "copy": "Your laundry will smell fresher and longer when the softener gets deep into fabrics during the wash cycle.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-09-1-Scent-D.jpg",
+        "video": null
+      },
+      {
+        "title": "Long Lasting and High Reliability",
+        "copy": "The Inverter Direct Drive Motor is reliable, quiet, and comes with a 10-year warranty.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-11-1-Inverter-DD-D.jpg",
+        "video": null
+      },
+      {
+        "title": "An Optimal Way to Wash",
+        "copy": "6 washing motions powered by the Inverter Direct Drive Motor™ create 6 optimized cycles to wash fabric.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-05-2-1-6Motion-Agitating-D.jpg",
         "video": null
       }
     ],
@@ -5708,6 +7991,18 @@ export const PRODUCTS = [
       {
         "label": "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)",
         "value": "632 x 1040 x 670"
+      },
+      {
+        "label": "FEATURES - ezDispense",
+        "value": "No"
+      },
+      {
+        "label": "FEATURES - Steam",
+        "value": "Yes"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "Body Color",
@@ -5734,20 +8029,16 @@ export const PRODUCTS = [
         "value": "18:88"
       },
       {
+        "label": "AI DD",
+        "value": "Yes"
+      },
+      {
         "label": "Type",
         "value": "Top Load Washer"
       },
       {
-        "label": "Water feed (Hot / Cold)",
-        "value": "Cold Only"
-      },
-      {
-        "label": "Water Level",
-        "value": "Auto/Manual"
-      },
-      {
-        "label": "Product Height with Lid Open (mm)",
-        "value": "1355"
+        "label": "ezDispense",
+        "value": "No"
       }
     ]
   },
@@ -5759,7 +8050,7 @@ export const PRODUCTS = [
     "baseName": "LG Top Loader",
     "shortName": "LG Top Loader",
     "model": "TX2522AT9GR",
-    "tagline": "Automatically optimize motion based on the weight and fabric type in each load. LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
+    "tagline": "Wash with the stronger and faster movement of the Pulsator Dynamic waves from side to side for through washing.",
     "category": "Washers",
     "waters": [],
     "hasCare": true,
@@ -5769,9 +8060,16 @@ export const PRODUCTS = [
         "id": "black",
         "name": "Black",
         "hex": "#111111",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-08.jpg"
         ],
         "model": "TX2522AT9GR",
         "specIds": [
@@ -5780,69 +8078,120 @@ export const PRODUCTS = [
         "variants": {
           "22kg": {
             "model": "TX2522AT9GR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tv2520sv9kr-apbreml/thumbnail/350-1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gallery/DZ-08.jpg"
             ],
-            "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/tv2520sv9kr/lgsubscribe",
+            "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/tx2522at9gr/",
             "detail": {
-              "tagline": "Automatically optimize motion based on the weight and fabric type in each load. LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
+              "tagline": "Wash with the stronger and faster movement of the Pulsator Dynamic waves from side to side for through washing.",
               "quickFeatures": [
                 {
-                  "title": "Intelligent Care of 24% More Fabric Protection",
-                  "copy": "Automatically optimize motion based on the weight and fabric type in each load."
+                  "title": "Power motion",
+                  "copy": "Wash with the stronger and faster movement of the Pulsator Dynamic waves from side to side for through washing"
                 },
                 {
-                  "title": "A Powerful Clean in 39 Minutes",
-                  "copy": "LG's TurboWash gives you clean and fresh clothing in just 39 minutes."
+                  "title": "Wash cycles tailored to your laundry habits",
+                  "copy": "Cycle & Option Optimization By automatically selecting frequent cycles, the washer can save you time on laundry."
                 },
                 {
-                  "title": "Same Size on the Outside, Bigger Capacity in the Inside",
-                  "copy": "Do more laundry in one load with a washer that maximizes its interior space for a larger tub."
+                  "title": "Control your laundry anytime, anywhere",
+                  "copy": "The ThinQ app allows you to connect with your washer remotely."
                 },
                 {
-                  "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
-                  "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes."
+                  "title": "AI-enhanced washing powered by AI DD™",
+                  "copy": "AI Wash optimizes washing motions based on the laundry type."
+                },
+                {
+                  "title": "An optimal way to wash",
+                  "copy": "Powered by an LG Inverter Direct Drive™ motor, six different cycles ensure a through cleaning of clothes."
+                },
+                {
+                  "title": "A powerful yet gentle clean in 30 min",
+                  "copy": "Exclusive LG TurboWash™ gives a powerful yet gentle clean to help get through more in less time."
                 }
               ],
               "stories": [
                 {
-                  "title": "Intelligent Care of 24% More Fabric Protection",
-                  "copy": "Automatically optimize motion based on the weight and fabric type in each load.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.jpg",
-                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.mp4"
-                },
-                {
-                  "title": "A Powerful Clean in 39 Minutes",
-                  "copy": "LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.jpg",
-                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.mp4"
-                },
-                {
-                  "title": "Same Size on the Outside, Bigger Capacity in the Inside",
-                  "copy": "Do more laundry in one load with a washer that maximizes its interior space for a larger tub.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.jpg",
-                  "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.mp4"
-                },
-                {
-                  "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
-                  "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-08-1-Lint-Filter-M.jpg",
+                  "title": "Power motion",
+                  "copy": "Wash with the stronger and faster movement of the Pulsator Dynamic waves from side to side for through washing",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-turbowash-thumbnail-power-motion.jpg",
                   "video": null
+                },
+                {
+                  "title": "Wash cycles tailored to your laundry habits",
+                  "copy": "Cycle & Option Optimization By automatically selecting frequent cycles, the washer can save you time on laundry. Simply toggle the Cycle List Edit option.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-cycle-option-optimization.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-cycle-option-optimization.mp4"
+                },
+                {
+                  "title": "Control your laundry anytime, anywhere",
+                  "copy": "The ThinQ app allows you to connect with your washer remotely. Start your load with just the tap of a button. Whether it's everyday maintenance or larger tasks, conveniently monitor your washer's energy usage through the ThinQ app.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-thinq-remote-operation-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "AI-enhanced washing powered by AI DD™",
+                  "copy": "AI Wash optimizes washing motions based on the laundry type. Additionally, it can help achieve effective fabric care and energy savings with soft fabrics.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-ai-wash-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-ai-wash-m.mp4"
+                },
+                {
+                  "title": "An optimal way to wash",
+                  "copy": "Powered by an LG Inverter Direct Drive™ motor, six different cycles ensure a through cleaning of clothes.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-6-motion-agitating.jpg",
+                  "video": null
+                },
+                {
+                  "title": "A powerful yet gentle clean in 30 min",
+                  "copy": "Exclusive LG TurboWash™ gives a powerful yet gentle clean to help get through more in less time.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-turbowash-30-min-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Use multiple times with just one easy fill",
+                  "copy": "Automatically dispenses the right amount of detergent and fabric softener, skipping refills for up to 15 loads. Even get alerts on your smartphone when it's time to refill, making laundry quick, easy and foolproof.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-automatic-dispenser-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-automatic-dispenser-m.mp4"
+                },
+                {
+                  "title": "Easy ergonomic reach",
+                  "copy": "An angled washer front offers a more comfortable, ergonomic reach without compromising capacity.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-easyunload-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-easyunload-m.mp4"
                 }
               ],
               "facts": [
                 {
                   "label": "CAPACITY - Max Wash Capacity(kg)",
-                  "value": "20"
+                  "value": "22"
                 },
                 {
                   "label": "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)",
-                  "value": "632 x 1040 x 670"
+                  "value": "651 x 1060 x 680"
+                },
+                {
+                  "label": "FEATURES - ezDispense",
+                  "value": "Yes"
+                },
+                {
+                  "label": "FEATURES - Steam",
+                  "value": "Yes"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "Body Color",
-                  "value": "Platinum Black"
+                  "value": "Essence Graphite"
                 },
                 {
                   "label": "Lid Type",
@@ -5850,35 +8199,31 @@ export const PRODUCTS = [
                 },
                 {
                   "label": "Max Wash Capacity(kg)",
-                  "value": "20"
+                  "value": "22"
+                },
+                {
+                  "label": "Display Type",
+                  "value": "Dial + Full Touch Buttons & LCD+LED Display"
                 },
                 {
                   "label": "Delay Timer",
                   "value": "3-19 hours"
                 },
                 {
-                  "label": "Display Type",
-                  "value": "Hard Buttons & LED Display"
-                },
-                {
                   "label": "Figure Indicator",
-                  "value": "18:88"
+                  "value": "LCD"
                 },
                 {
                   "label": "Type",
                   "value": "Top Load Washer"
                 },
                 {
-                  "label": "Water feed (Hot / Cold)",
-                  "value": "Cold Only"
+                  "label": "AI DD",
+                  "value": "Yes"
                 },
                 {
-                  "label": "Water Level",
-                  "value": "Auto/Manual"
-                },
-                {
-                  "label": "Product Height with Lid Open (mm)",
-                  "value": "1355"
+                  "label": "ezDispense",
+                  "value": "Yes"
                 }
               ]
             }
@@ -5896,7 +8241,7 @@ export const PRODUCTS = [
           "outright": null,
           "subscribe": {
             "60": {
-              "combined": 80,
+              "combined": 100,
               "visit": {
                 "6": 110,
                 "12": null,
@@ -5904,7 +8249,7 @@ export const PRODUCTS = [
               }
             },
             "84": {
-              "combined": 100,
+              "combined": 80,
               "visit": {
                 "6": 90,
                 "12": null,
@@ -5918,60 +8263,104 @@ export const PRODUCTS = [
     "copyFeaturesFrom": null,
     "quickFeatures": [
       {
-        "title": "Intelligent Care of 24% More Fabric Protection",
-        "copy": "Automatically optimize motion based on the weight and fabric type in each load."
+        "title": "Power motion",
+        "copy": "Wash with the stronger and faster movement of the Pulsator Dynamic waves from side to side for through washing"
       },
       {
-        "title": "A Powerful Clean in 39 Minutes",
-        "copy": "LG's TurboWash gives you clean and fresh clothing in just 39 minutes."
+        "title": "Wash cycles tailored to your laundry habits",
+        "copy": "Cycle & Option Optimization By automatically selecting frequent cycles, the washer can save you time on laundry."
       },
       {
-        "title": "Same Size on the Outside, Bigger Capacity in the Inside",
-        "copy": "Do more laundry in one load with a washer that maximizes its interior space for a larger tub."
+        "title": "Control your laundry anytime, anywhere",
+        "copy": "The ThinQ app allows you to connect with your washer remotely."
       },
       {
-        "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
-        "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes."
+        "title": "AI-enhanced washing powered by AI DD™",
+        "copy": "AI Wash optimizes washing motions based on the laundry type."
+      },
+      {
+        "title": "An optimal way to wash",
+        "copy": "Powered by an LG Inverter Direct Drive™ motor, six different cycles ensure a through cleaning of clothes."
+      },
+      {
+        "title": "A powerful yet gentle clean in 30 min",
+        "copy": "Exclusive LG TurboWash™ gives a powerful yet gentle clean to help get through more in less time."
       }
     ],
     "stories": [
       {
-        "title": "Intelligent Care of 24% More Fabric Protection",
-        "copy": "Automatically optimize motion based on the weight and fabric type in each load.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.jpg",
-        "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-01-1-AI-DD-M.mp4"
-      },
-      {
-        "title": "A Powerful Clean in 39 Minutes",
-        "copy": "LG's TurboWash gives you clean and fresh clothing in just 39 minutes.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.jpg",
-        "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-03-1-TurboWash-3D-M.mp4"
-      },
-      {
-        "title": "Same Size on the Outside, Bigger Capacity in the Inside",
-        "copy": "Do more laundry in one load with a washer that maximizes its interior space for a larger tub.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.jpg",
-        "video": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-06-1-Capacity-M.mp4"
-      },
-      {
-        "title": "A Larger Lint Filter Keeps the Tub and Your Clothes Cleaner",
-        "copy": "A larger lint filter keeps your laundry and drum cleaner as dust and dirt comes off your clothes.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/WM-Vplus-LED-AI-DD-08-1-Lint-Filter-M.jpg",
+        "title": "Power motion",
+        "copy": "Wash with the stronger and faster movement of the Pulsator Dynamic waves from side to side for through washing",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-turbowash-thumbnail-power-motion.jpg",
         "video": null
+      },
+      {
+        "title": "Wash cycles tailored to your laundry habits",
+        "copy": "Cycle & Option Optimization By automatically selecting frequent cycles, the washer can save you time on laundry. Simply toggle the Cycle List Edit option.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-cycle-option-optimization.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-cycle-option-optimization.mp4"
+      },
+      {
+        "title": "Control your laundry anytime, anywhere",
+        "copy": "The ThinQ app allows you to connect with your washer remotely. Start your load with just the tap of a button. Whether it's everyday maintenance or larger tasks, conveniently monitor your washer's energy usage through the ThinQ app.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-thinq-remote-operation-d.jpg",
+        "video": null
+      },
+      {
+        "title": "AI-enhanced washing powered by AI DD™",
+        "copy": "AI Wash optimizes washing motions based on the laundry type. Additionally, it can help achieve effective fabric care and energy savings with soft fabrics.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-ai-wash-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-ai-wash-m.mp4"
+      },
+      {
+        "title": "An optimal way to wash",
+        "copy": "Powered by an LG Inverter Direct Drive™ motor, six different cycles ensure a through cleaning of clothes.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-6-motion-agitating.jpg",
+        "video": null
+      },
+      {
+        "title": "A powerful yet gentle clean in 30 min",
+        "copy": "Exclusive LG TurboWash™ gives a powerful yet gentle clean to help get through more in less time.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-turbowash-30-min-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Use multiple times with just one easy fill",
+        "copy": "Automatically dispenses the right amount of detergent and fabric softener, skipping refills for up to 15 loads. Even get alerts on your smartphone when it's time to refill, making laundry quick, easy and foolproof.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-automatic-dispenser-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-automatic-dispenser-m.mp4"
+      },
+      {
+        "title": "Easy ergonomic reach",
+        "copy": "An angled washer front offers a more comfortable, ergonomic reach without compromising capacity.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/feature/desktop/top-loading-washing-machine-2025-t13x1ehdtta-feature-easyunload-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/tx2522at9g-aegreml/gp1/video/top-loading-washing-machine-2025-t13x1ehdtta-feature-easyunload-m.mp4"
       }
     ],
     "facts": [
       {
         "label": "CAPACITY - Max Wash Capacity(kg)",
-        "value": "20"
+        "value": "22"
       },
       {
         "label": "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)",
-        "value": "632 x 1040 x 670"
+        "value": "651 x 1060 x 680"
+      },
+      {
+        "label": "FEATURES - ezDispense",
+        "value": "Yes"
+      },
+      {
+        "label": "FEATURES - Steam",
+        "value": "Yes"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ(Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "Body Color",
-        "value": "Platinum Black"
+        "value": "Essence Graphite"
       },
       {
         "label": "Lid Type",
@@ -5979,35 +8368,31 @@ export const PRODUCTS = [
       },
       {
         "label": "Max Wash Capacity(kg)",
-        "value": "20"
+        "value": "22"
+      },
+      {
+        "label": "Display Type",
+        "value": "Dial + Full Touch Buttons & LCD+LED Display"
       },
       {
         "label": "Delay Timer",
         "value": "3-19 hours"
       },
       {
-        "label": "Display Type",
-        "value": "Hard Buttons & LED Display"
-      },
-      {
         "label": "Figure Indicator",
-        "value": "18:88"
+        "value": "LCD"
       },
       {
         "label": "Type",
         "value": "Top Load Washer"
       },
       {
-        "label": "Water feed (Hot / Cold)",
-        "value": "Cold Only"
+        "label": "AI DD",
+        "value": "Yes"
       },
       {
-        "label": "Water Level",
-        "value": "Auto/Manual"
-      },
-      {
-        "label": "Product Height with Lid Open (mm)",
-        "value": "1355"
+        "label": "ezDispense",
+        "value": "Yes"
       }
     ]
   },
@@ -6029,9 +8414,16 @@ export const PRODUCTS = [
         "id": "matte-black",
         "name": "Matte Black",
         "hex": "#1A1A1A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/450x450/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/450x450/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-02-10kg-front-open.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-03-10kg-front-high-angle.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-04-10kg-knob-display-detail1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-05-10kg-drum.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-06-10kg-left.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-07-10kg-left-high-angle.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-08-10kg-right.jpg"
         ],
         "model": "RX10VHP3KR",
         "specIds": [
@@ -6040,9 +8432,16 @@ export const PRODUCTS = [
         "variants": {
           "10kg": {
             "model": "RX10VHP3KR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/450x450/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/450x450/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-01-10kg-front.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-02-10kg-front-open.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-03-10kg-front-high-angle.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-04-10kg-knob-display-detail1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-05-10kg-drum.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-06-10kg-left.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-07-10kg-left-high-angle.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x76ven-rx10vhp3kr-my-mattblack-08-10kg-right.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/rx10vhp3kr/lgsubscribe",
             "detail": {
@@ -6063,13 +8462,21 @@ export const PRODUCTS = [
                 {
                   "title": "Wash and dry in sync",
                   "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack."
+                },
+                {
+                  "title": "Control your laundry anytime, anywhere",
+                  "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before."
+                },
+                {
+                  "title": "AI-enhanced optimal drying",
+                  "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics."
                 }
               ],
               "stories": [
                 {
                   "title": "Experience a new standard of laundry in energy class A+++-10%",
                   "copy": "With AI DUAL Inverter and great programming algorithms, energy consumption is significantly reduced.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/mobile/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-d.jpg",
                   "video": null
                 },
                 {
@@ -6089,6 +8496,30 @@ export const PRODUCTS = [
                   "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-10-1-smart-pairing.jpg",
                   "video": null
+                },
+                {
+                  "title": "Control your laundry anytime, anywhere",
+                  "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before. Start your load with just the tap of a button. Whether it's everyday maintenance or lager tasks, conveniently monitor your dryer's energy usage through the LG ThinQ™ app.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-11-2-1-remote-operation-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "AI-enhanced optimal drying",
+                  "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-05-2-ai-dry-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Drying done in just 81 minutes",
+                  "copy": "Enjoy 81-minute drying, powered by the DUAL Inverter Compressor.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-06-2-turbo-dry-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Clothes get a deep clean, reducing the risk of allergies",
+                  "copy": "Rest easy, knowing that Allergy Care reduces the live dust mites that can cause allergies.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-07-2-allergy-care-d.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -6105,8 +8536,20 @@ export const PRODUCTS = [
                   "value": "600x850x660"
                 },
                 {
+                  "label": "FEATURES - Auto Cleaning Condenser",
+                  "value": "Yes"
+                },
+                {
+                  "label": "FEATURES - Reversible Door",
+                  "value": "No"
+                },
+                {
                   "label": "Dry Level",
                   "value": "3 Levels"
+                },
+                {
+                  "label": "Steam",
+                  "value": "No"
                 },
                 {
                   "label": "Bar Code",
@@ -6135,10 +8578,6 @@ export const PRODUCTS = [
                 {
                   "label": "Product Dimensions (WxHxD mm)",
                   "value": "600x850x660"
-                },
-                {
-                  "label": "Weight (kg)",
-                  "value": "55.0"
                 }
               ]
             }
@@ -6184,13 +8623,21 @@ export const PRODUCTS = [
       {
         "title": "Wash and dry in sync",
         "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack."
+      },
+      {
+        "title": "Control your laundry anytime, anywhere",
+        "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before."
+      },
+      {
+        "title": "AI-enhanced optimal drying",
+        "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics."
       }
     ],
     "stories": [
       {
         "title": "Experience a new standard of laundry in energy class A+++-10%",
         "copy": "With AI DUAL Inverter and great programming algorithms, energy consumption is significantly reduced.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/mobile/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-d.jpg",
         "video": null
       },
       {
@@ -6210,6 +8657,30 @@ export const PRODUCTS = [
         "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-10-1-smart-pairing.jpg",
         "video": null
+      },
+      {
+        "title": "Control your laundry anytime, anywhere",
+        "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before. Start your load with just the tap of a button. Whether it's everyday maintenance or lager tasks, conveniently monitor your dryer's energy usage through the LG ThinQ™ app.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-11-2-1-remote-operation-d.jpg",
+        "video": null
+      },
+      {
+        "title": "AI-enhanced optimal drying",
+        "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-05-2-ai-dry-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Drying done in just 81 minutes",
+        "copy": "Enjoy 81-minute drying, powered by the DUAL Inverter Compressor.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-06-2-turbo-dry-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Clothes get a deep clean, reducing the risk of allergies",
+        "copy": "Rest easy, knowing that Allergy Care reduces the live dust mites that can cause allergies.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3kr-bebreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-07-2-allergy-care-d.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -6226,8 +8697,20 @@ export const PRODUCTS = [
         "value": "600x850x660"
       },
       {
+        "label": "FEATURES - Auto Cleaning Condenser",
+        "value": "Yes"
+      },
+      {
+        "label": "FEATURES - Reversible Door",
+        "value": "No"
+      },
+      {
         "label": "Dry Level",
         "value": "3 Levels"
+      },
+      {
+        "label": "Steam",
+        "value": "No"
       },
       {
         "label": "Bar Code",
@@ -6256,10 +8739,6 @@ export const PRODUCTS = [
       {
         "label": "Product Dimensions (WxHxD mm)",
         "value": "600x850x660"
-      },
-      {
-        "label": "Weight (kg)",
-        "value": "55.0"
       }
     ]
   },
@@ -6281,9 +8760,16 @@ export const PRODUCTS = [
         "id": "essence-white",
         "name": "Essence White",
         "hex": "#F7F7F5",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/450x450/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/450x450/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-02-10kg-frontopen.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-03-10kg-fronthighangle.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-04-10kg-knobdisplaydetail.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-05-10kg-top-drawer-open-detail.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-06-10kg-drum.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-07-10kg-left.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-08-10kg-lefthighangle.jpg"
         ],
         "model": "RX10VHP3WR",
         "specIds": [
@@ -6292,9 +8778,16 @@ export const PRODUCTS = [
         "variants": {
           "10kg": {
             "model": "RX10VHP3WR",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/450x450/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/450x450/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-01-10kg-front.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-02-10kg-frontopen.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-03-10kg-fronthighangle.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-04-10kg-knobdisplaydetail.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-05-10kg-top-drawer-open-detail.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-06-10kg-drum.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-07-10kg-left.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/gallery/2010x1334/dryer-vx-2026-rh10x75v2n-rx10vhp3wr-my-essencewhite-08-10kg-lefthighangle.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/washer-dryers/rx10vhp3wr/lgsubscribe",
             "detail": {
@@ -6315,13 +8808,21 @@ export const PRODUCTS = [
                 {
                   "title": "Wash and dry in sync",
                   "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack."
+                },
+                {
+                  "title": "Control your laundry anytime, anywhere",
+                  "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before."
+                },
+                {
+                  "title": "AI-enhanced optimal drying",
+                  "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics."
                 }
               ],
               "stories": [
                 {
                   "title": "Experience a new standard of laundry in energy class A+++-10%",
                   "copy": "With AI DUAL Inverter and great programming algorithms, energy consumption is significantly reduced.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/mobile/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-d.jpg",
                   "video": null
                 },
                 {
@@ -6340,6 +8841,30 @@ export const PRODUCTS = [
                   "title": "Wash and dry in sync",
                   "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-10-1-smart-pairing.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Control your laundry anytime, anywhere",
+                  "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before. Start your load with just the tap of a button. Whether it's everyday maintenance or lager tasks, conveniently monitor your dryer's energy usage through the LG ThinQ™ app.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-11-2-1-remote-operation-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "AI-enhanced optimal drying",
+                  "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-05-2-ai-dry-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Drying done in just 81 minutes",
+                  "copy": "Enjoy 81-minute drying, powered by the DUAL Inverter Compressor.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-06-2-turbo-dry-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Clothes get a deep clean, reducing the risk of allergies",
+                  "copy": "Rest easy, knowing that Allergy Care reduces the live dust mites that can cause allergies.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-07-2-allergy-care-d.jpg",
                   "video": null
                 }
               ],
@@ -6387,13 +8912,21 @@ export const PRODUCTS = [
       {
         "title": "Wash and dry in sync",
         "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack."
+      },
+      {
+        "title": "Control your laundry anytime, anywhere",
+        "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before."
+      },
+      {
+        "title": "AI-enhanced optimal drying",
+        "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics."
       }
     ],
     "stories": [
       {
         "title": "Experience a new standard of laundry in energy class A+++-10%",
         "copy": "With AI DUAL Inverter and great programming algorithms, energy consumption is significantly reduced.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/mobile/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-03-1-energy-efficiency-d.jpg",
         "video": null
       },
       {
@@ -6413,8 +8946,33 @@ export const PRODUCTS = [
         "copy": "With Smart pairing, the washer can tell the dryer to select a compatible cycle, making it a great laundry hack.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-10-1-smart-pairing.jpg",
         "video": null
+      },
+      {
+        "title": "Control your laundry anytime, anywhere",
+        "copy": "The LG ThinQ™ app allows you to connect with your dryer like never before. Start your load with just the tap of a button. Whether it's everyday maintenance or lager tasks, conveniently monitor your dryer's energy usage through the LG ThinQ™ app.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-11-2-1-remote-operation-d.jpg",
+        "video": null
+      },
+      {
+        "title": "AI-enhanced optimal drying",
+        "copy": "AI Dry optimizes drying by fabric type and load size, which can help save energy and time for efficient results with soft fabrics.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-05-2-ai-dry-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Drying done in just 81 minutes",
+        "copy": "Enjoy 81-minute drying, powered by the DUAL Inverter Compressor.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-06-2-turbo-dry-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Clothes get a deep clean, reducing the risk of allergies",
+        "copy": "Rest easy, knowing that Allergy Care reduces the live dust mites that can cause allergies.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/washing-machine/rx10vhp3wr-bgwreml/gp1/feature/desktop/dryer-vx-rh90x95v3n-2024-feature-07-2-allergy-care-d.jpg",
+        "video": null
       }
-    ]
+    ],
+    "facts": []
   },
   {
     "id": "instaview-french-door-gc-x24ffc7r",
@@ -6434,9 +8992,13 @@ export const PRODUCTS = [
         "id": "beige",
         "name": "Beige",
         "hex": "#E4D5C3",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/450x450/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/450x450/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-05-didlighton-hand.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-07-dispenser.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-08-drawercloseup1.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-10-filter.jpg"
         ],
         "model": "GC-X24FFC7R",
         "specIds": [
@@ -6445,9 +9007,13 @@ export const PRODUCTS = [
         "variants": {
           "601l": {
             "model": "GC-X24FFC7R",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/450x450/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/450x450/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-01-front1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-05-didlighton-hand.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-07-dispenser.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-08-drawercloseup1.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/gallery/new/2010x1334/multi-door-f-next6-2025-gc-x24ffc7b-gc-x24ffc7r-my-beige-10-filter.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/refrigerators/gc-x24ffc7r/",
             "detail": {
@@ -6468,6 +9034,14 @@ export const PRODUCTS = [
                 {
                   "title": "Taste the freshness",
                   "copy": "Enjoy pure water every time with our UV technology, which eliminates *99.99% of bacteria."
+                },
+                {
+                  "title": "Preserves the freshness of nature",
+                  "copy": "The new premium French-door refrigerator’s advanced cooling technology keeps your produce at peak freshness."
+                },
+                {
+                  "title": "Experience a smart life: Stay connected with LG ThinQ™",
+                  "copy": "Manage your refrigerator easily and receive the latest alerts from anywhere with the LG ThinQ™ app."
                 }
               ],
               "stories": [
@@ -6494,6 +9068,24 @@ export const PRODUCTS = [
                   "copy": "Enjoy pure water every time with our UV technology, which eliminates *99.99% of bacteria.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/desktop/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-07-UVnano-desktop-thumbnail.jpg",
                   "video": null
+                },
+                {
+                  "title": "Preserves the freshness of nature",
+                  "copy": "The new premium French-door refrigerator’s advanced cooling technology keeps your produce at peak freshness.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/desktop/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-08-Freshness-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Experience a smart life: Stay connected with LG ThinQ™",
+                  "copy": "Manage your refrigerator easily and receive the latest alerts from anywhere with the LG ThinQ™ app.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/desktop/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-12-ThinQ-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Cool faster, save energy",
+                  "copy": "The LG Inverter Linear Compressor™ maintains ideal temperatures efficiently and quickly, with a 10-year warranty on compressor parts.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/mobile/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-16-Inverter-Linear-Compressor-mobile.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -6506,12 +9098,20 @@ export const PRODUCTS = [
                   "value": "Smart Inverter Compressor (BLDC)"
                 },
                 {
+                  "label": "FEATURES - InstaView",
+                  "value": "Yes"
+                },
+                {
                   "label": "FEATURES - Door-in-Door",
                   "value": "InstaView Door-in-Door(Tinted Glass)"
                 },
                 {
                   "label": "ICE & WATER SYSTEM - Plumbing",
                   "value": "Plumbing required"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "MATERIAL & FINISH - Finish (Door)",
@@ -6563,15 +9163,15 @@ export const PRODUCTS = [
             "60": {
               "visit": {
                 "6": null,
-                "12": 290,
-                "24": null
+                "12": null,
+                "24": 290
               }
             },
             "84": {
               "visit": {
                 "6": null,
-                "12": 270,
-                "24": null
+                "12": null,
+                "24": 270
               }
             }
           }
@@ -6595,6 +9195,14 @@ export const PRODUCTS = [
       {
         "title": "Taste the freshness",
         "copy": "Enjoy pure water every time with our UV technology, which eliminates *99.99% of bacteria."
+      },
+      {
+        "title": "Preserves the freshness of nature",
+        "copy": "The new premium French-door refrigerator’s advanced cooling technology keeps your produce at peak freshness."
+      },
+      {
+        "title": "Experience a smart life: Stay connected with LG ThinQ™",
+        "copy": "Manage your refrigerator easily and receive the latest alerts from anywhere with the LG ThinQ™ app."
       }
     ],
     "stories": [
@@ -6621,6 +9229,24 @@ export const PRODUCTS = [
         "copy": "Enjoy pure water every time with our UV technology, which eliminates *99.99% of bacteria.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/desktop/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-07-UVnano-desktop-thumbnail.jpg",
         "video": null
+      },
+      {
+        "title": "Preserves the freshness of nature",
+        "copy": "The new premium French-door refrigerator’s advanced cooling technology keeps your produce at peak freshness.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/desktop/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-08-Freshness-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Experience a smart life: Stay connected with LG ThinQ™",
+        "copy": "Manage your refrigerator easily and receive the latest alerts from anywhere with the LG ThinQ™ app.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/desktop/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-12-ThinQ-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Cool faster, save energy",
+        "copy": "The LG Inverter Linear Compressor™ maintains ideal temperatures efficiently and quickly, with a 10-year warranty on compressor parts.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gc-x24ffcab/feature/mobile/HA-UAE-REF-F-NEXT6-GR-X34FFCAB-16-Inverter-Linear-Compressor-mobile.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -6633,12 +9259,20 @@ export const PRODUCTS = [
         "value": "Smart Inverter Compressor (BLDC)"
       },
       {
+        "label": "FEATURES - InstaView",
+        "value": "Yes"
+      },
+      {
         "label": "FEATURES - Door-in-Door",
         "value": "InstaView Door-in-Door(Tinted Glass)"
       },
       {
         "label": "ICE & WATER SYSTEM - Plumbing",
         "value": "Plumbing required"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "MATERIAL & FINISH - Finish (Door)",
@@ -6692,9 +9326,16 @@ export const PRODUCTS = [
         "id": "white",
         "name": "White",
         "hex": "#F4F4F4",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery/01-basic/ref-t-vn6-gv-k25ffgeb-basic-large-20250729.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-01-2010.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery/01-basic/ref-t-vn6-gv-k25ffgeb-basic-large-20250729.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-01-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-02-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-03-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-04-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-05-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-06-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-07-2010.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-08-2010.jpg"
         ],
         "model": "GV-K25FFGER",
         "specIds": [
@@ -6703,9 +9344,16 @@ export const PRODUCTS = [
         "variants": {
           "612l": {
             "model": "GV-K25FFGER",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery/01-basic/ref-t-vn6-gv-k25ffgeb-basic-large-20250729.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-01-2010.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery/01-basic/ref-t-vn6-gv-k25ffgeb-basic-large-20250729.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-01-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-02-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-03-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-04-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-05-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-06-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-07-2010.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-k25ffger/gallery-new/02-gallery/2010x1334/ref-t-vn6-gv-k25ffgeb-gallery-08-2010.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/refrigerators/gv-k25ffger/lgsubscribe",
             "detail": {
@@ -6726,6 +9374,14 @@ export const PRODUCTS = [
                 {
                   "title": "Temperature set by food type",
                   "copy": "Store food at the appropriate temperature settings for meat, fish and vegetables."
+                },
+                {
+                  "title": "Reduces bacteria3) and odors, increases freshness",
+                  "copy": "Keep the air in your fridge fresh with Hygiene Fresh⁺ ™, which deodorizes and reduces up to 99.999%4) of bacteria3)."
+                },
+                {
+                  "title": "Keep your cool from anywhere with LG ThinQ®",
+                  "copy": "LG ThinQ® home assistant provides intelligent solutions for appliances, delivering comfort and convenience to the home."
                 }
               ],
               "stories": [
@@ -6752,6 +9408,30 @@ export const PRODUCTS = [
                   "copy": "LG ThinQ® home assistant provides intelligent solutions for appliances, delivering comfort and convenience to the home.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-15-1-lg-thinq.jpg",
                   "video": null
+                },
+                {
+                  "title": "Knock twice to see inside",
+                  "copy": "Knock twice on the newly designed InstaView™ door lets you see inside without opening the door.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-03-2-insta-view-thumbnail-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/video/ref-t-vn6-gv-v25ffgrb-03-2-insta-view-m.mp4"
+                },
+                {
+                  "title": "Expanded fridge storage, improved volume",
+                  "copy": "Enjoy ample storage with this new refrigerator, providing plenty of space for groceries without crowding the kitchen.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-04-2-large-fridge-space-thumbnail-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/video/ref-t-vn6-gv-v25ffgrb-04-2-large-fridge-space-m.mp4"
+                },
+                {
+                  "title": "Seals in farm freshness longer",
+                  "copy": "LinearCooling™ reduces temperature fluctuations, locking in flavor and keeping food fresh for up to 7 days1).",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-05-2-linear-cooling-thumbnail-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/video/ref-t-vn6-gv-v25ffgrb-05-2-linear-cooling-m.mp4"
+                },
+                {
+                  "title": "Cooling freshly and quickly",
+                  "copy": "Drinks get colder2) with reliable DoorCooling⁺ ™ technology.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-07-door-cooling-d.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -6762,6 +9442,18 @@ export const PRODUCTS = [
                 {
                   "label": "PERFORMANCE - Compressor Type",
                   "value": "Smart Inverter Compressor (BLDC)"
+                },
+                {
+                  "label": "FEATURES - InstaView",
+                  "value": "Yes"
+                },
+                {
+                  "label": "FEATURES - Door-in-Door",
+                  "value": "No"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "MATERIAL & FINISH - Finish (Door)",
@@ -6796,12 +9488,8 @@ export const PRODUCTS = [
                   "value": "Smart Inverter Compressor (BLDC)"
                 },
                 {
-                  "label": "Door Basket_Transparent",
-                  "value": "6"
-                },
-                {
-                  "label": "Refrigerator Light",
-                  "value": "Top LED"
+                  "label": "ThinQ (Wi-Fi)",
+                  "value": "Yes"
                 }
               ]
             }
@@ -6821,15 +9509,15 @@ export const PRODUCTS = [
             "60": {
               "visit": {
                 "6": null,
-                "12": 180,
-                "24": null
+                "12": 200,
+                "24": 180
               }
             },
             "84": {
               "visit": {
                 "6": null,
-                "12": 160,
-                "24": null
+                "12": 180,
+                "24": 160
               }
             }
           }
@@ -6853,6 +9541,14 @@ export const PRODUCTS = [
       {
         "title": "Temperature set by food type",
         "copy": "Store food at the appropriate temperature settings for meat, fish and vegetables."
+      },
+      {
+        "title": "Reduces bacteria3) and odors, increases freshness",
+        "copy": "Keep the air in your fridge fresh with Hygiene Fresh⁺ ™, which deodorizes and reduces up to 99.999%4) of bacteria3)."
+      },
+      {
+        "title": "Keep your cool from anywhere with LG ThinQ®",
+        "copy": "LG ThinQ® home assistant provides intelligent solutions for appliances, delivering comfort and convenience to the home."
       }
     ],
     "stories": [
@@ -6879,6 +9575,30 @@ export const PRODUCTS = [
         "copy": "LG ThinQ® home assistant provides intelligent solutions for appliances, delivering comfort and convenience to the home.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-15-1-lg-thinq.jpg",
         "video": null
+      },
+      {
+        "title": "Knock twice to see inside",
+        "copy": "Knock twice on the newly designed InstaView™ door lets you see inside without opening the door.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-03-2-insta-view-thumbnail-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/video/ref-t-vn6-gv-v25ffgrb-03-2-insta-view-m.mp4"
+      },
+      {
+        "title": "Expanded fridge storage, improved volume",
+        "copy": "Enjoy ample storage with this new refrigerator, providing plenty of space for groceries without crowding the kitchen.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-04-2-large-fridge-space-thumbnail-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/video/ref-t-vn6-gv-v25ffgrb-04-2-large-fridge-space-m.mp4"
+      },
+      {
+        "title": "Seals in farm freshness longer",
+        "copy": "LinearCooling™ reduces temperature fluctuations, locking in flavor and keeping food fresh for up to 7 days1).",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-05-2-linear-cooling-thumbnail-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/video/ref-t-vn6-gv-v25ffgrb-05-2-linear-cooling-m.mp4"
+      },
+      {
+        "title": "Cooling freshly and quickly",
+        "copy": "Drinks get colder2) with reliable DoorCooling⁺ ™ technology.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/refrigerators/gv-b25ffgpb/feature/desktop/ref-t-vn6-gv-v25ffgrb-07-door-cooling-d.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -6889,6 +9609,18 @@ export const PRODUCTS = [
       {
         "label": "PERFORMANCE - Compressor Type",
         "value": "Smart Inverter Compressor (BLDC)"
+      },
+      {
+        "label": "FEATURES - InstaView",
+        "value": "Yes"
+      },
+      {
+        "label": "FEATURES - Door-in-Door",
+        "value": "No"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "MATERIAL & FINISH - Finish (Door)",
@@ -6923,12 +9655,8 @@ export const PRODUCTS = [
         "value": "Smart Inverter Compressor (BLDC)"
       },
       {
-        "label": "Door Basket_Transparent",
-        "value": "6"
-      },
-      {
-        "label": "Refrigerator Light",
-        "value": "Top LED"
+        "label": "ThinQ (Wi-Fi)",
+        "value": "Yes"
       }
     ]
   },
@@ -6950,10 +9678,16 @@ export const PRODUCTS = [
         "id": "matte-black",
         "name": "Matte Black",
         "hex": "#1A1A1A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/450.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/medium01.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large08.jpg"
         ],
         "model": "GC-J257SQNW",
         "specIds": [
@@ -6962,10 +9696,16 @@ export const PRODUCTS = [
         "variants": {
           "635l": {
             "model": "GC-J257SQNW",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/450.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/medium01.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/refrigerators/gc-j257sqnw_amcrlml_eaml_my_c/gallery/large08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/refrigerators/gc-j257sqnw/lgsubscribe",
             "detail": {
@@ -6986,13 +9726,21 @@ export const PRODUCTS = [
                 {
                   "title": "Refresh Your Dispenser Nozzle Every Day",
                   "copy": "Automatically reduce *99.99% of bacteria from the water nozzle with UV light."
+                },
+                {
+                  "title": "Enhance Your Décor with an UltraSleek Door",
+                  "copy": "The UltraSleek Door instantly enhances the décor of any kitchen."
+                },
+                {
+                  "title": "Smart Inverter Compressor",
+                  "copy": "The cutting edge Smart Inverter Compressor technology takes energy efficiency to another level and helps you save more."
                 }
               ],
               "stories": [
                 {
                   "title": "Quick & Easy Access to Your Favorites",
                   "copy": "Door-in-Door™ allows you to easily get your favorite foods with concealed opening button.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-01-1-Door-in-Door-M.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-01-1-Door-in-Door-D.jpg",
                   "video": null
                 },
                 {
@@ -7012,6 +9760,18 @@ export const PRODUCTS = [
                   "copy": "Automatically reduce *99.99% of bacteria from the water nozzle with UV light.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-04-1-UVnano-D.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-04-1-UVnano-M.mp4"
+                },
+                {
+                  "title": "Enhance Your Décor with an UltraSleek Door",
+                  "copy": "The UltraSleek Door instantly enhances the décor of any kitchen.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-05-1-1-UltraSleek-Door-D.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Smart Inverter Compressor",
+                  "copy": "The cutting edge Smart Inverter Compressor technology takes energy efficiency to another level and helps you save more. Not only this, it comes with 10 year warranty and provides super silent operation.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/M01_Smart_Inverter_Compressor_M.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -7024,12 +9784,20 @@ export const PRODUCTS = [
                   "value": "Smart Inverter Compressor (BLDC)"
                 },
                 {
+                  "label": "FEATURES - InstaView",
+                  "value": "No"
+                },
+                {
                   "label": "FEATURES - Door-in-Door",
                   "value": "Yes (Door-in-Door)"
                 },
                 {
                   "label": "ICE & WATER SYSTEM - Plumbing",
                   "value": "No plumbing required"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "MATERIAL & FINISH - Finish (Door)",
@@ -7081,8 +9849,8 @@ export const PRODUCTS = [
             "60": {
               "visit": {
                 "6": null,
-                "12": 130,
-                "24": null
+                "12": 150,
+                "24": 130
               }
             }
           }
@@ -7106,13 +9874,21 @@ export const PRODUCTS = [
       {
         "title": "Refresh Your Dispenser Nozzle Every Day",
         "copy": "Automatically reduce *99.99% of bacteria from the water nozzle with UV light."
+      },
+      {
+        "title": "Enhance Your Décor with an UltraSleek Door",
+        "copy": "The UltraSleek Door instantly enhances the décor of any kitchen."
+      },
+      {
+        "title": "Smart Inverter Compressor",
+        "copy": "The cutting edge Smart Inverter Compressor technology takes energy efficiency to another level and helps you save more."
       }
     ],
     "stories": [
       {
         "title": "Quick & Easy Access to Your Favorites",
         "copy": "Door-in-Door™ allows you to easily get your favorite foods with concealed opening button.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-01-1-Door-in-Door-M.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-01-1-Door-in-Door-D.jpg",
         "video": null
       },
       {
@@ -7132,6 +9908,18 @@ export const PRODUCTS = [
         "copy": "Automatically reduce *99.99% of bacteria from the water nozzle with UV light.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-04-1-UVnano-D.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-04-1-UVnano-M.mp4"
+      },
+      {
+        "title": "Enhance Your Décor with an UltraSleek Door",
+        "copy": "The UltraSleek Door instantly enhances the décor of any kitchen.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/REF-Vplus-SxS-J-Good-MC-DID-05-1-1-UltraSleek-Door-D.jpg",
+        "video": null
+      },
+      {
+        "title": "Smart Inverter Compressor",
+        "copy": "The cutting edge Smart Inverter Compressor technology takes energy efficiency to another level and helps you save more. Not only this, it comes with 10 year warranty and provides super silent operation.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/M01_Smart_Inverter_Compressor_M.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -7144,12 +9932,20 @@ export const PRODUCTS = [
         "value": "Smart Inverter Compressor (BLDC)"
       },
       {
+        "label": "FEATURES - InstaView",
+        "value": "No"
+      },
+      {
         "label": "FEATURES - Door-in-Door",
         "value": "Yes (Door-in-Door)"
       },
       {
         "label": "ICE & WATER SYSTEM - Plumbing",
         "value": "No plumbing required"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "MATERIAL & FINISH - Finish (Door)",
@@ -7203,10 +9999,16 @@ export const PRODUCTS = [
         "id": "matte-black",
         "name": "Matte Black",
         "hex": "#1A1A1A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/QBasic-450.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-front-1600X1062.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/QBasic-450.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/QD-1.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-front-1600X1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-frontopen-food-1600X1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-frontopen-1600X1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-e-micom-1600X1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-tempcontrol-1600X1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-freezer-1600X1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-handle-1600X1062.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-dispenser1-1600X1062.jpg"
         ],
         "model": "GN-F452PQAK",
         "specIds": [
@@ -7215,10 +10017,16 @@ export const PRODUCTS = [
         "variants": {
           "493l": {
             "model": "GN-F452PQAK",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/QBasic-450.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-front-1600X1062.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/QBasic-450.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/QD-1.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-front-1600X1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-frontopen-food-1600X1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-frontopen-1600X1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-e-micom-1600X1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-tempcontrol-1600X1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-freezer-1600X1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-handle-1600X1062.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/images/rent-up/gn-f452pqak_aeprlml_eaml_my_c/gallery/1600/top-freezer-vt4-2024-gn-f452pqak-ltd46blma-ep-dispenser1-1600X1062.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/refrigerators/gn-f452pqak/lgsubscribe",
             "detail": {
@@ -7239,6 +10047,14 @@ export const PRODUCTS = [
                 {
                   "title": "Save Defrosting Time",
                   "copy": "The special drawer allows you to better preserve foods like meat and fish without frosting & defrosting."
+                },
+                {
+                  "title": "The Smarter Way to Cool",
+                  "copy": "Smart Fresh Air learns your usage patterns to optimize cooling, even during peak use times."
+                },
+                {
+                  "title": "Step 1. Smart Fresh Air Algorithm",
+                  "copy": "Smart Fresh Air analyzes usage patterns over a 3-week period to optimize cooling performance"
                 }
               ],
               "stories": [
@@ -7251,19 +10067,43 @@ export const PRODUCTS = [
                 {
                   "title": "Delivers Freshness Evenly & Faster",
                   "copy": "Food stays fresh and drinks get ice cold on any shelf with even and faster cooling performance.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-basic-good-ps3-02-door-cooling-m.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-basic-good-ps3-02-door-cooling-d.jpg",
                   "video": null
                 },
                 {
                   "title": "Minimize Bacteria and Odors, Maximize Freshness",
                   "copy": "Keep your fridge clean with Hygiene Fresh, which deodorizes and removes up to 99.99% of bacteria.",
-                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-03-hygiene-fresh-mobile.jpg",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-03-hygiene-fresh-desktop.jpg",
                   "video": null
                 },
                 {
                   "title": "Save Defrosting Time",
                   "copy": "The special drawer allows you to better preserve foods like meat and fish without frosting & defrosting.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-04-fresh-0-zone-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "The Smarter Way to Cool",
+                  "copy": "Smart Fresh Air learns your usage patterns to optimize cooling, even during peak use times.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-1-smart-fresh-air-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Step 1. Smart Fresh Air Algorithm",
+                  "copy": "Smart Fresh Air analyzes usage patterns over a 3-week period to optimize cooling performance",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-2-smart-fresh-air-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Step 2. Lower 1°C from user setting temperature",
+                  "copy": "Based on the usage patterns, Smart Fresh Air will increase cooling 2 hours before periods of high usage",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-3-smart-fresh-air-desktop.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Step 3. Minimize temperature rise to keep food fresh",
+                  "copy": "Even when the door is opened frequently, the inside temperature stays at optimal levels to keep food fresh",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-4-smart-fresh-air-desktop.jpg",
                   "video": null
                 }
               ],
@@ -7283,6 +10123,14 @@ export const PRODUCTS = [
                 {
                   "label": "PERFORMANCE - Compressor Type",
                   "value": "Smart Inverter Compressor (BLDC)"
+                },
+                {
+                  "label": "FEATURES - Door-in-Door",
+                  "value": "No"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "MATERIAL & FINISH - Finish (Door)",
@@ -7334,8 +10182,8 @@ export const PRODUCTS = [
             "60": {
               "visit": {
                 "6": null,
-                "12": 80,
-                "24": null
+                "12": 100,
+                "24": 80
               }
             }
           }
@@ -7359,6 +10207,14 @@ export const PRODUCTS = [
       {
         "title": "Save Defrosting Time",
         "copy": "The special drawer allows you to better preserve foods like meat and fish without frosting & defrosting."
+      },
+      {
+        "title": "The Smarter Way to Cool",
+        "copy": "Smart Fresh Air learns your usage patterns to optimize cooling, even during peak use times."
+      },
+      {
+        "title": "Step 1. Smart Fresh Air Algorithm",
+        "copy": "Smart Fresh Air analyzes usage patterns over a 3-week period to optimize cooling performance"
       }
     ],
     "stories": [
@@ -7371,19 +10227,43 @@ export const PRODUCTS = [
       {
         "title": "Delivers Freshness Evenly & Faster",
         "copy": "Food stays fresh and drinks get ice cold on any shelf with even and faster cooling performance.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-basic-good-ps3-02-door-cooling-m.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-basic-good-ps3-02-door-cooling-d.jpg",
         "video": null
       },
       {
         "title": "Minimize Bacteria and Odors, Maximize Freshness",
         "copy": "Keep your fridge clean with Hygiene Fresh, which deodorizes and removes up to 99.99% of bacteria.",
-        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-03-hygiene-fresh-mobile.jpg",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-03-hygiene-fresh-desktop.jpg",
         "video": null
       },
       {
         "title": "Save Defrosting Time",
         "copy": "The special drawer allows you to better preserve foods like meat and fish without frosting & defrosting.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-04-fresh-0-zone-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "The Smarter Way to Cool",
+        "copy": "Smart Fresh Air learns your usage patterns to optimize cooling, even during peak use times.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-1-smart-fresh-air-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Step 1. Smart Fresh Air Algorithm",
+        "copy": "Smart Fresh Air analyzes usage patterns over a 3-week period to optimize cooling performance",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-2-smart-fresh-air-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Step 2. Lower 1°C from user setting temperature",
+        "copy": "Based on the usage patterns, Smart Fresh Air will increase cooling 2 hours before periods of high usage",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-3-smart-fresh-air-desktop.jpg",
+        "video": null
+      },
+      {
+        "title": "Step 3. Minimize temperature rise to keep food fresh",
+        "copy": "Even when the door is opened frequently, the inside temperature stays at optimal levels to keep food fresh",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/images/rf/features/ref-vt6-best-water-dispenser-ps3-07-4-smart-fresh-air-desktop.jpg",
         "video": null
       }
     ],
@@ -7403,6 +10283,14 @@ export const PRODUCTS = [
       {
         "label": "PERFORMANCE - Compressor Type",
         "value": "Smart Inverter Compressor (BLDC)"
+      },
+      {
+        "label": "FEATURES - Door-in-Door",
+        "value": "No"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "MATERIAL & FINISH - Finish (Door)",
@@ -7439,6 +10327,315 @@ export const PRODUCTS = [
     ]
   },
   {
+    "id": "side-by-side-refrigerator-gc-b257kljr",
+    "type": "fridge",
+    "sku": "GC-B257KLJR",
+    "name": "LG Side-by-Side Refrigerator",
+    "baseName": "LG Side-by-Side Refrigerator",
+    "shortName": "Side-by-Side Refrigerator",
+    "model": "GC-B257KLJR",
+    "tagline": "Clean lines and hidden hinges make this fridge freezer the perfect chic touch to your kitchen aesthetic.",
+    "category": "Refrigerators",
+    "waters": [],
+    "hasCare": true,
+    "specLabel": "Specification",
+    "colors": [
+      {
+        "id": "silver",
+        "name": "Silver",
+        "hex": "#C5C9CE",
+        "image": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-02.jpg",
+        "gallery": [
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-08.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-09.jpg"
+        ],
+        "model": "GC-B257KLJR",
+        "specIds": [
+          "664l"
+        ],
+        "variants": {
+          "664l": {
+            "model": "GC-B257KLJR",
+            "image": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-02.jpg",
+            "gallery": [
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-08.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/gc-b257kljw/gallery-new/2010-09.jpg"
+            ],
+            "url": "https://www.lg.com/eg_en/refrigerators/side-by-side/gc-b257kljw/",
+            "detail": {
+              "tagline": "Clean lines and hidden hinges make this fridge freezer the perfect chic touch to your kitchen aesthetic.",
+              "quickFeatures": [
+                {
+                  "title": "A touch of sophistication",
+                  "copy": "Clean lines and hidden hinges make this fridge freezer the perfect chic touch to your kitchen aesthetic."
+                },
+                {
+                  "title": "Seals in farm freshness longer",
+                  "copy": "The Multi-Air-Flow systems ensures optimal cooling performance by surrounding food with cold air from various angles, keeping it fresher and colder."
+                },
+                {
+                  "title": "Flexible freshness",
+                  "copy": "Flexibly organise your various foods at their optimal temperatures for freshness by separating them into storage areas."
+                },
+                {
+                  "title": "Durable and energy-saving",
+                  "copy": "Smart Inverter Compressor™ The type of efficiency you've been imagining - the intelligent LG Smart Inverter Compressor™ checks the cooling requirements of your fridge's interior an"
+                },
+                {
+                  "title": "Energy efficient & durable",
+                  "copy": "LG Smart Inverter Compressor™ takes energy efficiency to the next level to help your save more and 10 years peace of mind."
+                }
+              ],
+              "stories": [
+                {
+                  "title": "A touch of sophistication",
+                  "copy": "Clean lines and hidden hinges make this fridge freezer the perfect chic touch to your kitchen aesthetic. The pocket handle has been totally redesigned- it's now easier to grab and more beautiful in your modern home.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-pocket-handle-design-m-02v.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Seals in farm freshness longer",
+                  "copy": "The Multi-Air-Flow systems ensures optimal cooling performance by surrounding food with cold air from various angles, keeping it fresher and colder.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-freshness-m-03.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Flexible freshness",
+                  "copy": "Flexibly organise your various foods at their optimal temperatures for freshness by separating them into storage areas.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-smart-organisation-d-05.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Durable and energy-saving",
+                  "copy": "Smart Inverter Compressor™ The type of efficiency you've been imagining - the intelligent LG Smart Inverter Compressor™ checks the cooling requirements of your fridge's interior and adjusts its speed to match, using only the amount of energy necessary. Nothing more, nothing less.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-smart-inverter-m-06-v.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Energy efficient & durable",
+                  "copy": "LG Smart Inverter Compressor™ takes energy efficiency to the next level to help your save more and 10 years peace of mind.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-energy-saving-d-07.jpg",
+                  "video": null
+                }
+              ],
+              "facts": [
+                {
+                  "label": "DIMENSIONS & WEIGHT - Product Dimension (WxHxD, mm)",
+                  "value": "913 x 1790 x 735"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+                  "value": "No"
+                },
+                {
+                  "label": "MATERIAL & FINISH - Finish (Door)",
+                  "value": "Prime Silver"
+                },
+                {
+                  "label": "Product Type",
+                  "value": "Side by Side"
+                },
+                {
+                  "label": "Packing Weight (kg)",
+                  "value": "111"
+                },
+                {
+                  "label": "Product Weight (kg)",
+                  "value": "101"
+                },
+                {
+                  "label": "Depth without door (mm)",
+                  "value": "620"
+                },
+                {
+                  "label": "Product Dimension (WxHxD, mm)",
+                  "value": "913 x 1790 x 735"
+                },
+                {
+                  "label": "Depth without handle (mm)",
+                  "value": "735"
+                },
+                {
+                  "label": "Finish (Door)",
+                  "value": "Prime Silver"
+                },
+                {
+                  "label": "Compressor Type",
+                  "value": "Smart Inverter Compressor (BLDC)"
+                },
+                {
+                  "label": "Refrigerator Light",
+                  "value": "Top LED"
+                },
+                {
+                  "label": "Shelf_Tempered Glass",
+                  "value": "3"
+                },
+                {
+                  "label": "Vegetable Box",
+                  "value": "Yes (2)"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "specs": [
+      {
+        "id": "664l",
+        "label": "664L",
+        "available": true,
+        "waters": [],
+        "pricing": {
+          "outright": null,
+          "subscribe": {
+            "60": {
+              "visit": {
+                "6": null,
+                "12": 125,
+                "24": 105
+              }
+            },
+            "84": {
+              "visit": {
+                "6": null,
+                "12": 105,
+                "24": 85
+              }
+            }
+          }
+        }
+      }
+    ],
+    "copyFeaturesFrom": null,
+    "quickFeatures": [
+      {
+        "title": "A touch of sophistication",
+        "copy": "Clean lines and hidden hinges make this fridge freezer the perfect chic touch to your kitchen aesthetic."
+      },
+      {
+        "title": "Seals in farm freshness longer",
+        "copy": "The Multi-Air-Flow systems ensures optimal cooling performance by surrounding food with cold air from various angles, keeping it fresher and colder."
+      },
+      {
+        "title": "Flexible freshness",
+        "copy": "Flexibly organise your various foods at their optimal temperatures for freshness by separating them into storage areas."
+      },
+      {
+        "title": "Durable and energy-saving",
+        "copy": "Smart Inverter Compressor™ The type of efficiency you've been imagining - the intelligent LG Smart Inverter Compressor™ checks the cooling requirements of your fridge's interior an"
+      },
+      {
+        "title": "Energy efficient & durable",
+        "copy": "LG Smart Inverter Compressor™ takes energy efficiency to the next level to help your save more and 10 years peace of mind."
+      }
+    ],
+    "stories": [
+      {
+        "title": "A touch of sophistication",
+        "copy": "Clean lines and hidden hinges make this fridge freezer the perfect chic touch to your kitchen aesthetic. The pocket handle has been totally redesigned- it's now easier to grab and more beautiful in your modern home.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-pocket-handle-design-m-02v.jpg",
+        "video": null
+      },
+      {
+        "title": "Seals in farm freshness longer",
+        "copy": "The Multi-Air-Flow systems ensures optimal cooling performance by surrounding food with cold air from various angles, keeping it fresher and colder.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-freshness-m-03.jpg",
+        "video": null
+      },
+      {
+        "title": "Flexible freshness",
+        "copy": "Flexibly organise your various foods at their optimal temperatures for freshness by separating them into storage areas.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-smart-organisation-d-05.jpg",
+        "video": null
+      },
+      {
+        "title": "Durable and energy-saving",
+        "copy": "Smart Inverter Compressor™ The type of efficiency you've been imagining - the intelligent LG Smart Inverter Compressor™ checks the cooling requirements of your fridge's interior and adjusts its speed to match, using only the amount of energy necessary. Nothing more, nothing less.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-smart-inverter-m-06-v.jpg",
+        "video": null
+      },
+      {
+        "title": "Energy efficient & durable",
+        "copy": "LG Smart Inverter Compressor™ takes energy efficiency to the next level to help your save more and 10 years peace of mind.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/eg_en/refrigerators/side-by-side/features/side-by-side-vs6-ck-gc-b257kqhx-gp1-feature-energy-saving-d-07.jpg",
+        "video": null
+      }
+    ],
+    "featureSource": "GC-J257SQNW",
+    "facts": [
+      {
+        "label": "DIMENSIONS & WEIGHT - Product Dimension (WxHxD, mm)",
+        "value": "913 x 1790 x 735"
+      },
+      {
+        "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+        "value": "No"
+      },
+      {
+        "label": "MATERIAL & FINISH - Finish (Door)",
+        "value": "Prime Silver"
+      },
+      {
+        "label": "Product Type",
+        "value": "Side by Side"
+      },
+      {
+        "label": "Packing Weight (kg)",
+        "value": "111"
+      },
+      {
+        "label": "Product Weight (kg)",
+        "value": "101"
+      },
+      {
+        "label": "Depth without door (mm)",
+        "value": "620"
+      },
+      {
+        "label": "Product Dimension (WxHxD, mm)",
+        "value": "913 x 1790 x 735"
+      },
+      {
+        "label": "Depth without handle (mm)",
+        "value": "735"
+      },
+      {
+        "label": "Finish (Door)",
+        "value": "Prime Silver"
+      },
+      {
+        "label": "Compressor Type",
+        "value": "Smart Inverter Compressor (BLDC)"
+      },
+      {
+        "label": "Refrigerator Light",
+        "value": "Top LED"
+      },
+      {
+        "label": "Shelf_Tempered Glass",
+        "value": "3"
+      },
+      {
+        "label": "Vegetable Box",
+        "value": "Yes (2)"
+      }
+    ]
+  },
+  {
     "id": "quadwash-steam-dishwasher-dfc335hm",
     "type": "dish",
     "sku": "DFC335HM",
@@ -7456,9 +10653,16 @@ export const PRODUCTS = [
         "id": "matte-black",
         "name": "Matte Black",
         "hex": "#1A1A1A",
-        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/basic/free-standing-xd3-2024-dfc335hm-gallery-basic-large.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-01.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/basic/free-standing-xd3-2024-dfc335hm-gallery-basic-large.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-01.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-02.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-03.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-04.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-05.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-06.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-07.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-08.jpg"
         ],
         "model": "DFC335HM",
         "specIds": [
@@ -7467,9 +10671,16 @@ export const PRODUCTS = [
         "variants": {
           "standard": {
             "model": "DFC335HM",
-            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/basic/free-standing-xd3-2024-dfc335hm-gallery-basic-large.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-01.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/basic/free-standing-xd3-2024-dfc335hm-gallery-basic-large.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-01.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-02.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-03.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-04.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-05.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-06.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-07.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/gallery/gallery/free-standing-xd3-2024-dfc335hm-gallery-gallery-2010-08.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/dishwashers/dfc335hm/lgsubscribe",
             "detail": {
@@ -7490,6 +10701,14 @@ export const PRODUCTS = [
                 {
                   "title": "Safe and hygienic",
                   "copy": "TrueSteam™ cleans your dishes with pure steam, making them ultra-clean for you and your family."
+                },
+                {
+                  "title": "Powerful and gentle cleaning",
+                  "copy": "QuadWash™ uses four multi-directional arms to thoroughly spray every item, while Dual Zone Wash allows you to choose different pressure levels for each rack."
+                },
+                {
+                  "title": "Flexible loading options",
+                  "copy": "Experience the flexible space of EasyRack™Plus with a height-adjustable upper rack and a bottom rack with folding tines."
                 }
               ],
               "stories": [
@@ -7516,6 +10735,30 @@ export const PRODUCTS = [
                   "copy": "TrueSteam™ cleans your dishes with pure steam, making them ultra-clean for you and your family.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-04-2-truesteam-thumbnail-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/video/free-standing-xd3-2024-dfc335hm-feature-04-2-truesteam-m.mp4"
+                },
+                {
+                  "title": "Powerful and gentle cleaning",
+                  "copy": "QuadWash™ uses four multi-directional arms to thoroughly spray every item, while Dual Zone Wash allows you to choose different pressure levels for each rack.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-06-2-quadwash-thumbnail-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/video/free-standing-xd3-2024-dfc335hm-feature-06-2-quadwash-m.mp4"
+                },
+                {
+                  "title": "Flexible loading options",
+                  "copy": "Experience the flexible space of EasyRack™Plus with a height-adjustable upper rack and a bottom rack with folding tines.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-08-2-easyrack-plus-thumbnail-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/video/free-standing-xd3-2024-dfc335hm-feature-08-2-easyrack-plus-m.mp4"
+                },
+                {
+                  "title": "Step up to the 3rd rack",
+                  "copy": "The 3rd rack gives you more space to fit everything from long flatware to oversized cooking utensils including spatulas, spoons, tongs and more.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-09-2-3rd-rack-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Powerful and quiet performance",
+                  "copy": "Enjoy a quiet and reliable performance from a brand you trust.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-10-2-low-noise-d.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -7526,6 +10769,10 @@ export const PRODUCTS = [
                 {
                   "label": "Height Adjustability",
                   "value": "Easy One Touch (3 Level)"
+                },
+                {
+                  "label": "ThinQ(Wi-Fi)",
+                  "value": "Yes"
                 },
                 {
                   "label": "Display Type",
@@ -7562,6 +10809,10 @@ export const PRODUCTS = [
                 {
                   "label": "Time Remaining Indicator",
                   "value": "LED"
+                },
+                {
+                  "label": "Steam",
+                  "value": "Yes"
                 },
                 {
                   "label": "Drying Type",
@@ -7610,6 +10861,14 @@ export const PRODUCTS = [
       {
         "title": "Safe and hygienic",
         "copy": "TrueSteam™ cleans your dishes with pure steam, making them ultra-clean for you and your family."
+      },
+      {
+        "title": "Powerful and gentle cleaning",
+        "copy": "QuadWash™ uses four multi-directional arms to thoroughly spray every item, while Dual Zone Wash allows you to choose different pressure levels for each rack."
+      },
+      {
+        "title": "Flexible loading options",
+        "copy": "Experience the flexible space of EasyRack™Plus with a height-adjustable upper rack and a bottom rack with folding tines."
       }
     ],
     "stories": [
@@ -7636,6 +10895,30 @@ export const PRODUCTS = [
         "copy": "TrueSteam™ cleans your dishes with pure steam, making them ultra-clean for you and your family.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-04-2-truesteam-thumbnail-d.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/video/free-standing-xd3-2024-dfc335hm-feature-04-2-truesteam-m.mp4"
+      },
+      {
+        "title": "Powerful and gentle cleaning",
+        "copy": "QuadWash™ uses four multi-directional arms to thoroughly spray every item, while Dual Zone Wash allows you to choose different pressure levels for each rack.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-06-2-quadwash-thumbnail-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/video/free-standing-xd3-2024-dfc335hm-feature-06-2-quadwash-m.mp4"
+      },
+      {
+        "title": "Flexible loading options",
+        "copy": "Experience the flexible space of EasyRack™Plus with a height-adjustable upper rack and a bottom rack with folding tines.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-08-2-easyrack-plus-thumbnail-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/video/free-standing-xd3-2024-dfc335hm-feature-08-2-easyrack-plus-m.mp4"
+      },
+      {
+        "title": "Step up to the 3rd rack",
+        "copy": "The 3rd rack gives you more space to fit everything from long flatware to oversized cooking utensils including spatulas, spoons, tongs and more.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-09-2-3rd-rack-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Powerful and quiet performance",
+        "copy": "Enjoy a quiet and reliable performance from a brand you trust.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/my/image-update/dishwasher/dfc335hm-abmreml/feature/desktop/free-standing-xd3-2024-dfc335hm-feature-10-2-low-noise-d.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -7646,6 +10929,10 @@ export const PRODUCTS = [
       {
         "label": "Height Adjustability",
         "value": "Easy One Touch (3 Level)"
+      },
+      {
+        "label": "ThinQ(Wi-Fi)",
+        "value": "Yes"
       },
       {
         "label": "Display Type",
@@ -7684,6 +10971,10 @@ export const PRODUCTS = [
         "value": "LED"
       },
       {
+        "label": "Steam",
+        "value": "Yes"
+      },
+      {
         "label": "Drying Type",
         "value": "AOD"
       }
@@ -7707,9 +10998,16 @@ export const PRODUCTS = [
         "id": "finish",
         "name": "Default",
         "hex": "#D9D4CC",
-        "image": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/basic/lg-oled-b6-2026-65-gallery-basic.jpg",
+        "image": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-01-product-front-main.jpg",
         "gallery": [
-          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/basic/lg-oled-b6-2026-65-gallery-basic.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-01-product-front-main.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-02-dimension.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-03-perfect-black-color.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-04-ai-processor.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-05-award-winning-multi-ai-webos.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-06-ai-hub-for-personalization-ga.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-07-lg-shield.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-08-gaming.jpg"
         ],
         "model": "OLED65B6SSA",
         "specIds": [
@@ -7718,9 +11016,16 @@ export const PRODUCTS = [
         "variants": {
           "65": {
             "model": "OLED65B6SSA",
-            "image": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/basic/lg-oled-b6-2026-65-gallery-basic.jpg",
+            "image": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-01-product-front-main.jpg",
             "gallery": [
-              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/basic/lg-oled-b6-2026-65-gallery-basic.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-01-product-front-main.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-02-dimension.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-03-perfect-black-color.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-04-ai-processor.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-05-award-winning-multi-ai-webos.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-06-ai-hub-for-personalization-ga.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-07-lg-shield.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/gallery/65-b6/gallery/lg-oled-b6-2026-65-gallery-08-gaming.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/tvs/oled65b6ssa/lgsubscribe",
             "detail": {
@@ -7741,6 +11046,14 @@ export const PRODUCTS = [
                 {
                   "title": "4K upscaling refines every frame for stunning visual quality",
                   "copy": "AI Super Upscaling refines image quality up to 4K and Dynamic Tone Mapping Pro ensures balanced brightness and detail for each object in every frame."
+                },
+                {
+                  "title": "Hear voices clearly in every scene with AI Object Remastering Pro",
+                  "copy": "AI Object Remastering Pro No need to adjust the volume to hear voices clearly."
+                },
+                {
+                  "title": "Immersive and room-filling sound with Virtual 11.1.2 Ch",
+                  "copy": "AI Sound refines sound quality to deliver multi-dimensional audio that surrounds you, heightening your senses through deeper immersion."
                 }
               ],
               "stories": [
@@ -7767,6 +11080,30 @@ export const PRODUCTS = [
                   "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-07-ai-hdr-remastering-d.jpg",
                   "video": null
+                },
+                {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 7) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 8)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-08-1-multi-ai-search-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-08-1-multi-ai-search-d.mp4"
+                },
+                {
+                  "title": "Knowing the problem before you ask",
+                  "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 10)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-10-1-ai-chatbot-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-10-1-ai-chatbot-d.mp4"
+                },
+                {
+                  "title": "Making your picture, your way",
+                  "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-10-2-ai-picture-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-10-2-ai-picture-wizard-d.mp4"
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-10-3-ai-sound-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-10-3-ai-sound-wizard-d.mp4"
                 }
               ],
               "facts": [
@@ -7817,6 +11154,14 @@ export const PRODUCTS = [
                 {
                   "label": "Refresh Rate",
                   "value": "120Hz Native (VRR 144Hz)"
+                },
+                {
+                  "label": "Wide Color Gamut",
+                  "value": "Perfect Color"
+                },
+                {
+                  "label": "Picture Processor",
+                  "value": "Alpha 8 AI Processor 4K Gen3"
                 }
               ]
             }
@@ -7857,6 +11202,14 @@ export const PRODUCTS = [
       {
         "title": "4K upscaling refines every frame for stunning visual quality",
         "copy": "AI Super Upscaling refines image quality up to 4K and Dynamic Tone Mapping Pro ensures balanced brightness and detail for each object in every frame."
+      },
+      {
+        "title": "Hear voices clearly in every scene with AI Object Remastering Pro",
+        "copy": "AI Object Remastering Pro No need to adjust the volume to hear voices clearly."
+      },
+      {
+        "title": "Immersive and room-filling sound with Virtual 11.1.2 Ch",
+        "copy": "AI Sound refines sound quality to deliver multi-dimensional audio that surrounds you, heightening your senses through deeper immersion."
       }
     ],
     "stories": [
@@ -7883,6 +11236,30 @@ export const PRODUCTS = [
         "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-07-ai-hdr-remastering-d.jpg",
         "video": null
+      },
+      {
+        "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+        "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 7) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 8)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-08-1-multi-ai-search-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-08-1-multi-ai-search-d.mp4"
+      },
+      {
+        "title": "Knowing the problem before you ask",
+        "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 10)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-10-1-ai-chatbot-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-10-1-ai-chatbot-d.mp4"
+      },
+      {
+        "title": "Making your picture, your way",
+        "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-10-2-ai-picture-wizard-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-10-2-ai-picture-wizard-d.mp4"
+      },
+      {
+        "title": "Making your sound, your way",
+        "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/feature/desktop/lg-oled-b6-2026-feature-10-3-ai-sound-wizard-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/oled/b6/gp1/video/desktop/lg-oled-b6-2026-feature-10-3-ai-sound-wizard-d.mp4"
       }
     ],
     "facts": [
@@ -7933,6 +11310,14 @@ export const PRODUCTS = [
       {
         "label": "Refresh Rate",
         "value": "120Hz Native (VRR 144Hz)"
+      },
+      {
+        "label": "Wide Color Gamut",
+        "value": "Perfect Color"
+      },
+      {
+        "label": "Picture Processor",
+        "value": "Alpha 8 AI Processor 4K Gen3"
       }
     ]
   },
@@ -7960,7 +11345,10 @@ export const PRODUCTS = [
           "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-02-product-dimension.jpg",
           "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-03-dynamic-qned-color-pro.jpg",
           "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-04-mini-led-precision-dimming.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-05-ai-processor-alpha8-gen3.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-05-ai-processor-alpha8-gen3.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-06-ai-tv-ai-picture-pro.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-07-lg-shield.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-08-multi-ai-search.jpg"
         ],
         "model": "55QNED87BSA",
         "specIds": [
@@ -7977,7 +11365,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-02-product-dimension.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-03-dynamic-qned-color-pro.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-04-mini-led-precision-dimming.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-05-ai-processor-alpha8-gen3.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-05-ai-processor-alpha8-gen3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-06-ai-tv-ai-picture-pro.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-07-lg-shield.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/55-qned85/gallery/lg-qned-evo-qned85-2026-55-gallery-08-multi-ai-search.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/tvs/55qned87bsa/lgsubscribe",
             "detail": {
@@ -7998,6 +11389,14 @@ export const PRODUCTS = [
                 {
                   "title": "Upgrade every frame to HDR quality",
                   "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals."
+                },
+                {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+                },
+                {
+                  "title": "Knowing the problem before you ask",
+                  "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
                 }
               ],
               "stories": [
@@ -8024,6 +11423,30 @@ export const PRODUCTS = [
                   "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-09-ai-hdr-remastering-d.jpg",
                   "video": null
+                },
+                {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.mp4"
+                },
+                {
+                  "title": "Knowing the problem before you ask",
+                  "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-m.mp4"
+                },
+                {
+                  "title": "Making your picture, your way",
+                  "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-m.mp4"
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-m.mp4"
                 }
               ],
               "facts": [
@@ -8074,6 +11497,14 @@ export const PRODUCTS = [
                 {
                   "label": "Display Resolution",
                   "value": "4K Ultra HD (3,840 x 2,160)"
+                },
+                {
+                  "label": "Refresh Rate",
+                  "value": "120Hz Native (VRR 144Hz)"
+                },
+                {
+                  "label": "Wide Color Gamut",
+                  "value": "Dynamic QNED Color Pro (100% Color Volume certified)"
                 }
               ]
             }
@@ -8086,7 +11517,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-02-product-dimension.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-03-dynamic-qned-color-pro.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-04-mini-led-precision-dimming.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-05-ai-processor-alpha8-gen3.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-05-ai-processor-alpha8-gen3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-06-ai-tv-ai-picture-pro.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-07-lg-shield.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/65-qned85/gallery/lg-qned-evo-qned85-2026-65-gallery-08-multi-ai-search.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/tvs/65qned87bsa/lgsubscribe",
             "detail": {
@@ -8107,6 +11541,14 @@ export const PRODUCTS = [
                 {
                   "title": "Upgrade every frame to HDR quality",
                   "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals."
+                },
+                {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+                },
+                {
+                  "title": "Knowing the problem before you ask",
+                  "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
                 }
               ],
               "stories": [
@@ -8133,6 +11575,30 @@ export const PRODUCTS = [
                   "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-09-ai-hdr-remastering-d.jpg",
                   "video": null
+                },
+                {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.mp4"
+                },
+                {
+                  "title": "Knowing the problem before you ask",
+                  "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-m.mp4"
+                },
+                {
+                  "title": "Making your picture, your way",
+                  "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-m.mp4"
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-m.mp4"
                 }
               ],
               "facts": [
@@ -8183,6 +11649,14 @@ export const PRODUCTS = [
                 {
                   "label": "Display Resolution",
                   "value": "4K Ultra HD (3,840 x 2,160)"
+                },
+                {
+                  "label": "Refresh Rate",
+                  "value": "120Hz Native (VRR 144Hz)"
+                },
+                {
+                  "label": "Wide Color Gamut",
+                  "value": "Dynamic QNED Color Pro (100% Color Volume certified)"
                 }
               ]
             }
@@ -8195,7 +11669,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-02-product-dimension.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-03-ultra-big-tv-sports.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-04-dynamic-qned-color-pro.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-05-mini-led-precision-dimming.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-05-mini-led-precision-dimming.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-06-ai-processor-alpha8-gen3.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-07-ai-tv-ai-picture-pro-ultra-big.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/gallery/75-qned85/gallery/lg-qned-evo-qned85-2026-75-gallery-08-lg-shield.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/tvs/75qned87bsa/lgsubscribe",
             "detail": {
@@ -8216,6 +11693,14 @@ export const PRODUCTS = [
                 {
                   "title": "Upgrade every frame to HDR quality",
                   "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals."
+                },
+                {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+                },
+                {
+                  "title": "Knowing the problem before you ask",
+                  "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
                 }
               ],
               "stories": [
@@ -8242,6 +11727,30 @@ export const PRODUCTS = [
                   "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-09-ai-hdr-remastering-d.jpg",
                   "video": null
+                },
+                {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.mp4"
+                },
+                {
+                  "title": "Knowing the problem before you ask",
+                  "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-m.mp4"
+                },
+                {
+                  "title": "Making your picture, your way",
+                  "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-m.mp4"
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-m.mp4"
                 }
               ],
               "facts": [
@@ -8292,6 +11801,14 @@ export const PRODUCTS = [
                 {
                   "label": "Display Resolution",
                   "value": "4K Ultra HD (3,840 x 2,160)"
+                },
+                {
+                  "label": "Refresh Rate",
+                  "value": "120Hz Native (VRR 144Hz)"
+                },
+                {
+                  "label": "Wide Color Gamut",
+                  "value": "Dynamic QNED Color Pro (100% Color Volume certified)"
                 }
               ]
             }
@@ -8360,6 +11877,14 @@ export const PRODUCTS = [
       {
         "title": "Upgrade every frame to HDR quality",
         "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals."
+      },
+      {
+        "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+        "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+      },
+      {
+        "title": "Knowing the problem before you ask",
+        "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
       }
     ],
     "stories": [
@@ -8386,6 +11911,30 @@ export const PRODUCTS = [
         "copy": "AI automatically optimizes color, brightness, and contrast and elevates SDR picture quality to HDR levels for richer, more realistic visuals.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-09-ai-hdr-remastering-d.jpg",
         "video": null
+      },
+      {
+        "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+        "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-10-multi-ai-search-d.mp4"
+      },
+      {
+        "title": "Knowing the problem before you ask",
+        "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-chatbot-m.mp4"
+      },
+      {
+        "title": "Making your picture, your way",
+        "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-picture-wizard-m.mp4"
+      },
+      {
+        "title": "Making your sound, your way",
+        "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1/feature/desktop/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/qned-evo/qned85/gp1-v1-00/gp1/video/lg-qned-evo-qned85-2026-feature-12-ai-sound-wizard-m.mp4"
       }
     ],
     "facts": [
@@ -8436,6 +11985,14 @@ export const PRODUCTS = [
       {
         "label": "Display Resolution",
         "value": "4K Ultra HD (3,840 x 2,160)"
+      },
+      {
+        "label": "Refresh Rate",
+        "value": "120Hz Native (VRR 144Hz)"
+      },
+      {
+        "label": "Wide Color Gamut",
+        "value": "Dynamic QNED Color Pro (100% Color Volume certified)"
       }
     ]
   },
@@ -8463,7 +12020,10 @@ export const PRODUCTS = [
           "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-02-product-dimension.jpg",
           "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-03-nano-detail-enhancer.jpg",
           "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-04-hdr-10-pro.jpg",
-          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-05-ai-processor-alpha7-gen9.jpg"
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-05-ai-processor-alpha7-gen9.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-06-ai-tv-4k-super-upscaling.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-07-lg-shield.jpg",
+          "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-08-multi-ai-search.jpg"
         ],
         "model": "50NU865BPSA",
         "specIds": [
@@ -8480,7 +12040,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-02-product-dimension.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-03-nano-detail-enhancer.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-04-hdr-10-pro.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-05-ai-processor-alpha7-gen9.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-05-ai-processor-alpha7-gen9.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-06-ai-tv-4k-super-upscaling.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-07-lg-shield.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/50-nu85/gallery/lg-nano-4k-uhd-nu85-2026-50-gallery-08-multi-ai-search.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/tvs/50nu865bpsa/lgsubscribe",
             "detail": {
@@ -8495,12 +12058,20 @@ export const PRODUCTS = [
                   "copy": "AI Sound uses sophisticated algorithms to analyze sound and upscale it to create an audio experience that emulates surround sound even without any additional external speakers."
                 },
                 {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+                },
+                {
                   "title": "Knowing the problem before you ask",
                   "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
                 },
                 {
                   "title": "Making your picture, your way",
                   "copy": "Advanced algorithms learn your preferences."
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you."
                 }
               ],
               "stories": [
@@ -8517,6 +12088,12 @@ export const PRODUCTS = [
                   "video": null
                 },
                 {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.mp4"
+                },
+                {
                   "title": "Knowing the problem before you ask",
                   "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-chatbot-d.jpg",
@@ -8527,6 +12104,24 @@ export const PRODUCTS = [
                   "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-m.mp4"
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you. 12)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-m.mp4"
+                },
+                {
+                  "title": "Security you can trust",
+                  "copy": "LG Shield's 7 core technologies ensure your data stays safe with secure data storage and management, secure cryptographic algorithms, ensured software integrity, user authentication and access control, secure data transmission, security event detection and response, and secure update management.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-12-lg-shield-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Your LG TV is built to last with LG Quad Protection",
+                  "copy": "From hardware to software, your LG TV is protected. Built-in capacitors protect against high voltages, including lightning strikes, while semiconductors are engineered with surge protection. Silicon gel and protective coatings shield chipsets from humidity and even your data stays safe and secure with LG Shield.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-14-lg-quad-protection-d.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -8577,6 +12172,14 @@ export const PRODUCTS = [
                 {
                   "label": "AI Upscaling",
                   "value": "4K Super Upscaling"
+                },
+                {
+                  "label": "HDR (High Dynamic Range)",
+                  "value": "HDR10 / HLG"
+                },
+                {
+                  "label": "Picture Mode",
+                  "value": "9 modes"
                 }
               ]
             }
@@ -8589,7 +12192,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-02-product-dimension.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-03-nano-detail-enhancer.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-04-hdr-10-pro.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-05-ai-processor-alpha7-gen9.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-05-ai-processor-alpha7-gen9.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-06-ai-tv-4k-super-upscaling.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-07-lg-shield.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/55-nu85/gallery/lg-nano-4k-uhd-nu85-2026-55-gallery-08-multi-ai-search.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/tvs/55nu865bpsa/lgsubscribe",
             "detail": {
@@ -8604,12 +12210,20 @@ export const PRODUCTS = [
                   "copy": "AI Sound uses sophisticated algorithms to analyze sound and upscale it to create an audio experience that emulates surround sound even without any additional external speakers."
                 },
                 {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+                },
+                {
                   "title": "Knowing the problem before you ask",
                   "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
                 },
                 {
                   "title": "Making your picture, your way",
                   "copy": "Advanced algorithms learn your preferences."
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you."
                 }
               ],
               "stories": [
@@ -8626,6 +12240,12 @@ export const PRODUCTS = [
                   "video": null
                 },
                 {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.mp4"
+                },
+                {
                   "title": "Knowing the problem before you ask",
                   "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-chatbot-d.jpg",
@@ -8636,6 +12256,24 @@ export const PRODUCTS = [
                   "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-m.mp4"
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you. 12)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-m.mp4"
+                },
+                {
+                  "title": "Security you can trust",
+                  "copy": "LG Shield's 7 core technologies ensure your data stays safe with secure data storage and management, secure cryptographic algorithms, ensured software integrity, user authentication and access control, secure data transmission, security event detection and response, and secure update management.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-12-lg-shield-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Your LG TV is built to last with LG Quad Protection",
+                  "copy": "From hardware to software, your LG TV is protected. Built-in capacitors protect against high voltages, including lightning strikes, while semiconductors are engineered with surge protection. Silicon gel and protective coatings shield chipsets from humidity and even your data stays safe and secure with LG Shield.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-14-lg-quad-protection-d.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -8686,6 +12324,14 @@ export const PRODUCTS = [
                 {
                   "label": "AI Upscaling",
                   "value": "4K Super Upscaling"
+                },
+                {
+                  "label": "HDR (High Dynamic Range)",
+                  "value": "HDR10 / HLG"
+                },
+                {
+                  "label": "Picture Mode",
+                  "value": "9 modes"
                 }
               ]
             }
@@ -8698,7 +12344,10 @@ export const PRODUCTS = [
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-02-product-dimension.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-03-nano-detail-enhancer.jpg",
               "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-04-hdr-10-pro.jpg",
-              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-05-ai-processor-alpha7-gen9.jpg"
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-05-ai-processor-alpha7-gen9.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-06-ai-tv-4k-super-upscaling.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-07-lg-shield.jpg",
+              "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/gallery/65-nu85/gallery/lg-nano-4k-uhd-nu85-2026-65-gallery-08-multi-ai-search.jpg"
             ],
             "url": "https://www.lg.com/my/lg-subscribe/tvs/65nu865bpsa/lgsubscribe",
             "detail": {
@@ -8713,12 +12362,20 @@ export const PRODUCTS = [
                   "copy": "AI Sound uses sophisticated algorithms to analyze sound and upscale it to create an audio experience that emulates surround sound even without any additional external speakers."
                 },
                 {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+                },
+                {
                   "title": "Knowing the problem before you ask",
                   "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
                 },
                 {
                   "title": "Making your picture, your way",
                   "copy": "Advanced algorithms learn your preferences."
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you."
                 }
               ],
               "stories": [
@@ -8735,6 +12392,12 @@ export const PRODUCTS = [
                   "video": null
                 },
                 {
+                  "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+                  "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.mp4"
+                },
+                {
                   "title": "Knowing the problem before you ask",
                   "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-chatbot-d.jpg",
@@ -8745,6 +12408,24 @@ export const PRODUCTS = [
                   "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
                   "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-d.jpg",
                   "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-m.mp4"
+                },
+                {
+                  "title": "Making your sound, your way",
+                  "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you. 12)",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-d.jpg",
+                  "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-m.mp4"
+                },
+                {
+                  "title": "Security you can trust",
+                  "copy": "LG Shield's 7 core technologies ensure your data stays safe with secure data storage and management, secure cryptographic algorithms, ensured software integrity, user authentication and access control, secure data transmission, security event detection and response, and secure update management.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-12-lg-shield-d.jpg",
+                  "video": null
+                },
+                {
+                  "title": "Your LG TV is built to last with LG Quad Protection",
+                  "copy": "From hardware to software, your LG TV is protected. Built-in capacitors protect against high voltages, including lightning strikes, while semiconductors are engineered with surge protection. Silicon gel and protective coatings shield chipsets from humidity and even your data stays safe and secure with LG Shield.",
+                  "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-14-lg-quad-protection-d.jpg",
+                  "video": null
                 }
               ],
               "facts": [
@@ -8795,6 +12476,14 @@ export const PRODUCTS = [
                 {
                   "label": "Backlight Type",
                   "value": "Direct"
+                },
+                {
+                  "label": "Picture Processor",
+                  "value": "Alpha 7 AI Processor 4K Gen9"
+                },
+                {
+                  "label": "AI Upscaling",
+                  "value": "4K Super Upscaling"
                 }
               ]
             }
@@ -8857,12 +12546,20 @@ export const PRODUCTS = [
         "copy": "AI Sound uses sophisticated algorithms to analyze sound and upscale it to create an audio experience that emulates surround sound even without any additional external speakers."
       },
       {
+        "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+        "copy": "Simply say what you are searching for, then select the AI model that suits you the best."
+      },
+      {
         "title": "Knowing the problem before you ask",
         "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support."
       },
       {
         "title": "Making your picture, your way",
         "copy": "Advanced algorithms learn your preferences."
+      },
+      {
+        "title": "Making your sound, your way",
+        "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you."
       }
     ],
     "stories": [
@@ -8879,6 +12576,12 @@ export const PRODUCTS = [
         "video": null
       },
       {
+        "title": "Advanced Multi AI search with Google Gemini and Microsoft Copilot",
+        "copy": "Simply say what you are searching for, then select the AI model that suits you the best. The system connects to multiple AI models to deliver broader, more relevant results. 8) AI Concierge suggests content and updates tailored to your interests. In This Scene provides relevant recommendations and information based on what you’re watching, while Generative AI enables searching and creating images. 9)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-08-multi-ai-search-d.mp4"
+      },
+      {
         "title": "Knowing the problem before you ask",
         "copy": "When your TV shows signs of trouble, the system detects the issue and provides step-by-step guidance right on your screen, helping you resolve it instantly or connect to support. 11)",
         "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-chatbot-d.jpg",
@@ -8889,6 +12592,24 @@ export const PRODUCTS = [
         "copy": "Advanced algorithms learn your preferences. Based on your selections, your TV creates a personalized picture just for you.",
         "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-d.jpg",
         "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-picture-wizard-m.mp4"
+      },
+      {
+        "title": "Making your sound, your way",
+        "copy": "Your TV adjusts the sound to your hearing preferences and optimizes overall sound quality to create a sound profile tuned precisely to you. 12)",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-d.jpg",
+        "video": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/video/lg-nano-4k-uhd-nu85-2026-feature-10-ai-sound-wizard-m.mp4"
+      },
+      {
+        "title": "Security you can trust",
+        "copy": "LG Shield's 7 core technologies ensure your data stays safe with secure data storage and management, secure cryptographic algorithms, ensured software integrity, user authentication and access control, secure data transmission, security event detection and response, and secure update management.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-12-lg-shield-d.jpg",
+        "video": null
+      },
+      {
+        "title": "Your LG TV is built to last with LG Quad Protection",
+        "copy": "From hardware to software, your LG TV is protected. Built-in capacitors protect against high voltages, including lightning strikes, while semiconductors are engineered with surge protection. Silicon gel and protective coatings shield chipsets from humidity and even your data stays safe and secure with LG Shield.",
+        "poster": "https://www.lg.com/content/dam/channel/wcms/1-channel/my/ms/lgcom/2026/tv-audio-video/tv/nano-4k-uhd/nu85/gp1/feature/desktop/lg-nano-4k-uhd-nu85-2026-feature-14-lg-quad-protection-d.jpg",
+        "video": null
       }
     ],
     "facts": [
@@ -8939,6 +12660,14 @@ export const PRODUCTS = [
       {
         "label": "AI Upscaling",
         "value": "4K Super Upscaling"
+      },
+      {
+        "label": "HDR (High Dynamic Range)",
+        "value": "HDR10 / HLG"
+      },
+      {
+        "label": "Picture Mode",
+        "value": "9 modes"
       }
     ]
   }

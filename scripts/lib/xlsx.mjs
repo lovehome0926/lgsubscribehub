@@ -123,14 +123,21 @@ function sheetPathFor(zip, preferredName) {
     name: item[1],
     path: `xl/${relMap[item[2]]?.replace(/^\//, "") || `worksheets/sheet1.xml`}`,
   }))
-  const match = sheets.find((sheet) => sheet.name === preferredName) || sheets[0]
-  return match?.path || "xl/worksheets/sheet1.xml"
+  const match = sheets.find((sheet) => sheet.name === preferredName) || (preferredName ? null : sheets[0])
+  return match?.path || null
+}
+
+export function listSheetNames(filePath) {
+  const zip = unzip(fs.readFileSync(filePath))
+  const workbook = zip["xl/workbook.xml"]?.toString("utf8") || ""
+  return [...workbook.matchAll(/<sheet[^>]*name="([^"]+)"/g)].map((item) => item[1])
 }
 
 // 2D array including the header row. Prefers a sheet named Products.
 export function readSheetCells(filePath, preferredName = "Products") {
   const zip = unzip(fs.readFileSync(filePath))
-  const xml = zip[sheetPathFor(zip, preferredName)]?.toString("utf8")
+  const pathName = sheetPathFor(zip, preferredName) || sheetPathFor(zip, "")
+  const xml = zip[pathName]?.toString("utf8")
   if (!xml) throw new Error(`Could not read sheet "${preferredName}" in ${filePath}`)
   return parseSheetCells(xml, parseSharedStrings(zip))
 }

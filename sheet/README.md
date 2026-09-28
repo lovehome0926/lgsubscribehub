@@ -101,6 +101,23 @@ Scope 可以填四种，**越具体的优先**：
 举例：9 月同时有一条 `all` 的全站促销和一条 `Refrigerators` 的冰箱促销，那么冰箱显示冰箱那条，
 其他商品显示全站那条。
 
+## Reviews（文字好评）
+
+完整步骤写在项目根目录的 [`HOW-TO-ADD-REVIEWS.md`](../HOW-TO-ADD-REVIEWS.md)。
+
+- 日常：改 `sheet/reviews.csv`（Author, Rating, Date, Product, Quote）
+- 或在本 xlsx 加一个 **Reviews** 页签，标题含 `Author`
+- 安装图：`INSTALL_PHOTOS/`　　合照：`GROUP_PHOTOS/`
+- 改完运行 `npm run import:xlsx`
+
+## CareShip（保养价钱）
+
+完整步骤写在项目根目录的 [`HOW-TO-CARESHIP.md`](../HOW-TO-CARESHIP.md)。
+
+- 日常：改 `sheet/careship.csv`
+- 或在本 xlsx 加一个 **CareShip** 页签
+- 改完运行 `npm run import:xlsx`
+
 ## 出问题时
 
 | 现象 | 原因 |

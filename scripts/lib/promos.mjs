@@ -2,6 +2,7 @@
 // Offer column accepts the memo wording the team already uses.
 import fs from "fs"
 import path from "path"
+import { MERDEKA_PROMOS } from "../../src/data/campaign.js"
 import { root } from "./build-products.mjs"
 
 export const promosOutPath = path.join(root, "src", "data", "promos.js")
@@ -71,9 +72,9 @@ function defaultCopy(parsed, scope) {
   if (parsed.type === "intro_percent") {
     const half = parsed.percentOff === 50
     return {
-      badge: parsed.merdeka ? "MERDEKA" : half ? "9M HALF" : `${parsed.introMonths}M ${parsed.percentOff}%`,
+      badge: parsed.merdeka ? "MERDEKA" : half ? "HALF PRICE" : `${parsed.percentOff}% OFF`,
       title: half
-        ? `First ${parsed.introMonths} months half price`
+        ? `${parsed.introMonths} months half price`
         : `First ${parsed.introMonths} months ${parsed.percentOff}% off`,
       detail: half
         ? `Pay half the monthly fee for the first ${parsed.introMonths} months. Standard fee from month ${parsed.introMonths + 1}.`
@@ -82,7 +83,7 @@ function defaultCopy(parsed, scope) {
   }
   return {
     badge: parsed.merdeka ? "MERDEKA" : `RM${parsed.extraOff} OFF`,
-    title: parsed.merdeka ? `Merdeka RM${parsed.extraOff} off` : `RM${parsed.extraOff} off monthly`,
+    title: parsed.merdeka ? `Merdeka RM${parsed.extraOff} off` : `RM${parsed.extraOff} off every month`,
     detail: parsed.merdeka
       ? `Merdeka incentive: RM${parsed.extraOff} off the monthly Subscribe fee${scope && scope !== "all" ? ` on ${scope}` : ""}.`
       : `RM${parsed.extraOff} off the monthly Subscribe fee.`,
@@ -147,12 +148,43 @@ export function promosToRows(promos) {
 }
 
 export const DEFAULT_PROMOS = [
+  ...MERDEKA_PROMOS,
+  {
+    month: 9,
+    scope: "all",
+    offer: "前9m半价",
+    badge: "HALF PRICE",
+    title: "9 months half price",
+    detail: "When a model has no Merdeka memo, Subscribe plans are half price for the first 9 months.",
+    type: "intro_percent",
+    introMonths: 9,
+    percentOff: 50,
+    extraOff: 0,
+    merdeka: false,
+    start: null,
+    end: null,
+  },
+  {
+    month: 8,
+    scope: "all",
+    offer: "前9m半价",
+    badge: "HALF PRICE",
+    title: "9 months half price",
+    detail: "When a model has no Merdeka memo, Subscribe plans are half price for the first 9 months.",
+    type: "intro_percent",
+    introMonths: 9,
+    percentOff: 50,
+    extraOff: 0,
+    merdeka: false,
+    start: null,
+    end: null,
+  },
   {
     month: 0,
     scope: "all",
     offer: "前9m半价",
-    badge: "9M HALF",
-    title: "First 9 months half price",
+    badge: "HALF PRICE",
+    title: "9 months half price",
     detail: "When the month has no special memo, every Subscribe plan is half price for the first 9 months.",
     type: "intro_percent",
     introMonths: 9,
@@ -165,7 +197,8 @@ export const DEFAULT_PROMOS = [
 ]
 
 export function writePromos(promos, { source }) {
-  const list = promos.length ? promos : DEFAULT_PROMOS
+  const fromSheet = promos.length ? promos.filter((promo) => !promo.merdeka) : DEFAULT_PROMOS.filter((promo) => !promo.merdeka)
+  const list = [...MERDEKA_PROMOS, ...fromSheet]
   const banner = `// Generated from the "Promos" tab of ${source}.
 // Re-run scripts/sync-sheet.mjs or npm run import:xlsx after a memo update.
 //

@@ -1,5 +1,38 @@
-import { PRODUCTS } from "./subscribe2026.js"
-import { PROMOS } from "./promos.js"
+import { PRODUCTS as BASE_PRODUCTS } from "./subscribe2026.js"
+import { EXTRA_PRODUCTS, MERDEKA_PROMOS, patchProducts } from "./campaign.js"
+import { PROMOS as SHEET_PROMOS } from "./promos.js"
+
+function mergePromos(...lists) {
+  const seen = new Set()
+  const out = []
+  for (const list of lists) {
+    for (const promo of list) {
+      const key = [promo.month, promo.scope, promo.offer, promo.type, promo.tenure, promo.care].join("|")
+      if (seen.has(key)) continue
+      seen.add(key)
+      out.push(promo)
+    }
+  }
+  return out
+}
+
+export const PROMOS = mergePromos(MERDEKA_PROMOS, SHEET_PROMOS)
+
+function borrowSellingCopy(products) {
+  for (const product of products) {
+    if (!product.copyFeaturesFrom) continue
+    const source = products.find((item) => item.model === product.copyFeaturesFrom)
+    if (!source) continue
+    if (source.quickFeatures?.length) product.quickFeatures = source.quickFeatures
+    if (source.stories?.length) product.stories = source.stories
+    if (source.tagline) product.tagline = source.tagline
+  }
+  return products
+}
+
+export const PRODUCTS = borrowSellingCopy(patchProducts([...BASE_PRODUCTS, ...EXTRA_PRODUCTS])).filter(
+  (product) => !product.paused,
+)
 
 export const CDN = "https://www.lg.com/content/dam"
 
@@ -118,7 +151,6 @@ export function groupedCatalog() {
   })).filter((entry) => entry.listings.length > 0)
 }
 
-export { PROMOS }
 
 function withinWindow(promo, date) {
   if (promo.start && date < new Date(promo.start)) return false
@@ -207,20 +239,167 @@ export function promoForProduct(product, date = new Date()) {
   return bestPromo(promosForDate(date), product) ?? bestPromo(fallbackPromos(date), product)
 }
 
-export function applyPromo(monthly, promo) {
-  if (monthly == null) return { list: null, now: null, introMonths: null }
-  if (!promo) return { list: monthly, now: monthly, introMonths: null }
+export function promoForProductPlan(product, plan = {}, date = new Date()) {
+  const specific = promoForProduct(product, date)
+  if (specific && promoAppliesToPlan(specific, plan)) return specific
+  return (
+    bestPromo(
+      promosForDate(date).filter((promo) => String(promo.scope ?? "").trim().toLowerCase() === "all"),
+      product,
+    ) ??
+    bestPromo(fallbackPromos(date), product)
+  )
+}
+
+export function promoAppliesToPlan(promo, plan = {}) {
+  if (!promo) return false
+  if (promo.tenure != null && plan.tenure != null && Number(promo.tenure) !== Number(plan.tenure)) return false
+  if (promo.care && plan.care && promo.care !== plan.care) return false
+  return true
+}
+
+export function applyPromo(monthly, promo, plan = {}) {
+  if (monthly == null) return { list: null, now: null, introMonths: null, after: null }
+  if (!promo || !promoAppliesToPlan(promo, plan)) {
+    return { list: monthly, now: monthly, introMonths: null, after: null }
+  }
+  const after = promo.afterPrice ?? monthly
+  if (promo.promoPrice != null) {
+    return { list: after, now: promo.promoPrice, introMonths: promo.introMonths || null, after }
+  }
   if (promo.percentOff) {
     return {
       list: monthly,
-      now: Math.max(Math.round(monthly * (1 - promo.percentOff / 100)), 0),
+      now: Math.max(Math.ceil(Number((monthly * (1 - promo.percentOff / 100)).toFixed(2))), 0),
       introMonths: promo.introMonths || null,
+      after,
     }
   }
   if (promo.extraOff) {
-    return { list: monthly, now: Math.max(monthly - promo.extraOff, 0), introMonths: null }
+    return { list: monthly, now: Math.max(monthly - promo.extraOff, 0), introMonths: null, after: monthly }
   }
-  return { list: monthly, now: monthly, introMonths: null }
+  return { list: monthly, now: monthly, introMonths: null, after: null }
+}
+
+export function dealForListing(product, specs) {
+  const promo = promoForProduct(product)
+  const lowest = lowestMonthlyFor(specs)
+  const list = promo?.afterPrice ?? lowest
+  return { promo, ...applyPromo(list, promo, { tenure: promo?.tenure, care: promo?.care }) }
+}
+
+export function promoKind(promo) {
+  if (!promo) return null
+  if (promo.merdeka) return "merdeka"
+  if (promo.type === "amount_off" || promo.extraOff) return "cash"
+  if (promo.percentOff === 50 || /半价|half/i.test(`${promo.offer || ""} ${promo.badge || ""}`)) return "half"
+  if (promo.percentOff >= 70) return "deep"
+  if (promo.percentOff) return "percent"
+  return "other"
+}
+
+export const PROMO_TABS = [
+  { id: "half", label: "Half Price", short: "HALF PRICE" },
+  { id: "deep", label: "77% Off", short: "77% OFF" },
+  { id: "percent", label: "% Off", short: "% OFF" },
+  { id: "merdeka", label: "Merdeka", short: "MERDEKA" },
+  { id: "cash", label: "RM Off", short: "RM OFF" },
+]
+
+const THEMES = {
+  half: {
+    kicker: "This month",
+    badge: "HALF PRICE",
+    className: "bg-[#FFB800] text-[#111] shadow-[0_10px_24px_rgba(255,184,0,0.38)]",
+    tab: "bg-[#FFB800] text-[#111] ring-[#FFB800]",
+    soft: "bg-[#FFF4CC] text-[#7A4B00]",
+    price: "text-[#B8860B]",
+  },
+  deep: {
+    kicker: "Limited intro",
+    badge: "77% OFF",
+    className: "bg-[#E10600] text-white shadow-[0_10px_24px_rgba(225,6,0,0.32)]",
+    tab: "bg-[#E10600] text-white ring-[#E10600]",
+    soft: "bg-[#FDECEC] text-[#E10600]",
+    price: "text-[#E10600]",
+  },
+  percent: {
+    kicker: "Intro offer",
+    badge: "% OFF",
+    className: "bg-[#FF5A1F] text-white shadow-[0_10px_24px_rgba(255,90,31,0.32)]",
+    tab: "bg-[#FF5A1F] text-white ring-[#FF5A1F]",
+    soft: "bg-[#FFE8DE] text-[#C2410C]",
+    price: "text-[#C2410C]",
+  },
+  merdeka: {
+    kicker: "Merdeka",
+    badge: "MERDEKA",
+    className: "bg-[#111111] text-[#FFD100] shadow-[0_10px_24px_rgba(17,17,17,0.28)] ring-2 ring-[#C8102E]",
+    tab: "bg-[#111111] text-[#FFD100] ring-[#C8102E]",
+    soft: "bg-[#111111] text-[#FFD100]",
+    price: "text-[#C8102E]",
+  },
+  cash: {
+    kicker: "Every month",
+    badge: "RM OFF",
+    className: "bg-[#0B8A5A] text-white shadow-[0_10px_24px_rgba(11,138,90,0.32)]",
+    tab: "bg-[#0B8A5A] text-white ring-[#0B8A5A]",
+    soft: "bg-[#E7F6EF] text-[#0B8A5A]",
+    price: "text-[#0B8A5A]",
+  },
+  other: {
+    kicker: "Offer",
+    badge: "PROMO",
+    className: "bg-lg-red text-white shadow-[0_10px_24px_rgba(165,0,52,0.28)]",
+    tab: "bg-lg-red text-white ring-lg-red",
+    soft: "bg-rose-50 text-lg-red",
+    price: "text-lg-red",
+  },
+}
+
+export function promoTheme(promo) {
+  const kind = promoKind(promo)
+  if (!kind) return null
+  const theme = THEMES[kind] || THEMES.other
+  const months = promo.introMonths
+  const off = promo.percentOff
+  const cash = promo.extraOff
+  let badge = promo.badge || theme.badge
+  let line = promo.title
+  if (kind === "half") {
+    badge = promo.badge || "HALF PRICE"
+    line = months ? `First ${months} months` : "Pay half now"
+  } else if (kind === "deep" || kind === "percent") {
+    badge = promo.badge || `${off}% OFF`
+    line = months ? `First ${months} months` : "Intro price"
+  } else if (kind === "merdeka") {
+    badge = promo.badge || "MERDEKA"
+    line = promo.promoPrice != null ? `RM ${promo.promoPrice}/mth` : cash ? `RM${cash} off / month` : "National Day deal"
+  } else if (kind === "cash") {
+    badge = promo.badge || `RM${cash} OFF`
+    line = "Every month"
+  }
+  return {
+    kind,
+    kicker: theme.kicker,
+    badge,
+    line,
+    title: promo.title,
+    className: theme.className,
+    tab: theme.tab,
+    soft: theme.soft,
+    price: theme.price,
+  }
+}
+
+export function livePromoTabs(date = new Date()) {
+  const counts = new Map()
+  for (const listing of allListings()) {
+    const kind = promoKind(promoForProduct(listing.product, date))
+    if (!kind) continue
+    counts.set(kind, (counts.get(kind) || 0) + 1)
+  }
+  return PROMO_TABS.filter((tab) => counts.get(tab.id)).map((tab) => ({ ...tab, count: counts.get(tab.id) }))
 }
 
 export const SERVICES = {
@@ -250,8 +429,6 @@ export const SERVICES = {
     blurb: "TVs include LG standard warranty only. CareShip™ visit plans do not apply.",
   },
 }
-
-export { PRODUCTS }
 
 export function isMoney(value) {
   return typeof value === "number" && Number.isFinite(value)
@@ -352,9 +529,11 @@ export function lowestMonthly(product) {
 export const startingMonthly = lowestMonthly
 
 export function productById(id) {
+  const want = String(id || "").toLowerCase()
   return (
     PRODUCTS.find((item) => item.id === id) ??
-    PRODUCTS.find((item) => item.model?.toLowerCase() === String(id || "").toLowerCase()) ??
+    PRODUCTS.find((item) => item.model?.toLowerCase() === want) ??
+    PRODUCTS.find((item) => item.sku?.toLowerCase() === want) ??
     PRODUCTS[0]
   )
 }

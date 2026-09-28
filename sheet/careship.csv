@@ -1,0 +1,39 @@
+Category,Model,Name,Variant/Color,Plan_Type,1_Year_RM,2_Year_RM,Details
+Water Purifier,WD112AN,PuriCare Tankless Water Purifier,White,Regular Visit (Quarterly/3mth),500,950,1x Visit every 3mth; Includes 12-mth Internal Pipe Change
+Water Purifier,WD210AN,PuriCare Tankless Water Purifier,"Silver, White",Regular Visit (Quarterly/3mth),500,950,1x Visit every 3mth; Includes 12-mth Internal Pipe Change
+Water Purifier,WD512AN,PuriCare Tankless Water Purifier,"Silver, White",Regular Visit (Quarterly/3mth),500,950,1x Visit every 3mth; Includes 12-mth Internal Pipe Change
+Water Purifier,WD515AN,PuriCare Tankless Water Purifier,"Shiny Rose, Silver, White",Regular Visit (Quarterly/3mth),500,950,1x Visit every 3mth; Includes 12-mth Internal Pipe Change
+Water Purifier,WS410GN / WS510SN,Floor Standing Water Purifier,White,Regular Visit (Quarterly/3mth),500,950,1x Visit every 3mth; Includes 12-mth Internal Pipe Change (WS410)
+Water Purifier,WD217AN / WD517AN,PuriCare Tankless Water Purifier,"Grey, White",Regular Visit (Quarterly/3mth),500,950,1x Visit every 3mth
+Water Purifier,WD216AN / WD516AN,PuriCare Tankless Water Purifier,"Navy Blue, Silver, White",Regular Visit (6mth),350,665,1x Regular visit every 6mth
+Water Purifier,WD216AN / WD516AN,PuriCare Tankless Water Purifier,"Navy Blue, Silver, White",Self-Service,250,475,2x Filter deliveries per year
+Water Purifier,WD216AN / WD516AN,PuriCare Tankless Water Purifier,"Navy Blue, Silver, White",Combine Maintenance,300,570,1x Filter delivery + 1x Regular Visit annually
+Water Purifier,WD210MN,PuriCare Tankless Water Purifier,"Calming Beige, Calming Clay Brown",Regular Visit (6mth),350,665,1x Regular visit every 6mth
+Water Purifier,WD210MN,PuriCare Tankless Water Purifier,"Calming Beige, Calming Clay Brown",Self-Service,250,475,2x Filter deliveries per year
+Water Purifier,WD210MN,PuriCare Tankless Water Purifier,"Calming Beige, Calming Clay Brown",Combine Maintenance,300,570,1x Filter delivery + 1x Regular Visit annually
+Water Purifier,WD518AN,PuriCare Tankless Water Purifier,"Beige, Pebble Grey, Cream White, Pink, Cream Sky, Clay Mint",Regular Visit (6mth),350,665,1x Regular visit every 6mth
+Water Purifier,WD518AN,PuriCare Tankless Water Purifier,"Beige, Pebble Grey, Cream White, Pink, Cream Sky, Clay Mint",Self-Service,250,475,2x Filter deliveries per year
+Water Purifier,WD518AN,PuriCare Tankless Water Purifier,"Beige, Pebble Grey, Cream White, Pink, Cream Sky, Clay Mint",Combine Maintenance,300,570,1x Filter delivery + 1x Regular Visit annually
+Water Purifier,WU525BS,PuriCare Under-Sink Water Purifier,"Silver, Black",Regular Visit (6mth),350,665,1x Regular visit every 6mth
+Water Purifier,WU525BS,PuriCare Under-Sink Water Purifier,"Silver, Black",Self-Service,250,475,2x Filter deliveries per year
+Water Purifier,WU525BS,PuriCare Under-Sink Water Purifier,"Silver, Black",Combine Maintenance,300,570,1x Filter delivery + 1x Regular Visit annually
+Air Purifier,AS20GPHK0 / AS20GPBK0 / AS20GPKK0,PuriCare 360 Double Tower,"Essence White, Clay Brown, Graphite",Regular Visit,400,760,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS20GPHK0 / AS20GPBK0 / AS20GPKK0,PuriCare 360 Double Tower,"Essence White, Clay Brown, Graphite",Self-Service,300,570,1x Filter delivery/yr
+Air Purifier,AS10GDBY0 / AS10GDPB0 / AS10GDWB0,PuriCare 360 Double Booster,"Beige, Romantic Rose, White",Regular Visit,600,1140,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS10GDBY0 / AS10GDPB0 / AS10GDWB0,PuriCare 360 Double Booster,"Beige, Romantic Rose, White",Self-Service,500,950,1x Filter delivery/yr
+Air Purifier,AS65GDBY0 / AS65GDPB0 / AS65GDWB0,PuriCare 360 Single Booster,"Beige, Romantic Rose, White",Regular Visit,400,760,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS65GDBY0 / AS65GDPB0 / AS65GDWB0,PuriCare 360 Single Booster,"Beige, Romantic Rose, White",Self-Service,300,570,1x Filter delivery/yr
+Air Purifier,AS60GHWG0 / AS60GHCG0 / AS60GHBT0,PuriCare 360 Hit / Pet Version,"White, Brown, Blue",Regular Visit,400,760,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS60GHWG0 / AS60GHCG0 / AS60GHBT0,PuriCare 360 Hit / Pet Version,"White, Brown, Blue",Self-Service,300,570,1x Filter delivery/yr
+Air Purifier,AS55GGWX0 / AS55GGSY0,PuriCare AeroBooster / Pet,"White, Beige",Regular Visit,600,1140,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS55GGWX0 / AS55GGSY0,PuriCare AeroBooster / Pet,"White, Beige",Self-Service,500,950,1x Filter delivery/yr
+Air Purifier,AS25GCBZ0,PuriCare AeroCatTower,Clay Brown,Regular Visit,400,760,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS25GCBZ0,PuriCare AeroCatTower,Clay Brown,Self-Service,300,570,1x Filter delivery/yr
+Air Purifier,AS35GGW10,PuriCare AeroFurniture,"Essence White, Dark Gray",Regular Visit,400,760,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS35GGW10,PuriCare AeroFurniture,"Essence White, Dark Gray",Self-Service,300,570,1x Filter delivery/yr
+Air Purifier,AS30GGW10,PuriCare AeroMini,White,Regular Visit,240,430,1x Visit/yr; Pre-Filter + HEPA Filter
+Air Purifier,AS30GGW10,PuriCare AeroMini,White,Self-Service,180,340,1x Filter delivery/yr
+Dehumidifier,DD16GMWE1 / DD16GMEE1,PuriCare Dehumidifier 16L,"Essence White, Calming Beige",Regular Visit,250,475,1x Visit/yr; Accessory Assembly (Cover + HEPA Filter)
+Dehumidifier,DD16GMWE1 / DD16GMEE1,PuriCare Dehumidifier 16L,"Essence White, Calming Beige",Self-Service,150,285,1x Filter delivery/yr
+Styler,S3WF / S3GHM,LG Styler Steam Clothing Care,"White, Essence Win Mirror",Regular Visit,N/A,550,2x Filter accessories delivery/yr; Aroma Sheet + Tanks
+Styler,S3WF / S3GHM,LG Styler Steam Clothing Care,"White, Essence Win Mirror",Self-Service,N/A,400,2x Filter accessories delivery/yr; Aroma Sheet + Tanks

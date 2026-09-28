@@ -27,12 +27,19 @@ Google Sheet 我只能读取、不能替你改（没有你账号的写入权限�
 
 列说明和上门周期（6 / 12 / 24 个月）见 [`sheet/README.md`](sheet/README.md)。
 
+**添加 / 修改顾客好评：** 看根目录 [`HOW-TO-ADD-REVIEWS.md`](HOW-TO-ADD-REVIEWS.md)。  
+文字改 `sheet/reviews.csv`（或 Excel 的 Reviews 页签），安装图放 `INSTALL_PHOTOS/`，合照放 `GROUP_PHOTOS/`，然后 `npm run import:xlsx`。
+
+**添加 / 修改 CareShip 保养价钱：** 看根目录 [`HOW-TO-CARESHIP.md`](HOW-TO-CARESHIP.md)。  
+改 `sheet/careship.csv`（或 Excel 的 CareShip 页签），然后 `npm run import:xlsx`。
+
 ## 数据说明
 
 | 文件 | 内容 | 怎么更新 |
 |---|---|---|
 | `src/data/subscribe2026.js` | 商品、颜色、规格、价格 | `npm run import:xlsx` 或 `npm run sync`（自动生成，别手改） |
 | `src/data/promos.js` | 每月促销 | 同上（自动生成，别手改） |
+| `src/data/careship.js` | CareShip 1年/2年保养价 | `sheet/careship.csv` 后 `npm run import:xlsx` |
 | `src/data/catalog.js` | 分类分组、服务方案、价格计算 | 手动编辑 |
 | `scripts/detail-cache.json` | 从 LG 官网抓的详情文案缓存 | `node scripts/import-details.mjs` |
 

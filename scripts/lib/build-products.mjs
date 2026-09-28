@@ -331,11 +331,10 @@ function usableImage(record) {
 }
 
 function galleryFrom(record) {
+  const list = (record?.gallery || []).filter(Boolean)
+  if (list.length) return list.slice(0, 8)
   const og = usableImage(record)
-  if (!og) return []
-  const dir = og.slice(0, og.lastIndexOf("/"))
-  const extra = (record.gallery || []).filter((src) => src.startsWith(dir) && src !== og)
-  return [og, ...extra].slice(0, 5)
+  return og ? [og] : []
 }
 
 function specIdFor(row, specMap) {
@@ -517,9 +516,13 @@ export async function mergePriorDetail(products) {
         const saved = variant.url ? savedByUrl.get(variant.url) : null
         if (!saved) continue
         if (saved.detail) variant.detail = saved.detail
-        if (saved.gallery?.length > 1 && isPlaceholderImage(variant.image)) {
-          variant.gallery = saved.gallery
-          variant.image = saved.image || saved.gallery[0]
+        if (saved.gallery?.length > (variant.gallery?.length || 0)) {
+          if (String(variant.image || "").startsWith("/products/")) {
+            variant.gallery = [...new Set([variant.image, ...(variant.gallery || []), ...saved.gallery])].slice(0, 8)
+          } else {
+            variant.gallery = saved.gallery
+            variant.image = saved.image || saved.gallery[0]
+          }
         }
       }
       const lead = Object.values(color.variants).find((variant) => variant.gallery?.length > 1 && !isPlaceholderImage(variant.image))

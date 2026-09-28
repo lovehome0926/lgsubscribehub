@@ -1,0 +1,77 @@
+import { COMPANY, INDEPENDENCE_NOTICE } from "../config"
+import { GOOGLE_REVIEWS_URL, REVIEWS, reviewStats } from "../data/reviews"
+import { STORES } from "../data/stores"
+
+export default function SeoJsonLd() {
+  const stats = reviewStats()
+  const reviews = REVIEWS.map((review) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: review.author },
+    datePublished: review.date || undefined,
+    reviewBody: review.quote || undefined,
+    name: review.product || undefined,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(review.rating),
+      bestRating: "5",
+      worstRating: "1",
+    },
+  }))
+
+  const aggregateRating =
+    stats.count > 0
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: String(stats.average),
+          reviewCount: String(stats.count),
+          ratingCount: String(stats.count),
+          bestRating: "5",
+          worstRating: "1",
+        }
+      : undefined
+
+  const locations = STORES.map((store) => ({
+    "@type": "LocalBusiness",
+    "@id": `https://lgsubscribe.biz.my/#${store.id}`,
+    name: `${store.name} — ${COMPANY.name}`,
+    image: store.photo,
+    telephone: COMPANY.phoneTel,
+    email: COMPANY.email,
+    url: store.maps,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: store.address,
+      addressLocality: store.shortName.includes("Parit Raja") ? "Parit Raja" : "Batu Pahat",
+      addressRegion: "Johor",
+      postalCode: store.shortName.includes("Parit Raja") ? "66400" : "83000",
+      addressCountry: "MY",
+    },
+  }))
+
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: COMPANY.name,
+        legalName: COMPANY.name,
+        identifier: COMPANY.ssm,
+        telephone: COMPANY.phoneTel,
+        email: COMPANY.email,
+        description: INDEPENDENCE_NOTICE,
+        sameAs: [GOOGLE_REVIEWS_URL],
+        aggregateRating,
+        review: reviews,
+        location: locations,
+      },
+      ...locations.map((store) => ({
+        ...store,
+        parentOrganization: { "@type": "Organization", name: COMPANY.name },
+        aggregateRating,
+        review: reviews,
+      })),
+    ],
+  }
+
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+}

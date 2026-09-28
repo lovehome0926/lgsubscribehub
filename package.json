@@ -11,7 +11,9 @@
     "sync": "node scripts/sync-sheet.mjs",
     "sheet:export": "node scripts/export-sheet-csv.mjs",
     "sheet:xlsx": "node scripts/export-workbook.mjs",
-    "import:xlsx": "node scripts/import-subscribe.mjs"
+    "import:xlsx": "node scripts/import-subscribe.mjs",
+    "photos": "node scripts/publish-photos.mjs",
+    "import:details": "node scripts/import-details.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",

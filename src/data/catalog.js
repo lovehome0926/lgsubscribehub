@@ -392,6 +392,38 @@ export function promoTheme(promo) {
   }
 }
 
+export function promoCopy(promo, t) {
+  const theme = promoTheme(promo)
+  if (!theme) return null
+  if (!t) return theme
+  const kind = theme.kind
+  const months = promo.introMonths
+  const off = promo.percentOff
+  const cash = promo.extraOff
+  const price = promo.promoPrice
+  const kicker = t(`promo.kicker.${kind}`)
+  const badgeN = kind === "cash" || (kind === "merdeka" && (off == null || off === 0)) ? (price ?? cash) : (off ?? price ?? cash)
+  let badge = t(`promo.badge.${kind}`, { n: badgeN })
+  if ((kind === "deep" || kind === "percent" || (kind === "merdeka" && off)) && off != null) {
+    badge = months ? t("promo.badge.percentYear", { n: off }) : t(off >= 70 ? "promo.badge.deep" : "promo.badge.percent", { n: off })
+  }
+  let line = theme.line
+  if (kind === "half") line = months ? t("promo.line.halfMonths", { n: months }) : t("promo.line.half")
+  else if (kind === "deep" || kind === "percent" || (kind === "merdeka" && off)) line = months ? t("promo.line.percentMonths", { n: months }) : t("promo.line.percent")
+  else if (kind === "merdeka") {
+    if (price != null) line = t("promo.line.merdekaPrice", { n: price })
+    else if (cash) line = t("promo.line.merdekaCash", { n: cash })
+    else line = t("promo.line.merdeka")
+  } else if (kind === "cash") line = t("promo.line.cash")
+  let detail
+  if (months && price != null && promo.afterPrice != null) {
+    detail = t("promo.detail.intro", { now: price, months, after: promo.afterPrice })
+  } else if (price != null && promo.afterPrice != null) {
+    detail = t("promo.detail.cash", { now: price, list: promo.afterPrice })
+  }
+  return { ...theme, kicker, badge, line, detail }
+}
+
 export function livePromoTabs(date = new Date()) {
   const counts = new Map()
   for (const listing of allListings()) {

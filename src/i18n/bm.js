@@ -25,6 +25,57 @@ export default {
     description:
       "Laman pertanyaan LG Subscribe bebas oleh DNC HOME APPLIANCES di Batu Pahat dan Parit Raja, Johor. Pelan bulanan, lawatan kedai, ulasan pelanggan. WhatsApp Cindy 017-7473787. Bukan laman rasmi LG Malaysia.",
   },
+  campaign: {
+    name: "OHSEM Merdeka Deals",
+    banner: "OHSEM Merdeka Deals! Diskaun sehingga 77% untuk 12 bulan pertama | Langganan dari RM 17/bulan",
+    tag: "Promo terhad • Pemasangan percuma & hadiah tersedia",
+  },
+  promo: {
+    kicker: {
+      half: "Bulan ini",
+      deep: "Harga intro",
+      percent: "Harga intro",
+      merdeka: "Merdeka",
+      cash: "Setiap bulan",
+      other: "Tawaran",
+    },
+    badge: {
+      half: "SEPARUH HARGA",
+      deep: "{n}% OFF",
+      percent: "{n}% OFF",
+      merdeka: "MERDEKA",
+      percentYear: "{n}% off (tahun 1)",
+      cash: "RM{n} OFF",
+      other: "PROMO",
+    },
+    line: {
+      halfMonths: "{n} bulan pertama",
+      half: "Bayar separuh sekarang",
+      percentMonths: "{n} bulan pertama",
+      percent: "Harga intro",
+      merdekaPrice: "RM {n}/bulan",
+      merdekaCash: "RM{n} potongan / bulan",
+      merdeka: "Tawaran Hari Kebangsaan",
+      cash: "Setiap bulan",
+    },
+    tabs: {
+      half: "SEPARUH HARGA",
+      deep: "77% OFF",
+      percent: "% OFF",
+      merdeka: "MERDEKA",
+      cash: "RM OFF",
+    },
+    detail: {
+      intro: "RM {now}/bulan untuk {months} bulan pertama, kemudian RM {after}/bulan. T&C terpakai.",
+      cash: "RM {now}/bulan (dulu RM {list}/bulan). T&C terpakai.",
+    },
+  },
+  waters: {
+    Hot: "Panas",
+    Ambient: "Suhu bilik",
+    Cold: "Sejuk",
+    Ice: "Ais",
+  },
   wa: {
     header: "Hai Cindy, saya ingin bertanya tentang LG Subscribe Malaysia.",
     fab: "Hai Cindy, saya ingin bertanya tentang LG Subscribe Malaysia untuk rumah saya.",
@@ -33,7 +84,7 @@ export default {
   hero: {
     kicker: "LG Subscribe™ · Malaysia",
     title: "Peralatan rumah LG terkini. Pelan bulanan yang fleksibel.",
-    copy: "Nikmati PuriCare™, DualCool™ dan OLED tanpa bayaran pendahuluan yang besar. Pilih Self-Service, Combine Maintenance atau Regular Visit mengikut keperluan rumah.",
+    copy: "Nikmati PuriCare™, DualCool™ dan OLED tanpa bayaran pendahuluan yang besar. Pilih Servis sendiri, Gabungan atau Lawatan berkala mengikut keperluan rumah.",
     cta: "Subscribe Sekarang",
     promoTitle: "Diskaun sehingga 77% untuk 12 bulan pertama.",
     promoCopy: "Langganan dari RM 17/bulan. Promo terhad · Pemasangan percuma & hadiah tersedia.",
@@ -76,7 +127,7 @@ export default {
     items: [
       { title: "Tiada kos pendahuluan besar", copy: "Mula dengan pelan bulanan, bukan pembelian penuh. Sesuai untuk condo, rumah pertama dan naik taraf keluarga." },
       { title: "Teknologi sentiasa terkini", copy: "Guna PuriCare™, DualCool™ AI dan OLED evo sekarang — naik taraf atau lengkapkan kontrak mengikut terma." },
-      { title: "Penjagaan terbina dalam pelan", copy: "Self-Service, Combine Maintenance atau Regular Visit. Penapis dan lawatan juruteknik mengikut kitaran rasmi CareShip™." },
+      { title: "Penjagaan terbina dalam pelan", copy: "Servis sendiri, Gabungan atau Lawatan berkala. Penapis dan lawatan juruteknik mengikut kitaran rasmi CareShip™." },
     ],
   },
   stores: {
@@ -125,7 +176,7 @@ export default {
         a: "Penamatan awal mungkin dikenakan yuran mengikut baki tempoh dan jenis produk. Minta penasihat kira mengikut model anda sebelum menandatangani.",
       },
       {
-        q: "Mengapa TV tiada Regular Visit?",
+        q: "Mengapa TV tiada Lawatan berkala?",
         a: "Produk paparan dijual/dilanggan dengan waranti pengeluar standard sahaja. Program kebersihan dan penapis CareShip™ untuk penapis air dan udara PuriCare™ (serta HA terpilih), bukan TV.",
       },
       {
@@ -181,9 +232,9 @@ export default {
       warranty5: "Waranti 5 tahun",
     },
     care: {
-      self: "Self-Service",
-      combined: "Combined",
-      visit: "Regular Visit",
+      self: "Servis sendiri",
+      combined: "Gabungan",
+      visit: "Lawatan berkala",
       none: "Waranti",
     },
     careBlurb: {
@@ -210,9 +261,9 @@ export default {
     title: "LG CareShip Servis & Penyelenggaraan",
     lead: "Untuk pemilik PuriCare™ air, udara, dehumidifier dan Styler yang perlukan pelan CareShip™ 1 tahun atau 2 tahun. Pilih model dan gaya lawatan, kemudian WhatsApp {advisor} dengan pakej sebut harga. Sewaan Subscribe bulanan kekal di Kedai.",
     intro: [
-      { name: "Self-Service", cadence: "Kit penapis dihantar", copy: "Penapis atau aksesori tulen LG dihantar ke alamat anda. Anda ganti mengikut kitaran pada pelan." },
-      { name: "Combine Maintenance", cadence: "1 penghantaran + 1 lawatan / tahun", copy: "Satu penghantaran penapis plus satu lawatan juruteknik dibenarkan setiap tahun. Tersedia pada penapis air terpilih." },
-      { name: "Regular Visit", cadence: "3 bulan, 6 bulan atau tahunan", copy: "Juruteknik diluluskan LG urus kebersihan, penapis dan, pada model air terpilih, tukar paip dalaman 12 bulan." },
+      { name: "Servis sendiri", cadence: "Kit penapis dihantar", copy: "Penapis atau aksesori tulen LG dihantar ke alamat anda. Anda ganti mengikut kitaran pada pelan." },
+      { name: "Gabungan", cadence: "1 penghantaran + 1 lawatan / tahun", copy: "Satu penghantaran penapis plus satu lawatan juruteknik dibenarkan setiap tahun. Tersedia pada penapis air terpilih." },
+      { name: "Lawatan berkala", cadence: "3 bulan, 6 bulan atau tahunan", copy: "Juruteknik diluluskan LG urus kebersihan, penapis dan, pada model air terpilih, tukar paip dalaman 12 bulan." },
     ],
     configEyebrow: "Konfigurator pelan",
     configTitle: "Bina pelan CareShip™ anda",
@@ -243,6 +294,13 @@ export default {
       visit: "1 lawatan juruteknik setahun",
       self: "Penapis tulen dihantar",
       combine: "1 penghantaran + 1 lawatan setiap tahun",
+    },
+    planNames: {
+      "visit-q": "Lawatan berkala (setiap 3 bulan)",
+      "visit-6": "Lawatan berkala (setiap 6 bulan)",
+      visit: "Lawatan berkala",
+      self: "Servis sendiri",
+      combine: "Gabungan",
     },
     wa: {
       intro: "Hai {advisor}, saya ingin bertanya tentang LG CareShip Servis & Penyelenggaraan.",

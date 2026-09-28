@@ -24,6 +24,57 @@ export default {
     description:
       "DNC HOME APPLIANCES 在峇株巴辖与巴力拉惹（柔佛）独立运营的 LG Subscribe 咨询站。月租方案、到店、顾客评价。WhatsApp Cindy 017-7473787。并非 LG 马来西亚官方网站。",
   },
+  campaign: {
+    name: "OHSEM Merdeka Deals",
+    banner: "OHSEM Merdeka Deals！前 12 个月最高 77% 优惠 | 月租低至 RM 17",
+    tag: "限时促销 • 免费安装与赠品",
+  },
+  promo: {
+    kicker: {
+      half: "本月",
+      deep: "限时首年",
+      percent: "限时首年",
+      merdeka: "独立日",
+      cash: "每月",
+      other: "优惠",
+    },
+    badge: {
+      half: "半价",
+      deep: "{n}% 优惠",
+      percent: "{n}% 优惠",
+      merdeka: "独立日",
+      percentYear: "首年 {n}% 优惠",
+      cash: "减 RM{n}",
+      other: "促销",
+    },
+    line: {
+      halfMonths: "前 {n} 个月",
+      half: "现付一半",
+      percentMonths: "前 {n} 个月",
+      percent: "首年月费",
+      merdekaPrice: "RM {n}/月",
+      merdekaCash: "每月减 RM{n}",
+      merdeka: "国庆优惠",
+      cash: "每月",
+    },
+    tabs: {
+      half: "半价",
+      deep: "77% 优惠",
+      percent: "% 优惠",
+      merdeka: "独立日",
+      cash: "减 RM",
+    },
+    detail: {
+      intro: "前 {months} 个月 RM {now}/月，之后 RM {after}/月。条款适用。",
+      cash: "RM {now}/月（原价 RM {list}/月）。条款适用。",
+    },
+  },
+  waters: {
+    Hot: "热水",
+    Ambient: "常温",
+    Cold: "冷水",
+    Ice: "冰块",
+  },
   wa: {
     header: "你好Cindy，我想了解马来西亚 LG Subscribe。",
     fab: "你好Cindy，我想为家里了解马来西亚 LG Subscribe。",
@@ -32,7 +83,7 @@ export default {
   hero: {
     kicker: "LG Subscribe™ · 马来西亚",
     title: "最新 LG 家电。灵活月付方案。",
-    copy: "无需大额预付，即可使用 PuriCare™、DualCool™ 与 OLED。按家庭需求选择 Self-Service、Combine Maintenance 或 Regular Visit。",
+    copy: "无需大额预付，即可使用 PuriCare™、DualCool™ 与 OLED。按家庭需求选择自行更换、组合保养或定期上门。",
     cta: "立即订阅",
     promoTitle: "前 12 个月最高 77% 优惠。",
     promoCopy: "月租低至 RM 17。限时促销 · 免费安装与赠品。",
@@ -75,7 +126,7 @@ export default {
     items: [
       { title: "无需大额预付", copy: "以月付开始，而不是一次买断。适合公寓、首套房与家庭升级。" },
       { title: "技术保持更新", copy: "现在就能用上 PuriCare™、DualCool™ AI 与 OLED evo — 按条款升级或完成合约。" },
-      { title: "保养写进方案", copy: "Self-Service、Combine Maintenance 或 Regular Visit。滤芯与技师上门按官方 CareShip™ 周期执行。" },
+      { title: "保养写进方案", copy: "自行更换、组合保养或定期上门。滤芯与技师上门按官方 CareShip™ 周期执行。" },
     ],
   },
   stores: {
@@ -124,7 +175,7 @@ export default {
         a: "提前终止可能产生费用，金额取决于剩余合约期与产品类型。签约前请让顾问按您的机型核算。",
       },
       {
-        q: "为什么电视没有 Regular Visit？",
+        q: "为什么电视没有定期上门？",
         a: "显示类产品仅含标准原厂保修。CareShip™ 卫生与滤芯方案适用于 PuriCare™ 净水器、空气净化器（及部分家电），不适用于电视。",
       },
       {
@@ -179,9 +230,9 @@ export default {
       warranty5: "5 年保修",
     },
     care: {
-      self: "Self-Service",
-      combined: "Combined",
-      visit: "Regular Visit",
+      self: "自行更换",
+      combined: "组合保养",
+      visit: "定期上门",
       none: "保修",
     },
     careBlurb: {
@@ -208,9 +259,9 @@ export default {
     title: "LG CareShip 服务与保养",
     lead: "面向需要 1 年或 2 年 CareShip™ 方案的 PuriCare™ 净水、空气净化、除湿机与 Styler 用户。选择机型与上门方式，再把报价配套 WhatsApp 给 {advisor}。月租订阅仍在选购区。",
     intro: [
-      { name: "Self-Service", cadence: "滤芯寄送到家", copy: "正品 LG 滤芯或配件寄到您的地址。按方案周期自行更换。" },
-      { name: "Combine Maintenance", cadence: "每年 1 次配送 + 1 次上门", copy: "每年一次滤芯配送加一次授权技师上门。适用于部分净水器。" },
-      { name: "Regular Visit", cadence: "3 个月、6 个月或每年", copy: "LG 授权技师处理卫生、滤芯，部分净水机型含 12 个月内部管路更换。" },
+      { name: "自行更换", cadence: "滤芯寄送到家", copy: "正品 LG 滤芯或配件寄到您的地址。按方案周期自行更换。" },
+      { name: "组合保养", cadence: "每年 1 次配送 + 1 次上门", copy: "每年一次滤芯配送加一次授权技师上门。适用于部分净水器。" },
+      { name: "定期上门", cadence: "3 个月、6 个月或每年", copy: "LG 授权技师处理卫生、滤芯，部分净水机型含 12 个月内部管路更换。" },
     ],
     configEyebrow: "方案配置",
     configTitle: "配置您的 CareShip™ 方案",
@@ -241,6 +292,13 @@ export default {
       visit: "每年 1 次技师上门",
       self: "正品滤芯寄送",
       combine: "每年 1 次配送 + 1 次上门",
+    },
+    planNames: {
+      "visit-q": "定期上门（每 3 个月）",
+      "visit-6": "定期上门（每 6 个月）",
+      visit: "定期上门",
+      self: "自行更换",
+      combine: "组合保养",
     },
     wa: {
       intro: "你好{advisor}，我想了解 LG CareShip 服务与保养。",

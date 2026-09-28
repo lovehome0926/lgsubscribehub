@@ -43,6 +43,11 @@ function firstYear(plan) {
   return yearsForPlan(plan)[0] ?? 2
 }
 
+function planName(t, kind, fallback) {
+  const value = t(`careship.planNames.${kind}`)
+  return !value || value === `careship.planNames.${kind}` ? fallback : value
+}
+
 function fallbackImage(category) {
   if (category.includes("Air") || category.includes("Dehumid")) return IMG.cardAir
   if (category.includes("Styler")) return IMG.cardHome
@@ -112,7 +117,7 @@ export default function CareShip() {
     t("careship.wa.model", { value: product.models.join(" / ") }),
     t("careship.wa.product", { value: product.name }),
     color ? t("careship.wa.colour", { value: color }) : "",
-    t("careship.wa.plan", { label: plan.label, years: selectedYears, plural: selectedYears > 1 ? "s" : "" }),
+    t("careship.wa.plan", { label: planName(t, plan.kind, plan.label), years: selectedYears, plural: selectedYears > 1 ? "s" : "" }),
     price != null ? t("careship.wa.price", { value: price }) : "",
     plan.details ? t("careship.wa.details", { value: plan.details }) : "",
   ]
@@ -246,7 +251,7 @@ export default function CareShip() {
                       selected ? "ring-2 ring-lg-red" : "ring-1 ring-lg-line hover:ring-black/30"
                     }`}
                   >
-                    <span className="block font-semibold">{item.label}</span>
+                    <span className="block font-semibold">{planName(t, item.kind, item.label)}</span>
                     {hint ? <span className="mt-1 block text-xs text-lg-muted">{hint}</span> : null}
                     <span className="mt-2 block text-xs leading-5 text-lg-muted">{item.details}</span>
                   </button>
@@ -302,7 +307,7 @@ export default function CareShip() {
                   <p className="mt-2 text-sm font-semibold text-[#1f7a43]">{t("careship.save", { n: twoYearSave })}</p>
                 ) : null}
                 <ul className="mt-4 space-y-2 text-sm">
-                  {[plan.label, t(`careship.planHints.${plan.kind}`) || meta.hint, plan.details, t("careship.genuine")].filter(Boolean).map((line) => (
+                  {[planName(t, plan.kind, plan.label), t(`careship.planHints.${plan.kind}`) || meta.hint, plan.details, t("careship.genuine")].filter(Boolean).map((line) => (
                     <li key={line} className="flex gap-2">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-lg-red" />
                       {line}

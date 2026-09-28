@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react"
-import { CAMPAIGN, campaignActive } from "../data/campaign"
+import { campaignActive } from "../data/campaign"
 import { CATEGORY_GROUPS, LOGO, SUB_LOGO } from "../data/catalog"
 import { CAREER, COMPANY, whatsappHref } from "../config"
 import { LANGS, useLang } from "../i18n/LanguageProvider"
@@ -63,7 +63,7 @@ export default function Header({ onHome }) {
     }
   }, [open])
 
-  const promo = live ? CAMPAIGN.banner : t("nav.idleBanner", { phone: COMPANY.phoneDisplay })
+  const promo = live ? t("campaign.banner") : t("nav.idleBanner", { phone: COMPANY.phoneDisplay })
 
   return (
     <>

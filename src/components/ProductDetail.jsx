@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react"
 import { Check, ChevronLeft, Droplets, Flame, LayoutPanelTop, ShieldCheck, Snowflake, Truck, Wifi, Zap } from "lucide-react"
-import { SERVICES, applyPromo, groupOf, hasOutrightPrice, isMoney, planCareOptions, planPrice, pricedTenures, promoForProduct, promoForProductPlan, promoTheme, visitCycles } from "../data/catalog"
+import { SERVICES, applyPromo, groupOf, hasOutrightPrice, isMoney, planCareOptions, planPrice, pricedTenures, promoCopy, promoForProduct, promoForProductPlan, visitCycles } from "../data/catalog"
 import { whatsappHref } from "../config"
+import { localizePdp } from "../i18n/pdpFeatures"
 import { useLang } from "../i18n/LanguageProvider"
 import PromoBadge from "./PromoBadge"
 
@@ -16,6 +17,7 @@ const WATER_META = {
   Hot: { Icon: Flame, className: "text-[#c45c26]" },
   Ambient: { Icon: Droplets, className: "text-[#2b6cb0]" },
   Cold: { Icon: Snowflake, className: "text-[#2b9eb3]" },
+  Ice: { Icon: Snowflake, className: "text-[#4c8fd4]" },
 }
 
 function firstSpec(product) {
@@ -29,6 +31,7 @@ function displayName(product, color) {
 }
 
 function TitleBlock({ product, color, spec, tagline }) {
+  const { t } = useLang()
   return (
     <div>
       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-lg-red">LG Subscribe™</p>
@@ -48,7 +51,7 @@ function TitleBlock({ product, color, spec, tagline }) {
             return (
               <span key={item} className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 ring-1 ring-lg-line">
                 <Icon className={`h-3.5 w-3.5 ${meta.className}`} />
-                {item}
+                {t(`waters.${item}`)}
               </span>
             )
           })}
@@ -107,6 +110,7 @@ function tileState(selected) {
 function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, tenure, setTenure, care, setCare, visitCycle, setVisitCycle, promo, price, waText }) {
   const { t } = useLang()
   const activePromo = price.planPromo ?? promo
+  const theme = promoCopy(activePromo, t)
   const waterOutright = payMode === "outright" && product.type === "water"
   const perks = waterOutright
     ? [
@@ -304,10 +308,10 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
                 <span className="mr-1 line-through">{t("pdp.was", { n: price.list })}</span>
                 {price.introMonths
                   ? t("pdp.after", { n: price.after ?? price.list, from: price.introMonths + 1 })
-                  : ` · ${promoTheme(activePromo)?.line || activePromo?.title || t("pdp.tnc")}. ${t("pdp.tnc")}`}
+                  : ` · ${theme?.line || activePromo?.title || t("pdp.tnc")}. ${t("pdp.tnc")}`}
               </p>
             ) : activePromo?.merdeka ? (
-              <p className="mt-2 text-xs leading-5 text-gray-500">{activePromo.detail || t("pdp.tnc")}</p>
+              <p className="mt-2 text-xs leading-5 text-gray-500">{theme?.detail || t("pdp.tnc")}</p>
             ) : null}
           </div>
         ) : price.kind === "outright" && price.amount != null ? (
@@ -361,7 +365,7 @@ function FeatureGrid({ items, className = "" }) {
   return (
     <div className={`grid grid-cols-2 gap-3 ${className}`}>
       {items.map((item) => {
-        const Icon = featureIcon(item.title)
+        const Icon = featureIcon(item.iconTitle || item.title)
         return (
           <article key={item.title} className="rounded-[22px] bg-white p-5 shadow-[0_10px_40px_rgba(17,17,17,0.04)] ring-1 ring-lg-line">
             <Icon className="h-5 w-5 text-lg-red" />
@@ -375,7 +379,7 @@ function FeatureGrid({ items, className = "" }) {
 }
 
 export default function ProductDetail({ product, onBack, initialSpecId, initialColorId, lockSpec }) {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const promo = promoForProduct(product)
   const openingSpec = product.specs.find((item) => item.id === initialSpecId) ?? firstSpec(product)
   const visibleSpecs = lockSpec ? [openingSpec] : product.specs
@@ -409,10 +413,13 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
   const modelCode = variant?.model || color.model || product.model
   const viewColor = { ...color, model: modelCode, image: shot }
   const detail = variant?.detail?.quickFeatures?.length || variant?.detail?.stories?.length ? variant.detail : null
-  const quickFeatures = detail?.quickFeatures?.length ? detail.quickFeatures : product.quickFeatures
-  const stories = detail?.stories?.length ? detail.stories : product.stories
   const facts = detail?.facts?.length ? detail.facts : product.facts
-  const tagline = detail?.tagline || product.tagline
+  const localized = localizePdp(lang, product.id, {
+    tagline: detail?.tagline || product.tagline,
+    quickFeatures: detail?.quickFeatures?.length ? detail.quickFeatures : product.quickFeatures,
+    stories: detail?.stories?.length ? detail.stories : product.stories,
+  })
+  const { tagline, quickFeatures, stories } = localized
   const [hero, setHero] = useState(shot)
 
   useEffect(() => {

@@ -25,6 +25,57 @@ export default {
     description:
       "Independent LG Subscribe enquiry site by DNC HOME APPLIANCES in Batu Pahat and Parit Raja, Johor. Monthly plans, store visits, customer reviews. WhatsApp Cindy 017-7473787. Not the official LG Malaysia website.",
   },
+  campaign: {
+    name: "OHSEM Merdeka Deals",
+    banner: "OHSEM Merdeka Deals! Enjoy up to 77% off for the first 12 months | Subscription from RM 17/mth",
+    tag: "Limited-time promo • Free installation & gift available",
+  },
+  promo: {
+    kicker: {
+      half: "This month",
+      deep: "Limited intro",
+      percent: "Limited intro",
+      merdeka: "Merdeka",
+      cash: "Every month",
+      other: "Offer",
+    },
+    badge: {
+      half: "HALF PRICE",
+      deep: "{n}% OFF",
+      percent: "{n}% OFF",
+      merdeka: "MERDEKA",
+      percentYear: "{n}% OFF (1st Year)",
+      cash: "RM{n} OFF",
+      other: "PROMO",
+    },
+    line: {
+      halfMonths: "First {n} months",
+      half: "Pay half now",
+      percentMonths: "First {n} months",
+      percent: "Intro price",
+      merdekaPrice: "RM {n}/mth",
+      merdekaCash: "RM{n} off / month",
+      merdeka: "National Day deal",
+      cash: "Every month",
+    },
+    tabs: {
+      half: "HALF PRICE",
+      deep: "77% OFF",
+      percent: "% OFF",
+      merdeka: "MERDEKA",
+      cash: "RM OFF",
+    },
+    detail: {
+      intro: "RM {now}/mth for the first {months} months, then RM {after}/mth. T&C apply.",
+      cash: "RM {now}/mth (was RM {list}/mth). T&C apply.",
+    },
+  },
+  waters: {
+    Hot: "Hot",
+    Ambient: "Ambient",
+    Cold: "Cold",
+    Ice: "Ice",
+  },
   wa: {
     header: "Hi Cindy, I would like to enquire about LG Subscribe Malaysia.",
     fab: "Hi Cindy, I would like to enquire about LG Subscribe Malaysia for my home.",
@@ -243,6 +294,13 @@ export default {
       visit: "1 technician visit per year",
       self: "Genuine filters delivered",
       combine: "1 delivery + 1 visit each year",
+    },
+    planNames: {
+      "visit-q": "Regular Visit (every 3 months)",
+      "visit-6": "Regular Visit (every 6 months)",
+      visit: "Regular Visit",
+      self: "Self-Service",
+      combine: "Combine Maintenance",
     },
     wa: {
       intro: "Hi {advisor}, I would like to enquire about LG CareShip Service & Maintenance.",

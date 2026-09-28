@@ -7,11 +7,12 @@ import {
   groupById,
   groupedCatalog,
   livePromoTabs,
+  promoCopy,
   promoForProduct,
   promoKind,
   promoTheme,
 } from "../data/catalog"
-import { CAMPAIGN, campaignActive } from "../data/campaign"
+import { campaignActive } from "../data/campaign"
 import { useLang } from "../i18n/LanguageProvider"
 import PromoBadge from "./PromoBadge"
 
@@ -54,7 +55,7 @@ function ProductCard({ listing, onSelect }) {
   const model = variant?.model || color.model || product.model
   const promo = promoForProduct(product)
   const deal = dealForListing(product, [spec])
-  const theme = promoTheme(promo)
+  const theme = promoCopy(promo, t)
   const Icon = ICONS[product.type] ?? Droplets
   const palette = choosableColors(colors)
   const showColors = palette.length > 1
@@ -215,8 +216,8 @@ export default function Catalog({ onSelect }) {
 
         {live ? (
           <div className="mt-8 rounded-[22px] bg-[#A50034] px-5 py-4 text-white shadow-[0_10px_24px_rgba(165,0,52,0.28)]">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/80">{CAMPAIGN.tag}</p>
-            <p className="mt-1 text-lg font-black leading-snug">{CAMPAIGN.banner}</p>
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/80">{t("campaign.tag")}</p>
+            <p className="mt-1 text-lg font-black leading-snug">{t("campaign.banner")}</p>
           </div>
         ) : null}
 
@@ -241,7 +242,7 @@ export default function Catalog({ onSelect }) {
               <span>
                 <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-lg-muted">{t("catalog.filterOffers")}</span>
                 <span className="mt-0.5 block text-sm font-semibold">
-                  {deal === "all" ? t("catalog.allDeals") : dealTabs.find((tab) => tab.id === deal)?.short}
+                  {deal === "all" ? t("catalog.allDeals") : t(`promo.tabs.${deal}`)}
                 </span>
               </span>
               <ChevronDown className={`h-4 w-4 shrink-0 ${openPanel === "offers" ? "rotate-180" : ""}`} />
@@ -312,7 +313,7 @@ export default function Catalog({ onSelect }) {
                     selected ? theme?.tab || "bg-lg-red text-white" : "bg-white text-lg-ink ring-lg-line"
                   }`}
                 >
-                  {tab.short}
+                  {t(`promo.tabs.${tab.id}`)}
                   <span className={`ml-2 text-xs font-semibold ${selected ? "opacity-80" : "text-lg-muted"}`}>{tab.count}</span>
                 </button>
               )

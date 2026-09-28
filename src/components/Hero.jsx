@@ -1,4 +1,4 @@
-import { CAMPAIGN, campaignActive } from "../data/campaign"
+import { campaignActive } from "../data/campaign"
 import { IMG } from "../data/catalog"
 import { useLang } from "../i18n/LanguageProvider"
 
@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
         <div className="relative z-10 mx-auto flex min-h-[280px] max-w-7xl flex-col justify-center px-4 py-8 sm:min-h-[380px] sm:px-6 lg:min-h-[540px]">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70 sm:text-xs">
-            {live ? CAMPAIGN.name : t("hero.kicker")}
+            {live ? t("campaign.name") : t("hero.kicker")}
           </p>
           <h1 className="mt-2 max-w-xl text-2xl font-semibold leading-tight text-white sm:mt-3 sm:text-4xl lg:text-5xl">
             {live ? t("hero.promoTitle") : t("hero.title")}

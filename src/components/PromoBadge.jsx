@@ -1,7 +1,9 @@
-import { promoTheme } from "../data/catalog"
+import { promoCopy } from "../data/catalog"
+import { useLang } from "../i18n/LanguageProvider"
 
 export default function PromoBadge({ promo, size = "card" }) {
-  const theme = promoTheme(promo)
+  const { t } = useLang()
+  const theme = promoCopy(promo, t)
   if (!theme) return null
 
   if (size === "chip") {

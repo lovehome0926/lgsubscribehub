@@ -128,29 +128,27 @@ export default function Career({ section }) {
 
   return (
     <main>
-      <section className="bg-black">
-        <div className="relative min-h-[460px] overflow-hidden lg:min-h-[540px]">
-          <img src={CAREER_MEDIA.team} alt={copy.heroAlt} className="h-full w-full object-cover opacity-55" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-          <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-4 sm:px-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">{copy.eyebrow}</p>
-            <h1 className="mt-3 max-w-2xl text-4xl font-semibold leading-tight text-white sm:text-5xl">{copy.title}</h1>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-white/80 sm:text-base">{copy.lead}</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {copy.chips.map((chip) => (
-                <span key={chip} className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-white">
-                  {chip}
-                </span>
-              ))}
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#career/quiz" className="rounded-full bg-lg-red px-6 py-3 text-sm font-semibold text-white hover:bg-lg-red-dark">
-                {copy.startQuiz}
-              </a>
-              <a href="#career/briefing" className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-lg-ink hover:bg-lg-cream">
-                {copy.bookBriefing}
-              </a>
-            </div>
+      <section className="relative overflow-hidden bg-black">
+        <img src={CAREER_MEDIA.team} alt={copy.heroAlt} className="absolute inset-0 h-full w-full object-cover opacity-55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
+        <div className="relative mx-auto flex min-h-[460px] max-w-7xl flex-col justify-end px-4 py-8 sm:px-6 sm:py-12 lg:min-h-[540px] lg:justify-center lg:py-16">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70 sm:text-xs sm:tracking-[0.22em]">{copy.eyebrow}</p>
+          <h1 className="mt-2 max-w-2xl text-[28px] font-semibold leading-tight text-white sm:mt-3 sm:text-4xl lg:text-5xl">{copy.title}</h1>
+          <p className="mt-3 max-w-xl text-sm leading-6 text-white/80 sm:mt-4 sm:text-base sm:leading-7">{copy.lead}</p>
+          <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
+            {copy.chips.map((chip) => (
+              <span key={chip} className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-white">
+                {chip}
+              </span>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
+            <a href="#career/quiz" className="rounded-full bg-lg-red px-5 py-2.5 text-sm font-semibold text-white hover:bg-lg-red-dark sm:px-6 sm:py-3">
+              {copy.startQuiz}
+            </a>
+            <a href="#career/briefing" className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-lg-ink hover:bg-lg-cream sm:px-6 sm:py-3">
+              {copy.bookBriefing}
+            </a>
           </div>
         </div>
       </section>

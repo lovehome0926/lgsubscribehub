@@ -1,6 +1,6 @@
 import { ExternalLink } from "lucide-react"
 import { CAREER, COMPANY } from "../config"
-import { LOGO, SUB_LOGO } from "../data/catalog"
+import { SUB_LOGO } from "../data/catalog"
 import { STORES } from "../data/stores"
 import { useLang } from "../i18n/LanguageProvider"
 
@@ -11,9 +11,8 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-8">
           <div>
-            <div className="flex items-center gap-3">
-              <img src={LOGO} alt="LG" className="h-7" />
-              <img src={SUB_LOGO} alt="LG Subscribe" className="h-6" />
+            <div className="flex items-center">
+              <img src={SUB_LOGO} alt="LG Subscribe" className="h-8" />
             </div>
             <p className="mt-3 text-sm font-semibold text-lg-ink">{COMPANY.name}</p>
             <p className="mt-1 text-xs text-lg-muted">SSM: {COMPANY.ssm}</p>

@@ -161,7 +161,7 @@ export const MERDEKA_PROMOS = [
   }),
 ]
 
-export const PAUSED_MODELS = ["GC-X24FFC7R", "RX10VHP3WR"]
+export const PAUSED_MODELS = ["GC-X24FFC7R", "RX10VHP3WR", "MH21RRY"]
 export const DELISTED_MODELS = ["DFC533FV", "FV1450S2W"]
 
 export const EXTRA_PRODUCTS = []

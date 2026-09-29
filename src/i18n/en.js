@@ -16,14 +16,14 @@ export default {
     cooling: { name: "Air Conditioners", blurb: "DUALCOOL and ARTCOOL inverter cooling." },
     laundry: { name: "Laundry & Care", blurb: "Washers, dryers, WashTower and Styler garment care." },
     kitchen: { name: "Kitchen", blurb: "InstaView refrigerators and QuadWash dishwashers." },
-    living: { name: "TV & Living", blurb: "OLED and QNED screens plus massage recliners." },
+    living: { name: "TV & Living", blurb: "OLED and QNED screens for the living room." },
   },
   notice:
     "This website is independently managed by DNC HOME APPLIANCES and is not the official LG Malaysia website.",
   seo: {
-    title: "LG Subscribe Batu Pahat | Monthly plans | DNC HOME APPLIANCES",
+    title: "LG Subscribe Malaysia | Monthly plans | DNC HOME APPLIANCES",
     description:
-      "Independent LG Subscribe enquiry site by DNC HOME APPLIANCES in Batu Pahat and Parit Raja, Johor. Monthly plans, store visits, customer reviews. WhatsApp Cindy 017-7473787. Not the official LG Malaysia website.",
+      "Independent LG Subscribe enquiry site for Peninsular Malaysia by DNC HOME APPLIANCES. Monthly plans, CareShip™, store visits at Brandshop Batu Pahat and Parit Raja. WhatsApp Cindy 017-7473787. Not the official LG Malaysia website.",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",
@@ -314,8 +314,8 @@ export default {
     },
   },
   career: {
-    heroAlt: "SUPREME GROUP team at the Batu Pahat LG Brandshop",
-    eyebrow: "For people tired of money stress · Batu Pahat",
+    heroAlt: "SUPREME GROUP team at an LG Subscribe Brandshop",
+    eyebrow: "For people tired of money stress",
     title: "You work hard every day. Why is it still not enough?",
     lead: "Before we ran LG Subscribe, we also worried about money. Not because we were lazy — a fixed income just never quite covered life. This is not a promise of how much you will earn. It is a chance to see whether you can open another path.",
     chips: ["You can start part-time", "No same-day decision required", "Not a fixed-salary job", "Income depends on action, qualification and company rules"],
@@ -487,7 +487,7 @@ export default {
     ],
     ctaTitle: "Money pressure will not vanish by itself. You can first see if there is another path.",
     ctaLead: "We will not push you to resign, and we will not guarantee a result. Hear the products, three routes, real actions and system conditions — then decide if it fits.",
-    ctaNext: "Next session: this Saturday 5:00 PM, Batu Pahat. If you cannot attend, we can arrange an online briefing.",
+    ctaNext: "Next session: Saturday 5:00 PM in-person briefing in Batu Pahat. Online briefing available if you cannot attend.",
     legal:
       "This is an independent-agent partner page, not an official LG Electronics Malaysia careers page. Product packages, PV, bonuses, allowances and events follow the latest official company documents and approvals. All income figures are conditional system illustrations, not promises, guarantees or employment wages. Sending your contact details means you agree the team may follow up on this enquiry; you can ask us to stop at any time.",
     wa: {

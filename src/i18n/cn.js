@@ -16,13 +16,13 @@ export default {
     cooling: { name: "冷气", blurb: "DUALCOOL 与 ARTCOOL 变频制冷。" },
     laundry: { name: "洗衣护理", blurb: "洗衣机、干衣机、WashTower 与 Styler 衣物护理。" },
     kitchen: { name: "厨房", blurb: "InstaView 冰箱与 QuadWash 洗碗机。" },
-    living: { name: "电视与客厅", blurb: "OLED、QNED 屏幕与按摩椅。" },
+    living: { name: "电视与客厅", blurb: "客厅 OLED 与 QNED 屏幕。" },
   },
   notice: "本网站由 DNC HOME APPLIANCES 独立运营，并非 LG 马来西亚官方网站。",
   seo: {
-    title: "LG Subscribe 峇株巴辖 | 月付方案 | DNC HOME APPLIANCES",
+    title: "LG Subscribe 马来西亚 | 月付方案 | DNC HOME APPLIANCES",
     description:
-      "DNC HOME APPLIANCES 在峇株巴辖与巴力拉惹（柔佛）独立运营的 LG Subscribe 咨询站。月租方案、到店、顾客评价。WhatsApp Cindy 017-7473787。并非 LG 马来西亚官方网站。",
+      "DNC HOME APPLIANCES 面向西马的独立 LG Subscribe 咨询站。月租方案、CareShip™，可到 Brandshop Batu Pahat 与巴力拉惹门店。WhatsApp Cindy 017-7473787。并非 LG 马来西亚官方网站。",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",
@@ -312,8 +312,8 @@ export default {
     },
   },
   career: {
-    heroAlt: "SUPREME GROUP 团队在 Batu Pahat LG Brandshop 门店合照",
-    eyebrow: "给正在为钱烦的人 · Batu Pahat",
+    heroAlt: "SUPREME GROUP 团队在 LG Subscribe Brandshop 合照",
+    eyebrow: "给正在为钱烦的人",
     title: "每天很努力，钱还是不够用？",
     lead: "我们经营 LG Subscribe 之前，也常常为了钱烦。不是不努力，而是固定收入面对生活开销时，总觉得少一个出口。这里不是保证你赚多少钱，而是让你先看清：自己能不能多走一条路。",
     chips: ["可以先兼职了解", "不要求当天决定", "非固定薪资职位", "收入取决于实际行动、资格与公司制度"],
@@ -485,7 +485,7 @@ export default {
     ],
     ctaTitle: "钱的压力不会自己消失，但你可以先了解多一条路。",
     ctaLead: "不催你辞职，也不保证结果。先听清楚产品、三条路线、实际行动和制度条件，再决定适不适合你。",
-    ctaNext: "下一场：本周六 5:00 PM，Batu Pahat。不能到场也可以安排线上了解。",
+    ctaNext: "下一场：周六 5:00 PM 峇株巴辖线下说明会。不能到场可安排线上了解。",
     legal:
       "这是独立代理团队的伙伴了解页面，并非 LG Electronics Malaysia 官方招聘页面。产品配套、PV、奖金、津贴与活动以公司最新正式文件及审批为准。所有收入数字均为附带条件的制度说明，不构成承诺、保证或就业薪资。提交联络资料即表示同意团队就本次咨询与你联系；你可随时要求停止跟进。",
     wa: {

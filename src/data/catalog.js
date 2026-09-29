@@ -80,7 +80,7 @@ export const CATEGORY_GROUPS = [
   {
     id: "living",
     name: "TV & Living",
-    blurb: "OLED and QNED screens plus massage recliners.",
+    blurb: "OLED and QNED screens for the living room.",
     categories: ["TVs", "Massage Chairs"],
   },
 ]

@@ -13,7 +13,8 @@
     "sheet:xlsx": "node scripts/export-workbook.mjs",
     "import:xlsx": "node scripts/import-subscribe.mjs",
     "photos": "node scripts/publish-photos.mjs",
-    "import:details": "node scripts/import-details.mjs"
+    "import:details": "node scripts/import-details.mjs",
+    "photos:crop": "node scripts/scan-water-crops.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",
@@ -26,6 +27,7 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
     "oxlint": "^1.81.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "vite": "^8.3.0"
   }

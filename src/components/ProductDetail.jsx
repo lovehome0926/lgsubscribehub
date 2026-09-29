@@ -4,6 +4,7 @@ import { SERVICES, applyPromo, groupOf, hasOutrightPrice, isMoney, planCareOptio
 import { whatsappHref } from "../config"
 import { localizePdp } from "../i18n/pdpFeatures"
 import { useLang } from "../i18n/LanguageProvider"
+import CroppedPhoto from "./CroppedPhoto"
 import PromoBadge from "./PromoBadge"
 
 const FEATURE_ICONS = {
@@ -529,6 +530,13 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
                   <p className="text-sm font-medium text-lg-ink">{t("pdp.photoComing")}</p>
                   <p className="max-w-xs text-xs leading-5 text-lg-muted">{`Drop the main photo into public/products/${modelCode}.jpg`}</p>
                 </div>
+              ) : product.type === "water" ? (
+                <CroppedPhoto
+                  src={hero}
+                  alt={displayName(product, viewColor)}
+                  className="mx-auto h-[360px] w-full md:h-[460px]"
+                  fallbackClass="object-contain p-8 md:p-10"
+                />
               ) : (
                 <img src={hero} alt={displayName(product, viewColor)} className="mx-auto h-[360px] w-full object-contain p-8 md:h-[460px] md:p-10" />
               )}
@@ -542,7 +550,11 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
                     onClick={() => setHero(src)}
                     className={`aspect-square overflow-hidden rounded-2xl bg-white ${hero === src ? "ring-2 ring-lg-red ring-offset-2 ring-offset-lg-cream" : "ring-1 ring-lg-line"}`}
                   >
-                    <img src={src} alt="" className="h-full w-full object-contain p-1" />
+                    {product.type === "water" ? (
+                      <CroppedPhoto src={src} alt="" className="h-full w-full" fallbackClass="object-contain p-1" />
+                    ) : (
+                      <img src={src} alt="" className="h-full w-full object-contain p-1" />
+                    )}
                   </button>
                 ))}
               </div>
@@ -633,11 +645,13 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
               key={story.title}
               className={`grid overflow-hidden rounded-[28px] bg-white shadow-[0_18px_50px_rgba(17,17,17,0.04)] md:grid-cols-2 ${index % 2 ? "md:[&>div:first-child]:order-2" : ""}`}
             >
-              <div className="min-h-[260px] bg-[#111]">
+              <div className="min-h-[260px] overflow-hidden bg-[#111]">
                 {story.video ? (
                   <video className="h-full w-full object-cover" autoPlay muted loop playsInline poster={story.poster}>
                     <source src={story.video} type="video/mp4" />
                   </video>
+                ) : product.type === "water" ? (
+                  <CroppedPhoto src={story.poster} alt="" className="h-full w-full min-h-[260px]" fallbackClass="object-cover" />
                 ) : (
                   <img src={story.poster} alt="" className="h-full w-full object-cover" />
                 )}

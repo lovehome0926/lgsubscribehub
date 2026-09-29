@@ -16,14 +16,14 @@ export default {
     cooling: { name: "Penyaman Udara", blurb: "Penyejukan inverter DUALCOOL dan ARTCOOL." },
     laundry: { name: "Dobi & Penjagaan", blurb: "Mesin basuh, pengering, WashTower dan Styler." },
     kitchen: { name: "Dapur", blurb: "Peti sejuk InstaView dan mesin basuh pinggan QuadWash." },
-    living: { name: "TV & Ruang Tamu", blurb: "Skrin OLED dan QNED serta kerusi urut." },
+    living: { name: "TV & Ruang Tamu", blurb: "Skrin OLED dan QNED untuk ruang tamu." },
   },
   notice:
     "Laman ini diurus secara bebas oleh DNC HOME APPLIANCES dan bukan laman rasmi LG Malaysia.",
   seo: {
-    title: "LG Subscribe Batu Pahat | Pelan bulanan | DNC HOME APPLIANCES",
+    title: "LG Subscribe Malaysia | Pelan bulanan | DNC HOME APPLIANCES",
     description:
-      "Laman pertanyaan LG Subscribe bebas oleh DNC HOME APPLIANCES di Batu Pahat dan Parit Raja, Johor. Pelan bulanan, lawatan kedai, ulasan pelanggan. WhatsApp Cindy 017-7473787. Bukan laman rasmi LG Malaysia.",
+      "Laman pertanyaan LG Subscribe bebas untuk Semenanjung Malaysia oleh DNC HOME APPLIANCES. Pelan bulanan, CareShip™, lawatan kedai di Brandshop Batu Pahat dan Parit Raja. WhatsApp Cindy 017-7473787. Bukan laman rasmi LG Malaysia.",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",
@@ -314,8 +314,8 @@ export default {
     },
   },
   career: {
-    heroAlt: "Pasukan SUPREME GROUP di LG Brandshop Batu Pahat",
-    eyebrow: "Untuk yang penat dengan tekanan duit · Batu Pahat",
+    heroAlt: "Pasukan SUPREME GROUP di LG Subscribe Brandshop",
+    eyebrow: "Untuk yang penat dengan tekanan duit",
     title: "Setiap hari berusaha, duit masih tak cukup?",
     lead: "Sebelum kami urus LG Subscribe, kami juga risau pasal duit. Bukan malas — pendapatan tetap sering tak cukup untuk hidup. Ini bukan janji berapa anda akan dapat. Ini peluang untuk nampak sama ada anda boleh buka satu lagi jalan.",
     chips: ["Boleh mula sambilan", "Tak perlu putuskan hari itu", "Bukan jawatan gaji tetap", "Pendapatan bergantung pada tindakan, kelayakan dan peraturan syarikat"],
@@ -487,7 +487,7 @@ export default {
     ],
     ctaTitle: "Tekanan duit tak hilang sendiri. Anda boleh dulu tengok ada satu lagi jalan.",
     ctaLead: "Kami tak desak anda berhenti kerja, dan kami tak jamin keputusan. Dengar produk, tiga laluan, tindakan sebenar dan syarat sistem — kemudian putuskan sesuai atau tidak.",
-    ctaNext: "Sesi seterusnya: Sabtu ini 5:00 PM, Batu Pahat. Kalau tak dapat hadir, kami boleh atur taklimat dalam talian.",
+    ctaNext: "Sesi seterusnya: taklimat bersemuka Sabtu 5:00 PM di Batu Pahat. Kalau tak dapat hadir, boleh atur taklimat dalam talian.",
     legal:
       "Ini halaman rakan ejen bebas, bukan halaman kerjaya rasmi LG Electronics Malaysia. Pakej produk, PV, bonus, elaun dan acara mengikut dokumen rasmi syarikat terkini dan kelulusan. Semua angka pendapatan ialah ilustrasi sistem bersyarat, bukan janji, jaminan atau gaji pekerjaan. Menghantar butiran hubungan bermaksud anda setuju pasukan boleh follow up pertanyaan ini; anda boleh minta kami berhenti pada bila-bila masa.",
     wa: {

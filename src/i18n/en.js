@@ -21,9 +21,9 @@ export default {
   notice:
     "This website is independently managed by DNC HOME APPLIANCES and is not the official LG Malaysia website.",
   seo: {
-    title: "LG Subscribe Malaysia | Monthly or outright",
+    title: "LG Subscribe Malaysia | Easy Rental & Home Appliances from RM 25/mth",
     description:
-      "LG Subscribe for Peninsular Malaysia — monthly plans or outright purchase, plus CareShip™. WhatsApp Cindy 017-7473787. Visit Brandshop Batu Pahat or Parit Raja. Operated by DNC HOME APPLIANCES. Not the official LG Malaysia website.",
+      "Subscribe latest LG Water Purifiers, Washers, TVs & Air Conditioners in Malaysia from RM25/mth. Free Delivery, Installation & Care Service included!",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",

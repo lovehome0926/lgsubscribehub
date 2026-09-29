@@ -20,9 +20,9 @@ export default {
   },
   notice: "本网站由 DNC HOME APPLIANCES 独立运营，并非 LG 马来西亚官方网站。",
   seo: {
-    title: "LG Subscribe 马来西亚 | 月付或买断",
+    title: "LG Subscribe Malaysia | Easy Rental & Home Appliances from RM 25/mth",
     description:
-      "西马 LG Subscribe — 月付或买断，另有 CareShip™。WhatsApp Cindy 017-7473787。可到 Brandshop Batu Pahat 或巴力拉惹门店。由 DNC HOME APPLIANCES 运营。并非 LG 马来西亚官方网站。",
+      "Subscribe latest LG Water Purifiers, Washers, TVs & Air Conditioners in Malaysia from RM25/mth. Free Delivery, Installation & Care Service included!",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",

@@ -21,9 +21,9 @@ export default {
   notice:
     "Laman ini diurus secara bebas oleh DNC HOME APPLIANCES dan bukan laman rasmi LG Malaysia.",
   seo: {
-    title: "LG Subscribe Malaysia | Pelan bulanan | DNC HOME APPLIANCES",
+    title: "LG Subscribe Malaysia | Bulanan atau beli putus",
     description:
-      "Laman pertanyaan LG Subscribe bebas untuk Semenanjung Malaysia oleh DNC HOME APPLIANCES. Pelan bulanan, CareShip™, lawatan kedai di Brandshop Batu Pahat dan Parit Raja. WhatsApp Cindy 017-7473787. Bukan laman rasmi LG Malaysia.",
+      "LG Subscribe untuk Semenanjung Malaysia — pelan bulanan atau beli putus, plus CareShip™. WhatsApp Cindy 017-7473787. Lawat Brandshop Batu Pahat atau Parit Raja. Diurus oleh DNC HOME APPLIANCES. Bukan laman rasmi LG Malaysia.",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",

@@ -21,9 +21,9 @@ export default {
   notice:
     "This website is independently managed by DNC HOME APPLIANCES and is not the official LG Malaysia website.",
   seo: {
-    title: "LG Subscribe Malaysia | Monthly plans | DNC HOME APPLIANCES",
+    title: "LG Subscribe Malaysia | Monthly or outright",
     description:
-      "Independent LG Subscribe enquiry site for Peninsular Malaysia by DNC HOME APPLIANCES. Monthly plans, CareShip™, store visits at Brandshop Batu Pahat and Parit Raja. WhatsApp Cindy 017-7473787. Not the official LG Malaysia website.",
+      "LG Subscribe for Peninsular Malaysia — monthly plans or outright purchase, plus CareShip™. WhatsApp Cindy 017-7473787. Visit Brandshop Batu Pahat or Parit Raja. Operated by DNC HOME APPLIANCES. Not the official LG Malaysia website.",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",

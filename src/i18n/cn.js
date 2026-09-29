@@ -20,9 +20,9 @@ export default {
   },
   notice: "本网站由 DNC HOME APPLIANCES 独立运营，并非 LG 马来西亚官方网站。",
   seo: {
-    title: "LG Subscribe 马来西亚 | 月付方案 | DNC HOME APPLIANCES",
+    title: "LG Subscribe 马来西亚 | 月付或买断",
     description:
-      "DNC HOME APPLIANCES 面向西马的独立 LG Subscribe 咨询站。月租方案、CareShip™，可到 Brandshop Batu Pahat 与巴力拉惹门店。WhatsApp Cindy 017-7473787。并非 LG 马来西亚官方网站。",
+      "西马 LG Subscribe — 月付或买断，另有 CareShip™。WhatsApp Cindy 017-7473787。可到 Brandshop Batu Pahat 或巴力拉惹门店。由 DNC HOME APPLIANCES 运营。并非 LG 马来西亚官方网站。",
   },
   campaign: {
     name: "OHSEM Merdeka Deals",

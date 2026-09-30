@@ -220,7 +220,7 @@ export default function Catalog({ onSelect }) {
               <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/80">{t("campaign.tag")}</p>
               <p className="mt-1 text-lg font-black leading-snug text-[#FFD100] sm:text-xl">{t("campaign.banner")}</p>
             </div>
-            <div className="grid gap-3 px-5 py-4 sm:grid-cols-3 sm:px-6">
+            <div className="grid gap-3 px-5 py-4 sm:grid-cols-2 sm:px-6">
               <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift2")}</p>
                 <p className="mt-1 text-sm font-black">{t("campaign.gift2Prize")}</p>
@@ -228,10 +228,6 @@ export default function Catalog({ onSelect }) {
               <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift3")}</p>
                 <p className="mt-1 text-sm font-black">{t("campaign.gift3Prize")}</p>
-              </div>
-              <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift4")}</p>
-                <p className="mt-1 text-sm font-black">{t("campaign.gift4Prize")}</p>
               </div>
             </div>
             <p className="border-t border-white/10 px-5 py-3 text-xs leading-5 text-white/70 sm:px-6">

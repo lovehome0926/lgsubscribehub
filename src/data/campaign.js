@@ -12,7 +12,7 @@ export const CAMPAIGN = {
   name: "10.10 October Deals",
   start: OCT_WIN.start,
   end: OCT_WIN.end,
-  banner: "10.10 October Deals! From RM 17/mth · Up to 77% off · Free 50\" TV when you take 2 appliances",
+  banner: "10.10 October Deals! From RM 17/mth · Up to 77% off",
   tag: "1–31 Oct · Free delivery, installation & CareShip",
 }
 
@@ -182,7 +182,20 @@ export const OCTOBER_PROMOS = [
     care: "combined",
   }),
 
-  // 6. Double Haze Combo — 50% first 12 months + RM1 off remaining (beats 10.10 intro on Single Booster)
+  // 6. Double Haze Combo — 50% first 12 months + RM1 off remaining
+  // 10.10 for AS65 is also on the sheet (RM59 every month). Cheaper-wins picks 10.10.
+  ...october("AS65GDBY0", {
+    offer: "10.10 RM16 off",
+    featured: true,
+    badge: "10.10 · RM16 OFF",
+    title: "10.10 RM 59/mth",
+    detail: "5-year plan RM 59/mth (was RM 75/mth). T&C Apply.",
+    type: "promo_price",
+    promoPrice: 59,
+    afterPrice: 75,
+    extraOff: 16,
+    tenure: 60,
+  }),
   ...october("AS65GDBY0", {
     offer: "前12m半价 + RM1",
     badge: "HALF PRICE",

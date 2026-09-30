@@ -476,7 +476,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
             care: t(`pdp.care.${careKey}`),
             visit: careKey === "visit" ? t("pdp.visitSuffix", { n: visitCycle }) : "",
             price: price.now ?? "TBC",
-            promo: promo ? ` (${promo.title})` : "",
+            promo: activePromo ? ` (${activePromo.title})` : "",
           })
 
   function selectColor(id) {
@@ -610,9 +610,9 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
               </div>
             ) : null}
 
-            {promo ? (
+            {payMode === "subscribe" && activePromo ? (
               <div className="mt-4">
-                <PromoBadge promo={promo} />
+                <PromoBadge promo={activePromo} />
               </div>
             ) : null}
 

@@ -236,20 +236,97 @@ function bestPromo(list, product) {
   return bestRank >= 0 ? best : null
 }
 
+function isDefaultHalf(promo) {
+  return Boolean(promo && promo.month === 0 && promo.percentOff === 50 && Number(promo.introMonths) === 9)
+}
+
+function promoContractMonths(promo, plan = {}) {
+  return Number(plan.tenure ?? promo?.tenure ?? 60)
+}
+
+function listMonthlyForPromo(product, promo, plan = {}) {
+  if (promo?.afterPrice != null) return promo.afterPrice
+  const tenure = promoContractMonths(promo, plan)
+  const care = plan.care ?? promo?.care
+  const cares = care ? [care] : ["self", "combined", "visit", "none"]
+  let best = null
+  for (const spec of product.specs || []) {
+    for (const nextCare of cares) {
+      const cycles = nextCare === "visit" ? [6, 12, 24] : [undefined]
+      for (const cycle of cycles) {
+        const value = planPrice(spec, { payMode: "subscribe", tenure, care: nextCare, cycle })
+        if (isMoney(value) && (best == null || value < best)) best = value
+      }
+    }
+  }
+  return best ?? lowestMonthlyFor(product.specs)
+}
+
+function promoPayableTotal(monthly, promo, plan = {}) {
+  const applied = applyPromo(monthly, promo, plan)
+  if (!isMoney(applied.now)) return Infinity
+  const tenure = promoContractMonths(promo, plan)
+  const intro = applied.introMonths || 0
+  const after = applied.after ?? monthly
+  if (!intro || intro >= tenure) return applied.now * tenure
+  return applied.now * intro + after * (tenure - intro)
+}
+
+function specialsForProduct(product, date = new Date()) {
+  return promosForDate(date).filter((promo) => !isDefaultHalf(promo) && scopeRank(promo.scope, product) > 0)
+}
+
+function defaultHalfPromo(date = new Date()) {
+  const fallback = fallbackPromos(date)
+  return fallback.find(isDefaultHalf) ?? fallback[0] ?? null
+}
+
+function scorePromo(product, promo, plan = {}) {
+  const tenure = promoContractMonths(promo, plan)
+  const care = plan.care ?? promo?.care
+  const usePlan = { tenure, care }
+  if (!promoAppliesToPlan(promo, usePlan)) return null
+  const monthly = listMonthlyForPromo(product, promo, usePlan)
+  if (!isMoney(monthly)) return null
+  const total = promoPayableTotal(monthly, promo, usePlan)
+  return { promo, total, avg: total / tenure }
+}
+
+function cheapestPromo(product, specials, half, plan = {}) {
+  const scores = []
+  const add = (promo, nextPlan) => {
+    const score = scorePromo(product, promo, nextPlan)
+    if (score) scores.push(score)
+  }
+
+  if (plan.tenure != null || plan.care) {
+    for (const promo of specials) add(promo, plan)
+    add(half, plan)
+  } else {
+    for (const promo of specials) add(promo, { tenure: promo.tenure ?? 60, care: promo.care })
+    if (!specials.length) add(half, { tenure: 60 })
+    const seen = new Set()
+    for (const promo of specials) {
+      const tenure = promo.tenure ?? 60
+      const key = `${tenure}|${promo.care || ""}`
+      if (seen.has(key)) continue
+      seen.add(key)
+      add(half, { tenure, care: promo.care })
+    }
+  }
+
+  scores.sort((a, b) => a.avg - b.avg || a.total - b.total)
+  return scores[0]?.promo ?? half ?? null
+}
+
 export function promoForProduct(product, date = new Date()) {
-  return bestPromo(promosForDate(date), product) ?? bestPromo(fallbackPromos(date), product)
+  return cheapestPromo(product, specialsForProduct(product, date), defaultHalfPromo(date))
 }
 
 export function promoForProductPlan(product, plan = {}, date = new Date()) {
-  const specific = promoForProduct(product, date)
-  if (specific && promoAppliesToPlan(specific, plan)) return specific
-  return (
-    bestPromo(
-      promosForDate(date).filter((promo) => String(promo.scope ?? "").trim().toLowerCase() === "all"),
-      product,
-    ) ??
-    bestPromo(fallbackPromos(date), product)
-  )
+  const half = defaultHalfPromo(date)
+  const matching = specialsForProduct(product, date).filter((promo) => promoAppliesToPlan(promo, plan))
+  return cheapestPromo(product, matching, half, plan)
 }
 
 export function promoAppliesToPlan(promo, plan = {}) {

@@ -1,5 +1,6 @@
 import { PRODUCTS as BASE_PRODUCTS } from "./subscribe2026.js"
-import { EXTRA_PRODUCTS, MERDEKA_PROMOS, patchProducts } from "./campaign.js"
+import { EXTRA_PRODUCTS, OCTOBER_PROMOS, patchProducts } from "./campaign.js"
+import { evaluateProductPricing, giftForProduct, pricesActive, toPromo } from "./promoConfig.js"
 import { PROMOS as SHEET_PROMOS } from "./promos.js"
 
 function mergePromos(...lists) {
@@ -16,7 +17,7 @@ function mergePromos(...lists) {
   return out
 }
 
-export const PROMOS = mergePromos(MERDEKA_PROMOS, SHEET_PROMOS)
+export const PROMOS = mergePromos(OCTOBER_PROMOS, SHEET_PROMOS)
 
 function borrowSellingCopy(products) {
   for (const product of products) {
@@ -236,98 +237,18 @@ function bestPromo(list, product) {
   return bestRank >= 0 ? best : null
 }
 
-function isDefaultHalf(promo) {
-  return Boolean(promo && promo.month === 0 && promo.percentOff === 50 && Number(promo.introMonths) === 9)
-}
-
-function promoContractMonths(promo, plan = {}) {
-  return Number(plan.tenure ?? promo?.tenure ?? 60)
-}
-
-function listMonthlyForPromo(product, promo, plan = {}) {
-  if (promo?.afterPrice != null) return promo.afterPrice
-  const tenure = promoContractMonths(promo, plan)
-  const care = plan.care ?? promo?.care
-  const cares = care ? [care] : ["self", "combined", "visit", "none"]
-  let best = null
-  for (const spec of product.specs || []) {
-    for (const nextCare of cares) {
-      const cycles = nextCare === "visit" ? [6, 12, 24] : [undefined]
-      for (const cycle of cycles) {
-        const value = planPrice(spec, { payMode: "subscribe", tenure, care: nextCare, cycle })
-        if (isMoney(value) && (best == null || value < best)) best = value
-      }
-    }
-  }
-  return best ?? lowestMonthlyFor(product.specs)
-}
-
-function promoPayableTotal(monthly, promo, plan = {}) {
-  const applied = applyPromo(monthly, promo, plan)
-  if (!isMoney(applied.now)) return Infinity
-  const tenure = promoContractMonths(promo, plan)
-  const intro = applied.introMonths || 0
-  const after = applied.after ?? monthly
-  if (!intro || intro >= tenure) return applied.now * tenure
-  return applied.now * intro + after * (tenure - intro)
-}
-
-function specialsForProduct(product, date = new Date()) {
-  return promosForDate(date).filter((promo) => !isDefaultHalf(promo) && scopeRank(promo.scope, product) > 0)
-}
-
-function defaultHalfPromo(date = new Date()) {
-  const fallback = fallbackPromos(date)
-  return fallback.find(isDefaultHalf) ?? fallback[0] ?? null
-}
-
-function scorePromo(product, promo, plan = {}) {
-  const tenure = promoContractMonths(promo, plan)
-  const care = plan.care ?? promo?.care
-  const usePlan = { tenure, care }
-  if (!promoAppliesToPlan(promo, usePlan)) return null
-  const monthly = listMonthlyForPromo(product, promo, usePlan)
-  if (!isMoney(monthly)) return null
-  const total = promoPayableTotal(monthly, promo, usePlan)
-  return { promo, total, avg: total / tenure }
-}
-
-function cheapestPromo(product, specials, half, plan = {}) {
-  const scores = []
-  const add = (promo, nextPlan) => {
-    const score = scorePromo(product, promo, nextPlan)
-    if (score) scores.push(score)
-  }
-
-  if (plan.tenure != null || plan.care) {
-    for (const promo of specials) add(promo, plan)
-    add(half, plan)
-  } else {
-    for (const promo of specials) add(promo, { tenure: promo.tenure ?? 60, care: promo.care })
-    if (!specials.length) add(half, { tenure: 60 })
-    const seen = new Set()
-    for (const promo of specials) {
-      const tenure = promo.tenure ?? 60
-      const key = `${tenure}|${promo.care || ""}`
-      if (seen.has(key)) continue
-      seen.add(key)
-      add(half, { tenure, care: promo.care })
-    }
-  }
-
-  scores.sort((a, b) => a.avg - b.avg || a.total - b.total)
-  return scores[0]?.promo ?? half ?? null
-}
-
 export function promoForProduct(product, date = new Date()) {
-  return cheapestPromo(product, specialsForProduct(product, date), defaultHalfPromo(date))
+  if (!product || !pricesActive(date)) return null
+  return toPromo(product, evaluateProductPricing(product))
 }
 
 export function promoForProductPlan(product, plan = {}, date = new Date()) {
-  const half = defaultHalfPromo(date)
-  const matching = specialsForProduct(product, date).filter((promo) => promoAppliesToPlan(promo, plan))
-  return cheapestPromo(product, matching, half, plan)
+  const promo = promoForProduct(product, date)
+  if (promo && promoAppliesToPlan(promo, plan)) return promo
+  return null
 }
+
+export { giftForProduct } from "./promoConfig.js"
 
 export function promoAppliesToPlan(promo, plan = {}) {
   if (!promo) return false
@@ -342,6 +263,9 @@ export function applyPromo(monthly, promo, plan = {}) {
     return { list: monthly, now: monthly, introMonths: null, after: null }
   }
   const after = promo.afterPrice ?? monthly
+  if (promo.flat && promo.promoPrice != null) {
+    return { list: monthly, now: promo.promoPrice, introMonths: null, after: promo.promoPrice }
+  }
   if (promo.promoPrice != null) {
     return { list: after, now: promo.promoPrice, introMonths: promo.introMonths || null, after }
   }
@@ -377,68 +301,89 @@ export function dealForListing(product, specs) {
     }
     if (best != null) list = best
   }
-  if (promo?.afterPrice != null && promo.promoPrice != null) list = promo.afterPrice
+  if (promo?.afterPrice != null && promo.promoPrice != null && !promo.flat) list = promo.afterPrice
   return { promo, ...applyPromo(list, promo, { tenure: promo?.tenure, care: promo?.care }) }
 }
 
 export function promoKind(promo) {
   if (!promo) return null
-  if (promo.merdeka) return "merdeka"
-  if (promo.type === "amount_off" || promo.extraOff) return "cash"
-  if (promo.percentOff === 50 || /半价|half/i.test(`${promo.offer || ""} ${promo.badge || ""}`)) return "half"
-  if (promo.percentOff >= 70) return "deep"
-  if (promo.percentOff) return "percent"
+  if (promo.kind) return promo.kind
+  if (promo.flat || promo.promoPrice === 99) return "flat"
+  if (promo.extraOff === 20) return "rebate20"
+  if (promo.extraOff === 15) return "rebate15"
+  if (promo.extraOff === 10) return "rebate10"
+  if (promo.percentOff === 50 && Number(promo.introMonths) === 12) return "half12"
+  if (promo.percentOff === 50) return "ohsem"
+  if (promo.extraOff === 5) return "artcool"
   return "other"
 }
 
 export const PROMO_TABS = [
-  { id: "half", label: "Half Price", short: "HALF PRICE" },
-  { id: "deep", label: "77% Off", short: "77% OFF" },
-  { id: "percent", label: "% Off", short: "% OFF" },
-  { id: "merdeka", label: "10.10", short: "10.10" },
-  { id: "cash", label: "RM Off", short: "RM OFF" },
+  { id: "ohsem", label: "50% First 9 Mths", short: "50% 9 MTHS" },
+  { id: "half12", label: "50% First 12 Mths", short: "50% 12 MTHS" },
+  { id: "rebate20", label: "RM20 Off", short: "RM20 OFF" },
+  { id: "rebate15", label: "RM15 Off", short: "RM15 OFF" },
+  { id: "rebate10", label: "RM10 Off", short: "RM10 OFF" },
+  { id: "flat", label: "RM99 Flat", short: "RM99" },
+  { id: "artcool", label: "ARTCOOL RM5", short: "RM5 OFF" },
 ]
 
 const THEMES = {
-  half: {
+  ohsem: {
     kicker: "This month",
-    badge: "HALF PRICE",
+    badge: "50% OFF (First 9 Mths)",
     className: "bg-[#FFB800] text-[#111] shadow-[0_10px_24px_rgba(255,184,0,0.38)]",
     tab: "bg-[#FFB800] text-[#111] ring-[#FFB800]",
     soft: "bg-[#FFF4CC] text-[#7A4B00]",
     price: "text-[#B8860B]",
   },
-  deep: {
+  half12: {
     kicker: "Limited intro",
-    badge: "77% OFF",
-    className: "bg-[#E10600] text-white shadow-[0_10px_24px_rgba(225,6,0,0.32)]",
-    tab: "bg-[#E10600] text-white ring-[#E10600]",
-    soft: "bg-[#FDECEC] text-[#E10600]",
-    price: "text-[#E10600]",
-  },
-  percent: {
-    kicker: "Intro offer",
-    badge: "% OFF",
-    className: "bg-[#FF5A1F] text-white shadow-[0_10px_24px_rgba(255,90,31,0.32)]",
-    tab: "bg-[#FF5A1F] text-white ring-[#FF5A1F]",
-    soft: "bg-[#FFE8DE] text-[#C2410C]",
+    badge: "50% OFF (First 12 Mths)",
+    className: "bg-[#FF8A00] text-[#111] shadow-[0_10px_24px_rgba(255,138,0,0.32)]",
+    tab: "bg-[#FF8A00] text-[#111] ring-[#FF8A00]",
+    soft: "bg-[#FFE8CC] text-[#9A4D00]",
     price: "text-[#C2410C]",
   },
-  merdeka: {
-    kicker: "10.10",
-    badge: "10.10",
-    className: "bg-[#111111] text-[#FFD100] shadow-[0_10px_24px_rgba(17,17,17,0.28)] ring-2 ring-[#E10600]",
-    tab: "bg-[#111111] text-[#FFD100] ring-[#E10600]",
-    soft: "bg-[#111111] text-[#FFD100]",
-    price: "text-[#E10600]",
+  rebate20: {
+    kicker: "Laundry",
+    badge: "RM20 OFF Monthly",
+    className: "bg-[#0B6E99] text-white shadow-[0_10px_24px_rgba(11,110,153,0.32)]",
+    tab: "bg-[#0B6E99] text-white ring-[#0B6E99]",
+    soft: "bg-[#E6F4FA] text-[#0B6E99]",
+    price: "text-[#0B6E99]",
   },
-  cash: {
-    kicker: "Every month",
-    badge: "RM OFF",
+  rebate15: {
+    kicker: "Air",
+    badge: "RM15 OFF Monthly",
+    className: "bg-[#0F766E] text-white shadow-[0_10px_24px_rgba(15,118,110,0.32)]",
+    tab: "bg-[#0F766E] text-white ring-[#0F766E]",
+    soft: "bg-[#CCFBF1] text-[#0F766E]",
+    price: "text-[#0F766E]",
+  },
+  rebate10: {
+    kicker: "Combo",
+    badge: "RM10 OFF Monthly",
     className: "bg-[#0B8A5A] text-white shadow-[0_10px_24px_rgba(11,138,90,0.32)]",
     tab: "bg-[#0B8A5A] text-white ring-[#0B8A5A]",
     soft: "bg-[#E7F6EF] text-[#0B8A5A]",
     price: "text-[#0B8A5A]",
+  },
+  flat: {
+    kicker: "Extended",
+    badge: "Special RM99/mth Till Contract End",
+    className: "bg-[#111111] text-[#FFD100] shadow-[0_10px_24px_rgba(17,17,17,0.28)]",
+    tab: "bg-[#111111] text-[#FFD100] ring-[#111111]",
+    soft: "bg-[#111111] text-[#FFD100]",
+    price: "text-[#E10600]",
+  },
+  artcool: {
+    kicker: "ARTCOOL",
+    badge: "RM5 OFF Monthly",
+    className: "bg-[#155E75] text-white shadow-[0_10px_24px_rgba(21,94,117,0.32)]",
+    tab: "bg-[#155E75] text-white ring-[#155E75]",
+    soft: "bg-[#E0F2FE] text-[#155E75]",
+    price: "text-[#155E75]",
   },
   other: {
     kicker: "Offer",
@@ -459,18 +404,15 @@ export function promoTheme(promo) {
   const cash = promo.extraOff
   let badge = promo.badge || theme.badge
   let line = promo.title
-  if (kind === "half") {
-    badge = promo.badge || "HALF PRICE"
+  if (kind === "ohsem" || kind === "half12") {
+    badge = promo.badge || theme.badge
     line = months ? `First ${months} months` : "Pay half now"
-  } else if (kind === "deep" || kind === "percent") {
-    badge = promo.badge || `${off}% OFF`
-    line = months ? `First ${months} months` : "Intro price"
-  } else if (kind === "merdeka") {
-    badge = promo.badge || "MERDEKA"
-    line = promo.promoPrice != null ? `RM ${promo.promoPrice}/mth` : cash ? `RM${cash} off / month` : "10.10 October deal"
-  } else if (kind === "cash") {
-    badge = promo.badge || `RM${cash} OFF`
-    line = "Every month"
+  } else if (kind === "rebate20" || kind === "rebate15" || kind === "rebate10" || kind === "artcool") {
+    badge = promo.badge || theme.badge
+    line = cash ? `RM${cash} off / month` : "Every month"
+  } else if (kind === "flat") {
+    badge = promo.badge || theme.badge
+    line = "Till contract end"
   }
   return {
     kind,
@@ -495,19 +437,12 @@ export function promoCopy(promo, t) {
   const cash = promo.extraOff
   const price = promo.promoPrice
   const kicker = t(`promo.kicker.${kind}`)
-  const badgeN = kind === "cash" || (kind === "merdeka" && (off == null || off === 0)) ? (price ?? cash) : (off ?? price ?? cash)
+  const badgeN = cash || off || price
   let badge = t(`promo.badge.${kind}`, { n: badgeN })
-  if ((kind === "deep" || kind === "percent" || (kind === "merdeka" && off)) && off != null) {
-    badge = months ? t("promo.badge.percentYear", { n: off }) : t(off >= 70 ? "promo.badge.deep" : "promo.badge.percent", { n: off })
-  }
   let line = theme.line
-  if (kind === "half") line = months ? t("promo.line.halfMonths", { n: months }) : t("promo.line.half")
-  else if (kind === "deep" || kind === "percent" || (kind === "merdeka" && off)) line = months ? t("promo.line.percentMonths", { n: months }) : t("promo.line.percent")
-  else if (kind === "merdeka") {
-    if (price != null) line = t("promo.line.merdekaPrice", { n: price })
-    else if (cash) line = t("promo.line.merdekaCash", { n: cash })
-    else line = t("promo.line.merdeka")
-  } else if (kind === "cash") line = t("promo.line.cash")
+  if (kind === "ohsem" || kind === "half12") line = months ? t("promo.line.halfMonths", { n: months }) : t("promo.line.ohsem")
+  else if (kind === "rebate20" || kind === "rebate15" || kind === "rebate10" || kind === "artcool") line = t(`promo.line.${kind}`)
+  else if (kind === "flat") line = t("promo.line.flat")
   let detail
   if (months && price != null && promo.afterPrice != null) {
     detail = t("promo.detail.intro", { now: price, months, after: promo.afterPrice })

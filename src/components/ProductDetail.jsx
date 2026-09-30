@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
 import { Check, ChevronLeft, Droplets, Flame, LayoutPanelTop, ShieldCheck, Snowflake, Truck, Wifi, Zap } from "lucide-react"
-import { SERVICES, applyPromo, groupOf, hasOutrightPrice, isMoney, planCareOptions, planPrice, pricedTenures, promoCopy, promoForProduct, promoForProductPlan, visitCycles } from "../data/catalog"
+import { SERVICES, applyPromo, giftForProduct, groupOf, hasOutrightPrice, isMoney, planCareOptions, planPrice, pricedTenures, promoCopy, promoForProduct, promoForProductPlan, visitCycles } from "../data/catalog"
 import { whatsappHref } from "../config"
 import { localizePdp } from "../i18n/pdpFeatures"
 import { useLang } from "../i18n/LanguageProvider"
@@ -129,6 +129,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
           { Icon: ShieldCheck, label: t("pdp.perks.zeroDeposit") },
           { Icon: Zap, label: t("pdp.perks.warranty5") },
         ]
+  const gift = giftForProduct(product)
   const services = planCareOptions(product, spec, { payMode, tenure })
   const cycles = payMode === "subscribe" ? visitCycles(spec, tenure) : []
   const outrightReady = hasOutrightPrice(spec)
@@ -153,6 +154,12 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
 
   return (
     <div className="space-y-6">
+      {gift && payMode === "subscribe" ? (
+        <div className="rounded-2xl bg-[#111] px-4 py-3 text-white ring-1 ring-[#E10600]">
+          <p className="text-sm font-black text-[#FFD100]">{t("pdp.giftBanner")}</p>
+          <p className="mt-1 text-xs leading-5 text-white/70">{t("pdp.giftBannerLead")}</p>
+        </div>
+      ) : null}
       {showPayModes ? (
         <div>
           <StepLabel n={++step}>{t("pdp.purchase")}</StepLabel>
@@ -311,7 +318,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
                   ? t("pdp.after", { n: price.after ?? price.list, from: price.introMonths + 1 })
                   : ` · ${theme?.line || activePromo?.title || t("pdp.tnc")}. ${t("pdp.tnc")}`}
               </p>
-            ) : activePromo?.merdeka ? (
+            ) : activePromo ? (
               <p className="mt-2 text-xs leading-5 text-gray-500">{theme?.detail || t("pdp.tnc")}</p>
             ) : null}
           </div>
@@ -457,9 +464,10 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
 
   const activePromo = price.planPromo ?? promo
   const colorLabel = viewColor.name === "Default" ? product.shortName : viewColor.name
+  const giftNote = giftForProduct(product) && payMode === "subscribe" ? t("pdp.waBundleNote") : ""
   const waText =
-    activePromo?.merdeka && payMode === "subscribe" && price.now != null
-      ? t("pdp.waPromo", { name: product.name, model: modelCode, price: price.now })
+    activePromo && payMode === "subscribe" && price.now != null
+      ? `${t("pdp.waPromo", { name: product.name, model: modelCode, price: price.now })}${giftNote}`
       : payMode === "outright"
         ? t("pdp.waOutright", {
             model: modelCode,
@@ -468,7 +476,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
             price: price.amount ?? "TBC",
             care: product.type === "water" ? t("pdp.waterCareNote", { plan: t(`pdp.care.${careKey}`) }) : "",
           })
-        : t("pdp.waSubscribe", {
+        : `${t("pdp.waSubscribe", {
             model: modelCode,
             color: colorLabel,
             spec: spec.label,
@@ -477,7 +485,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
             visit: careKey === "visit" ? t("pdp.visitSuffix", { n: visitCycle }) : "",
             price: price.now ?? "TBC",
             promo: activePromo ? ` (${activePromo.title})` : "",
-          })
+          })}${giftNote}`
 
   function selectColor(id) {
     const next = palette.find((item) => item.id === id)

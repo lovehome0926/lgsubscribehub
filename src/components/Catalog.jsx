@@ -4,6 +4,7 @@ import {
   CATEGORY_GROUPS,
   allListings,
   dealForListing,
+  giftForProduct,
   groupById,
   groupedCatalog,
   livePromoTabs,
@@ -54,6 +55,7 @@ function ProductCard({ listing, onSelect }) {
   const waitingPhoto = !image || /lg-subscribe-2025-banner/i.test(image)
   const model = variant?.model || color.model || product.model
   const promo = promoForProduct(product)
+  const gift = giftForProduct(product)
   const deal = dealForListing(product, [spec])
   const theme = promoCopy(promo, t)
   const Icon = ICONS[product.type] ?? Droplets
@@ -81,7 +83,13 @@ function ProductCard({ listing, onSelect }) {
     <article className="relative flex flex-col rounded-[28px] bg-white p-5 shadow-sm ring-1 ring-lg-line">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
-          {promo ? <PromoBadge promo={promo} size="chip" /> : <span className="text-[11px] font-semibold text-lg-muted">{t("catalog.subscribe")}</span>}
+          {promo ? (
+            <PromoBadge promo={promo} size="chip" />
+          ) : gift ? (
+            <span className="inline-flex rounded-md bg-[#111] px-2 py-0.5 text-[11px] font-bold text-[#FFD100]">{t("pdp.giftBanner")}</span>
+          ) : (
+            <span className="text-[11px] font-semibold text-lg-muted">{t("catalog.subscribe")}</span>
+          )}
         </div>
         <Icon className="h-4 w-4 shrink-0 text-lg-muted" />
       </div>
@@ -220,14 +228,10 @@ export default function Catalog({ onSelect }) {
               <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/80">{t("campaign.tag")}</p>
               <p className="mt-1 text-lg font-black leading-snug text-[#FFD100] sm:text-xl">{t("campaign.banner")}</p>
             </div>
-            <div className="grid gap-3 px-5 py-4 sm:grid-cols-2 sm:px-6">
+            <div className="px-5 py-4 sm:px-6">
               <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift2")}</p>
                 <p className="mt-1 text-sm font-black">{t("campaign.gift2Prize")}</p>
-              </div>
-              <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift3")}</p>
-                <p className="mt-1 text-sm font-black">{t("campaign.gift3Prize")}</p>
               </div>
             </div>
             <p className="border-t border-white/10 px-5 py-3 text-xs leading-5 text-white/70 sm:px-6">

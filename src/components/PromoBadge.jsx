@@ -7,15 +7,8 @@ export default function PromoBadge({ promo, size = "card" }) {
   if (!theme) return null
 
   if (size === "chip") {
-    const merdeka = theme.kind === "merdeka" || theme.kind === "deep" || theme.kind === "cash"
     return (
-      <span
-        className={
-          merdeka
-            ? "inline-flex rounded-md bg-[#A50034] px-2 py-0.5 text-[11px] font-bold text-white"
-            : `inline-flex rounded-md px-2 py-0.5 text-[11px] font-bold ${theme.soft}`
-        }
-      >
+      <span className={`inline-flex rounded-md px-2 py-0.5 text-[11px] font-bold ${theme.soft}`}>
         {theme.badge}
       </span>
     )

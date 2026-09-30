@@ -321,6 +321,12 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
             ) : activePromo ? (
               <p className="mt-2 text-xs leading-5 text-gray-500">{theme?.detail || t("pdp.tnc")}</p>
             ) : null}
+            {activePromo?.kind === "aircombo" ? (
+              <p className="mt-2 text-xs leading-5 text-gray-500">
+                {t("pdp.airComboNote")}{" "}
+                <a href="/promotions" className="font-semibold text-lg-red hover:text-lg-red-dark">{t("pdp.airComboLink")}</a>
+              </p>
+            ) : null}
           </div>
         ) : price.kind === "outright" && price.amount != null ? (
           <div className="mt-2">

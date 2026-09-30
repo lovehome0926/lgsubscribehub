@@ -45,6 +45,8 @@ export default {
     giftLead: "买两台独立洗衣机或干衣机。WashTower 不计。限 130 台，须十月安装。条款适用。",
     gift2: "65 寸 AI 电视配套",
     gift2Prize: "须十月安装 · 限 130 台，先到先得。",
+    airCombo: "空气净化器组合：一台 AS65 配一台 AS30，每台合约期内每月少 RM15。",
+    airComboCta: "查看组合价",
   },
   promo: {
     kicker: {
@@ -55,6 +57,7 @@ export default {
       rebate10: "洗干一体",
       flat: "延展",
       artcool: "ARTCOOL",
+      aircombo: "官方组合价",
       other: "优惠",
     },
     badge: {
@@ -65,6 +68,7 @@ export default {
       rebate10: "每月减 RM10",
       flat: "特价 RM99/月直至合约结束",
       artcool: "每月减 RM5",
+      aircombo: "AS65 配 AS30，每台每月少 RM15",
       other: "促销",
     },
     line: {
@@ -75,6 +79,7 @@ export default {
       rebate10: "每月减 RM10",
       flat: "直至合约结束",
       artcool: "每月减 RM5",
+      aircombo: "须 AS65 配 AS30，直到合约结束",
     },
     tabs: {
       ohsem: "半价 9 个月",
@@ -84,6 +89,7 @@ export default {
       rebate10: "减 RM10",
       flat: "RM99",
       artcool: "减 RM5",
+      aircombo: "组合 RM15",
     },
     detail: {
       intro: "前 {months} 个月 RM {now}/月，之后 RM {after}/月。条款适用。",
@@ -109,6 +115,29 @@ export default {
     bundleTitle: "两台独立洗衣机或干衣机，配 65 寸 UHD AI 电视",
     bundleBody:
       "购买任意两台独立洗衣机或干衣机：一洗一烘、两台洗衣机，或两台干衣机。WashTower 和洗烘一体不计算。须在十月内安装。限前 130 台，先到先得。条款适用。",
+    combo: {
+      eyebrow: "Official Combo Deals (Bundle & Save)",
+      title: "空气净化器组合：一台 AS65 配一台 AS30",
+      kicker: "Limited Combo Special",
+      headline: "Combo Subscription Discount · Official Combo Rate",
+      tag: "只有同一份申请里一台 AS65GDBY0.AML 配一台 AS30GGW10.AML，每台合约期内每月少 RM15。",
+      note: "RM15 组合月租只适用于同一份申请里的一台 AS65GDBY0.AML 加一台 AS30GGW10.AML，直到合约结束。同款两台不适用。",
+      cta: "Inquire Combo Deal",
+      wa: "Hi, I want to inquire about the Air Purifier Combo Deal (one AS65GDBY0.AML and one AS30GGW10.AML, RM15 OFF each monthly).",
+      unit: "第 {n} 台",
+      names: {
+        AS65GDBY0: "LG PuriCare™ AeroTower / Air Purifier",
+        AS30GGW10: "LG PuriCare™ Air Purifier",
+      },
+    },
+    tower: {
+      title: "WashTower 官方月租",
+      lead: "前 9 个月官方月租半价，之后按官方月租直到合约结束。Regular Visit 与 Combine Maintenance，5 年与 7 年。",
+      badge: "Official Revised Rate",
+      contract: "合约",
+      visit: "Regular Visit",
+      combined: "Combine Maintenance",
+    },
     cta: "WhatsApp 问问",
     wa: "Hi, I want to inquire about the latest promotion for {name} on your website.",
     sections: {
@@ -132,6 +161,10 @@ export default {
       {
         q: "送货和安装免费吗？",
         a: "是。按官方 LG Subscribe 配套，标准送货、基本安装和定期 CareShip 保养已包含在内。",
+      },
+      {
+        q: "空气净化器组合价什么时候适用？",
+        a: "只有同一份申请里的一台 AS65GDBY0.AML 和一台 AS30GGW10.AML 才适用。同款两台不适用。每台少 RM15，直到合约结束。",
       },
     ],
   },
@@ -283,6 +316,8 @@ export default {
     was: "原价 RM {n}/月",
     after: "第 {from} 个月起 RM {n}/月。条款适用。",
     tnc: "条款适用。",
+    airComboNote: "只有同一份申请里一台 AS65 配一台 AS30，合约期内才是这个组合月租。同款两台不适用。",
+    airComboLink: "查看组合",
     tbc: "价格待确认",
     enquire: "通过 WhatsApp 咨询",
     specs: "规格",

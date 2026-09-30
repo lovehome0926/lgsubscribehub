@@ -326,6 +326,7 @@ export const PROMO_TABS = [
   { id: "rebate10", label: "RM10 Off", short: "RM10 OFF" },
   { id: "flat", label: "RM99 Flat", short: "RM99" },
   { id: "artcool", label: "ARTCOOL RM5", short: "RM5 OFF" },
+  { id: "aircombo", label: "Air Combo RM15", short: "COMBO RM15" },
 ]
 
 const THEMES = {
@@ -385,6 +386,14 @@ const THEMES = {
     soft: "bg-[#E0F2FE] text-[#155E75]",
     price: "text-[#155E75]",
   },
+  aircombo: {
+    kicker: "Official Combo Rate",
+    badge: "Bundle & Save RM15/mth each",
+    className: "bg-[#0F766E] text-white shadow-[0_10px_24px_rgba(15,118,110,0.32)]",
+    tab: "bg-[#0F766E] text-white ring-[#0F766E]",
+    soft: "bg-[#CCFBF1] text-[#0F766E]",
+    price: "text-[#0F766E]",
+  },
   other: {
     kicker: "Offer",
     badge: "PROMO",
@@ -407,9 +416,9 @@ export function promoTheme(promo) {
   if (kind === "ohsem" || kind === "half12") {
     badge = promo.badge || theme.badge
     line = months ? `First ${months} months` : "Pay half now"
-  } else if (kind === "rebate20" || kind === "rebate15" || kind === "rebate10" || kind === "artcool") {
+  } else if (kind === "rebate20" || kind === "rebate15" || kind === "rebate10" || kind === "artcool" || kind === "aircombo") {
     badge = promo.badge || theme.badge
-    line = cash ? `RM${cash} off / month` : "Every month"
+    line = kind === "aircombo" ? "AS65 + AS30 only, until contract end" : cash ? `RM${cash} off / month` : "Every month"
   } else if (kind === "flat") {
     badge = promo.badge || theme.badge
     line = "Till contract end"
@@ -441,7 +450,7 @@ export function promoCopy(promo, t) {
   let badge = t(`promo.badge.${kind}`, { n: badgeN })
   let line = theme.line
   if (kind === "ohsem" || kind === "half12") line = months ? t("promo.line.halfMonths", { n: months }) : t("promo.line.ohsem")
-  else if (kind === "rebate20" || kind === "rebate15" || kind === "rebate10" || kind === "artcool") line = t(`promo.line.${kind}`)
+  else if (kind === "rebate20" || kind === "rebate15" || kind === "rebate10" || kind === "artcool" || kind === "aircombo") line = t(`promo.line.${kind}`)
   else if (kind === "flat") line = t("promo.line.flat")
   let detail
   if (months && price != null && promo.afterPrice != null) {

@@ -46,6 +46,8 @@ export default {
     giftLead: "Buy 2 standalone washers or dryers. WashTower does not count. First 130, October install only. T&C apply.",
     gift2: "Free 65\" AI TV Bundle",
     gift2Prize: "Oct install only · First 130 units, first come first served.",
+    airCombo: "Air purifier combo: one AS65 and one AS30, RM15/mth off each until contract end.",
+    airComboCta: "See combo rates",
   },
   promo: {
     kicker: {
@@ -56,6 +58,7 @@ export default {
       rebate10: "Combo",
       flat: "Extended",
       artcool: "ARTCOOL",
+      aircombo: "Official Combo Rate",
       other: "Offer",
     },
     badge: {
@@ -66,6 +69,7 @@ export default {
       rebate10: "RM10 OFF Monthly",
       flat: "Special RM99/mth Till Contract End",
       artcool: "RM5 OFF Monthly",
+      aircombo: "Bundle & Save RM15/mth each",
       other: "PROMO",
     },
     line: {
@@ -76,6 +80,7 @@ export default {
       rebate10: "RM10 off every month",
       flat: "Till contract end",
       artcool: "RM5 off every month",
+      aircombo: "AS65 + AS30 only, until contract end",
     },
     tabs: {
       ohsem: "50% 9 MTHS",
@@ -85,6 +90,7 @@ export default {
       rebate10: "RM10 OFF",
       flat: "RM99",
       artcool: "RM5 OFF",
+      aircombo: "COMBO RM15",
     },
     detail: {
       intro: "RM {now}/mth for the first {months} months, then RM {after}/mth. T&C apply.",
@@ -110,6 +116,29 @@ export default {
     bundleTitle: "2 standalone washers or dryers include a 65\" UHD AI TV",
     bundleBody:
       "Buy any 2 standalone washers or dryers — washer + dryer, 2 washers, or 2 dryers. WashTower and washer-dryer combos do not count. Install within October. First 130 units, first come first served. T&C apply.",
+    combo: {
+      eyebrow: "Official Combo Deals (Bundle & Save)",
+      title: "Air Purifier Combo Deal: One AS65 + One AS30",
+      kicker: "Limited Combo Special",
+      headline: "Combo Subscription Discount · Official Combo Rate",
+      tag: "Save RM15/mth for EACH unit only when one AS65GDBY0.AML and one AS30GGW10.AML are in the same application.",
+      note: "The RM15 monthly combo rate applies only to one AS65GDBY0.AML together with one AS30GGW10.AML in a single application, until contract end. Two of the same model do not qualify.",
+      cta: "Inquire Combo Deal",
+      wa: "Hi, I want to inquire about the Air Purifier Combo Deal (one AS65GDBY0.AML and one AS30GGW10.AML, RM15 OFF each monthly).",
+      unit: "Unit {n}",
+      names: {
+        AS65GDBY0: "LG PuriCare™ AeroTower / Air Purifier",
+        AS30GGW10: "LG PuriCare™ Air Purifier",
+      },
+    },
+    tower: {
+      title: "WashTower official monthly rates",
+      lead: "50% off the official monthly rate for the first 9 months, then the official rate until contract end. Regular Visit and Combine Maintenance, 5 years and 7 years.",
+      badge: "Official Revised Rate",
+      contract: "Contract",
+      visit: "Regular Visit",
+      combined: "Combine Maintenance",
+    },
     cta: "Ask on WhatsApp",
     wa: "Hi, I want to inquire about the latest promotion for {name} on your website.",
     sections: {
@@ -133,6 +162,10 @@ export default {
       {
         q: "Are delivery and installation free?",
         a: "Yes, standard delivery, basic installation, and regular CareShip maintenance service are included as per official LG Subscribe packages.",
+      },
+      {
+        q: "When does the air purifier combo rate apply?",
+        a: "Only one AS65GDBY0.AML and one AS30GGW10.AML in the same application qualify. Two of the same model do not. The RM15 off each unit lasts until contract end.",
       },
     ],
   },
@@ -285,6 +318,8 @@ export default {
     was: "Was RM {n}/mth",
     after: "RM {n}/mth from {from}th month onwards. T&C Apply.",
     tnc: "T&C Apply.",
+    airComboNote: "Official combo rate only for one AS65 and one AS30 in the same application, until contract end. Two of the same model do not qualify.",
+    airComboLink: "See the combo",
     tbc: "Price to be confirmed",
     enquire: "Enquire via WhatsApp",
     specs: "Specifications",

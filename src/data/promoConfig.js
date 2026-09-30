@@ -30,7 +30,39 @@ export const Q4_MONTHS = [9, 10, 11, 12]
 
 export const FLAT99_MODELS = ["DFC335HM"]
 export const REBATE20_MODELS = ["RX10VHP3WR", "RX10VHP3KR", "F2520SNEKR"]
-export const REBATE15_MODELS = ["AS65GDBY0", "AS30GGW10"]
+export const REBATE15_MODELS = []
+export const AIR_COMBO_MODELS = ["AS65GDBY0", "AS30GGW10"]
+export const AIR_COMBO_OFF = 15
+export const AIR_COMBO_SKU = {
+  AS65GDBY0: "AS65GDBY0.AML",
+  AS30GGW10: "AS30GGW10.AML",
+}
+export const WASHTOWER_RATES = {
+  WT2520NHEGR: {
+    label: "25/20kg",
+    sku: "WT2520NHEGR.ABGREML",
+    60: {
+      visit: { now: 239, was: 290 },
+      combined: { now: 229, was: 280 },
+    },
+    84: {
+      visit: { now: 219 },
+      combined: { now: 209 },
+    },
+  },
+  WT1410NHB: {
+    label: "14/10kg",
+    sku: "WT1410NHB.APBRQML",
+    60: {
+      visit: { now: 199, was: 220 },
+      combined: { now: 189, was: 210 },
+    },
+    84: {
+      visit: { now: 179 },
+      combined: { now: 169 },
+    },
+  },
+}
 export const REBATE10_MODELS = ["FV1209D4W", "FX1412S5GR"]
 export const HALF12_MODELS = ["GC-B257KLJR", "TX2522AT9GR"]
 export const ARTCOOL_MODELS = ["S3-Q24K2RPA"]
@@ -134,6 +166,16 @@ export function evaluateProductPricing(product) {
     }
   }
 
+  if (isListedModel(AIR_COMBO_MODELS, product)) {
+    return {
+      promoType: "AIR_COMBO",
+      rebate: AIR_COMBO_OFF,
+      badge: "Bundle & Save RM15/mth each",
+      note: "AS65 + AS30 only, until contract end",
+      kind: "aircombo",
+    }
+  }
+
   if (isArtcoolModel(product)) {
     return {
       promoType: "RAC_REBATE",
@@ -153,7 +195,7 @@ export function evaluateProductPricing(product) {
 }
 
 export function toPromo(product, evaluation = evaluateProductPricing(product)) {
-  if (!evaluation) return null
+  if (!evaluation || evaluation.kind === "none" || evaluation.kind === "revised") return null
   const scope = product?.model || evaluation.promoType
   const base = {
     scope,

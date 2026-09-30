@@ -1,5 +1,6 @@
 // Product patches only. October prices live in promoConfig.evaluateProductPricing.
 import { applyF2520Name, applyFx1412 } from "./fx1412.js"
+import { WASHTOWER_RATES } from "./promoConfig.js"
 
 export { CAMPAIGN, campaignActive } from "./promoConfig.js"
 
@@ -77,6 +78,28 @@ function applyDualcoolAiLook(product, donor) {
   )
 }
 
+function applyWashTowerRates(product) {
+  const rate = WASHTOWER_RATES[product.model]
+  if (!rate) return product
+  const subscribe = {
+    60: {
+      combined: rate[60].combined.now,
+      visit: { 6: rate[60].visit.now, 12: null, 24: null },
+    },
+    84: {
+      combined: rate[84].combined.now,
+      visit: { 6: rate[84].visit.now, 12: null, 24: null },
+    },
+  }
+  return {
+    ...product,
+    specs: product.specs.map((spec) => ({
+      ...spec,
+      pricing: { ...spec.pricing, subscribe },
+    })),
+  }
+}
+
 function applyB257Hero(product) {
   if (product.model !== "GC-B257KLJR") return product
   const hero = "/products/GC-B257KLJR.jpg"
@@ -90,7 +113,9 @@ export function patchProducts(products) {
   return products
     .filter((product) => !DELISTED_MODELS.includes(product.model))
     .map((product) => {
-      let next = applyB257Hero(applyFx1412(applyF2520Name(patchF2515(applyDualcoolAiLook(product, dualcoolAi))), f2520))
+      let next = applyWashTowerRates(
+        applyB257Hero(applyFx1412(applyF2520Name(patchF2515(applyDualcoolAiLook(product, dualcoolAi))), f2520)),
+      )
       if (PAUSED_MODELS.includes(product.model)) next = { ...next, paused: true }
       return next
     })

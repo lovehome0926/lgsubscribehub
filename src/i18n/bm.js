@@ -46,6 +46,8 @@ export default {
     giftLead: "Beli 2 mesin basuh atau pengering berasingan. WashTower tidak dikira. 130 unit pertama, pasang Oktober sahaja. T&C terpakai.",
     gift2: "Pakej TV AI 65\" percuma",
     gift2Prize: "Pasang Oktober sahaja · 130 unit pertama, siapa cepat dia dapat.",
+    airCombo: "Kombo penapis udara: satu AS65 dan satu AS30, setiap unit kurang RM15/bulan hingga tamat kontrak.",
+    airComboCta: "Lihat kadar kombo",
   },
   promo: {
     kicker: {
@@ -56,6 +58,7 @@ export default {
       rebate10: "Kombo",
       flat: "Lanjutan",
       artcool: "ARTCOOL",
+      aircombo: "Kadar Kombo Rasmi",
       other: "Tawaran",
     },
     badge: {
@@ -66,6 +69,7 @@ export default {
       rebate10: "RM10 OFF sebulan",
       flat: "Khas RM99/bulan hingga tamat kontrak",
       artcool: "RM5 OFF sebulan",
+      aircombo: "Bundle & Save RM15/bulan setiap unit",
       other: "PROMO",
     },
     line: {
@@ -76,6 +80,7 @@ export default {
       rebate10: "RM10 potongan setiap bulan",
       flat: "Hingga tamat kontrak",
       artcool: "RM5 potongan setiap bulan",
+      aircombo: "AS65 + AS30 sahaja, hingga tamat kontrak",
     },
     tabs: {
       ohsem: "50% 9 BLN",
@@ -85,6 +90,7 @@ export default {
       rebate10: "RM10 OFF",
       flat: "RM99",
       artcool: "RM5 OFF",
+      aircombo: "KOMBO RM15",
     },
     detail: {
       intro: "RM {now}/bulan untuk {months} bulan pertama, kemudian RM {after}/bulan. T&C terpakai.",
@@ -110,6 +116,29 @@ export default {
     bundleTitle: "2 unit mesin basuh atau pengering berasingan termasuk TV AI UHD 65\"",
     bundleBody:
       "Beli mana-mana 2 unit mesin basuh atau pengering berasingan — mesin basuh + pengering, 2 mesin basuh, atau 2 pengering. WashTower dan kombo mesin basuh-pengering tidak dikira. Pemasangan dalam Oktober. 130 unit pertama, siapa cepat dia dapat. T&C terpakai.",
+    combo: {
+      eyebrow: "Official Combo Deals (Bundle & Save)",
+      title: "Air Purifier Combo Deal: Satu AS65 + Satu AS30",
+      kicker: "Limited Combo Special",
+      headline: "Combo Subscription Discount · Official Combo Rate",
+      tag: "Jimat RM15/bulan untuk SETIAP unit hanya bila satu AS65GDBY0.AML dan satu AS30GGW10.AML dalam permohonan yang sama.",
+      note: "Kadar kombo RM15 sebulan hanya untuk satu AS65GDBY0.AML bersama satu AS30GGW10.AML dalam satu permohonan, hingga tamat kontrak. Dua unit model yang sama tidak layak.",
+      cta: "Inquire Combo Deal",
+      wa: "Hi, I want to inquire about the Air Purifier Combo Deal (one AS65GDBY0.AML and one AS30GGW10.AML, RM15 OFF each monthly).",
+      unit: "Unit {n}",
+      names: {
+        AS65GDBY0: "LG PuriCare™ AeroTower / Air Purifier",
+        AS30GGW10: "LG PuriCare™ Air Purifier",
+      },
+    },
+    tower: {
+      title: "Kadar bulanan rasmi WashTower",
+      lead: "50% kurang daripada kadar rasmi untuk 9 bulan pertama, kemudian kadar rasmi hingga tamat kontrak. Regular Visit dan Combine Maintenance, 5 tahun dan 7 tahun.",
+      badge: "Official Revised Rate",
+      contract: "Kontrak",
+      visit: "Regular Visit",
+      combined: "Combine Maintenance",
+    },
     cta: "Tanya di WhatsApp",
     wa: "Hi, I want to inquire about the latest promotion for {name} on your website.",
     sections: {
@@ -133,6 +162,10 @@ export default {
       {
         q: "Adakah penghantaran dan pemasangan percuma?",
         a: "Ya, penghantaran standard, pemasangan asas, dan servis penyelenggaraan CareShip biasa disertakan mengikut pakej rasmi LG Subscribe.",
+      },
+      {
+        q: "Bila kadar combo penapis udara terpakai?",
+        a: "Hanya satu AS65GDBY0.AML dan satu AS30GGW10.AML dalam permohonan yang sama layak. Dua unit model yang sama tidak layak. Potongan RM15 setiap unit kekal hingga tamat kontrak.",
       },
     ],
   },
@@ -285,6 +318,8 @@ export default {
     was: "Dulu RM {n}/bulan",
     after: "RM {n}/bulan dari bulan ke-{from} dan seterusnya. T&C terpakai.",
     tnc: "T&C terpakai.",
+    airComboNote: "Kadar kombo rasmi hanya untuk satu AS65 dan satu AS30 dalam permohonan yang sama, hingga tamat kontrak. Dua unit model yang sama tidak layak.",
+    airComboLink: "Lihat kombo",
     tbc: "Harga akan disahkan",
     enquire: "Tanya melalui WhatsApp",
     specs: "Spesifikasi",

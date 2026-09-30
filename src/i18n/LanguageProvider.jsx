@@ -64,17 +64,8 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     const meta = LANGS.find((item) => item.id === lang)
-    const title = lookup(MESSAGES[lang], "seo.title") || lookup(MESSAGES.en, "seo.title")
-    const description = lookup(MESSAGES[lang], "seo.description") || lookup(MESSAGES.en, "seo.description")
-    const pageUrl = `${SITE_ORIGIN}/?lang=${lang}`
     document.documentElement.lang = meta?.html || "en-MY"
-    document.title = title
-    document.querySelector('meta[name="description"]')?.setAttribute("content", description)
-    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title)
-    document.querySelector('meta[property="og:description"]')?.setAttribute("content", description)
-    document.querySelector('meta[property="og:url"]')?.setAttribute("content", pageUrl)
     document.querySelector('meta[property="og:locale"]')?.setAttribute("content", meta?.og || "en_MY")
-    document.querySelector('link[rel="canonical"]')?.setAttribute("href", pageUrl)
   }, [lang])
 
   const value = useMemo(() => {
@@ -93,4 +84,34 @@ export function useLang() {
   const ctx = useContext(LanguageContext)
   if (!ctx) throw new Error("useLang must be used inside LanguageProvider")
   return ctx
+}
+
+const DEFAULT_OG =
+  "https://www.lg.com/content/dam/channel/wcms/my/lg-subscribe/images/LG-Subscribe-Online-Store-Launch-Microsite-Hero-Banner-D.jpg"
+
+function pageUrl(path, lang) {
+  const clean = !path || path === "/" ? "/" : path
+  return lang ? `${SITE_ORIGIN}${clean}?lang=${lang}` : `${SITE_ORIGIN}${clean}`
+}
+
+export function usePageSeo({ title, description, path = "/", image = "" }) {
+  const { lang } = useLang()
+  useEffect(() => {
+    const meta = LANGS.find((item) => item.id === lang)
+    const canonical = pageUrl(path, lang)
+    document.title = title
+    document.querySelector('meta[name="description"]')?.setAttribute("content", description)
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", description)
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", canonical)
+    document.querySelector('meta[property="og:locale"]')?.setAttribute("content", meta?.og || "en_MY")
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", canonical)
+    const picture = image || DEFAULT_OG
+    document.querySelector('meta[property="og:image"]')?.setAttribute("content", picture)
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", picture)
+    for (const item of LANGS) {
+      document.querySelector(`link[rel="alternate"][hreflang="${item.html}"]`)?.setAttribute("href", pageUrl(path, item.id))
+    }
+    document.querySelector('link[rel="alternate"][hreflang="x-default"]')?.setAttribute("href", pageUrl(path, ""))
+  }, [description, image, lang, path, title])
 }

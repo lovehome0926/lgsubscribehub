@@ -24,6 +24,18 @@ export default {
     title: "LG Subscribe Malaysia | Easy Rental & Home Appliances from RM 25/mth",
     description:
       "Subscribe latest LG Water Purifiers, Washers, TVs & Air Conditioners in Malaysia from RM25/mth. Free Delivery, Installation & Care Service included!",
+    careTitle: "Servis & Penyelenggaraan LG CareShip | LG Subscribe Malaysia",
+    careDescription: "Semak harga servis dan penyelenggaraan LG CareShip di Malaysia, kemudian tanya melalui WhatsApp.",
+    careerTitle: "Kerjaya | LG Subscribe Malaysia",
+    careerDescription: "Sertai pasukan LG Subscribe di Malaysia. Jawab kuiz ringkas atau tempah taklimat Sabtu.",
+    categoryTitle: "{name} | LG Subscribe Malaysia",
+    categoryDescription: "{blurb} Langgan di Malaysia dari RM25/bulan dengan penghantaran, pemasangan dan penjagaan.",
+    productTitle: "{name} | LG Subscribe Malaysia dari RM {price}/bulan",
+    productTitlePlain: "{name} | LG Subscribe Malaysia",
+    productDescription: "Langgan {name} di Malaysia. Penghantaran, pemasangan dan pilihan penjagaan. Tanya melalui WhatsApp.",
+    notFoundTitle: "Produk tidak dijumpai | LG Subscribe Malaysia",
+    notFoundHeading: "Produk ini tiada dalam senarai",
+    notFoundDescription: "Lihat penapis air, mesin basuh, TV dan penghawa dingin LG yang boleh dilanggan di Malaysia.",
   },
   campaign: {
     name: "LG October & Q4 Special Deals 2026",

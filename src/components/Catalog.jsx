@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Armchair, ChevronDown, Droplets, Refrigerator, Shirt, Snowflake, Tv, UtensilsCrossed, WashingMachine, Wind } from "lucide-react"
 import {
   CATEGORY_GROUPS,
   allListings,
   dealForListing,
   giftForProduct,
-  groupById,
   groupedCatalog,
   livePromoTabs,
   promoCopy,
@@ -15,6 +14,7 @@ import {
 } from "../data/catalog"
 import { campaignActive } from "../data/campaign"
 import { useLang } from "../i18n/LanguageProvider"
+import { productPath } from "../router"
 import PromoBadge from "./PromoBadge"
 
 const ICONS = {
@@ -32,18 +32,11 @@ const ICONS = {
 
 const ALL = "all"
 
-function groupFromHash() {
-  const hash = window.location.hash.replace(/^#\/?/, "")
-  if (!hash.startsWith("group-")) return null
-  const id = hash.slice("group-".length)
-  return groupById(id) ? id : null
-}
-
 function choosableColors(colors) {
   return colors.filter((color) => color.name && color.name !== "Default")
 }
 
-function ProductCard({ listing, onSelect }) {
+function ProductCard({ listing }) {
   const { t } = useLang()
   const { product, specs, colors, title } = listing
   const [colorId, setColorId] = useState(colors[0].id)
@@ -165,31 +158,21 @@ function ProductCard({ listing, onSelect }) {
       ) : (
         <p className="text-lg font-semibold text-gray-400">{t("catalog.tbc")}</p>
       )}
-      <button
-        type="button"
-        onClick={() => onSelect(product.id, spec.id, color.id)}
-        className="mt-4 rounded-full bg-lg-red py-2.5 text-sm font-semibold text-white hover:bg-lg-red-dark"
+      <a
+        href={productPath(product.id, spec.id, color.id)}
+        className="mt-4 rounded-full bg-lg-red py-2.5 text-center text-sm font-semibold text-white hover:bg-lg-red-dark"
       >
         {t("catalog.cta")}
-      </button>
+      </a>
     </article>
   )
 }
 
-export default function Catalog({ onSelect }) {
+export default function Catalog({ groupId = null, onGroup }) {
   const { t } = useLang()
-  const [active, setActive] = useState(() => groupFromHash() ?? ALL)
+  const active = groupId || ALL
   const [deal, setDeal] = useState("all")
   const [openPanel, setOpenPanel] = useState(null)
-
-  useEffect(() => {
-    const onHash = () => {
-      const id = groupFromHash()
-      if (id) setActive(id)
-    }
-    window.addEventListener("hashchange", onHash)
-    return () => window.removeEventListener("hashchange", onHash)
-  }, [])
 
   const sections = groupedCatalog()
   const listings = allListings()
@@ -280,8 +263,8 @@ export default function Catalog({ onSelect }) {
                 role="tab"
                 aria-selected={selected}
                 onClick={() => {
-                  setActive(tab.id)
                   setOpenPanel(null)
+                  onGroup?.(tab.id === ALL ? null : tab.id)
                 }}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   selected
@@ -349,7 +332,7 @@ export default function Catalog({ onSelect }) {
             </div>
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {cards.map((listing) => (
-                <ProductCard key={listing.id} listing={listing} onSelect={onSelect} />
+                <ProductCard key={listing.id} listing={listing} />
               ))}
             </div>
           </div>

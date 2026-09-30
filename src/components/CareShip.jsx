@@ -128,7 +128,7 @@ export default function CareShip() {
     <section id="care" className="bg-white pb-16">
       <div className="border-b border-lg-line bg-lg-cream">
         <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 text-xs text-lg-muted sm:px-6">
-          <a href="#shop" className="font-medium text-lg-ink hover:text-lg-red">{t("pdp.shop")}</a>
+          <a href="/#shop" className="font-medium text-lg-ink hover:text-lg-red">{t("pdp.shop")}</a>
           <span>/</span>
           <span className="text-lg-ink">{t("nav.care")}</span>
         </div>

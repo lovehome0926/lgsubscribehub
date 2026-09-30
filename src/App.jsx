@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import HomeChooser from "./components/HomeChooser"
@@ -11,18 +11,12 @@ import Faq from "./components/FAQ"
 import SiteFooter from "./components/SiteFooter"
 import WhatsAppFab from "./components/WhatsAppFab"
 import ProductDetail from "./components/ProductDetail"
+import ProductJsonLd from "./components/ProductJsonLd"
 import Career from "./components/Career"
 import SeoJsonLd from "./components/SeoJsonLd"
-import { productById } from "./data/catalog"
-
-function readRoute() {
-  const hash = window.location.hash.replace(/^#\/?/, "")
-  const [page, id, a, b] = hash.split("/")
-  if (page === "career") return { name: "career", section: id || null }
-  if (page === "care") return { name: "care" }
-  if (page === "product" && id) return { name: "product", id, a, b }
-  return { name: "home" }
-}
+import { dealForListing, findProduct } from "./data/catalog"
+import { useLang, usePageSeo } from "./i18n/LanguageProvider"
+import { bindSpaLinks, navigate, productPath, promoteLegacyHash, readRoute, shopGroupPath } from "./router"
 
 function routeOptions(product, a, b) {
   const specIds = new Set(product.specs.map((spec) => spec.id))
@@ -36,74 +30,132 @@ function routeOptions(product, a, b) {
   return { specId, colorId }
 }
 
+function currentRoute() {
+  promoteLegacyHash()
+  return readRoute()
+}
+
+function Shell({ children, onHome, jsonLd = null }) {
+  return (
+    <div className="min-h-screen bg-lg-cream">
+      <SeoJsonLd />
+      {jsonLd}
+      <Header onHome={onHome} />
+      {children}
+      <SiteFooter />
+      <WhatsAppFab />
+    </div>
+  )
+}
+
+function NotFound() {
+  const { t } = useLang()
+  return (
+    <main className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">LG Subscribe™</p>
+      <h1 className="mt-3 text-3xl font-semibold">{t("seo.notFoundHeading")}</h1>
+      <p className="mt-3 text-sm leading-7 text-lg-muted">{t("seo.notFoundDescription")}</p>
+      <a href="/#shop" className="mt-6 inline-flex rounded-full bg-lg-red px-5 py-2.5 text-sm font-semibold text-white hover:bg-lg-red-dark">
+        {t("pdp.shop")}
+      </a>
+    </main>
+  )
+}
+
 export default function App() {
-  const [route, setRoute] = useState(readRoute)
+  const { t } = useLang()
+  const [route, setRoute] = useState(currentRoute)
 
   useEffect(() => {
-    const onHash = () => setRoute(readRoute())
-    window.addEventListener("hashchange", onHash)
-    return () => window.removeEventListener("hashchange", onHash)
+    const onPop = () => setRoute(readRoute())
+    window.addEventListener("popstate", onPop)
+    return () => window.removeEventListener("popstate", onPop)
   }, [])
 
-  useEffect(() => {
-    if (route.name === "home") return
-    window.scrollTo(0, 0)
-  }, [route.name])
+  useEffect(() => bindSpaLinks(), [])
 
   useEffect(() => {
-    if (route.name !== "home") return
-    const id = window.location.hash.replace(/^#\/?/, "")
-    if (!id) return
+    if (route.name === "career") return
+    if (route.name === "care" || route.name === "product") {
+      window.scrollTo(0, 0)
+      return
+    }
+    const id = route.name === "shop" ? "shop" : window.location.hash.replace(/^#/, "")
+    if (!id) {
+      window.scrollTo(0, 0)
+      return
+    }
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })
     })
   }, [route])
 
-  const openProduct = (id, specId, colorId) => {
-    const parts = ["product", id]
-    if (specId) parts.push(specId)
-    if (colorId) parts.push(colorId)
-    window.location.hash = parts.join("/")
-    window.scrollTo(0, 0)
-  }
+  const goHome = () => navigate("/#shop")
 
-  const goHome = () => {
-    window.location.hash = "shop"
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+  const product = route.name === "product" ? findProduct(route.id) : null
+  const missing = route.name === "product" && !product
+
+  const seo = useMemo(() => {
+    if (route.name === "care") {
+      return { title: t("seo.careTitle"), description: t("seo.careDescription"), path: "/care" }
+    }
+    if (route.name === "career") {
+      return { title: t("seo.careerTitle"), description: t("seo.careerDescription"), path: "/career" }
+    }
+    if (route.name === "shop") {
+      return {
+        title: t("seo.categoryTitle", { name: t(`groups.${route.groupId}.name`) }),
+        description: t("seo.categoryDescription", { blurb: t(`groups.${route.groupId}.blurb`) }),
+        path: shopGroupPath(route.groupId),
+      }
+    }
+    if (missing) {
+      return { title: t("seo.notFoundTitle"), description: t("seo.notFoundDescription"), path: `/product/${route.id}` }
+    }
+    if (product) {
+      const price = dealForListing(product, product.specs).now
+      const name = product.baseName || product.name
+      return {
+        title: price != null ? t("seo.productTitle", { name, price }) : t("seo.productTitlePlain", { name }),
+        description: t("seo.productDescription", { name }),
+        path: productPath(product.id),
+        image: product.colors.find((color) => color.image)?.image || "",
+      }
+    }
+    return { title: t("seo.title"), description: t("seo.description"), path: "/" }
+  }, [missing, product, route, t])
+
+  usePageSeo(seo)
 
   if (route.name === "career") {
     return (
-      <div className="min-h-screen bg-lg-cream">
-        <SeoJsonLd />
-        <Header onHome={goHome} />
+      <Shell onHome={goHome}>
         <Career section={route.section} />
-        <SiteFooter />
-        <WhatsAppFab />
-      </div>
+      </Shell>
     )
   }
 
   if (route.name === "care") {
     return (
-      <div className="min-h-screen bg-lg-cream">
-        <SeoJsonLd />
-        <Header onHome={goHome} />
+      <Shell onHome={goHome}>
         <CareShip />
-        <SiteFooter />
-        <WhatsAppFab />
-      </div>
+      </Shell>
     )
   }
 
-  if (route.name === "product") {
-    const product = productById(route.id)
+  if (missing) {
+    return (
+      <Shell onHome={goHome}>
+        <NotFound />
+      </Shell>
+    )
+  }
+
+  if (product) {
     const { specId, colorId } = routeOptions(product, route.a, route.b)
     const lockSpec = Boolean(specId) && product.type !== "tv"
     return (
-      <div className="min-h-screen bg-lg-cream">
-        <SeoJsonLd />
-        <Header onHome={goHome} />
+      <Shell onHome={goHome} jsonLd={<ProductJsonLd product={product} />}>
         <ProductDetail
           key={`${product.id}:${specId ?? ""}:${colorId ?? ""}`}
           product={product}
@@ -112,25 +164,22 @@ export default function App() {
           lockSpec={lockSpec}
           onBack={goHome}
         />
-        <SiteFooter />
-        <WhatsAppFab />
-      </div>
+      </Shell>
     )
   }
 
   return (
-    <div className="min-h-screen bg-lg-cream">
-      <SeoJsonLd />
-      <Header onHome={goHome} />
+    <Shell onHome={goHome}>
       <Hero />
       <HomeChooser />
-      <Catalog onSelect={openProduct} />
+      <Catalog
+        groupId={route.name === "shop" ? route.groupId : null}
+        onGroup={(id) => navigate(id ? shopGroupPath(id) : "/#shop")}
+      />
       <WhySubscribe />
       <Stores />
       <Reviews />
       <Faq />
-      <SiteFooter />
-      <WhatsAppFab />
-    </div>
+    </Shell>
   )
 }

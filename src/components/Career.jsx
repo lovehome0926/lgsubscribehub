@@ -143,10 +143,10 @@ export default function Career({ section }) {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
-            <a href="#career/quiz" className="rounded-full bg-lg-red px-5 py-2.5 text-sm font-semibold text-white hover:bg-lg-red-dark sm:px-6 sm:py-3">
+            <a href="/career/quiz" className="rounded-full bg-lg-red px-5 py-2.5 text-sm font-semibold text-white hover:bg-lg-red-dark sm:px-6 sm:py-3">
               {copy.startQuiz}
             </a>
-            <a href="#career/briefing" className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-lg-ink hover:bg-lg-cream sm:px-6 sm:py-3">
+            <a href="/career/briefing" className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-lg-ink hover:bg-lg-cream sm:px-6 sm:py-3">
               {copy.bookBriefing}
             </a>
           </div>
@@ -361,7 +361,7 @@ export default function Career({ section }) {
               >
                 {copy.waJoe} · {JOE.phoneDisplay}
               </a>
-              <a href="#career/quiz" className="inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-lg-ink hover:text-lg-red">
+              <a href="/career/quiz" className="inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-lg-ink hover:text-lg-red">
                 {copy.startQuiz}
               </a>
             </div>

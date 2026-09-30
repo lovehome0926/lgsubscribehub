@@ -9,35 +9,339 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
   </url>
   <url>
-    <loc>https://lgsubscribehub.com.my/?lang=en</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/?lang=bm" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/?lang=cn" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
-  </url>
-  <url>
-    <loc>https://lgsubscribehub.com.my/?lang=bm</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/?lang=bm" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/?lang=cn" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
-  </url>
-  <url>
-    <loc>https://lgsubscribehub.com.my/?lang=cn</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/?lang=bm" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/?lang=cn" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/" />
-  </url>
-  <url>
-    <loc>https://lgsubscribehub.com.my/#care</loc>
+    <loc>https://lgsubscribehub.com.my/care</loc>
     <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/care?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/care?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/care?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/care" />
   </url>
   <url>
-    <loc>https://lgsubscribehub.com.my/#career</loc>
+    <loc>https://lgsubscribehub.com.my/career</loc>
     <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/career?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/career?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/career?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/career" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/shop/water-air</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/water-air?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/water-air?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/water-air?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/water-air" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/shop/cooling</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/cooling?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/cooling?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/cooling?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/cooling" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/shop/laundry</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/laundry?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/laundry?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/laundry?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/laundry" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/shop/kitchen</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/kitchen?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/kitchen?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/kitchen?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/kitchen" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/shop/living</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/living?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/living?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/living?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/living" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/atom-u-undersink-water-purifier-wu525bs</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/atom-u-undersink-water-purifier-wu525bs?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/atom-u-undersink-water-purifier-wu525bs?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/atom-u-undersink-water-purifier-wu525bs?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/atom-u-undersink-water-purifier-wu525bs" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd518an</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd518an?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd518an?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd518an?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd518an" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd516an</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd516an?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd516an?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd516an?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-tankless-water-purifier-wd516an" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-360-double-booster-as10gdby0</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-360-double-booster-as10gdby0?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-360-double-booster-as10gdby0?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-360-double-booster-as10gdby0?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-360-double-booster-as10gdby0" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-360-single-booster-as65gdby0</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-360-single-booster-as65gdby0?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-360-single-booster-as65gdby0?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-360-single-booster-as65gdby0?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-360-single-booster-as65gdby0" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-360-hit-pet-version-as60ghbto</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-360-hit-pet-version-as60ghbto?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-360-hit-pet-version-as60ghbto?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-360-hit-pet-version-as60ghbto?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-360-hit-pet-version-as60ghbto" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-aerobooster-pet-version-as55ggsyo</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-aerobooster-pet-version-as55ggsyo?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-aerobooster-pet-version-as55ggsyo?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-aerobooster-pet-version-as55ggsyo?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-aerobooster-pet-version-as55ggsyo" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-aeromini-as30ggw10</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-aeromini-as30ggw10?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-aeromini-as30ggw10?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-aeromini-as30ggw10?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-aeromini-as30ggw10" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/puricare-aerocat-tower-as25gcbzo</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/puricare-aerocat-tower-as25gcbzo?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/puricare-aerocat-tower-as25gcbzo?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/puricare-aerocat-tower-as25gcbzo?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/puricare-aerocat-tower-as25gcbzo" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-styler-steam-clothing-care-s3wf</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-styler-steam-clothing-care-s3wf?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-styler-steam-clothing-care-s3wf?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-styler-steam-clothing-care-s3wf?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-styler-steam-clothing-care-s3wf" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/dualcool-ai-s3-q120agzb</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q120agzb?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q120agzb?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q120agzb?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q120agzb" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/dualcool-ai-s3-q2412gzc</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q2412gzc?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q2412gzc?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q2412gzc?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/dualcool-ai-s3-q2412gzc" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/artcool-mirror-s3-q12jarpa</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q12jarpa?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q12jarpa?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q12jarpa?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q12jarpa" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/artcool-mirror-s3-q24k2rpa</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q24k2rpa?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q24k2rpa?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q24k2rpa?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/artcool-mirror-s3-q24k2rpa" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/dualcool-s3-q09jaypp</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q09jaypp?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q09jaypp?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/dualcool-s3-q09jaypp?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/dualcool-s3-q09jaypp" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/dualcool-s3-q12jaypp</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q12jaypp?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q12jaypp?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/dualcool-s3-q12jaypp?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/dualcool-s3-q12jaypp" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/dualcool-s3-q18kaypa</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q18kaypa?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q18kaypa?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/dualcool-s3-q18kaypa?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/dualcool-s3-q18kaypa" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/dualcool-s3-q24klypa</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q24klypa?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/dualcool-s3-q24klypa?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/dualcool-s3-q24klypa?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/dualcool-s3-q24klypa" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/front-loader-washing-machine-fx1412s5gr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-fx1412s5gr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-fx1412s5gr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-fx1412s5gr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-fx1412s5gr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/front-loader-washing-machine-f2520snekr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-f2520snekr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-f2520snekr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-f2520snekr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/front-loader-washing-machine-f2520snekr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/washer-dryer-f2515rntkar</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/washer-dryer-f2515rntkar?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/washer-dryer-f2515rntkar?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/washer-dryer-f2515rntkar?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/washer-dryer-f2515rntkar" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-washtower-wt2520nhegr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-washtower-wt2520nhegr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-washtower-wt2520nhegr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-washtower-wt2520nhegr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-washtower-wt2520nhegr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-washtower-wt1410nhb</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-washtower-wt1410nhb?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-washtower-wt1410nhb?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-washtower-wt1410nhb?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-washtower-wt1410nhb" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-top-loader-tv2520sv9kr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-top-loader-tv2520sv9kr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-top-loader-tv2520sv9kr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-top-loader-tv2520sv9kr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-top-loader-tv2520sv9kr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-top-loader-tx2522at9gr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-top-loader-tx2522at9gr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-top-loader-tx2522at9gr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-top-loader-tx2522at9gr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-top-loader-tx2522at9gr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3kr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3kr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3kr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3kr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3kr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3wr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3wr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3wr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3wr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-dual-inverter-heat-pump-dryer-rx10vhp3wr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/instaview-french-door-gv-k25ffger</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/instaview-french-door-gv-k25ffger?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/instaview-french-door-gv-k25ffger?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/instaview-french-door-gv-k25ffger?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/instaview-french-door-gv-k25ffger" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-j257sqnw</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-j257sqnw?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-j257sqnw?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-j257sqnw?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-j257sqnw" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/top-freezer-refrigerator-gn-f452pqak</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/top-freezer-refrigerator-gn-f452pqak?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/top-freezer-refrigerator-gn-f452pqak?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/top-freezer-refrigerator-gn-f452pqak?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/top-freezer-refrigerator-gn-f452pqak" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-b257kljr</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-b257kljr?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-b257kljr?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-b257kljr?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/side-by-side-refrigerator-gc-b257kljr" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/quadwash-steam-dishwasher-dfc335hm</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/quadwash-steam-dishwasher-dfc335hm?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/quadwash-steam-dishwasher-dfc335hm?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/quadwash-steam-dishwasher-dfc335hm?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/quadwash-steam-dishwasher-dfc335hm" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-oled-ai-4k-tv</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-oled-ai-4k-tv?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-oled-ai-4k-tv?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-oled-ai-4k-tv?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-oled-ai-4k-tv" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-qned-evo-ai-mini-led</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-qned-evo-ai-mini-led?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-qned-evo-ai-mini-led?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-qned-evo-ai-mini-led?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-qned-evo-ai-mini-led" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/product/lg-nano-4k-uhd-ai-tv</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/product/lg-nano-4k-uhd-ai-tv?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/product/lg-nano-4k-uhd-ai-tv?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/product/lg-nano-4k-uhd-ai-tv?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/product/lg-nano-4k-uhd-ai-tv" />
   </url>
 </urlset>

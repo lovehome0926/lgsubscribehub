@@ -21,10 +21,10 @@ export default function Hero() {
             {live ? t("hero.promoCopy") : t("hero.copy")}
           </p>
           <div className="mt-5 flex flex-wrap gap-3 sm:mt-8">
-            <a href="#shop" className="rounded-full bg-lg-red px-5 py-2.5 text-sm font-semibold text-white hover:bg-lg-red-dark sm:px-6 sm:py-3">
+            <a href="/#shop" className="rounded-full bg-lg-red px-5 py-2.5 text-sm font-semibold text-white hover:bg-lg-red-dark sm:px-6 sm:py-3">
               {t("hero.cta")}
             </a>
-            <a href="#shop" className="rounded-full bg-[#FFB800] px-5 py-2.5 text-sm font-black tracking-wide text-[#111] hover:bg-[#F0A500] sm:px-6 sm:py-3">
+            <a href="/#shop" className="rounded-full bg-[#FFB800] px-5 py-2.5 text-sm font-black tracking-wide text-[#111] hover:bg-[#F0A500] sm:px-6 sm:py-3">
               {live ? t("hero.promoBadge") : t("hero.idleBadge")}
             </a>
           </div>

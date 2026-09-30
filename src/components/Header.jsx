@@ -38,11 +38,11 @@ function LangSwitch({ onPick, tone = "default" }) {
 }
 
 const LINKS = [
-  { href: "#shop", key: "shop" },
-  { href: "#why", key: "why" },
-  { href: "#care", key: "care" },
-  { href: "#stores", key: "stores" },
-  { href: "#reviews", key: "reviews" },
+  { href: "/#shop", key: "shop" },
+  { href: "/#why", key: "why" },
+  { href: "/care", key: "care" },
+  { href: "/#stores", key: "stores" },
+  { href: "/#reviews", key: "reviews" },
 ]
 
 export default function Header({ onHome }) {
@@ -52,8 +52,8 @@ export default function Header({ onHome }) {
 
   useEffect(() => {
     const close = () => setOpen(false)
-    window.addEventListener("hashchange", close)
-    return () => window.removeEventListener("hashchange", close)
+    window.addEventListener("popstate", close)
+    return () => window.removeEventListener("popstate", close)
   }, [])
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function Header({ onHome }) {
         </button>
         <nav className="hidden items-center gap-5 text-sm font-medium text-lg-ink lg:flex">
           <div className="group relative">
-            <a href="#shop" className="inline-flex items-center gap-1 hover:text-lg-red">
+            <a href="/#shop" className="inline-flex items-center gap-1 hover:text-lg-red">
               {t("nav.shop")}
               <ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />
             </a>
@@ -94,7 +94,7 @@ export default function Header({ onHome }) {
                 {CATEGORY_GROUPS.map((group) => (
                   <a
                     key={group.id}
-                    href={`#group-${group.id}`}
+                    href={`/shop/${group.id}`}
                     className="block rounded-xl px-3 py-2 hover:bg-lg-cream"
                   >
                     <span className="block text-sm font-semibold">{t(`groups.${group.id}.name`)}</span>
@@ -104,10 +104,10 @@ export default function Header({ onHome }) {
               </div>
             </div>
           </div>
-          <a href="#why" className="hover:text-lg-red">{t("nav.why")}</a>
-          <a href="#care" className="hover:text-lg-red">{t("nav.care")}</a>
-          <a href="#stores" className="hover:text-lg-red">{t("nav.stores")}</a>
-          <a href="#reviews" className="hover:text-lg-red">{t("nav.reviews")}</a>
+          <a href="/#why" className="hover:text-lg-red">{t("nav.why")}</a>
+          <a href="/care" className="hover:text-lg-red">{t("nav.care")}</a>
+          <a href="/#stores" className="hover:text-lg-red">{t("nav.stores")}</a>
+          <a href="/#reviews" className="hover:text-lg-red">{t("nav.reviews")}</a>
           <a
             href={CAREER.href}
             className="inline-flex items-center rounded-full border border-lg-red px-3 py-1 text-sm font-semibold text-lg-red hover:bg-lg-red hover:text-white"
@@ -171,7 +171,7 @@ export default function Header({ onHome }) {
               {CATEGORY_GROUPS.map((group) => (
                 <a
                   key={group.id}
-                  href={`#group-${group.id}`}
+                  href={`/shop/${group.id}`}
                   onClick={() => setOpen(false)}
                   className="rounded-2xl bg-lg-cream px-4 py-3"
                 >

@@ -514,7 +514,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
           </button>
           <span>/</span>
           {groupOf(product) ? (
-            <a href={`#group-${groupOf(product).id}`} className="font-medium hover:text-lg-red">
+            <a href={`/shop/${groupOf(product).id}`} className="font-medium hover:text-lg-red">
               {product.category}
             </a>
           ) : (

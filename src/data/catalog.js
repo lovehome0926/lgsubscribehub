@@ -588,12 +588,16 @@ export function lowestMonthly(product) {
 
 export const startingMonthly = lowestMonthly
 
-export function productById(id) {
+export function findProduct(id) {
   const want = String(id || "").toLowerCase()
   return (
     PRODUCTS.find((item) => item.id === id) ??
     PRODUCTS.find((item) => item.model?.toLowerCase() === want) ??
     PRODUCTS.find((item) => item.sku?.toLowerCase() === want) ??
-    PRODUCTS[0]
+    null
   )
+}
+
+export function productById(id) {
+  return findProduct(id) ?? PRODUCTS[0]
 }

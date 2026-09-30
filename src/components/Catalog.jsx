@@ -215,9 +215,29 @@ export default function Catalog({ onSelect }) {
         </div>
 
         {live ? (
-          <div className="mt-8 rounded-[22px] bg-[#A50034] px-5 py-4 text-white shadow-[0_10px_24px_rgba(165,0,52,0.28)]">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/80">{t("campaign.tag")}</p>
-            <p className="mt-1 text-lg font-black leading-snug">{t("campaign.banner")}</p>
+          <div className="mt-8 overflow-hidden rounded-[22px] bg-[#111] text-white shadow-[0_16px_40px_rgba(17,17,17,0.28)] ring-2 ring-[#E10600]">
+            <div className="bg-[#E10600] px-5 py-3 sm:px-6">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/80">{t("campaign.tag")}</p>
+              <p className="mt-1 text-lg font-black leading-snug text-[#FFD100] sm:text-xl">{t("campaign.banner")}</p>
+            </div>
+            <div className="grid gap-3 px-5 py-4 sm:grid-cols-3 sm:px-6">
+              <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift2")}</p>
+                <p className="mt-1 text-sm font-black">{t("campaign.gift2Prize")}</p>
+              </div>
+              <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift3")}</p>
+                <p className="mt-1 text-sm font-black">{t("campaign.gift3Prize")}</p>
+              </div>
+              <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift4")}</p>
+                <p className="mt-1 text-sm font-black">{t("campaign.gift4Prize")}</p>
+              </div>
+            </div>
+            <p className="border-t border-white/10 px-5 py-3 text-xs leading-5 text-white/70 sm:px-6">
+              <span className="font-bold text-white">{t("campaign.giftTitle")}. </span>
+              {t("campaign.giftLead")}
+            </p>
           </div>
         ) : null}
 

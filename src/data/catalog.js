@@ -202,9 +202,10 @@ function scopeRank(scope, product) {
   if (product.category?.toLowerCase() === target.toLowerCase()) return 2
 
   const want = compactCode(target)
-  if (want.length >= 5) {
+  if (want.length >= 3) {
     for (const code of productCodes(product)) {
-      if (code === want || code.startsWith(want) || want.startsWith(code)) return 4
+      if (code === want) return 4
+      if (want.length >= 5 && (code.startsWith(want) || want.startsWith(code))) return 4
     }
   }
   return -1
@@ -283,8 +284,23 @@ export function applyPromo(monthly, promo, plan = {}) {
 
 export function dealForListing(product, specs) {
   const promo = promoForProduct(product)
-  const lowest = lowestMonthlyFor(specs)
-  const list = promo?.afterPrice ?? lowest
+  const locked = promo && (promo.tenure != null || promo.care)
+  let list = lowestMonthlyFor(specs)
+  if (locked) {
+    let best = null
+    const tenures = promo.tenure != null ? [promo.tenure] : [60, 84]
+    const cares = promo.care ? [promo.care] : ["self", "combined", "visit", "none"]
+    for (const spec of specs) {
+      for (const tenure of tenures) {
+        for (const care of cares) {
+          const value = planPrice(spec, { payMode: "subscribe", tenure, care, cycle: 6 })
+          if (isMoney(value) && (best == null || value < best)) best = value
+        }
+      }
+    }
+    if (best != null) list = best
+  }
+  if (promo?.afterPrice != null && promo.promoPrice != null) list = promo.afterPrice
   return { promo, ...applyPromo(list, promo, { tenure: promo?.tenure, care: promo?.care }) }
 }
 
@@ -302,7 +318,7 @@ export const PROMO_TABS = [
   { id: "half", label: "Half Price", short: "HALF PRICE" },
   { id: "deep", label: "77% Off", short: "77% OFF" },
   { id: "percent", label: "% Off", short: "% OFF" },
-  { id: "merdeka", label: "Merdeka", short: "MERDEKA" },
+  { id: "merdeka", label: "10.10", short: "10.10" },
   { id: "cash", label: "RM Off", short: "RM OFF" },
 ]
 
@@ -332,12 +348,12 @@ const THEMES = {
     price: "text-[#C2410C]",
   },
   merdeka: {
-    kicker: "Merdeka",
-    badge: "MERDEKA",
-    className: "bg-[#111111] text-[#FFD100] shadow-[0_10px_24px_rgba(17,17,17,0.28)] ring-2 ring-[#C8102E]",
-    tab: "bg-[#111111] text-[#FFD100] ring-[#C8102E]",
+    kicker: "10.10",
+    badge: "10.10",
+    className: "bg-[#111111] text-[#FFD100] shadow-[0_10px_24px_rgba(17,17,17,0.28)] ring-2 ring-[#E10600]",
+    tab: "bg-[#111111] text-[#FFD100] ring-[#E10600]",
     soft: "bg-[#111111] text-[#FFD100]",
-    price: "text-[#C8102E]",
+    price: "text-[#E10600]",
   },
   cash: {
     kicker: "Every month",
@@ -374,7 +390,7 @@ export function promoTheme(promo) {
     line = months ? `First ${months} months` : "Intro price"
   } else if (kind === "merdeka") {
     badge = promo.badge || "MERDEKA"
-    line = promo.promoPrice != null ? `RM ${promo.promoPrice}/mth` : cash ? `RM${cash} off / month` : "National Day deal"
+    line = promo.promoPrice != null ? `RM ${promo.promoPrice}/mth` : cash ? `RM${cash} off / month` : "10.10 October deal"
   } else if (kind === "cash") {
     badge = promo.badge || `RM${cash} OFF`
     line = "Every month"

@@ -6,7 +6,7 @@ export { CAMPAIGN, campaignActive } from "./promoConfig.js"
 export const OCTOBER_PROMOS = []
 export const MERDEKA_PROMOS = OCTOBER_PROMOS
 
-export const PAUSED_MODELS = ["GC-X24FFC7R", "MH21RRY"]
+export const PAUSED_MODELS = ["GC-X24FFC7R", "MH21RRY", "RX10VHP3WR"]
 export const DELISTED_MODELS = ["DFC533FV", "FV1450S2W"]
 
 export const EXTRA_PRODUCTS = []

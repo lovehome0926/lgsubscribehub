@@ -39,6 +39,7 @@ function LangSwitch({ onPick, tone = "default" }) {
 
 const LINKS = [
   { href: "/#shop", key: "shop" },
+  { href: "/promotions", key: "promotions" },
   { href: "/#why", key: "why" },
   { href: "/care", key: "care" },
   { href: "/#stores", key: "stores" },
@@ -104,6 +105,7 @@ export default function Header({ onHome }) {
               </div>
             </div>
           </div>
+          <a href="/promotions" className="hover:text-lg-red">{t("nav.promotions")}</a>
           <a href="/#why" className="hover:text-lg-red">{t("nav.why")}</a>
           <a href="/care" className="hover:text-lg-red">{t("nav.care")}</a>
           <a href="/#stores" className="hover:text-lg-red">{t("nav.stores")}</a>

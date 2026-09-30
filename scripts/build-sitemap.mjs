@@ -21,14 +21,15 @@ function loc(path, lang) {
   return lang ? `${SITE_ORIGIN}${clean}?lang=${lang}` : `${SITE_ORIGIN}${clean}`
 }
 
-function urlEntry(path, changefreq) {
+function urlEntry(path, changefreq, priority) {
   const links = LANGS.map(
     ([hreflang, lang]) =>
       `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${xml(loc(path, lang))}" />`,
   ).join("\n")
+  const priorityTag = priority ? `\n    <priority>${priority}</priority>` : ""
   return `  <url>
     <loc>${xml(loc(path))}</loc>
-    <changefreq>${changefreq}</changefreq>
+    <changefreq>${changefreq}</changefreq>${priorityTag}
 ${links}
     <xhtml:link rel="alternate" hreflang="x-default" href="${xml(loc(path))}" />
   </url>`
@@ -36,6 +37,7 @@ ${links}
 
 const paths = [
   ["/", "weekly"],
+  ["/promotions", "monthly", "0.9"],
   ["/care", "monthly"],
   ["/career", "monthly"],
   ...CATEGORY_GROUPS.map((group) => [`/shop/${group.id}`, "weekly"]),
@@ -44,7 +46,7 @@ const paths = [
 
 const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${paths.map(([path, freq]) => urlEntry(path, freq)).join("\n")}
+${paths.map(([path, freq, priority]) => urlEntry(path, freq, priority)).join("\n")}
 </urlset>
 `
 

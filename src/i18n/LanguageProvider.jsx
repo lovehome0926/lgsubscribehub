@@ -94,18 +94,18 @@ function pageUrl(path, lang) {
   return lang ? `${SITE_ORIGIN}${clean}?lang=${lang}` : `${SITE_ORIGIN}${clean}`
 }
 
-export function usePageSeo({ title, description, path = "/", image = "" }) {
+export function usePageSeo({ title, description, path = "/", image = "", ogTitle, ogDescription, canonical }) {
   const { lang } = useLang()
   useEffect(() => {
     const meta = LANGS.find((item) => item.id === lang)
-    const canonical = pageUrl(path, lang)
+    const canonicalHref = canonical || pageUrl(path, lang)
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute("content", description)
-    document.querySelector('meta[property="og:title"]')?.setAttribute("content", title)
-    document.querySelector('meta[property="og:description"]')?.setAttribute("content", description)
-    document.querySelector('meta[property="og:url"]')?.setAttribute("content", canonical)
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", ogTitle || title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", ogDescription || description)
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", canonicalHref)
     document.querySelector('meta[property="og:locale"]')?.setAttribute("content", meta?.og || "en_MY")
-    document.querySelector('link[rel="canonical"]')?.setAttribute("href", canonical)
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", canonicalHref)
     const picture = image || DEFAULT_OG
     document.querySelector('meta[property="og:image"]')?.setAttribute("content", picture)
     document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", picture)
@@ -113,5 +113,5 @@ export function usePageSeo({ title, description, path = "/", image = "" }) {
       document.querySelector(`link[rel="alternate"][hreflang="${item.html}"]`)?.setAttribute("href", pageUrl(path, item.id))
     }
     document.querySelector('link[rel="alternate"][hreflang="x-default"]')?.setAttribute("href", pageUrl(path, ""))
-  }, [description, image, lang, path, title])
+  }, [canonical, description, image, lang, ogDescription, ogTitle, path, title])
 }

@@ -13,6 +13,7 @@ import WhatsAppFab from "./components/WhatsAppFab"
 import ProductDetail from "./components/ProductDetail"
 import ProductJsonLd from "./components/ProductJsonLd"
 import Career from "./components/Career"
+import Promotions from "./components/Promotions"
 import SeoJsonLd from "./components/SeoJsonLd"
 import { dealForListing, findProduct } from "./data/catalog"
 import { useLang, usePageSeo } from "./i18n/LanguageProvider"
@@ -76,7 +77,7 @@ export default function App() {
 
   useEffect(() => {
     if (route.name === "career") return
-    if (route.name === "care" || route.name === "product") {
+    if (route.name === "care" || route.name === "product" || route.name === "promotions") {
       window.scrollTo(0, 0)
       return
     }
@@ -96,6 +97,18 @@ export default function App() {
   const missing = route.name === "product" && !product
 
   const seo = useMemo(() => {
+    if (route.name === "promotions") {
+      return {
+        title: "LG Subscribe Promotions & Monthly Deals | Special Rental Rates Malaysia",
+        description:
+          "Explore the latest official LG Subscribe promotions in Malaysia. Enjoy promotional monthly rental rates, 50% off selected months, free installation, and official CareShip service.",
+        ogTitle: "LG Subscribe Monthly Promotions & Official Deals",
+        ogDescription:
+          "Discover the latest monthly LG Rent Up & Subscription deals in Malaysia. Free installation & CareShip included.",
+        path: "/promotions",
+        canonical: "https://lgsubscribehub.com.my/promotions",
+      }
+    }
     if (route.name === "care") {
       return { title: t("seo.careTitle"), description: t("seo.careDescription"), path: "/care" }
     }
@@ -126,6 +139,14 @@ export default function App() {
   }, [missing, product, route, t])
 
   usePageSeo(seo)
+
+  if (route.name === "promotions") {
+    return (
+      <Shell onHome={goHome}>
+        <Promotions />
+      </Shell>
+    )
+  }
 
   if (route.name === "career") {
     return (

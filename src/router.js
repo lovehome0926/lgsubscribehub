@@ -32,6 +32,7 @@ export function readRoute(loc = window.location) {
   if (!page) return { name: "home" }
   if (page === "career") return { name: "career", section: id || null }
   if (page === "care") return { name: "care" }
+  if (page === "promotions") return { name: "promotions" }
   if (page === "product" && id) return { name: "product", id, a: a || null, b: b || null }
   if (page === "shop" && id && groupById(id)) return { name: "shop", groupId: id }
   return { name: "home" }
@@ -42,6 +43,7 @@ function legacyPath() {
   if (!hash || HOME_ANCHORS.has(hash)) return null
   const [page, id, a, b] = hash.split("/")
   if (page === "care") return "/care"
+  if (page === "promotions") return "/promotions"
   if (page === "career") return id ? `/career/${encodeURIComponent(id)}` : "/career"
   if (page === "product" && id) return productPath(id, a, b)
   if (page.startsWith("group-")) {

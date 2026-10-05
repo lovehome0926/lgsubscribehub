@@ -31,6 +31,12 @@ function pages() {
     { path: "/promotions/", ...PROMOTIONS },
     { path: "/care/", title: en.seo.careTitle, description: en.seo.careDescription },
     { path: "/career/", title: en.seo.careerTitle, description: en.seo.careerDescription },
+    {
+      path: "/shop/water-air/",
+      title: fill(en.seo.categoryTitle, { name: en.groups["water-air"].name }),
+      description: en.groups["water-air"].blurb,
+      robots: "noindex, follow",
+    },
   ]
   for (const group of CATEGORY_GROUPS) {
     const copy = en.groups[group.id]
@@ -67,7 +73,7 @@ function render(template, page) {
       '<meta charset="UTF-8" />\n    <meta name="robots" content="index, follow" />',
     )
   }
-  html = html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/>/, '<meta name="robots" content="index, follow" />')
+  html = html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/>/, `<meta name="robots" content="${attr(page.robots || "index, follow")}" />`)
   html = html.replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${attr(canonical)}" />`)
   html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/, `<meta property="og:url" content="${attr(canonical)}" />`)
   html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/, `<meta property="og:title" content="${attr(ogTitle)}" />`)
@@ -86,10 +92,10 @@ function render(template, page) {
     html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/>/, `<meta property="og:image" content="${attr(page.image)}" />`)
     html = html.replace(/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:image" content="${attr(page.image)}" />`)
   }
-  if (!html.includes('content="index, follow"') || !html.includes(`href="${attr(canonical)}"`)) {
+  if (!html.includes(`content="${page.robots || "index, follow"}"`) || !html.includes(`href="${attr(canonical)}"`)) {
     throw new Error(`missing robots or canonical for ${page.path}`)
   }
-  if (/noindex|nofollow/i.test(html)) throw new Error(`noindex found for ${page.path}`)
+  if (!page.robots && /noindex|nofollow/i.test(html)) throw new Error(`noindex found for ${page.path}`)
   return html
 }
 

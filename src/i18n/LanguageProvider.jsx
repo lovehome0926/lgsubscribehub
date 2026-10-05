@@ -94,7 +94,7 @@ function pageUrl(path, lang) {
   return lang ? `${SITE_ORIGIN}${clean}?lang=${lang}` : `${SITE_ORIGIN}${clean}`
 }
 
-export function usePageSeo({ title, description, path = "/", image = "", ogTitle, ogDescription, canonical }) {
+export function usePageSeo({ title, description, path = "/", image = "", ogTitle, ogDescription, canonical, robots: robotsContent = "index, follow" }) {
   const { lang } = useLang()
   useEffect(() => {
     const meta = LANGS.find((item) => item.id === lang)
@@ -106,7 +106,7 @@ export function usePageSeo({ title, description, path = "/", image = "", ogTitle
       robots.setAttribute("name", "robots")
       document.head.appendChild(robots)
     }
-    robots.setAttribute("content", "index, follow")
+    robots.setAttribute("content", robotsContent)
     document.querySelector('meta[name="description"]')?.setAttribute("content", description)
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", ogTitle || title)
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", ogDescription || description)
@@ -120,5 +120,5 @@ export function usePageSeo({ title, description, path = "/", image = "", ogTitle
       document.querySelector(`link[rel="alternate"][hreflang="${item.html}"]`)?.setAttribute("href", pageUrl(path, item.id))
     }
     document.querySelector('link[rel="alternate"][hreflang="x-default"]')?.setAttribute("href", pageUrl(path, ""))
-  }, [canonical, description, image, lang, ogDescription, ogTitle, path, title])
+  }, [canonical, description, image, lang, ogDescription, ogTitle, path, robotsContent, title])
 }

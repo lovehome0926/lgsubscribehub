@@ -34,12 +34,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/career/" />
   </url>
   <url>
-    <loc>https://lgsubscribehub.com.my/shop/water-air/</loc>
+    <loc>https://lgsubscribehub.com.my/shop/water/</loc>
     <changefreq>weekly</changefreq>
-    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/water-air/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/water-air/?lang=bm" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/water-air/?lang=cn" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/water-air/" />
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/water/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/water/?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/water/?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/water/" />
+  </url>
+  <url>
+    <loc>https://lgsubscribehub.com.my/shop/air/</loc>
+    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://lgsubscribehub.com.my/shop/air/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://lgsubscribehub.com.my/shop/air/?lang=bm" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lgsubscribehub.com.my/shop/air/?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lgsubscribehub.com.my/shop/air/" />
   </url>
   <url>
     <loc>https://lgsubscribehub.com.my/shop/cooling/</loc>

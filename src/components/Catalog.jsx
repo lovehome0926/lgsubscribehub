@@ -346,3 +346,22 @@ export default function Catalog({ groupId = null, onGroup }) {
     </section>
   )
 }
+
+export function ShopHub() {
+  const { t } = useLang()
+  const links = ["water", "air"]
+  return (
+    <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+      <h1 className="text-3xl font-semibold">{t("groups.water-air.name")}</h1>
+      <p className="mt-3 text-sm leading-7 text-lg-muted">{t("groups.water-air.blurb")}</p>
+      <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        {links.map((id) => (
+          <a key={id} href={`/shop/${id}/`} className="rounded-2xl bg-white p-5 ring-1 ring-lg-line hover:ring-lg-red">
+            <span className="text-lg font-semibold">{t(`groups.${id}.name`)}</span>
+            <p className="mt-2 text-sm leading-6 text-lg-muted">{t(`groups.${id}.blurb`)}</p>
+          </a>
+        ))}
+      </div>
+    </main>
+  )
+}

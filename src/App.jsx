@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import HomeChooser from "./components/HomeChooser"
-import Catalog from "./components/Catalog"
+import Catalog, { ShopHub } from "./components/Catalog"
 import WhySubscribe from "./components/WhySubscribe"
 import CareShip from "./components/CareShip"
 import Stores from "./components/Stores"
@@ -127,6 +127,14 @@ export default function App() {
     if (route.name === "career") {
       return { title: t("seo.careerTitle"), description: t("seo.careerDescription"), path: "/career/" }
     }
+    if (route.name === "shop-hub") {
+      return {
+        title: t("seo.categoryTitle", { name: t("groups.water-air.name") }),
+        description: t("groups.water-air.blurb"),
+        path: "/shop/water-air/",
+        robots: "noindex, follow",
+      }
+    }
     if (route.name === "shop") {
       return {
         title: t("seo.categoryTitle", { name: t(`groups.${route.groupId}.name`) }),
@@ -172,6 +180,14 @@ export default function App() {
     return (
       <Shell onHome={goHome}>
         <CareShip />
+      </Shell>
+    )
+  }
+
+  if (route.name === "shop-hub") {
+    return (
+      <Shell onHome={goHome}>
+        <ShopHub />
       </Shell>
     )
   }

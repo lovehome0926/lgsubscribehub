@@ -34,6 +34,7 @@ export function readRoute(loc = window.location) {
   if (page === "care") return { name: "care" }
   if (page === "promotions") return { name: "promotions" }
   if (page === "product" && id) return { name: "product", id, a: a || null, b: b || null }
+  if (page === "shop" && id === "water-air") return { name: "shop-hub" }
   if (page === "shop" && id && groupById(id)) return { name: "shop", groupId: id }
   return { name: "home" }
 }
@@ -48,6 +49,7 @@ function legacyPath() {
   if (page === "product" && id) return productPath(id, a, b)
   if (page.startsWith("group-")) {
     const groupId = page.slice("group-".length)
+    if (groupId === "water-air") return "/shop/water-air/"
     if (groupById(groupId)) return shopGroupPath(groupId)
   }
   return null

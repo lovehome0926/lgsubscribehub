@@ -13,7 +13,9 @@ export default {
     idleBanner: "LG Subscribe™ plans · CareShip™ options · Ask Cindy {phone}",
   },
   groups: {
-    "water-air": { name: "Water & Air", blurb: "Purified water and cleaner air for every room." },
+    water: { name: "Water Purifiers", blurb: "LG PuriCare water purifiers to subscribe in Malaysia." },
+    air: { name: "Air Purifiers", blurb: "LG PuriCare air purifiers for cleaner air at home." },
+    "water-air": { name: "Water & Air", blurb: "Choose water purifiers or air purifiers." },
     cooling: { name: "Air Conditioners", blurb: "DUALCOOL and ARTCOOL inverter cooling." },
     laundry: { name: "Laundry & Care", blurb: "Washers, dryers, WashTower and Styler garment care." },
     kitchen: { name: "Kitchen", blurb: "InstaView refrigerators and QuadWash dishwashers." },

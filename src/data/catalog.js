@@ -55,10 +55,16 @@ export const IMG = {
 // Shopfront grouping. `categories` holds the fine-grained values found on each product.
 export const CATEGORY_GROUPS = [
   {
-    id: "water-air",
-    name: "Water & Air",
-    blurb: "Purified water and cleaner air for every room.",
-    categories: ["Water Purifiers", "Air Purifiers"],
+    id: "water",
+    name: "Water Purifiers",
+    blurb: "LG PuriCare water purifiers to subscribe in Malaysia.",
+    categories: ["Water Purifiers"],
+  },
+  {
+    id: "air",
+    name: "Air Purifiers",
+    blurb: "LG PuriCare air purifiers for cleaner air at home.",
+    categories: ["Air Purifiers"],
   },
   {
     id: "cooling",

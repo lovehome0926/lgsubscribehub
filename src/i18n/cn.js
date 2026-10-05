@@ -13,7 +13,9 @@ export default {
     idleBanner: "LG Subscribe™ 方案 · CareShip™ 选项 · 联系 Cindy {phone}",
   },
   groups: {
-    "water-air": { name: "净水与空气", blurb: "每一间房都能用上净水与更干净的空气。" },
+    water: { name: "净水器", blurb: "LG PuriCare 净水器，马来西亚订阅。" },
+    air: { name: "空气净化器", blurb: "LG PuriCare 空气净化器，让家里空气更干净。" },
+    "water-air": { name: "净水与空气", blurb: "选择净水器或空气净化器。" },
     cooling: { name: "冷气", blurb: "DUALCOOL 与 ARTCOOL 变频制冷。" },
     laundry: { name: "洗衣护理", blurb: "洗衣机、干衣机、WashTower 与 Styler 衣物护理。" },
     kitchen: { name: "厨房", blurb: "InstaView 冰箱与 QuadWash 洗碗机。" },

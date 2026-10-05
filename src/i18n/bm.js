@@ -13,7 +13,9 @@ export default {
     idleBanner: "Pelan LG Subscribe™ · pilihan CareShip™ · Tanya Cindy {phone}",
   },
   groups: {
-    "water-air": { name: "Air & Udara", blurb: "Air tertapis dan udara lebih bersih untuk setiap bilik." },
+    water: { name: "Penapis Air", blurb: "Penapis air LG PuriCare untuk langganan di Malaysia." },
+    air: { name: "Pembersih Udara", blurb: "Pembersih udara LG PuriCare untuk udara rumah yang lebih bersih." },
+    "water-air": { name: "Air & Udara", blurb: "Pilih penapis air atau pembersih udara." },
     cooling: { name: "Penyaman Udara", blurb: "Penyejukan inverter DUALCOOL dan ARTCOOL." },
     laundry: { name: "Dobi & Penjagaan", blurb: "Mesin basuh, pengering, WashTower dan Styler." },
     kitchen: { name: "Dapur", blurb: "Peti sejuk InstaView dan mesin basuh pinggan QuadWash." },

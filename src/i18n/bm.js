@@ -603,4 +603,9 @@ export default {
       quizJoe: "Hai Joe, saya siap kuiz laluan. Keputusan ialah “{title}”. Saya ingin tahu langkah seterusnya.",
     },
   },
+  promoPdf: {
+    title: "Tawaran bulan ini",
+    download: "Muat turun",
+    close: "Tutup",
+  },
 }

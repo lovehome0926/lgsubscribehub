@@ -14,6 +14,7 @@ import ProductDetail from "./components/ProductDetail"
 import ProductJsonLd from "./components/ProductJsonLd"
 import Career from "./components/Career"
 import Promotions from "./components/Promotions"
+import PromoPdf from "./components/PromoPdf"
 import SeoJsonLd from "./components/SeoJsonLd"
 import { dealForListing, findProduct } from "./data/catalog"
 import { useLang, usePageSeo } from "./i18n/LanguageProvider"
@@ -191,6 +192,7 @@ export default function App() {
 
   return (
     <Shell onHome={goHome}>
+      {route.name === "home" ? <PromoPdf /> : null}
       <Hero />
       <HomeChooser />
       <Catalog

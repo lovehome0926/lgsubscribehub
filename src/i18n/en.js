@@ -603,4 +603,9 @@ export default {
       quizJoe: "Hi Joe, I finished the route quiz. The result is “{title}”. I would like to know the next step.",
     },
   },
+  promoPdf: {
+    title: "This month's offers",
+    download: "Download",
+    close: "Close",
+  },
 }

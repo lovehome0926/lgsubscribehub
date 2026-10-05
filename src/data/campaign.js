@@ -1,4 +1,5 @@
 // Product patches only. October prices live in promoConfig.evaluateProductPricing.
+import { DIMENSION_FACTS } from "./dimensions.js"
 import { applyF2520Name, applyFx1412 } from "./fx1412.js"
 import { WASHTOWER_RATES } from "./promoConfig.js"
 
@@ -100,6 +101,45 @@ function applyWashTowerRates(product) {
   }
 }
 
+const DIMENSION_LABEL = /dimension|尺寸|wxhxd|w x h/i
+
+function factsHaveDimensions(facts) {
+  return (facts || []).some((fact) => DIMENSION_LABEL.test(`${fact?.label || ""} ${fact?.value || ""}`))
+}
+
+function withDimensionFacts(facts, extra) {
+  const current = facts || []
+  if (!extra?.length || factsHaveDimensions(current)) return current
+  return [...current, ...extra]
+}
+
+function applyDimensions(product) {
+  const extra = DIMENSION_FACTS[product.model]
+  if (!extra) return product
+  return {
+    ...product,
+    facts: withDimensionFacts(product.facts, extra),
+    colors: (product.colors || []).map((color) => ({
+      ...color,
+      variants: Object.fromEntries(
+        Object.entries(color.variants || {}).map(([key, variant]) => {
+          if (!variant?.detail) return [key, variant]
+          return [
+            key,
+            {
+              ...variant,
+              detail: {
+                ...variant.detail,
+                facts: withDimensionFacts(variant.detail.facts, extra),
+              },
+            },
+          ]
+        }),
+      ),
+    })),
+  }
+}
+
 function applyB257Hero(product) {
   if (product.model !== "GC-B257KLJR") return product
   const hero = "/products/GC-B257KLJR.jpg"
@@ -113,8 +153,10 @@ export function patchProducts(products) {
   return products
     .filter((product) => !DELISTED_MODELS.includes(product.model))
     .map((product) => {
-      let next = applyWashTowerRates(
-        applyB257Hero(applyFx1412(applyF2520Name(patchF2515(applyDualcoolAiLook(product, dualcoolAi))), f2520)),
+      let next = applyDimensions(
+        applyWashTowerRates(
+          applyB257Hero(applyFx1412(applyF2520Name(patchF2515(applyDualcoolAiLook(product, dualcoolAi))), f2520)),
+        ),
       )
       if (PAUSED_MODELS.includes(product.model)) next = { ...next, paused: true }
       return next

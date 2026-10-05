@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-sitemap.mjs && vite build && node scripts/write-promotions-html.mjs",
+    "build": "node scripts/render-promo-pdf.mjs && node scripts/build-sitemap.mjs && vite build && node scripts/write-promotions-html.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
     "sync": "node scripts/sync-sheet.mjs",
@@ -22,6 +22,8 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "^1.0.10",
+    "pdfjs-dist": "^6.4.299",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",

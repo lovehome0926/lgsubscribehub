@@ -601,4 +601,9 @@ export default {
       quizJoe: "你好Joe，我完成了路线测试，结果是「{title}」。想了解下一步。",
     },
   },
+  promoPdf: {
+    title: "本月优惠",
+    download: "下载",
+    close: "关闭",
+  },
 }

@@ -17,6 +17,7 @@ import Promotions from "./components/Promotions"
 import PromoPdf from "./components/PromoPdf"
 import SeoJsonLd from "./components/SeoJsonLd"
 import { dealForListing, findProduct } from "./data/catalog"
+import { isWhatsAppLead, trackLeadConversion } from "./gtag"
 import { useLang, usePageSeo } from "./i18n/LanguageProvider"
 import { bindSpaLinks, navigate, productPath, promoteLegacyHash, readRoute, shopGroupPath } from "./router"
 
@@ -75,6 +76,16 @@ export default function App() {
   }, [])
 
   useEffect(() => bindSpaLinks(), [])
+
+  useEffect(() => {
+    const onClick = (event) => {
+      const link = event.target.closest?.("a[href]")
+      if (!link || !isWhatsAppLead(link.href)) return
+      trackLeadConversion()
+    }
+    document.addEventListener("click", onClick)
+    return () => document.removeEventListener("click", onClick)
+  }, [])
 
   useEffect(() => {
     if (route.name === "career") return

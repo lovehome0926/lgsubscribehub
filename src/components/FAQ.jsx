@@ -26,7 +26,7 @@ export default function Faq() {
                     {item.career ? (
                       <>
                         {" "}
-                        <a href="/career" className="font-semibold text-lg-red hover:text-lg-red-dark">
+                        <a href="/career/" className="font-semibold text-lg-red hover:text-lg-red-dark">
                           {t("faq.openCareer")}
                         </a>
                       </>
@@ -34,7 +34,7 @@ export default function Faq() {
                     {item.careship ? (
                       <>
                         {" "}
-                        <a href="/care" className="font-semibold text-lg-red hover:text-lg-red-dark">
+                        <a href="/care/" className="font-semibold text-lg-red hover:text-lg-red-dark">
                           {t("nav.care")}
                         </a>
                       </>

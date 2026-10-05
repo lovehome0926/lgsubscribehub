@@ -45,7 +45,7 @@ export default function SiteFooter() {
                   </a>
                 ))}
               </div>
-              <a href="/care" className="mt-2 inline-flex font-semibold text-lg-red hover:text-lg-red-dark">
+              <a href="/care/" className="mt-2 inline-flex font-semibold text-lg-red hover:text-lg-red-dark">
                 {t("nav.care")}
               </a>
             </div>

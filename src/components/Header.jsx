@@ -41,7 +41,7 @@ const LINKS = [
   { href: "/#shop", key: "shop" },
   { href: "/promotions/", key: "promotions" },
   { href: "/#why", key: "why" },
-  { href: "/care", key: "care" },
+  { href: "/care/", key: "care" },
   { href: "/#stores", key: "stores" },
   { href: "/#reviews", key: "reviews" },
 ]
@@ -95,7 +95,7 @@ export default function Header({ onHome }) {
                 {CATEGORY_GROUPS.map((group) => (
                   <a
                     key={group.id}
-                    href={`/shop/${group.id}`}
+                    href={`/shop/${group.id}/`}
                     className="block rounded-xl px-3 py-2 hover:bg-lg-cream"
                   >
                     <span className="block text-sm font-semibold">{t(`groups.${group.id}.name`)}</span>
@@ -107,7 +107,7 @@ export default function Header({ onHome }) {
           </div>
           <a href="/promotions/" className="hover:text-lg-red">{t("nav.promotions")}</a>
           <a href="/#why" className="hover:text-lg-red">{t("nav.why")}</a>
-          <a href="/care" className="hover:text-lg-red">{t("nav.care")}</a>
+          <a href="/care/" className="hover:text-lg-red">{t("nav.care")}</a>
           <a href="/#stores" className="hover:text-lg-red">{t("nav.stores")}</a>
           <a href="/#reviews" className="hover:text-lg-red">{t("nav.reviews")}</a>
           <a
@@ -173,7 +173,7 @@ export default function Header({ onHome }) {
               {CATEGORY_GROUPS.map((group) => (
                 <a
                   key={group.id}
-                  href={`/shop/${group.id}`}
+                  href={`/shop/${group.id}/`}
                   onClick={() => setOpen(false)}
                   className="rounded-2xl bg-lg-cream px-4 py-3"
                 >

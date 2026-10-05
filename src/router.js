@@ -6,11 +6,11 @@ export function productPath(id, specId, colorId) {
   const parts = ["/product", encodeURIComponent(id)]
   if (specId) parts.push(encodeURIComponent(specId))
   if (colorId) parts.push(encodeURIComponent(colorId))
-  return parts.join("/")
+  return `${parts.join("/")}/`
 }
 
 export function shopGroupPath(groupId) {
-  return `/shop/${groupId}`
+  return `/shop/${groupId}/`
 }
 
 function partsOf(pathname) {
@@ -42,9 +42,9 @@ function legacyPath() {
   const hash = window.location.hash.replace(/^#\/?/, "")
   if (!hash || HOME_ANCHORS.has(hash)) return null
   const [page, id, a, b] = hash.split("/")
-  if (page === "care") return "/care"
+  if (page === "care") return "/care/"
   if (page === "promotions") return "/promotions/"
-  if (page === "career") return id ? `/career/${encodeURIComponent(id)}` : "/career"
+  if (page === "career") return id ? `/career/${encodeURIComponent(id)}` : "/career/"
   if (page === "product" && id) return productPath(id, a, b)
   if (page.startsWith("group-")) {
     const groupId = page.slice("group-".length)

@@ -38,10 +38,10 @@ ${links}
 const paths = [
   ["/", "weekly"],
   ["/promotions/", "monthly", "0.9"],
-  ["/care", "monthly"],
-  ["/career", "monthly"],
-  ...CATEGORY_GROUPS.map((group) => [`/shop/${group.id}`, "weekly"]),
-  ...PRODUCTS.map((product) => [`/product/${encodeURIComponent(product.id)}`, "weekly"]),
+  ["/care/", "monthly"],
+  ["/career/", "monthly"],
+  ...CATEGORY_GROUPS.map((group) => [`/shop/${group.id}/`, "weekly"]),
+  ...PRODUCTS.map((product) => [`/product/${encodeURIComponent(product.id)}/`, "weekly"]),
 ]
 
 const body = `<?xml version="1.0" encoding="UTF-8"?>

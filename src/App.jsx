@@ -110,10 +110,10 @@ export default function App() {
       }
     }
     if (route.name === "care") {
-      return { title: t("seo.careTitle"), description: t("seo.careDescription"), path: "/care" }
+      return { title: t("seo.careTitle"), description: t("seo.careDescription"), path: "/care/" }
     }
     if (route.name === "career") {
-      return { title: t("seo.careerTitle"), description: t("seo.careerDescription"), path: "/career" }
+      return { title: t("seo.careerTitle"), description: t("seo.careerDescription"), path: "/career/" }
     }
     if (route.name === "shop") {
       return {
@@ -123,7 +123,7 @@ export default function App() {
       }
     }
     if (missing) {
-      return { title: t("seo.notFoundTitle"), description: t("seo.notFoundDescription"), path: `/product/${route.id}` }
+      return { title: t("seo.notFoundTitle"), description: t("seo.notFoundDescription"), path: `/product/${route.id}/` }
     }
     if (product) {
       const price = dealForListing(product, product.specs).now

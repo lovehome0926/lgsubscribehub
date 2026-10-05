@@ -24,7 +24,7 @@ export const JOE = {
 
 export const CAREER = {
   label: "Career",
-  href: "/career",
+  href: "/career/",
 }
 
 export const INDEPENDENCE_NOTICE =

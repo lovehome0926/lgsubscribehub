@@ -100,6 +100,13 @@ export function usePageSeo({ title, description, path = "/", image = "", ogTitle
     const meta = LANGS.find((item) => item.id === lang)
     const canonicalHref = canonical || pageUrl(path, lang)
     document.title = title
+    let robots = document.querySelector('meta[name="robots"]')
+    if (!robots) {
+      robots = document.createElement("meta")
+      robots.setAttribute("name", "robots")
+      document.head.appendChild(robots)
+    }
+    robots.setAttribute("content", "index, follow")
     document.querySelector('meta[name="description"]')?.setAttribute("content", description)
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", ogTitle || title)
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", ogDescription || description)

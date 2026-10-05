@@ -216,7 +216,7 @@ export default function Catalog({ groupId = null, onGroup }) {
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift2")}</p>
                 <p className="mt-1 text-sm font-black">{t("campaign.gift2Prize")}</p>
               </div>
-              <a href="/promotions" className="mt-3 block rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10 hover:bg-white/10">
+              <a href="/promotions/" className="mt-3 block rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10 hover:bg-white/10">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("promotions.combo.kicker")}</p>
                 <p className="mt-1 text-sm font-black">{t("campaign.airCombo")}</p>
                 <p className="mt-1 text-xs font-semibold text-[#FFD100]">{t("campaign.airComboCta")}</p>

@@ -105,8 +105,8 @@ export default function App() {
         ogTitle: "LG Subscribe Monthly Promotions & Official Deals",
         ogDescription:
           "Discover the latest monthly LG Rent Up & Subscription deals in Malaysia. Free installation & CareShip included.",
-        path: "/promotions",
-        canonical: "https://lgsubscribehub.com.my/promotions",
+        path: "/promotions/",
+        canonical: "https://lgsubscribehub.com.my/promotions/",
       }
     }
     if (route.name === "care") {

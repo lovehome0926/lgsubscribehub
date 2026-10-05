@@ -43,7 +43,7 @@ function legacyPath() {
   if (!hash || HOME_ANCHORS.has(hash)) return null
   const [page, id, a, b] = hash.split("/")
   if (page === "care") return "/care"
-  if (page === "promotions") return "/promotions"
+  if (page === "promotions") return "/promotions/"
   if (page === "career") return id ? `/career/${encodeURIComponent(id)}` : "/career"
   if (page === "product" && id) return productPath(id, a, b)
   if (page.startsWith("group-")) {

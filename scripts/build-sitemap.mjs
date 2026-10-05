@@ -37,7 +37,7 @@ ${links}
 
 const paths = [
   ["/", "weekly"],
-  ["/promotions", "monthly", "0.9"],
+  ["/promotions/", "monthly", "0.9"],
   ["/care", "monthly"],
   ["/career", "monthly"],
   ...CATEGORY_GROUPS.map((group) => [`/shop/${group.id}`, "weekly"]),

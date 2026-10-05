@@ -324,7 +324,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
             {activePromo?.kind === "aircombo" ? (
               <p className="mt-2 text-xs leading-5 text-gray-500">
                 {t("pdp.airComboNote")}{" "}
-                <a href="/promotions" className="font-semibold text-lg-red hover:text-lg-red-dark">{t("pdp.airComboLink")}</a>
+                <a href="/promotions/" className="font-semibold text-lg-red hover:text-lg-red-dark">{t("pdp.airComboLink")}</a>
               </p>
             ) : null}
           </div>

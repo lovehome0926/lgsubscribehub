@@ -1,4 +1,5 @@
 // Product patches only. October prices live in promoConfig.evaluateProductPricing.
+import { AS60GLSG0 } from "./as60glsg0.js"
 import { DIMENSION_FACTS } from "./dimensions.js"
 import { applyF2520Name, applyFx1412 } from "./fx1412.js"
 import { WASHTOWER_RATES } from "./promoConfig.js"
@@ -11,7 +12,7 @@ export const MERDEKA_PROMOS = OCTOBER_PROMOS
 export const PAUSED_MODELS = ["GC-X24FFC7R", "MH21RRY", "RX10VHP3WR"]
 export const DELISTED_MODELS = ["DFC533FV", "FV1450S2W"]
 
-export const EXTRA_PRODUCTS = []
+export const EXTRA_PRODUCTS = [AS60GLSG0]
 
 function patchF2515(product) {
   if (product.model !== "F2515RNTKAR") return product

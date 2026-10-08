@@ -64,7 +64,7 @@ export const WASHTOWER_RATES = {
   },
 }
 export const REBATE10_MODELS = ["FV1209D4W", "FX1412S5GR"]
-export const HALF12_MODELS = ["GC-B257KLJR", "TX2522AT9GR"]
+export const HALF12_MODELS = ["GC-B257KLJR", "TX2522AT9GR", "AS60GLSG0"]
 export const ARTCOOL_MODELS = ["S3-Q24K2RPA"]
 export const ARTCOOL_OFF = 5
 export const WASHTOWER_MODELS = ["WT1410NHB", "WT2520NHEGR"]

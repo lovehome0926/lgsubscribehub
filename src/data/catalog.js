@@ -31,7 +31,7 @@ function borrowSellingCopy(products) {
   return products
 }
 
-export const PRODUCTS = borrowSellingCopy(patchProducts([...BASE_PRODUCTS, ...EXTRA_PRODUCTS])).filter(
+export const PRODUCTS = borrowSellingCopy(patchProducts([...EXTRA_PRODUCTS, ...BASE_PRODUCTS])).filter(
   (product) => !product.paused,
 )
 

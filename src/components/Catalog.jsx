@@ -211,21 +211,6 @@ export default function Catalog({ groupId = null, onGroup }) {
               <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/80">{t("campaign.tag")}</p>
               <p className="mt-1 text-lg font-black leading-snug text-[#FFD100] sm:text-xl">{t("campaign.banner")}</p>
             </div>
-            <div className="px-5 py-4 sm:px-6">
-              <div className="rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("campaign.gift2")}</p>
-                <p className="mt-1 text-sm font-black">{t("campaign.gift2Prize")}</p>
-              </div>
-              <a href="/promotions/" className="mt-3 block rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10 hover:bg-white/10">
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FFD100]">{t("promotions.combo.kicker")}</p>
-                <p className="mt-1 text-sm font-black">{t("campaign.airCombo")}</p>
-                <p className="mt-1 text-xs font-semibold text-[#FFD100]">{t("campaign.airComboCta")}</p>
-              </a>
-            </div>
-            <p className="border-t border-white/10 px-5 py-3 text-xs leading-5 text-white/70 sm:px-6">
-              <span className="font-bold text-white">{t("campaign.giftTitle")}. </span>
-              {t("campaign.giftLead")}
-            </p>
           </div>
         ) : null}
 

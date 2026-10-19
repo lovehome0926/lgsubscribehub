@@ -31,7 +31,8 @@ export const Q4_MONTHS = [9, 10, 11, 12]
 export const FLAT99_MODELS = ["DFC335HM"]
 export const REBATE20_MODELS = ["RX10VHP3WR", "RX10VHP3KR", "F2520SNEKR"]
 export const REBATE15_MODELS = []
-export const AIR_COMBO_MODELS = ["AS65GDBY0", "AS30GGW10"]
+// Paused while AS30GGW10 is out of stock. Put both models back when stock returns.
+export const AIR_COMBO_MODELS = []
 export const AIR_COMBO_OFF = 15
 export const AIR_COMBO_SKU = {
   AS65GDBY0: "AS65GDBY0.AML",
@@ -110,9 +111,8 @@ export function isDoubleMatchModel(product) {
   return isStandaloneLaundry(product)
 }
 
-export function giftForProduct(product) {
-  if (!isDoubleMatchModel(product)) return null
-  return DOUBLE_MATCH
+export function giftForProduct() {
+  return null
 }
 
 export function evaluateProductPricing(product) {
@@ -133,7 +133,7 @@ export function evaluateProductPricing(product) {
       promoType: "CASH_REBATE",
       rebate: 20,
       badge: "RM20 OFF Monthly",
-      qualifiesForFreeTV: true,
+      qualifiesForFreeTV: false,
       kind: "rebate20",
     }
   }
@@ -183,6 +183,10 @@ export function evaluateProductPricing(product) {
       badge: "RM5 OFF Monthly",
       kind: "artcool",
     }
+  }
+
+  if (!AIR_COMBO_MODELS.length && isListedModel(["AS65GDBY0", "AS30GGW10"], product)) {
+    return { promoType: "NONE", kind: "none" }
   }
 
   return {

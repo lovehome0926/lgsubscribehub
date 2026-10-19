@@ -164,10 +164,6 @@ export default {
         q: "送货和安装免费吗？",
         a: "是。按官方 LG Subscribe 配套，标准送货、基本安装和定期 CareShip 保养已包含在内。",
       },
-      {
-        q: "空气净化器组合价什么时候适用？",
-        a: "只有同一份申请里的一台 AS65GDBY0.AML 和一台 AS30GGW10.AML 才适用。同款两台不适用。每台少 RM15，直到合约结束。",
-      },
     ],
   },
   waters: {
@@ -187,8 +183,8 @@ export default {
     copy: "无需大额预付，即可使用 PuriCare™、DualCool™ 与 OLED。按家庭需求选择自行更换、组合保养或定期上门。",
     cta: "先看月费",
     promoTitle: "LG October & Q4 Special Deals 2026",
-    promoCopy: "精选洗衣机/干衣机每月减 RM20。ARTCOOL 减 RM5。其余机型前 9 个月半价。Double Match：两台独立洗衣机或干衣机送 65 寸 AI 电视，须十月安装，限 130 台。WashTower 不计。",
-    promoBadge: "十月安装",
+    promoCopy: "精选洗衣机/干衣机每月减 RM20。ARTCOOL 减 RM5。其余机型前 9 个月半价。",
+    promoBadge: "询问 Cindy",
     idleBadge: "询问 Cindy",
   },
   chooser: {

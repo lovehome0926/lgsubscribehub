@@ -1,5 +1,5 @@
 import { allListings, applyPromo, dealForListing, findProduct, giftForProduct, promoForProduct, promoKind } from "../data/catalog"
-import { AIR_COMBO_MODELS, AIR_COMBO_OFF, AIR_COMBO_SKU, WASHTOWER_RATES, isWashTower } from "../data/promoConfig"
+import { AIR_COMBO_MODELS, WASHTOWER_RATES, isWashTower } from "../data/promoConfig"
 import { whatsappHref } from "../config"
 import { useLang } from "../i18n/LanguageProvider"
 
@@ -22,69 +22,6 @@ function tagIds(deal, product) {
   if (product.hasCare) ids.push("careship")
   if (giftForProduct(product)) ids.push("bundle")
   return ids
-}
-
-function selfRates(product) {
-  const spec = product?.specs?.[0]
-  if (!spec) return []
-  return [60, 84]
-    .map((tenure) => {
-      const amount = spec.pricing?.subscribe?.[tenure]?.self
-      if (amount == null) return null
-      return { tenure, list: amount, combo: Math.max(amount - AIR_COMBO_OFF, 0) }
-    })
-    .filter(Boolean)
-}
-
-function AirComboDeal() {
-  const { t } = useLang()
-  const chosen = AIR_COMBO_MODELS.map((model) => findProduct(model)).filter(Boolean)
-  if (chosen.length < 2) return null
-
-  return (
-    <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">{t("promotions.combo.eyebrow")}</p>
-      <h2 className="mt-2 text-2xl font-semibold">{t("promotions.combo.title")}</h2>
-      <div className="mt-6 overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-lg-line">
-        <div className="bg-[#111] px-5 py-4 text-white sm:px-6">
-          <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#FFD100]">{t("promotions.combo.kicker")}</p>
-          <p className="mt-1 text-lg font-semibold leading-snug">{t("promotions.combo.headline")}</p>
-          <p className="mt-2 text-sm leading-6 text-white/80">{t("promotions.combo.tag")}</p>
-        </div>
-        <div className="flex flex-col items-stretch gap-3 p-5 sm:flex-row sm:items-center sm:p-6">
-          {chosen.map((product, index) => (
-            <div key={`${product.id}-${index}`} className="contents">
-              {index === 1 ? <p className="text-center text-3xl font-black text-lg-red">+</p> : null}
-              <div className="min-w-0 flex-1 rounded-2xl bg-lg-cream p-4">
-                <img src={product.colors[0]?.image} alt={product.shortName} className="mx-auto h-36 object-contain" />
-                <p className="mt-3 text-sm font-semibold">{t(`promotions.combo.names.${product.model}`)}</p>
-                <p className="text-xs text-lg-muted">{AIR_COMBO_SKU[product.model]}</p>
-                <div className="mt-3 space-y-1 text-xs text-lg-muted">
-                  {selfRates(product).map((row) => (
-                    <p key={row.tenure}>
-                      {t(`pdp.tenureLabel.${row.tenure}`)} · <span className="line-through">{t("promotions.was", { list: row.list })}</span>
-                      <span className="ml-1 font-semibold text-lg-red">RM {row.combo}{t("promotions.perMonth")}</span>
-                    </p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="px-5 sm:px-6">
-          <p className="text-sm leading-6 text-lg-muted">{t("promotions.combo.note")}</p>
-          <a
-            href={whatsappHref(t("promotions.combo.wa"))}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-flex rounded-full bg-lg-red px-5 py-3 text-sm font-semibold text-white hover:bg-lg-red-dark"
-          >
-            {t("promotions.combo.cta")}
-          </a>
-        </div>
-      </div>
-    </section>
-  )
 }
 
 function WashTowerRates() {
@@ -219,15 +156,8 @@ export default function Promotions() {
           <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl">{t("promotions.title")}</h1>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 sm:text-base">{t("promotions.subtitle")}</p>
           <p className="mt-5 max-w-2xl rounded-2xl bg-white/10 px-4 py-3 text-sm leading-6 text-white">{t("promotions.upfront")}</p>
-          <div className="mt-6 max-w-3xl rounded-[28px] bg-[#E10600] px-5 py-5 sm:px-6">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/80">{t("promotions.bundleEyebrow")}</p>
-            <p className="mt-1 text-xl font-black leading-snug text-[#FFD100]">{t("promotions.bundleTitle")}</p>
-            <p className="mt-2 text-sm leading-6 text-white">{t("promotions.bundleBody")}</p>
-          </div>
         </div>
       </section>
-
-      <AirComboDeal />
 
       {SECTIONS.map((section) => {
         const cards = listings.filter(

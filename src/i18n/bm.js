@@ -165,10 +165,6 @@ export default {
         q: "Adakah penghantaran dan pemasangan percuma?",
         a: "Ya, penghantaran standard, pemasangan asas, dan servis penyelenggaraan CareShip biasa disertakan mengikut pakej rasmi LG Subscribe.",
       },
-      {
-        q: "Bila kadar combo penapis udara terpakai?",
-        a: "Hanya satu AS65GDBY0.AML dan satu AS30GGW10.AML dalam permohonan yang sama layak. Dua unit model yang sama tidak layak. Potongan RM15 setiap unit kekal hingga tamat kontrak.",
-      },
     ],
   },
   waters: {
@@ -188,8 +184,8 @@ export default {
     copy: "Nikmati PuriCare™, DualCool™ dan OLED tanpa bayaran pendahuluan yang besar. Pilih Servis sendiri, Gabungan atau Lawatan berkala mengikut keperluan rumah.",
     cta: "Lihat pelan bulanan",
     promoTitle: "LG October & Q4 Special Deals 2026",
-    promoCopy: "Potongan RM20 mesin basuh dan pengering terpilih. ARTCOOL RM5. 50% 9 bulan pertama untuk model lain. Double Match: 2 mesin basuh atau pengering, TV AI 65\" percuma, pasang Oktober, 130 unit. WashTower tidak termasuk.",
-    promoBadge: "Pasang Okt",
+    promoCopy: "Potongan RM20 mesin basuh dan pengering terpilih. ARTCOOL RM5. 50% 9 bulan pertama untuk model lain.",
+    promoBadge: "Tanya Cindy",
     idleBadge: "Tanya Cindy",
   },
   chooser: {

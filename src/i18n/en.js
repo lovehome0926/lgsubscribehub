@@ -165,10 +165,6 @@ export default {
         q: "Are delivery and installation free?",
         a: "Yes, standard delivery, basic installation, and regular CareShip maintenance service are included as per official LG Subscribe packages.",
       },
-      {
-        q: "When does the air purifier combo rate apply?",
-        a: "Only one AS65GDBY0.AML and one AS30GGW10.AML in the same application qualify. Two of the same model do not. The RM15 off each unit lasts until contract end.",
-      },
     ],
   },
   waters: {
@@ -188,8 +184,8 @@ export default {
     copy: "Enjoy PuriCare™, DualCool™ and OLED without a large upfront outlay. Choose Self-Service, Combined Maintenance or Regular Visit to match your household.",
     cta: "See monthly plans",
     promoTitle: "LG October & Q4 Special Deals 2026",
-    promoCopy: "RM20 off selected washers and dryers. ARTCOOL RM5 off. 50% first 9 months on other models. Double Match: 2 standalone washers or dryers, free 65\" AI TV, October install, first 130. WashTower excluded.",
-    promoBadge: "Oct install",
+    promoCopy: "RM20 off selected washers and dryers. ARTCOOL RM5 off. 50% first 9 months on other models.",
+    promoBadge: "Ask Cindy",
     idleBadge: "Ask Cindy",
   },
   chooser: {

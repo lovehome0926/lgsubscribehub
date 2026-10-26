@@ -55,6 +55,8 @@ function ProductCard({ listing }) {
   const palette = choosableColors(colors)
   const showColors = palette.length > 1
   const showSpecs = specs.length > 1
+  const href = productPath(product.id, spec.id, color.id)
+  const modelLabel = product.combo ? product.comboModels?.join(" + ") : model
 
   function pickColor(id) {
     const next = colors.find((item) => item.id === id)
@@ -144,8 +146,10 @@ function ProductCard({ listing }) {
         </div>
       ) : null}
       <p className={`text-xs text-lg-muted ${showColors || showSpecs ? "mt-3" : ""}`}>{product.category}</p>
-      <h3 className="mt-1 text-[15px] font-semibold leading-6">{title}</h3>
-      <p className="mt-1 text-xs text-lg-muted">{product.combo ? product.comboModels?.join(" + ") : model}</p>
+      <a href={href} className="mt-1 block text-inherit no-underline">
+        <h3 className="text-[15px] font-semibold leading-6">{title}</h3>
+        <p className="mt-1 text-xs text-lg-muted">{modelLabel}</p>
+      </a>
       <p className="mt-4 text-xs text-lg-muted">{t("catalog.subscription")}</p>
       {deal.now != null ? (
         <div>
@@ -164,7 +168,7 @@ function ProductCard({ listing }) {
         <p className="text-lg font-semibold text-gray-400">{t("catalog.tbc")}</p>
       )}
       <a
-        href={productPath(product.id, spec.id, color.id)}
+        href={href}
         className="mt-4 rounded-full bg-lg-red py-2.5 text-center text-sm font-semibold text-white hover:bg-lg-red-dark"
       >
         {t("catalog.cta")}

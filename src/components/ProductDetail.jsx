@@ -31,6 +31,14 @@ function displayName(product, color) {
   return `${product.baseName}, ${color.name}`
 }
 
+function productHeading(product, color) {
+  const name = displayName(product, color)
+  const model = color?.model || product.model
+  if (!model) return name
+  if (name.toUpperCase().includes(String(model).toUpperCase())) return name
+  return `${name} ${model}`
+}
+
 function TitleBlock({ product, color, spec, tagline }) {
   const { t } = useLang()
   return (
@@ -42,7 +50,7 @@ function TitleBlock({ product, color, spec, tagline }) {
         ) : null}
       </p>
       <h1 className="mt-2 text-[26px] font-semibold leading-[1.25] tracking-tight md:text-[30px]">
-        {displayName(product, color)}
+        {productHeading(product, color)}
       </h1>
       <p className="mt-1.5 text-sm text-lg-muted">
         {color.model ?? product.model}
@@ -537,12 +545,11 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
       </div>
 
       <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 md:py-12">
-        <div className="md:hidden">
-          <TitleBlock product={product} color={viewColor} spec={spec} tagline={tagline} />
-        </div>
-
-        <div className="mt-8 grid items-start gap-10 md:mt-0 md:grid-cols-2 md:gap-14">
-          <div>
+        <div className="md:grid md:grid-cols-2 md:items-start md:gap-x-14">
+          <div className="md:col-start-2 md:row-start-1">
+            <TitleBlock product={product} color={viewColor} spec={spec} tagline={tagline} />
+          </div>
+          <div className="mt-8 md:col-start-1 md:row-start-1 md:row-span-2 md:mt-0">
             <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_18px_50px_rgba(17,17,17,0.05)]">
               {waitingPhoto ? (
                 <div className="flex h-[360px] flex-col items-center justify-center gap-2 text-center md:h-[460px]">
@@ -581,11 +588,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
             <FeatureGrid items={quickFeatures} className="mt-5 hidden md:grid" />
           </div>
 
-          <div>
-            <div className="hidden md:block">
-              <TitleBlock product={product} color={viewColor} spec={spec} tagline={tagline} />
-            </div>
-
+          <div className="mt-10 md:col-start-2 md:row-start-2 md:mt-0">
             {palette.length > 1 && palette.some((item) => item.name !== "Default") ? (
               <div className="mt-5">
                 <div className="flex items-end justify-between text-sm">

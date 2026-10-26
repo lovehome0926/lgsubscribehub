@@ -7231,7 +7231,68 @@ export const PRODUCTS = [
                   "video": null
                 }
               ],
-              "facts": []
+              "facts": [
+                {
+                  "label": "Type",
+                  "value": "Objet WashTower"
+                },
+                {
+                  "label": "CAPACITY - Max Wash Capacity(kg)",
+                  "value": "25"
+                },
+                {
+                  "label": "CAPACITY - Max Dry Capacity(kg)",
+                  "value": "20"
+                },
+                {
+                  "label": "Color",
+                  "value": "Nature Green / Nature Beige"
+                },
+                {
+                  "label": "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)",
+                  "value": "700 x 1890 x 830"
+                },
+                {
+                  "label": "Weight (kg)",
+                  "value": "160"
+                },
+                {
+                  "label": "Power Supply",
+                  "value": "220-240 V~, 50 Hz"
+                },
+                {
+                  "label": "Maximum Power",
+                  "value": "1800-2400 W (Wash) / 1100 W (Dry)"
+                },
+                {
+                  "label": "Permissible Inlet Water Pressure",
+                  "value": "100-800 kPa"
+                },
+                {
+                  "label": "FEATURES - AI DD",
+                  "value": "Yes"
+                },
+                {
+                  "label": "FEATURES - TurboWash 360",
+                  "value": "Yes"
+                },
+                {
+                  "label": "FEATURES - Steam",
+                  "value": "Yes"
+                },
+                {
+                  "label": "FEATURES - DUAL Inverter Heat Pump",
+                  "value": "Yes"
+                },
+                {
+                  "label": "FEATURES - Smart Pairing",
+                  "value": "Yes"
+                },
+                {
+                  "label": "SMART TECHNOLOGY - ThinQ (Wi-Fi)",
+                  "value": "Yes"
+                }
+              ]
             }
           }
         }

@@ -3,6 +3,7 @@ import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 import { SITE_ORIGIN } from "../src/config.js"
 import { CATEGORY_GROUPS, PRODUCTS, dealForListing } from "../src/data/catalog.js"
+import { productStructuredData, titledName } from "../src/data/productSchema.js"
 import en from "../src/i18n/en.js"
 
 const PROMOTIONS = {
@@ -47,14 +48,16 @@ function pages() {
     })
   }
   for (const product of PRODUCTS) {
-    const name = product.baseName || product.name
+    const name = titledName(product)
     const price = dealForListing(product, product.specs).now
     const image = product.colors?.find((color) => color.image)?.image || ""
+    const structured = productStructuredData(product)
     list.push({
       path: `/product/${encodeURIComponent(product.id)}/`,
       title: price != null ? fill(en.seo.productTitle, { name, price }) : fill(en.seo.productTitlePlain, { name }),
       description: fill(en.seo.productDescription, { name }),
       image,
+      jsonLd: [structured.product, structured.breadcrumb],
     })
   }
   return list
@@ -83,11 +86,12 @@ function render(template, page) {
     /<meta\s+property="og:description"[\s\S]*?\/>/,
     `<meta property="og:description" content="${attr(ogDescription)}" />`,
   )
-  html = html.replaceAll(`${SITE_ORIGIN}/?lang=`, `${canonical}?lang=`)
-  html = html.replace(
-    /<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/>/,
-    `<link rel="alternate" hreflang="x-default" href="${attr(canonical)}" />`,
-  )
+  if (page.jsonLd?.length) {
+    const tags = page.jsonLd
+      .map((data) => `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>`)
+      .join("\n    ")
+    html = html.replace("</head>", `    ${tags}\n  </head>`)
+  }
   if (page.image) {
     html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/>/, `<meta property="og:image" content="${attr(page.image)}" />`)
     html = html.replace(/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:image" content="${attr(page.image)}" />`)

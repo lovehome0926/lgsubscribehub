@@ -58,16 +58,13 @@ function legacyPath() {
 export function promoteLegacyHash() {
   const path = legacyPath()
   if (!path) return false
-  const lang = new URLSearchParams(window.location.search).get("lang")
-  const search = lang ? `?lang=${encodeURIComponent(lang)}` : ""
-  window.history.replaceState(null, "", `${path}${search}`)
+  window.history.replaceState(null, "", path)
   return true
 }
 
 export function navigate(href, { replace = false } = {}) {
   const url = new URL(href, window.location.origin)
-  const lang = new URLSearchParams(window.location.search).get("lang")
-  if (lang && !url.searchParams.has("lang")) url.searchParams.set("lang", lang)
+  url.searchParams.delete("lang")
   const next = `${url.pathname}${url.search}${url.hash}`
   const current = `${window.location.pathname}${window.location.search}${window.location.hash}`
   if (next === current) return

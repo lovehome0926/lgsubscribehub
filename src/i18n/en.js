@@ -290,6 +290,9 @@ export default {
   },
   footer: {
     contact: "Contact Cindy",
+    follow: "Follow Cindy",
+    xiaohongshu: "Xiaohongshu",
+    facebook: "Facebook",
     whatsappCall: "WhatsApp / call",
     stores: "Stores",
     career: "Career / Recruitment",

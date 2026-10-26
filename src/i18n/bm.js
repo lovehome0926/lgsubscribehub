@@ -290,6 +290,9 @@ export default {
   },
   footer: {
     contact: "Hubungi Cindy",
+    follow: "Ikuti Cindy",
+    xiaohongshu: "Xiaohongshu",
+    facebook: "Facebook",
     whatsappCall: "WhatsApp / telefon",
     stores: "Cawangan",
     career: "Kerjaya / Pengambilan",

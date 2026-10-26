@@ -69,9 +69,6 @@ export default function Header({ onHome }) {
   return (
     <>
     <header className="sticky top-0 z-[60] bg-white/95 backdrop-blur border-b border-lg-line">
-      <div className="hidden bg-[#111] px-3 py-1 text-center text-[10px] leading-4 text-white/90 lg:block sm:text-[11px]">
-        {t("notice")}
-      </div>
       <div className="bg-lg-red px-3 py-1 text-[11px] font-semibold tracking-wide text-white">
         <div className="flex items-center gap-2 lg:block lg:text-center">
           <div className="lg:hidden">

@@ -17,6 +17,7 @@ import Promotions from "./components/Promotions"
 import PromoPdf from "./components/PromoPdf"
 import SeoJsonLd from "./components/SeoJsonLd"
 import { dealForListing, findProduct } from "./data/catalog"
+import { titledName } from "./data/productSchema"
 import { isWhatsAppLead, trackLeadConversion } from "./gtag"
 import { useLang, usePageSeo } from "./i18n/LanguageProvider"
 import { bindSpaLinks, navigate, productPath, promoteLegacyHash, readRoute, shopGroupPath } from "./router"
@@ -143,11 +144,16 @@ export default function App() {
       }
     }
     if (missing) {
-      return { title: t("seo.notFoundTitle"), description: t("seo.notFoundDescription"), path: `/product/${route.id}/` }
+      return {
+        title: t("seo.notFoundTitle"),
+        description: t("seo.notFoundDescription"),
+        path: `/product/${route.id}/`,
+        robots: "noindex, follow",
+      }
     }
     if (product) {
       const price = dealForListing(product, product.specs).now
-      const name = product.baseName || product.name
+      const name = titledName(product)
       return {
         title: price != null ? t("seo.productTitle", { name, price }) : t("seo.productTitlePlain", { name }),
         description: t("seo.productDescription", { name }),

@@ -2,12 +2,6 @@ import { writeFileSync } from "node:fs"
 import { SITE_ORIGIN } from "../src/config.js"
 import { CATEGORY_GROUPS, PRODUCTS } from "../src/data/catalog.js"
 
-const LANGS = [
-  ["en-MY", "en"],
-  ["ms-MY", "bm"],
-  ["zh-CN", "cn"],
-]
-
 function xml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -16,22 +10,15 @@ function xml(value) {
     .replace(/"/g, "&quot;")
 }
 
-function loc(path, lang) {
-  const clean = path === "/" ? "/" : path
-  return lang ? `${SITE_ORIGIN}${clean}?lang=${lang}` : `${SITE_ORIGIN}${clean}`
+function loc(path) {
+  return `${SITE_ORIGIN}${path === "/" ? "/" : path}`
 }
 
 function urlEntry(path, changefreq, priority) {
-  const links = LANGS.map(
-    ([hreflang, lang]) =>
-      `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${xml(loc(path, lang))}" />`,
-  ).join("\n")
   const priorityTag = priority ? `\n    <priority>${priority}</priority>` : ""
   return `  <url>
     <loc>${xml(loc(path))}</loc>
     <changefreq>${changefreq}</changefreq>${priorityTag}
-${links}
-    <xhtml:link rel="alternate" hreflang="x-default" href="${xml(loc(path))}" />
   </url>`
 }
 
@@ -45,7 +32,7 @@ const paths = [
 ]
 
 const body = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${paths.map(([path, freq, priority]) => urlEntry(path, freq, priority)).join("\n")}
 </urlset>
 `

@@ -57,10 +57,15 @@ export function LanguageProvider({ children }) {
     } catch {
       /* ignore */
     }
-    const url = new URL(window.location.href)
-    url.searchParams.set("lang", next)
-    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`)
   }
+
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    if (!url.searchParams.has("lang")) return
+    url.searchParams.delete("lang")
+    const search = url.searchParams.toString()
+    window.history.replaceState(null, "", `${url.pathname}${search ? `?${search}` : ""}${url.hash}`)
+  }, [])
 
   useEffect(() => {
     const meta = LANGS.find((item) => item.id === lang)
@@ -89,16 +94,16 @@ export function useLang() {
 const DEFAULT_OG =
   "https://www.lg.com/content/dam/channel/wcms/my/lg-subscribe/images/LG-Subscribe-Online-Store-Launch-Microsite-Hero-Banner-D.jpg"
 
-function pageUrl(path, lang) {
+function pageUrl(path) {
   const clean = !path || path === "/" ? "/" : path
-  return lang ? `${SITE_ORIGIN}${clean}?lang=${lang}` : `${SITE_ORIGIN}${clean}`
+  return `${SITE_ORIGIN}${clean}`
 }
 
 export function usePageSeo({ title, description, path = "/", image = "", ogTitle, ogDescription, canonical, robots: robotsContent = "index, follow" }) {
   const { lang } = useLang()
   useEffect(() => {
     const meta = LANGS.find((item) => item.id === lang)
-    const canonicalHref = canonical || pageUrl(path, lang)
+    const canonicalHref = canonical || pageUrl(path)
     document.title = title
     let robots = document.querySelector('meta[name="robots"]')
     if (!robots) {
@@ -116,9 +121,6 @@ export function usePageSeo({ title, description, path = "/", image = "", ogTitle
     const picture = image || DEFAULT_OG
     document.querySelector('meta[property="og:image"]')?.setAttribute("content", picture)
     document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", picture)
-    for (const item of LANGS) {
-      document.querySelector(`link[rel="alternate"][hreflang="${item.html}"]`)?.setAttribute("href", pageUrl(path, item.id))
-    }
-    document.querySelector('link[rel="alternate"][hreflang="x-default"]')?.setAttribute("href", pageUrl(path, ""))
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((node) => node.remove())
   }, [canonical, description, image, lang, ogDescription, ogTitle, path, robotsContent, title])
 }

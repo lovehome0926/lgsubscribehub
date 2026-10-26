@@ -289,6 +289,9 @@ export default {
   },
   footer: {
     contact: "联系 Cindy",
+    follow: "关注 Cindy",
+    xiaohongshu: "小红书",
+    facebook: "Facebook",
     whatsappCall: "WhatsApp / 电话",
     stores: "门店",
     career: "招商 / 招募",

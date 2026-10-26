@@ -1,4 +1,4 @@
-import { COMPANY, INDEPENDENCE_NOTICE, SITE_ORIGIN } from "../config"
+import { COMPANY, INDEPENDENCE_NOTICE, SITE_ORIGIN, SOCIAL } from "../config"
 import { GOOGLE_REVIEWS_URL, REVIEWS, reviewStats } from "../data/reviews"
 import { STORES } from "../data/stores"
 
@@ -68,7 +68,7 @@ export default function SeoJsonLd() {
         email: COMPANY.email,
         description: INDEPENDENCE_NOTICE,
         areaServed,
-        sameAs: [GOOGLE_REVIEWS_URL],
+        sameAs: [GOOGLE_REVIEWS_URL, ...SOCIAL.map((item) => item.href)],
         aggregateRating,
         review: reviews,
         location: locations,

@@ -1,5 +1,5 @@
 import { ExternalLink } from "lucide-react"
-import { CAREER, COMPANY } from "../config"
+import { CAREER, COMPANY, SOCIAL } from "../config"
 import { SUB_LOGO } from "../data/catalog"
 import { STORES } from "../data/stores"
 import { useLang } from "../i18n/LanguageProvider"
@@ -16,6 +16,21 @@ export default function SiteFooter() {
             </div>
             <p className="mt-3 text-sm font-semibold text-lg-ink">{COMPANY.name}</p>
             <p className="mt-1 text-xs text-lg-muted">SSM: {COMPANY.ssm}</p>
+            <p className="mt-4 text-xs font-semibold text-lg-ink">{t("footer.follow")}</p>
+            <div className="mt-1 flex flex-col items-start gap-1">
+              {SOCIAL.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-lg-ink hover:text-lg-red"
+                >
+                  {t(`footer.${item.id}`)}
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              ))}
+            </div>
           </div>
           <div className="grid max-w-4xl gap-6 text-xs leading-5 text-lg-muted sm:grid-cols-3">
             <p>
@@ -58,13 +73,10 @@ export default function SiteFooter() {
             </p>
           </div>
         </div>
-        <div className="mt-8 rounded-2xl bg-white p-5 text-xs leading-6 text-lg-muted ring-1 ring-lg-line">
-          <p className="font-semibold uppercase tracking-[0.14em] text-lg-ink">{t("footer.disclaimer")}</p>
-          <p className="mt-2">{t("footer.legal")}</p>
-        </div>
-        <p className="mt-6 text-xs text-lg-muted">
+        <p className="mt-8 text-xs text-lg-muted">
           © {new Date().getFullYear()} {COMPANY.name}. {t("footer.copyright")}
         </p>
+        <p className="mt-2 text-[11px] leading-5 text-lg-muted">{t("notice")}</p>
       </div>
     </footer>
   )

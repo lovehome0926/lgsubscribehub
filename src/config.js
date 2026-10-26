@@ -27,6 +27,17 @@ export const CAREER = {
   href: "/career/",
 }
 
+export const SOCIAL = [
+  {
+    id: "xiaohongshu",
+    href: "https://www.xiaohongshu.com/user/profile/5cf4541b000000001003cd47",
+  },
+  {
+    id: "facebook",
+    href: "https://www.facebook.com/people/Cindy-Smart-Home-Living/61593089376806/",
+  },
+]
+
 export const INDEPENDENCE_NOTICE =
   "This website is independently managed by DNC HOME APPLIANCES and is not the official LG Malaysia website."
 

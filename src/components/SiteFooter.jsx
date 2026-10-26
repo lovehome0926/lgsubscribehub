@@ -12,8 +12,7 @@ export default function SiteFooter() {
           <div>
             <div className="flex items-center">
               <span className="inline-flex items-center gap-2">
-                <img src="/lg-icon.png" alt="" className="h-10 w-10" />
-                <span className="text-sm font-bold tracking-tight text-lg-ink">LG Subscribe</span>
+                <img src="/lg-wordmark.png" alt="LG Subscribe" className="h-9 w-auto" />
               </span>
             </div>
             <p className="mt-3 text-sm font-semibold text-lg-ink">{COMPANY.name}</p>

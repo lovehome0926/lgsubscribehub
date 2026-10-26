@@ -79,8 +79,7 @@ export default function Header({ onHome }) {
       </div>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[72px]">
         <button type="button" onClick={onHome} className="flex min-w-0 items-center gap-2">
-          <img src="/lg-icon.png" alt="" className="h-10 w-10 shrink-0 sm:h-11 sm:w-11" />
-          <span className="text-[15px] font-bold tracking-tight text-lg-ink sm:text-base">LG Subscribe</span>
+          <img src="/lg-wordmark.png" alt="LG Subscribe" className="h-9 w-auto sm:h-10" />
         </button>
         <nav className="hidden items-center gap-5 text-sm font-medium text-lg-ink lg:flex">
           <div className="group relative">

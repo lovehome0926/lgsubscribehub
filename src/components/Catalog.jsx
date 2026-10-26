@@ -14,7 +14,7 @@ import {
 } from "../data/catalog"
 import { campaignActive } from "../data/campaign"
 import { useLang } from "../i18n/LanguageProvider"
-import { productPath } from "../router"
+import { productPath, shopGroupPath } from "../router"
 import PromoBadge from "./PromoBadge"
 
 const ICONS = {
@@ -317,7 +317,11 @@ export default function Catalog({ groupId = null, onGroup }) {
         {visible.map(({ group, listings: cards }) => (
           <div key={group.id} id={`group-${group.id}`} className="scroll-mt-28 mt-12">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-lg-line pb-3">
-              <h3 className="text-xl font-semibold">{t(`groups.${group.id}.name`)}</h3>
+              <h3 className="text-xl font-semibold">
+                <a href={shopGroupPath(group.id)} className="text-inherit no-underline hover:text-lg-red">
+                  {t(`groups.${group.id}.name`)}
+                </a>
+              </h3>
               <p className="text-sm text-lg-muted">{t(`groups.${group.id}.blurb`)}</p>
             </div>
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

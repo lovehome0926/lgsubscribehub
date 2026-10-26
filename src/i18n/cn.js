@@ -179,6 +179,9 @@ export default {
   },
   hero: {
     kicker: "LG Subscribe™ · 马来西亚",
+    heading: "LG Subscribe Malaysia",
+    intro:
+      "了解 LG 净水器、空气净化器、空调、洗衣机、冰箱和电视的灵活月付方案。对比现有型号与月费后，可通过 WhatsApp 咨询，或前往峇株巴辖展厅。",
     title: "最新 LG 家电。灵活月付方案。",
     copy: "无需大额预付，即可使用 PuriCare™、DualCool™ 与 OLED。按家庭需求选择自行更换、组合保养或定期上门。",
     cta: "先看月费",

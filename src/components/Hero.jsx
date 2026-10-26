@@ -15,8 +15,11 @@ export default function Hero() {
             {live ? t("campaign.name") : t("hero.kicker")}
           </p>
           <h1 className="mt-2 max-w-xl text-2xl font-semibold leading-tight text-white sm:mt-3 sm:text-4xl lg:text-5xl">
-            {live ? t("hero.promoTitle") : t("hero.title")}
+            {t("hero.heading")}
           </h1>
+          <p className="mt-3 max-w-lg text-sm leading-6 text-white/80 sm:text-base sm:leading-7">
+            {t("hero.intro")}
+          </p>
           <p className="mt-3 max-w-lg text-sm leading-6 text-white/80 sm:mt-4 sm:text-base sm:leading-7">
             {live ? t("hero.promoCopy") : t("hero.copy")}
           </p>

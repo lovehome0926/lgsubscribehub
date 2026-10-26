@@ -180,6 +180,9 @@ export default {
   },
   hero: {
     kicker: "LG Subscribe™ · Malaysia",
+    heading: "LG Subscribe Malaysia",
+    intro:
+      "Explore LG water purifiers, air purifiers, air conditioners, washing machines, refrigerators and TVs with flexible monthly plans. Compare available models and monthly fees, then enquire through WhatsApp or visit our Batu Pahat showroom.",
     title: "Latest LG home appliances. Flexible monthly plans.",
     copy: "Enjoy PuriCare™, DualCool™ and OLED without a large upfront outlay. Choose Self-Service, Combined Maintenance or Regular Visit to match your household.",
     cta: "See monthly plans",

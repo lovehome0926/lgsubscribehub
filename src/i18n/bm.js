@@ -180,6 +180,9 @@ export default {
   },
   hero: {
     kicker: "LG Subscribe™ · Malaysia",
+    heading: "LG Subscribe Malaysia",
+    intro:
+      "Terokai penapis air, penapis udara, penghawa dingin, mesin basuh, peti sejuk dan TV LG dengan pelan bulanan yang fleksibel. Bandingkan model dan yuran bulanan yang ada, kemudian buat pertanyaan melalui WhatsApp atau lawati ruang pameran kami di Batu Pahat.",
     title: "Peralatan rumah LG terkini. Pelan bulanan yang fleksibel.",
     copy: "Nikmati PuriCare™, DualCool™ dan OLED tanpa bayaran pendahuluan yang besar. Pilih Servis sendiri, Gabungan atau Lawatan berkala mengikut keperluan rumah.",
     cta: "Lihat pelan bulanan",

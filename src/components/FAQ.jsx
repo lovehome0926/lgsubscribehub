@@ -16,31 +16,35 @@ export default function Faq() {
             const active = open === index
             return (
               <div key={item.q} className="px-5">
-                <button type="button" className="flex w-full items-center justify-between gap-4 py-5 text-left" onClick={() => setOpen(active ? -1 : index)}>
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                  aria-expanded={active}
+                  aria-controls={`faq-answer-${index}`}
+                  onClick={() => setOpen(active ? -1 : index)}
+                >
                   <span className="font-semibold">{item.q}</span>
                   <ChevronDown className={`h-4 w-4 text-lg-red ${active ? "rotate-180" : ""}`} />
                 </button>
-                {active ? (
-                  <p className="pb-5 text-sm leading-7 text-lg-muted">
-                    {item.a}
-                    {item.career ? (
-                      <>
-                        {" "}
-                        <a href="/career/" className="font-semibold text-lg-red hover:text-lg-red-dark">
-                          {t("faq.openCareer")}
-                        </a>
-                      </>
-                    ) : null}
-                    {item.careship ? (
-                      <>
-                        {" "}
-                        <a href="/care/" className="font-semibold text-lg-red hover:text-lg-red-dark">
-                          {t("nav.care")}
-                        </a>
-                      </>
-                    ) : null}
-                  </p>
-                ) : null}
+                <p id={`faq-answer-${index}`} hidden={!active} className="pb-5 text-sm leading-7 text-lg-muted">
+                  {item.a}
+                  {item.career ? (
+                    <>
+                      {" "}
+                      <a href="/career/" className="font-semibold text-lg-red hover:text-lg-red-dark">
+                        {t("faq.openCareer")}
+                      </a>
+                    </>
+                  ) : null}
+                  {item.careship ? (
+                    <>
+                      {" "}
+                      <a href="/care/" className="font-semibold text-lg-red hover:text-lg-red-dark">
+                        {t("nav.care")}
+                      </a>
+                    </>
+                  ) : null}
+                </p>
               </div>
             )
           })}

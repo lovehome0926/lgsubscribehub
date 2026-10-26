@@ -8,6 +8,7 @@ import CareShip from "./components/CareShip"
 import Stores from "./components/Stores"
 import Reviews from "./components/Reviews"
 import Faq from "./components/FAQ"
+import CategoryIntro from "./components/CategoryIntro"
 import SiteFooter from "./components/SiteFooter"
 import WhatsAppFab from "./components/WhatsAppFab"
 import ProductDetail from "./components/ProductDetail"
@@ -90,11 +91,11 @@ export default function App() {
 
   useEffect(() => {
     if (route.name === "career") return
-    if (route.name === "care" || route.name === "product" || route.name === "promotions") {
+    if (route.name === "care" || route.name === "product" || route.name === "promotions" || route.name === "shop") {
       window.scrollTo(0, 0)
       return
     }
-    const id = route.name === "shop" ? "shop" : window.location.hash.replace(/^#/, "")
+    const id = window.location.hash.replace(/^#/, "")
     if (!id) {
       window.scrollTo(0, 0)
       return
@@ -223,19 +224,30 @@ export default function App() {
     )
   }
 
+  const shopGroupId = route.name === "shop" ? route.groupId : null
+
   return (
     <Shell onHome={goHome}>
       {route.name === "home" ? <PromoPdf /> : null}
-      <Hero />
-      <HomeChooser />
+      {shopGroupId ? <CategoryIntro groupId={shopGroupId} /> : <Hero />}
+      {shopGroupId ? null : <HomeChooser />}
       <Catalog
-        groupId={route.name === "shop" ? route.groupId : null}
+        groupId={shopGroupId}
         onGroup={(id) => navigate(id ? shopGroupPath(id) : "/#shop")}
       />
       <WhySubscribe />
       <Stores />
       <Reviews />
-      <Faq />
+      {shopGroupId ? (
+        <Faq
+          key={shopGroupId}
+          items={t(`shopPages.${shopGroupId}.faqs`)}
+          eyebrow={t("shopPages.faqEyebrow")}
+          title={t("shopPages.faqTitle")}
+        />
+      ) : (
+        <Faq />
+      )}
     </Shell>
   )
 }

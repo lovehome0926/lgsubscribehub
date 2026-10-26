@@ -21,6 +21,126 @@ export default {
     kitchen: { name: "Dapur", blurb: "Peti sejuk InstaView dan mesin basuh pinggan QuadWash." },
     living: { name: "TV & Ruang Tamu", blurb: "Skrin OLED dan QNED untuk ruang tamu." },
   },
+  shopPages: {
+    faqEyebrow: "Kategori ini",
+    faqTitle: "Soalan tentang kategori ini",
+    water: {
+      heading: "Penapis Air LG PuriCare",
+      intro:
+        "Kategori ini menyenaraikan tiga penapis air LG PuriCare: ATOM-U jenis bawah sinki, serta dua model tanpa tangki, WD518AN dan WD516AN. Setiap kad menunjukkan model dan yuran bulanan.",
+      faqs: [
+        {
+          q: "Penapis air mana yang disenaraikan?",
+          a: "Tiga model LG PuriCare: penapis bawah sinki ATOM-U, serta WD518AN dan WD516AN tanpa tangki. Yuran bulanan dipaparkan pada setiap kad.",
+        },
+        {
+          q: "Adakah penapis air perlukan tinjauan tapak?",
+          a: "Tinjauan tapak mungkin diperlukan untuk penapis air kerana tekanan air. Kelulusan bergantung pada penilaian LG.",
+        },
+        {
+          q: "Di mana saya bandingkan pelan untuk satu model?",
+          a: "Buka halaman produk dari kad. Halaman itu menunjukkan pilihan pelan bulanan yang disenaraikan untuk model tersebut.",
+        },
+      ],
+    },
+    air: {
+      heading: "Penapis Udara LG PuriCare",
+      intro:
+        "Kategori udara menyenaraikan model LG PuriCare WallFit, 360, AeroBooster, AeroMini dan AeroCat. Kad 360 Hit dan AeroBooster ialah versi haiwan peliharaan. Setiap kad menunjukkan yuran bulanan.",
+      faqs: [
+        {
+          q: "Penapis udara mana yang disenaraikan?",
+          a: "LG PuriCare WallFit, 360, AeroBooster, AeroMini dan AeroCat. Senarai 360 Hit dan AeroBooster ialah versi haiwan peliharaan.",
+        },
+        {
+          q: "Boleh beli CareShip tanpa kontrak Subscribe baharu?",
+          a: "Ya. Halaman CareShip menyenaraikan pelan servis 1 tahun atau 2 tahun untuk penapis udara. WhatsApp Cindy dengan model, warna dan pelan yang dipilih.",
+          careship: true,
+        },
+        {
+          q: "Di mana yuran bulanan?",
+          a: "Setiap kad menunjukkan yuran bulanan model itu. Buka halaman produk untuk melihat pilihan pelan yang disenaraikan di sana.",
+        },
+      ],
+    },
+    cooling: {
+      heading: "Penyaman Udara LG DUALCOOL & ARTCOOL",
+      intro:
+        "Kategori penyejukan menyenaraikan penyaman udara LG DUALCOOL, DUALCOOL AI dan ARTCOOL Mirror. Kuasa kuda pada kad ialah 1.0 HP hingga 2.5 HP.",
+      faqs: [
+        {
+          q: "Penyaman udara mana yang disenaraikan?",
+          a: "LG DUALCOOL, DUALCOOL AI dan ARTCOOL Mirror. Kuasa kuda pada kad ialah 1.0 HP hingga 2.5 HP.",
+        },
+        {
+          q: "Adakah penyaman udara perlukan tinjauan tapak?",
+          a: "Tinjauan tapak mungkin diperlukan untuk penyaman udara kerana paip. Kelulusan bergantung pada penilaian LG.",
+        },
+        {
+          q: "Di mana yuran bulanan?",
+          a: "Setiap kad menunjukkan yuran bulanan untuk model dan kuasa kuda itu. Buka halaman produk untuk melihat pilihan pelan yang disenaraikan di sana.",
+        },
+      ],
+    },
+    laundry: {
+      heading: "Mesin Basuh, Pengering & WashTower LG",
+      intro:
+        "Kategori dobi menyenaraikan mesin basuh muatan hadapan, mesin basuh muatan atas, mesin basuh-pengering, WashTower, pengering pam haba dan penjagaan pakaian Styler. Kapasiti dipaparkan pada setiap kad.",
+      faqs: [
+        {
+          q: "Produk dobi mana yang disenaraikan?",
+          a: "Mesin basuh muatan hadapan, mesin basuh muatan atas, mesin basuh-pengering, WashTower, pengering pam haba dan penjagaan pakaian Styler. Kapasiti dipaparkan pada setiap kad.",
+        },
+        {
+          q: "Adakah Styler mesin basuh?",
+          a: "Tidak. Styler disenaraikan di sini sebagai penjagaan pakaian, berasingan daripada mesin basuh, mesin basuh-pengering, WashTower dan pengering.",
+        },
+        {
+          q: "Boleh beli CareShip Styler tanpa kontrak Subscribe baharu?",
+          a: "Ya. Halaman CareShip termasuk pelan servis 1 tahun atau 2 tahun untuk Styler. WhatsApp Cindy dengan model, warna dan pelan yang dipilih.",
+          careship: true,
+        },
+      ],
+    },
+    kitchen: {
+      heading: "Peti Sejuk & Mesin Basuh Pinggan LG",
+      intro:
+        "Kategori dapur menyenaraikan peti sejuk multi-door, InstaView, side-by-side dan top-freezer, serta mesin basuh pinggan QuadWash. Kapasiti peti sejuk dipaparkan pada setiap kad.",
+      faqs: [
+        {
+          q: "Produk dapur mana yang disenaraikan?",
+          a: "Peti sejuk multi-door, InstaView, side-by-side dan top-freezer, serta mesin basuh pinggan QuadWash. Kapasiti peti sejuk dipaparkan pada setiap kad.",
+        },
+        {
+          q: "Di mana yuran bulanan?",
+          a: "Setiap kad menunjukkan yuran bulanan model itu. Buka halaman produk untuk melihat pilihan pelan yang disenaraikan di sana.",
+        },
+        {
+          q: "Bila pemasangan diatur?",
+          a: "Pemasangan diatur selepas kelulusan, dengan liputan tertumpu di Semenanjung Malaysia. WhatsApp Cindy di 017-7473787 untuk soalan tinjauan tapak.",
+        },
+      ],
+    },
+    living: {
+      heading: "TV OLED, QNED & Nano LG",
+      intro:
+        "Kategori ruang tamu menyenaraikan tiga TV LG: OLED, QNED evo dan Nano. Saiz skrin dipaparkan pada setiap kad.",
+      faqs: [
+        {
+          q: "TV mana yang disenaraikan?",
+          a: "Tiga TV LG: OLED, QNED evo dan Nano. Saiz skrin dipaparkan pada setiap kad.",
+        },
+        {
+          q: "Mengapa TV ini tiada Lawatan berkala?",
+          a: "Produk paparan dilanggan dengan waranti pengeluar standard sahaja. Program kebersihan dan penapis CareShip™ untuk penapis air dan udara PuriCare, serta peralatan rumah terpilih, bukan untuk TV.",
+        },
+        {
+          q: "Di mana yuran bulanan?",
+          a: "Setiap kad menunjukkan yuran bulanan untuk skrin itu. Buka halaman produk untuk melihat pilihan pelan yang disenaraikan di sana.",
+        },
+      ],
+    },
+  },
   notice:
     "Laman ini diurus secara bebas oleh DNC HOME APPLIANCES dan bukan laman rasmi LG Malaysia.",
   seo: {

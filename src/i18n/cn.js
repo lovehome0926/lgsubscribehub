@@ -21,6 +21,123 @@ export default {
     kitchen: { name: "厨房", blurb: "InstaView 冰箱与 QuadWash 洗碗机。" },
     living: { name: "电视与客厅", blurb: "客厅 OLED 与 QNED 屏幕。" },
   },
+  shopPages: {
+    faqEyebrow: "这个分类",
+    faqTitle: "关于这个分类的问题",
+    water: {
+      heading: "LG PuriCare 净水器",
+      intro:
+        "这个分类列出三台 LG PuriCare 净水器：台下式 ATOM-U，以及两台免水箱机 WD518AN 和 WD516AN。每张卡片都会显示型号和月费。",
+      faqs: [
+        {
+          q: "这里列出哪些净水器？",
+          a: "三台 LG PuriCare：台下式 ATOM-U，以及免水箱的 WD518AN 和 WD516AN。月费显示在每张卡片上。",
+        },
+        {
+          q: "净水器需要现场勘察吗？",
+          a: "净水器可能因为水压需要现场勘察。审批以 LG 的评估为准。",
+        },
+        {
+          q: "在哪里比较某一型号的方案？",
+          a: "从卡片打开产品页。该页会显示这个型号列出的月付方案。",
+        },
+      ],
+    },
+    air: {
+      heading: "LG PuriCare 空气净化器",
+      intro:
+        "空气净化分类列出 LG PuriCare WallFit、360、AeroBooster、AeroMini 和 AeroCat。360 Hit 与 AeroBooster 的卡片标明为宠物版。每张卡片都会显示月费。",
+      faqs: [
+        {
+          q: "这里列出哪些空气净化器？",
+          a: "LG PuriCare WallFit、360、AeroBooster、AeroMini 和 AeroCat。360 Hit 与 AeroBooster 是宠物版。",
+        },
+        {
+          q: "可以只买 CareShip，不签新的 Subscribe 合约吗？",
+          a: "可以。CareShip 页列出空气净化器的 1 年或 2 年保养方案。把机型、颜色和所选方案 WhatsApp 给 Cindy。",
+          careship: true,
+        },
+        {
+          q: "月费在哪里看？",
+          a: "每张卡片显示该型号的月费。打开产品页可以查看那里列出的方案。",
+        },
+      ],
+    },
+    cooling: {
+      heading: "LG DUALCOOL 与 ARTCOOL 冷气",
+      intro: "冷气分类列出 LG DUALCOOL、DUALCOOL AI 和 ARTCOOL Mirror。卡片上的匹数从 1.0 HP 到 2.5 HP。",
+      faqs: [
+        {
+          q: "这里列出哪些冷气？",
+          a: "LG DUALCOOL、DUALCOOL AI 和 ARTCOOL Mirror。卡片上的匹数从 1.0 HP 到 2.5 HP。",
+        },
+        {
+          q: "冷气需要现场勘察吗？",
+          a: "冷气可能因为管路需要现场勘察。审批以 LG 的评估为准。",
+        },
+        {
+          q: "月费在哪里看？",
+          a: "每张卡片显示该型号和匹数的月费。打开产品页可以查看那里列出的方案。",
+        },
+      ],
+    },
+    laundry: {
+      heading: "LG 洗衣机、干衣机与 WashTower",
+      intro:
+        "洗衣分类列出滚筒洗衣机、波轮洗衣机、洗烘一体机、WashTower、热泵干衣机，以及 Styler 衣物护理。容量显示在每张卡片上。",
+      faqs: [
+        {
+          q: "这里列出哪些洗衣产品？",
+          a: "滚筒洗衣机、波轮洗衣机、洗烘一体机、WashTower、热泵干衣机，以及 Styler 衣物护理。容量显示在每张卡片上。",
+        },
+        {
+          q: "Styler 是洗衣机吗？",
+          a: "不是。Styler 在这里列为衣物护理，与洗衣机、洗烘一体机、WashTower 和干衣机分开。",
+        },
+        {
+          q: "可以只买 Styler 的 CareShip，不签新的 Subscribe 合约吗？",
+          a: "可以。CareShip 页包含 Styler 的 1 年或 2 年保养方案。把机型、颜色和所选方案 WhatsApp 给 Cindy。",
+          careship: true,
+        },
+      ],
+    },
+    kitchen: {
+      heading: "LG 冰箱与洗碗机",
+      intro: "厨房分类列出多门、InstaView、对开门和上冷冻冰箱，以及一台 QuadWash 洗碗机。冰箱容量显示在每张卡片上。",
+      faqs: [
+        {
+          q: "这里列出哪些厨房产品？",
+          a: "多门、InstaView、对开门和上冷冻冰箱，以及一台 QuadWash 洗碗机。冰箱容量显示在每张卡片上。",
+        },
+        {
+          q: "月费在哪里看？",
+          a: "每张卡片显示该型号的月费。打开产品页可以查看那里列出的方案。",
+        },
+        {
+          q: "安装什么时候安排？",
+          a: "审核通过后安排安装，覆盖以西马为主。现场勘察的问题请 WhatsApp Cindy 017-7473787。",
+        },
+      ],
+    },
+    living: {
+      heading: "LG OLED、QNED 与 Nano 电视",
+      intro: "客厅分类列出三台 LG 电视：OLED、QNED evo 和 Nano。屏幕尺寸显示在每张卡片上。",
+      faqs: [
+        {
+          q: "这里列出哪些电视？",
+          a: "三台 LG 电视：OLED、QNED evo 和 Nano。屏幕尺寸显示在每张卡片上。",
+        },
+        {
+          q: "为什么这些电视没有定期上门？",
+          a: "显示类产品仅含标准原厂保修。CareShip 卫生与滤芯方案适用于 PuriCare 净水器、空气净化器及部分家电，不适用于电视。",
+        },
+        {
+          q: "月费在哪里看？",
+          a: "每张卡片显示该屏幕的月费。打开产品页可以查看那里列出的方案。",
+        },
+      ],
+    },
+  },
   notice: "本网站由 DNC HOME APPLIANCES 独立运营，并非 LG 马来西亚官方网站。",
   seo: {
     title: "LG Subscribe Malaysia | Easy Rental & Home Appliances from RM 25/mth",

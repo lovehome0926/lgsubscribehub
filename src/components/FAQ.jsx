@@ -2,15 +2,15 @@ import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { useLang } from "../i18n/LanguageProvider"
 
-export default function Faq() {
+export default function Faq({ items, eyebrow, title }) {
   const { t } = useLang()
-  const faqs = t("faq.items")
+  const faqs = items ?? t("faq.items")
   const [open, setOpen] = useState(0)
   return (
     <section id="faq" className="scroll-mt-24 bg-lg-cream py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">{t("faq.eyebrow")}</p>
-        <h2 className="mt-2 text-center text-3xl font-semibold">{t("faq.title")}</h2>
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">{eyebrow ?? t("faq.eyebrow")}</p>
+        <h2 className="mt-2 text-center text-3xl font-semibold">{title ?? t("faq.title")}</h2>
         <div className="mt-8 divide-y divide-lg-line rounded-[28px] bg-white">
           {faqs.map((item, index) => {
             const active = open === index

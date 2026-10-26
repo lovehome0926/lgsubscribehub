@@ -21,6 +21,126 @@ export default {
     kitchen: { name: "Kitchen", blurb: "InstaView refrigerators and QuadWash dishwashers." },
     living: { name: "TV & Living", blurb: "OLED and QNED screens for the living room." },
   },
+  shopPages: {
+    faqEyebrow: "This category",
+    faqTitle: "Questions about this category",
+    water: {
+      heading: "LG PuriCare Water Purifiers",
+      intro:
+        "This category lists three LG PuriCare water purifiers: the ATOM-U undersink model, and two tankless models, WD518AN and WD516AN. Each card shows the model and the monthly fee.",
+      faqs: [
+        {
+          q: "Which water purifiers are listed?",
+          a: "Three LG PuriCare models: the ATOM-U undersink purifier, and the tankless WD518AN and WD516AN. The monthly fee is shown on each card.",
+        },
+        {
+          q: "Will a water purifier need a site survey?",
+          a: "A site survey may be needed for water purifiers because of water pressure. Approval depends on LG’s assessment.",
+        },
+        {
+          q: "Where do I compare the plans for a model?",
+          a: "Open the product page from the card. That page shows the monthly plan options listed for the model.",
+        },
+      ],
+    },
+    air: {
+      heading: "LG PuriCare Air Purifiers",
+      intro:
+        "The air category lists LG PuriCare WallFit, 360, AeroBooster, AeroMini and AeroCat models. The 360 Hit and AeroBooster cards are the pet versions. Each card shows the monthly fee.",
+      faqs: [
+        {
+          q: "Which air purifiers are listed?",
+          a: "LG PuriCare WallFit, 360, AeroBooster, AeroMini and AeroCat. The 360 Hit and AeroBooster listings are the pet versions.",
+        },
+        {
+          q: "Can I buy CareShip without a new Subscribe contract?",
+          a: "Yes. The CareShip page lists 1-year or 2-year service plans for air purifiers. WhatsApp Cindy with the model, colour and plan you selected.",
+          careship: true,
+        },
+        {
+          q: "Where is the monthly fee?",
+          a: "Each card shows the monthly fee for that model. Open the product page to see the plan options listed there.",
+        },
+      ],
+    },
+    cooling: {
+      heading: "LG DUALCOOL & ARTCOOL Air Conditioners",
+      intro:
+        "The cooling category lists LG DUALCOOL, DUALCOOL AI and ARTCOOL Mirror air conditioners. Horsepower on the cards runs from 1.0 HP to 2.5 HP.",
+      faqs: [
+        {
+          q: "Which air conditioners are listed?",
+          a: "LG DUALCOOL, DUALCOOL AI and ARTCOOL Mirror. Horsepower on the cards runs from 1.0 HP to 2.5 HP.",
+        },
+        {
+          q: "Will an air conditioner need a site survey?",
+          a: "A site survey may be needed for air conditioners because of piping. Approval depends on LG’s assessment.",
+        },
+        {
+          q: "Where is the monthly fee?",
+          a: "Each card shows the monthly fee for that model and horsepower. Open the product page to see the plan options listed there.",
+        },
+      ],
+    },
+    laundry: {
+      heading: "LG Washers, Dryers & WashTower",
+      intro:
+        "The laundry category lists front-load washers, top-load washers, washer-dryers, WashTower, a heat-pump dryer and Styler garment care. Capacity is shown on each card.",
+      faqs: [
+        {
+          q: "Which laundry products are listed?",
+          a: "Front-load washers, top-load washers, washer-dryers, WashTower, a heat-pump dryer and Styler garment care. Capacity is shown on each card.",
+        },
+        {
+          q: "Is Styler a washing machine?",
+          a: "No. Styler is listed here as garment care, separate from the washers, washer-dryers, WashTower and dryer.",
+        },
+        {
+          q: "Can I buy Styler CareShip without a new Subscribe contract?",
+          a: "Yes. The CareShip page includes 1-year or 2-year service plans for Styler. WhatsApp Cindy with the model, colour and plan you selected.",
+          careship: true,
+        },
+      ],
+    },
+    kitchen: {
+      heading: "LG Refrigerators & Dishwashers",
+      intro:
+        "The kitchen category lists multi-door, InstaView, side-by-side and top-freezer refrigerators, plus a QuadWash dishwasher. Refrigerator capacity is shown on each card.",
+      faqs: [
+        {
+          q: "Which kitchen products are listed?",
+          a: "Multi-door, InstaView, side-by-side and top-freezer refrigerators, plus a QuadWash dishwasher. Refrigerator capacity is shown on each card.",
+        },
+        {
+          q: "Where is the monthly fee?",
+          a: "Each card shows the monthly fee for that model. Open the product page to see the plan options listed there.",
+        },
+        {
+          q: "When is installation arranged?",
+          a: "Installation is arranged after approval, with coverage focused on Peninsular Malaysia. WhatsApp Cindy at 017-7473787 for site-survey questions.",
+        },
+      ],
+    },
+    living: {
+      heading: "LG OLED, QNED & Nano TVs",
+      intro:
+        "The living category lists three LG TVs: OLED, QNED evo and Nano. Screen size is shown on each card.",
+      faqs: [
+        {
+          q: "Which TVs are listed?",
+          a: "Three LG TVs: OLED, QNED evo and Nano. Screen size is shown on each card.",
+        },
+        {
+          q: "Why don’t these TVs have Regular Visit?",
+          a: "Display products are subscribed with standard manufacturer warranty only. CareShip hygiene and filter programmes apply to PuriCare water and air purifiers, and selected home appliances, not to TVs.",
+        },
+        {
+          q: "Where is the monthly fee?",
+          a: "Each card shows the monthly fee for that screen. Open the product page to see the plan options listed there.",
+        },
+      ],
+    },
+  },
   notice:
     "This website is independently managed by DNC HOME APPLIANCES and is not the official LG Malaysia website.",
   seo: {

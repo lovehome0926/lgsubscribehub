@@ -3,10 +3,12 @@ import { groupById } from "./data/catalog"
 const HOME_ANCHORS = new Set(["shop", "why", "stores", "reviews", "faq", "top"])
 
 export function productPath(id, specId, colorId) {
-  const parts = ["/product", encodeURIComponent(id)]
-  if (specId) parts.push(encodeURIComponent(specId))
-  if (colorId) parts.push(encodeURIComponent(colorId))
-  return `${parts.join("/")}/`
+  const path = `/product/${encodeURIComponent(id)}/`
+  const params = new URLSearchParams()
+  if (specId) params.set("spec", specId)
+  if (colorId) params.set("color", colorId)
+  const hash = params.toString()
+  return hash ? `${path}#${hash}` : path
 }
 
 export function shopGroupPath(groupId) {
@@ -27,13 +29,23 @@ function partsOf(pathname) {
     })
 }
 
+function selectionFromHash(loc) {
+  const raw = String(loc.hash || "").replace(/^#/, "")
+  if (!raw || raw.includes("/")) return { specId: null, colorId: null }
+  const params = new URLSearchParams(raw)
+  return { specId: params.get("spec"), colorId: params.get("color") }
+}
+
 export function readRoute(loc = window.location) {
   const [page, id, a, b] = partsOf(loc.pathname || "/")
   if (!page) return { name: "home" }
   if (page === "career") return { name: "career", section: id || null }
   if (page === "care") return { name: "care" }
   if (page === "promotions") return { name: "promotions" }
-  if (page === "product" && id) return { name: "product", id, a: a || null, b: b || null }
+  if (page === "product" && id) {
+    const picked = selectionFromHash(loc)
+    return { name: "product", id, a: a || picked.specId || null, b: b || picked.colorId || null }
+  }
   if (page === "shop" && id === "water-air") return { name: "shop-hub" }
   if (page === "shop" && id && groupById(id)) return { name: "shop", groupId: id }
   return { name: "home" }

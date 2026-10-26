@@ -212,6 +212,7 @@ export default {
     filterOffers: "Tawaran",
     allDeals: "Semua tawaran",
     subscribe: "Subscribe",
+    new: "NEW",
     subscription: "Langganan",
     perMonth: "/bulan",
     firstMonths: " · {n} bulan pertama",

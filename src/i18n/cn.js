@@ -211,6 +211,7 @@ export default {
     filterOffers: "优惠",
     allDeals: "全部优惠",
     subscribe: "订阅",
+    new: "NEW",
     subscription: "订阅",
     perMonth: "/月",
     firstMonths: " · 前 {n} 个月",

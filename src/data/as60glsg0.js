@@ -106,6 +106,7 @@ export const AS60GLSG0 = {
   baseName: "LG PuriCare WallFit Air Purifier",
   shortName: "PuriCare WallFit",
   model: "AS60GLSG0",
+  isNew: true,
   tagline: detail.tagline,
   category: "Air Purifiers",
   waters: [],

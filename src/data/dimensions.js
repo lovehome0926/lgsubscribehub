@@ -16,7 +16,13 @@ export const DIMENSION_FACTS = {
   "S3-Q18KAYPA": [indoor("1068 x 425 x 279"), outdoor("839 x 532 x 324")],
   "S3-Q24KLYPA": [indoor("1068 x 425 x 279"), outdoor("839 x 532 x 324")],
   DFC335HM: [product("600 x 850 x 600"), packing("680 x 890 x 665")],
+  FX1411R5WR: [product("600 x 850 x 565")],
+  FX1412S5GR: [product("600 x 850 x 565")],
+  F2515RNTKAR: [product("650 x 950 x 645")],
+  WT2520NHEGR: [product("700 x 1890 x 830")],
+  "S3-Q2412GZC": [product("967 x 383 x 296")],
+  GXJB18JBQRC: [product("835 x 1860 x 696")],
 }
 
-// Official pages checked, no W x H x D line found — left blank on purpose:
-// S3-Q2412GZC, FX1412S5GR, F2515RNTKAR, WT2520NHEGR, 50NU865BPSA, 55NU865BPSA
+// Leaflet DST-102026 is the source for models whose LG page had no dimension line.
+// 50NU865BPSA and 55NU865BPSA share the NANO TV product, which already has a size line.

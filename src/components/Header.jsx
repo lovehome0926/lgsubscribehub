@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react"
 import { campaignActive } from "../data/campaign"
-import { CATEGORY_GROUPS, SUB_LOGO } from "../data/catalog"
+import { CATEGORY_GROUPS } from "../data/catalog"
 import { CAREER, COMPANY, whatsappHref } from "../config"
 import { LANGS, useLang } from "../i18n/LanguageProvider"
 
@@ -78,8 +78,9 @@ export default function Header({ onHome }) {
         </div>
       </div>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[72px]">
-        <button type="button" onClick={onHome} className="flex min-w-0 items-center">
-          <img src={SUB_LOGO} alt="LG Subscribe" className="h-8 shrink-0 sm:h-9" />
+        <button type="button" onClick={onHome} className="flex min-w-0 items-center gap-2">
+          <img src="/lg-icon.png" alt="" className="h-10 w-10 shrink-0 sm:h-11 sm:w-11" />
+          <span className="text-[15px] font-bold tracking-tight text-lg-ink sm:text-base">LG Subscribe</span>
         </button>
         <nav className="hidden items-center gap-5 text-sm font-medium text-lg-ink lg:flex">
           <div className="group relative">

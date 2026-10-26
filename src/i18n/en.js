@@ -212,6 +212,7 @@ export default {
     filterOffers: "Offers",
     allDeals: "All deals",
     subscribe: "Subscribe",
+    new: "NEW",
     subscription: "Subscription",
     perMonth: "/month",
     firstMonths: " · first {n} months",

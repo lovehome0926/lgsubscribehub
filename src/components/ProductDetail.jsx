@@ -35,7 +35,12 @@ function TitleBlock({ product, color, spec, tagline }) {
   const { t } = useLang()
   return (
     <div>
-      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-lg-red">LG Subscribe™</p>
+      <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-lg-red">
+        <span>LG Subscribe™</span>
+        {product.isNew ? (
+          <span className="rounded-md bg-[#A50034] px-2 py-0.5 text-[11px] font-black tracking-wide text-white">{t("catalog.new")}</span>
+        ) : null}
+      </p>
       <h1 className="mt-2 text-[26px] font-semibold leading-[1.25] tracking-tight md:text-[30px]">
         {displayName(product, color)}
       </h1>

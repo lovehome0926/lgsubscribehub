@@ -73,7 +73,7 @@ function ProductCard({ listing }) {
   }
 
   return (
-    <article className="relative flex flex-col rounded-[28px] bg-white p-5 shadow-sm ring-1 ring-lg-line">
+    <article className={`relative flex flex-col rounded-[28px] bg-white p-5 shadow-sm ring-1 ${product.isNew ? "ring-[#A50034]" : "ring-lg-line"}`}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           {promo ? (
@@ -86,7 +86,12 @@ function ProductCard({ listing }) {
         </div>
         <Icon className="h-4 w-4 shrink-0 text-lg-muted" />
       </div>
-      <div className="flex h-44 items-center justify-center">
+      <div className="relative flex h-44 items-center justify-center">
+        {product.isNew ? (
+          <span className="absolute left-0 top-2 rounded-md bg-[#A50034] px-2 py-0.5 text-[11px] font-black tracking-wide text-white">
+            {t("catalog.new")}
+          </span>
+        ) : null}
         {waitingPhoto ? (
           <div className="flex flex-col items-center gap-2 text-center">
             <Icon className="h-8 w-8 text-lg-muted/70" />

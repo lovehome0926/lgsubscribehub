@@ -31,7 +31,7 @@ export const Q4_MONTHS = [9, 10, 11, 12]
 export const FLAT99_MODELS = ["DFC335HM"]
 export const REBATE20_MODELS = ["RX10VHP3WR", "RX10VHP3KR", "F2520SNEKR"]
 export const REBATE15_MODELS = []
-// Paused while AS30GGW10 is out of stock. Put both models back when stock returns.
+// The RM15 pair stays paused. AS65GDBY0 and AS30GGW10 use the normal first-9-month half price.
 export const AIR_COMBO_MODELS = []
 export const AIR_COMBO_OFF = 15
 export const AIR_COMBO_SKU = {
@@ -183,10 +183,6 @@ export function evaluateProductPricing(product) {
       badge: "RM5 OFF Monthly",
       kind: "artcool",
     }
-  }
-
-  if (!AIR_COMBO_MODELS.length && isListedModel(["AS65GDBY0", "AS30GGW10"], product)) {
-    return { promoType: "NONE", kind: "none" }
   }
 
   return {

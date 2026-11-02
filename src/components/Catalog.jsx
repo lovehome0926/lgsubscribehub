@@ -47,9 +47,9 @@ function ProductCard({ listing }) {
   const image = variant?.image || color.image
   const waitingPhoto = !image || /lg-subscribe-2025-banner/i.test(image)
   const model = variant?.model || color.model || product.model
-  const promo = promoForProduct(product)
   const gift = giftForProduct(product)
-  const deal = dealForListing(product, [spec])
+  const deal = dealForListing(product, [spec], model)
+  const promo = deal.promo
   const theme = promoCopy(promo, t)
   const Icon = ICONS[product.type] ?? Droplets
   const palette = choosableColors(colors)

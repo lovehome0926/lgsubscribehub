@@ -1,19 +1,17 @@
 // Product patches only. October prices live in promoConfig.evaluateProductPricing.
 import { AS60GLSG0 } from "./as60glsg0.js"
-import { FX1411R5WR, GXJB18JBQRC } from "./newModels.js"
+import { FV1450S2W, FX1411R5WR, GXJB18JBQRC } from "./newModels.js"
 import { DIMENSION_FACTS } from "./dimensions.js"
 import { applyF2520Name, applyFx1412 } from "./fx1412.js"
-import { WASHTOWER_RATES } from "./promoConfig.js"
-
 export { CAMPAIGN, campaignActive } from "./promoConfig.js"
 
 export const OCTOBER_PROMOS = []
 export const MERDEKA_PROMOS = OCTOBER_PROMOS
 
 export const PAUSED_MODELS = ["GC-X24FFC7R", "MH21RRY", "RX10VHP3WR"]
-export const DELISTED_MODELS = ["DFC533FV", "FV1450S2W"]
+export const DELISTED_MODELS = ["DFC533FV", "DFC335HM", "F2515NREG"]
 
-export const EXTRA_PRODUCTS = [FX1411R5WR, GXJB18JBQRC, AS60GLSG0]
+export const EXTRA_PRODUCTS = [FV1450S2W, FX1411R5WR, GXJB18JBQRC, AS60GLSG0]
 
 function patchF2515(product) {
   if (product.model !== "F2515RNTKAR") return product
@@ -81,26 +79,36 @@ function applyDualcoolAiLook(product, donor) {
   )
 }
 
-function applyWashTowerRates(product) {
-  const rate = WASHTOWER_RATES[product.model]
-  if (!rate) return product
-  const subscribe = {
-    60: {
-      combined: rate[60].combined.now,
-      visit: { 6: rate[60].visit.now, 12: null, 24: null },
-    },
-    84: {
-      combined: rate[84].combined.now,
-      visit: { 6: rate[84].visit.now, 12: null, 24: null },
-    },
+function addWd518Colours(product) {
+  if (product.model !== "WD518AN") return product
+  const donor = product.colors.find((color) => color.model === "WD518AN") ?? product.colors[0]
+  const specIds = donor?.specIds?.length ? donor.specIds : product.specs.map((spec) => spec.id)
+  const extras = [
+    { id: "calming-pink", name: "Calming Pink", hex: "#F3D4D8", image: "/products/wd518an-calming-pink.png" },
+    { id: "calming-cream-sky", name: "Calming Cream Sky", hex: "#E4EDF6", image: "/products/wd518an-calming-cream-sky.png" },
+  ]
+  const colors = [...product.colors]
+  for (const extra of extras) {
+    if (colors.some((color) => color.id === extra.id)) continue
+    const variant = {
+      model: "WD518AN",
+      image: extra.image,
+      gallery: [extra.image],
+      url: donor?.variants?.[specIds[0]]?.url ?? null,
+      detail: donor?.variants?.[specIds[0]]?.detail,
+    }
+    colors.push({
+      id: extra.id,
+      name: extra.name,
+      hex: extra.hex,
+      image: extra.image,
+      gallery: [extra.image],
+      model: "WD518AN",
+      specIds,
+      variants: Object.fromEntries(specIds.map((id) => [id, { ...variant }])),
+    })
   }
-  return {
-    ...product,
-    specs: product.specs.map((spec) => ({
-      ...spec,
-      pricing: { ...spec.pricing, subscribe },
-    })),
-  }
+  return { ...product, colors }
 }
 
 const DIMENSION_LABEL = /dimension|尺寸|wxhxd|w x h/i
@@ -156,9 +164,7 @@ export function patchProducts(products) {
     .filter((product) => !DELISTED_MODELS.includes(product.model))
     .map((product) => {
       let next = applyDimensions(
-        applyWashTowerRates(
-          applyB257Hero(applyFx1412(applyF2520Name(patchF2515(applyDualcoolAiLook(product, dualcoolAi))), f2520)),
-        ),
+        addWd518Colours(applyB257Hero(applyFx1412(applyF2520Name(patchF2515(applyDualcoolAiLook(product, dualcoolAi))), f2520))),
       )
       if (PAUSED_MODELS.includes(product.model)) next = { ...next, paused: true }
       return next

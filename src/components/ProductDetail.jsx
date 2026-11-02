@@ -121,7 +121,7 @@ function tileState(selected) {
     : "border-gray-200 font-medium text-gray-400 hover:border-gray-300 hover:text-gray-500"
 }
 
-function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, tenure, setTenure, care, setCare, visitCycle, setVisitCycle, promo, price, waText }) {
+function PlanConfigurator({ product, spec, specModel, payMode, setPayMode, subscribeYears, tenure, setTenure, care, setCare, visitCycle, setVisitCycle, promo, price, waText }) {
   const { t } = useLang()
   const activePromo = price.planPromo ?? promo
   const theme = promoCopy(activePromo, t)
@@ -171,6 +171,11 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
         <div className="rounded-2xl bg-[#111] px-4 py-3 text-white ring-1 ring-[#E10600]">
           <p className="text-sm font-black text-[#FFD100]">{t("pdp.giftBanner")}</p>
           <p className="mt-1 text-xs leading-5 text-white/70">{t("pdp.giftBannerLead")}</p>
+          {price.list != null ? (
+            <p className="mt-1 text-xs font-semibold leading-5 text-white">
+              {t("pdp.giftRate", { now: Math.ceil(price.list / 2), after: price.list })}
+            </p>
+          ) : null}
         </div>
       ) : null}
       {showPayModes ? (
@@ -238,7 +243,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
             {services.map((id) => {
               const amount = serviceAmount(id)
               const selected = care === id
-              const priced = applyPromo(amount, promoForProductPlan(product, { tenure, care: id }), { tenure, care: id }).now
+              const priced = applyPromo(amount, promoForProductPlan(product, { tenure, care: id, cycle: visitCycle, model: specModel }), { tenure, care: id, cycle: visitCycle }).now
               return (
                 <button
                   key={id}
@@ -303,7 +308,7 @@ function PlanConfigurator({ product, spec, payMode, setPayMode, subscribeYears, 
                   {selected ? <SelectedMark /> : null}
                   <span className="block">{t(`pdp.visitLabel.${cycle}`)}</span>
                   <span className="mt-0.5 block text-[10px] font-medium tracking-normal text-gray-400">
-                    RM {applyPromo(amount, promoForProductPlan(product, { tenure, care: "visit" }), { tenure, care: "visit" }).now}
+                    RM {applyPromo(amount, promoForProductPlan(product, { tenure, care: "visit", cycle, model: specModel }), { tenure, care: "visit", cycle }).now}
                   </span>
                 </button>
               )
@@ -477,9 +482,10 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
   const price = useMemo(() => {
     const amount = planPrice(spec, { payMode, tenure, care: careKey, cycle: visitCycle })
     if (payMode === "outright") return { kind: "outright", amount }
-    const planPromo = promoForProductPlan(product, { tenure, care: careKey })
-    return { kind: "subscribe", ...applyPromo(amount, planPromo, { tenure, care: careKey }), months: tenure, planPromo }
-  }, [payMode, spec, careKey, tenure, visitCycle, promo])
+    const plan = { tenure, care: careKey, cycle: visitCycle, model: modelCode }
+    const planPromo = promoForProductPlan(product, plan)
+    return { kind: "subscribe", ...applyPromo(amount, planPromo, plan), months: tenure, planPromo }
+  }, [payMode, spec, careKey, tenure, visitCycle, modelCode])
 
   const activePromo = price.planPromo ?? promo
   const colorLabel = viewColor.name === "Default" ? product.shortName : viewColor.name
@@ -642,6 +648,7 @@ export default function ProductDetail({ product, onBack, initialSpecId, initialC
               <PlanConfigurator
                 product={product}
                 spec={spec}
+                specModel={modelCode}
                 payMode={payMode}
                 setPayMode={setPayMode}
                 subscribeYears={subscribeYears}

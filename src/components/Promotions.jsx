@@ -180,7 +180,7 @@ export default function Promotions() {
         )
       })}
 
-      <WashTowerRates />
+      {Object.keys(WASHTOWER_RATES).length ? <WashTowerRates /> : null}
 
       <section className="mx-auto max-w-3xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-lg-red">{t("promotions.faqEyebrow")}</p>

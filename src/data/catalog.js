@@ -81,7 +81,7 @@ export const CATEGORY_GROUPS = [
   {
     id: "kitchen",
     name: "Kitchen",
-    blurb: "InstaView refrigerators and QuadWash dishwashers.",
+    blurb: "InstaView, multi-door and side-by-side refrigerators.",
     categories: ["Refrigerators", "Dishwashers"],
   },
   {
@@ -243,15 +243,13 @@ function bestPromo(list, product) {
   return bestRank >= 0 ? best : null
 }
 
-export function promoForProduct(product, date = new Date()) {
+export function promoForProduct(product, date = new Date(), plan = {}) {
   if (!product || !pricesActive(date)) return null
-  return toPromo(product, evaluateProductPricing(product))
+  return toPromo(product, evaluateProductPricing(product, plan, date), date)
 }
 
 export function promoForProductPlan(product, plan = {}, date = new Date()) {
-  const promo = promoForProduct(product, date)
-  if (promo && promoAppliesToPlan(promo, plan)) return promo
-  return null
+  return promoForProduct(product, date, plan)
 }
 
 export { giftForProduct } from "./promoConfig.js"
@@ -260,6 +258,7 @@ export function promoAppliesToPlan(promo, plan = {}) {
   if (!promo) return false
   if (promo.tenure != null && plan.tenure != null && Number(promo.tenure) !== Number(plan.tenure)) return false
   if (promo.care && plan.care && promo.care !== plan.care) return false
+  if (promo.cycle != null && plan.cycle != null && Number(promo.cycle) !== Number(plan.cycle)) return false
   return true
 }
 
@@ -289,26 +288,34 @@ export function applyPromo(monthly, promo, plan = {}) {
   return { list: monthly, now: monthly, introMonths: null, after: null }
 }
 
-export function dealForListing(product, specs) {
-  const promo = promoForProduct(product)
-  const locked = promo && (promo.tenure != null || promo.care)
-  let list = lowestMonthlyFor(specs)
-  if (locked) {
-    let best = null
-    const tenures = promo.tenure != null ? [promo.tenure] : [60, 84]
-    const cares = promo.care ? [promo.care] : ["self", "combined", "visit", "none"]
-    for (const spec of specs) {
-      for (const tenure of tenures) {
-        for (const care of cares) {
-          const value = planPrice(spec, { payMode: "subscribe", tenure, care, cycle: 6 })
-          if (isMoney(value) && (best == null || value < best)) best = value
+function specModel(product, spec) {
+  for (const color of product.colors ?? []) {
+    const model = color.variants?.[spec.id]?.model
+    if (model) return model
+  }
+  return product.model
+}
+
+export function dealForListing(product, specs, model) {
+  let best = null
+  for (const spec of specs) {
+    const specCode = model || specModel(product, spec)
+    for (const tenure of pricedTenures(spec)) {
+      const cares = product.hasCare ? careOptions(spec, tenure) : ["none"]
+      for (const care of cares) {
+        const cycles = care === "visit" ? visitCycles(spec, tenure) : [null]
+        for (const cycle of cycles) {
+          const amount = planPrice(spec, { payMode: "subscribe", tenure, care, cycle: cycle ?? 6 })
+          if (!isMoney(amount)) continue
+          const promo = promoForProductPlan(product, { tenure, care, cycle, model: specCode })
+          const priced = applyPromo(amount, promo, { tenure, care, cycle })
+          if (priced.now == null) continue
+          if (!best || priced.now < best.now) best = { promo, ...priced }
         }
       }
     }
-    if (best != null) list = best
   }
-  if (promo?.afterPrice != null && promo.promoPrice != null && !promo.flat) list = promo.afterPrice
-  return { promo, ...applyPromo(list, promo, { tenure: promo?.tenure, care: promo?.care }) }
+  return best ?? { promo: null, list: null, now: null, introMonths: null, after: null }
 }
 
 export function promoKind(promo) {
@@ -331,7 +338,7 @@ export const PROMO_TABS = [
   { id: "rebate15", label: "RM15 Off", short: "RM15 OFF" },
   { id: "rebate10", label: "RM10 Off", short: "RM10 OFF" },
   { id: "flat", label: "RM99 Flat", short: "RM99" },
-  { id: "artcool", label: "ARTCOOL RM5", short: "RM5 OFF" },
+  { id: "artcool", label: "RM5 Off", short: "RM5 OFF" },
   { id: "aircombo", label: "Air Combo RM15", short: "COMBO RM15" },
 ]
 
@@ -385,7 +392,7 @@ const THEMES = {
     price: "text-[#E10600]",
   },
   artcool: {
-    kicker: "ARTCOOL",
+    kicker: "RM5 OFF",
     badge: "RM5 OFF Monthly",
     className: "bg-[#155E75] text-white shadow-[0_10px_24px_rgba(21,94,117,0.32)]",
     tab: "bg-[#155E75] text-white ring-[#155E75]",

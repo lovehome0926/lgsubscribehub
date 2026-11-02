@@ -184,6 +184,74 @@ export const FX1411R5WR = model({
   },
 })
 
+const FV_BASE = "https://www.lg.com/content/dam/channel/wcms/my/images/washers/fv1450s2w_abwreml_eaml_my_c"
+const fvGallery = [1, 2, 3, 4, 5].map((n) => `${FV_BASE}/gallery/large${String(n).padStart(2, "0")}.jpg`)
+const fvShot = (file) => `${FV_BASE}/feature/${file}`
+
+const fv1450Detail = {
+  tagline: "10.5kg front load washer in White, with AI DD™, TurboWash™ 360° and Steam+™.",
+  quickFeatures: [
+    { title: "AI DD™", copy: "AI DD™ senses the fabric and chooses the washing motion." },
+    { title: "TurboWash™ 360°", copy: "Four spray directions can finish a load in 39 minutes." },
+    { title: "Steam+™", copy: "Steam helps reduce allergens and wrinkles." },
+    { title: "10.5kg capacity", copy: "A larger drum in a 600mm-wide body." },
+    { title: "ThinQ™", copy: "Check and start the washer from the LG ThinQ app." },
+  ],
+  stories: [
+    {
+      title: "AI DD™",
+      copy: "The washer senses fabric softness as well as the load, then picks the motion.",
+      poster: fvShot("WM-Vivace-V900-VC2-White-02-1-AIDD-Desktop.gif"),
+      video: null,
+    },
+    {
+      title: "Thoroughly clean in 39 minutes",
+      copy: "TurboWash™ 360° sprays from four directions.",
+      poster: fvShot("WM-Vivace-V900-VC2-White-04-1-TurboWash-360-Desktop.jpg"),
+      video: null,
+    },
+    {
+      title: "Tempered glass door",
+      copy: "A tempered glass door and stainless lifter.",
+      poster: fvShot("WM-Vivace-V900-VC2-White-10-1-Druability-Desktop.jpg"),
+      video: null,
+    },
+  ],
+  facts: [
+    { label: "Type", value: "Front Load Washer" },
+    { label: "CAPACITY - Max Wash Capacity(kg)", value: "10.5" },
+    { label: "Color", value: "White" },
+    { label: "DIMENSIONS & WEIGHTS - Product Dimensions (WxHxD mm)", value: "600 x 850 x 560" },
+    { label: "Weight (kg)", value: "70" },
+    { label: "FEATURES - AI DD", value: "Yes" },
+    { label: "FEATURES - TurboWash 360", value: "Yes" },
+    { label: "FEATURES - Steam", value: "Yes" },
+    { label: "SMART TECHNOLOGY - ThinQ (Wi-Fi)", value: "Yes" },
+    { label: "LG TWINWash Compatible", value: "Yes" },
+  ],
+}
+
+export const FV1450S2W = {
+  ...model({
+  id: "front-load-washer-fv1450s2w",
+  type: "washer",
+  sku: "FV1450S2W",
+  name: "LG Front Load Washer",
+  shortName: "Front Load Washer",
+  model: "FV1450S2W",
+  category: "Washers",
+  specId: "10-5kg",
+  specLabel: "10.5kg",
+  color: { id: "white", name: "White", hex: "#F4F4F4", gallery: fvGallery },
+  detail: fv1450Detail,
+  url: "https://www.lg.com/my/lg-subscribe/washer-dryers/fv1450s2w/",
+  pricing: {
+    60: { combined: 90, visit: { 6: 100, 12: null, 24: null } },
+  },
+}),
+  isNew: false,
+}
+
 export const GXJB18JBQRC = model({
   id: "multi-door-gxjb18jbqrc",
   type: "fridge",
